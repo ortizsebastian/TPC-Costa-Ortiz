@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPC-Ortiz-Costa", "TPC-Ortiz-Costa\TPC-Ortiz-Costa.csproj", "{859F31E3-71B4-4DAA-8A16-46F6B130BDDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{859F31E3-71B4-4DAA-8A16-46F6B130BDDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859F31E3-71B4-4DAA-8A16-46F6B130BDDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859F31E3-71B4-4DAA-8A16-46F6B130BDDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859F31E3-71B4-4DAA-8A16-46F6B130BDDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40A8ADD6-6725-4BDE-9A59-6575BB490B05}
+	EndGlobalSection
+EndGlobal
