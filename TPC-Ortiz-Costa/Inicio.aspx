@@ -18,7 +18,7 @@
         <div class="card h-100">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Product 1</h5>
+            <h5 class="card-title"><a href="VerDetalle.aspx" style="text-decoration:none !important;">Product 1</a></h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
           <div class="card-footer">
@@ -30,7 +30,7 @@
         <div class="card h-100">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Product 2</h5>
+            <h5 class="card-title"><a href="VerDetalle.aspx" style="text-decoration:none !important;">Product 2</a></h5>
             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
           </div>
           <div class="card-footer">
@@ -42,7 +42,7 @@
         <div class="card h-100">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Product 3</h5>
+            <h5 class="card-title"><a href="VerDetalle.aspx" style="text-decoration:none !important;">Product 3</a></h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
           </div>
           <div class="card-footer">
