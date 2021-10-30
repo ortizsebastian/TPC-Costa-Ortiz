@@ -32,8 +32,8 @@
                             </label>
 
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-dark">Iniciar Sesión</button>
-                                <a class="btn btn-dark" href="Inicio.aspx">Volver al Inicio</a>
+                                <button type="submit" class="btn btn-dark">Conectar</button>
+                                <a class="btn btn-dark" href="Inicio.aspx">Volver</a>
                             </div>
 
                             <hr>

@@ -74,3 +74,7 @@ D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\obj\Debug\TPC-Or
 D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\obj\Debug\TPC-Ortiz-Costa.csproj.CopyComplete
 D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\obj\Debug\TPC-Ortiz-Costa.dll
 D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\obj\Debug\TPC-Ortiz-Costa.pdb
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Dominio.dll
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Negocio.dll
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Dominio.pdb
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Negocio.pdb

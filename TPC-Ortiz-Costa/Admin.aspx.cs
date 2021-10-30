@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TPC_Dominio;
+using TPC_Negocio;
 
 namespace TPC_Ortiz_Costa
 {

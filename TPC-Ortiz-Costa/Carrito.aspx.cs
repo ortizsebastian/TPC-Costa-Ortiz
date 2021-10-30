@@ -1,4 +1,6 @@
-﻿using System;
+﻿using TPC_Dominio;
+using TPC_Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,7 @@ namespace TPC_Ortiz_Costa
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

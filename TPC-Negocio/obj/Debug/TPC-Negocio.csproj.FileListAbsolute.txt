@@ -1,0 +1,9 @@
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\bin\Debug\TPC-Negocio.dll
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\bin\Debug\TPC-Negocio.pdb
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\bin\Debug\TPC-Dominio.dll
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\bin\Debug\TPC-Dominio.pdb
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\obj\Debug\TPC-Negocio.csproj.AssemblyReference.cache
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\obj\Debug\TPC-Negocio.csproj.CoreCompileInputs.cache
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\obj\Debug\TPC-Negocio.csproj.CopyComplete
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\obj\Debug\TPC-Negocio.dll
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\obj\Debug\TPC-Negocio.pdb

@@ -248,6 +248,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TPC-Dominio\TPC-Dominio.csproj">
+      <Project>{CB5CD0CA-2E7E-4CD5-B344-E9323BD4888D}</Project>
+      <Name>TPC-Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TPC-Negocio\TPC-Negocio.csproj">
+      <Project>{2B0048C2-A33B-46C9-8176-27FB0EB9F07D}</Project>
+      <Name>TPC-Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

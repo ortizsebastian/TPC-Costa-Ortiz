@@ -4,6 +4,10 @@
 </asp:Content>
 
 
+
+
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="input-group rounded" style="padding-top: 2rem; padding-left: 7rem; padding-right: 7rem;">
@@ -171,7 +175,7 @@
 
     <div style="padding-top: 3rem !important;">
         <div class="alert alert-dark d-flex w-25 mx-auto justify-content-center shadow-lg" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+            <svg class="bi flex-shrink-0 me-2 my-auto" width="24" height="24" role="img" aria-label="Info:">
                 <use xlink:href="#info-fill" />
             </svg>
             <div>
