@@ -25,6 +25,7 @@
                 <h5 class="card-title">Producto 1</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+            <asp:ImageButton ImageUrl="Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" /> 
             <div class="card-footer">
                 <small class="text-muted">Precio y Stock.</small>
             </div>
@@ -40,6 +41,7 @@
                 <h5 class="card-title">Producto 2</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+            <asp:ImageButton ImageUrl="Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
             <div class="card-footer">
                 <small class="text-muted">Precio y Stock.</small>
             </div>
@@ -55,6 +57,7 @@
                 <h5 class="card-title">Producto 3</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+            <asp:ImageButton ImageUrl="Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
             <div class="card-footer">
                 <small class="text-muted">Precio y Stock.</small>
             </div>
@@ -70,6 +73,7 @@
                 <h5 class="card-title">Producto 4</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+            <asp:ImageButton ImageUrl="Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
             <div class="card-footer">
                 <small class="text-muted">Precio y Stock.</small>
             </div>
@@ -85,6 +89,7 @@
                 <h5 class="card-title">Producto 5</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+            <asp:ImageButton ImageUrl="Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
             <div class="card-footer">
                 <small class="text-muted">Precio y Stock.</small>
             </div>
@@ -100,6 +105,7 @@
                 <h5 class="card-title">Producto 6</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+            <asp:ImageButton ImageUrl="Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
             <div class="card-footer">
                 <small class="text-muted">Precio y Stock.</small>
             </div>
@@ -115,6 +121,7 @@
                 <h5 class="card-title">Producto 7</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+            <asp:ImageButton ImageUrl="Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
             <div class="card-footer">
                 <small class="text-muted">Precio y Stock.</small>
             </div>
@@ -130,6 +137,7 @@
                 <h5 class="card-title">Producto 8</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+            <asp:ImageButton ImageUrl="Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
             <div class="card-footer">
                 <small class="text-muted">Precio y Stock.</small>
             </div>
@@ -145,6 +153,7 @@
                 <h5 class="card-title">Producto 9</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
+            <asp:ImageButton ImageUrl="Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
             <div class="card-footer">
                 <small class="text-muted">Precio y Stock.</small>
             </div>
@@ -154,24 +163,39 @@
 
 </div>
 
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </symbol>
+    </svg>
 
-    <h2 class="text-center" style="padding-top: 3rem !important; padding-bottom: 2rem !important;">¡Envíanos un mensaje!</h2>
+    <div style="padding-top: 3rem !important;">
+        <div class="alert alert-dark d-flex w-25 mx-auto justify-content-center shadow-lg" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                <use xlink:href="#info-fill" />
+            </svg>
+            <div>
+                <h5 class="my-auto">¡Envíanos un mensaje!</h5>
+            </div>
+        </div>
+    </div>
+
 
     <div class="card w-75 shadow-lg mx-auto">
         <div class="card-body">
             <div class="container py-4">
 
-                <!-- Bootstrap 5 starter form -->
+           
                 <form id="contactForm" data-sb-form-api-token="API_TOKEN">
 
-                    <!-- Name input -->
+            
                     <div class="mb-3">
                         <label class="form-label" for="name">Nombre</label>
                         <input class="form-control" id="name" type="text" placeholder="Nombre" data-sb-validations="required" />
                         <div class="invalid-feedback" data-sb-feedback="name:required">El nombre es requerido.</div>
                     </div>
 
-                    <!-- Email address input -->
+               
                     <div class="mb-3">
                         <label class="form-label" for="emailAddress">Email</label>
                         <input class="form-control" id="emailAddress" type="email" placeholder="Email" data-sb-validations="required, email" />
@@ -179,7 +203,7 @@
                         <div class="invalid-feedback" data-sb-feedback="emailAddress:email">El Email es invalido.</div>
                     </div>
 
-                    <!-- Message input -->
+            
                     <div class="mb-3">
                         <label class="form-label" for="message">Mensaje</label>
                         <textarea class="form-control" id="message" type="text" placeholder="Mensaje" style="height: 10rem;" data-sb-validations="required"></textarea>
@@ -196,7 +220,7 @@
                         <div class="text-center text-danger mb-3">Error enviando mensaje.</div>
                     </div>
 
-                    <!-- Form submit button -->
+                   
                     <div class="d-grid">
                         <button class="btn btn-dark mx-auto" id="submitButton" type="submit" style="width:20% !important; border-radius: 40px;">Enviar</button>
                     </div>
