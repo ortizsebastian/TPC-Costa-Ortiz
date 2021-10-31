@@ -17,50 +17,46 @@
 <body>
 <form id="form1" runat="server">
 
-    <header style="padding-bottom: 5rem;">  
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark shadow-lg">
-            <div class="container-fluid d-flex justify-content-end px-5">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div>
-                <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                        <a href="Admin.aspx" class="nav-link mx-5 my-auto" style="padding-right: 45rem !important;">Panel de Administrador</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="Inicio.aspx" class="nav-link mx-auto my-auto">Inicio</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="Carrito.aspx" class="nav-link navbar-link-2 waves-effect">
-                          <span class="badge badge-pill red">0</span>
-                          <i class="fas fa-shopping-cart pl-0"></i></a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="Usuario-Ingresar.aspx" class="nav-link mx-auto my-auto">Ingresar</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="Inicio.aspx" class="nav-link mx-auto my-auto">Salir</a>
-                      </li>
-                </ul>
-              </div>
+<header>  
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark shadow-lg">
+        <div class="container-fluid d-flex justify-content-end px-5">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+            <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a href="Admin.aspx" class="nav-link mx-5 my-auto" style="padding-right: 45rem !important;">Panel de Administrador</a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="Inicio.aspx" class="nav-link mx-auto my-auto">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="Carrito.aspx" class="nav-link navbar-link-2 waves-effect">
+                        <span class="badge badge-pill red">0</span>
+                        <i class="fas fa-shopping-cart pl-0"></i></a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="Usuario-Ingresar.aspx" class="nav-link mx-auto my-auto">Ingresar</a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="Inicio.aspx" class="nav-link mx-auto my-auto">Salir</a>
+                    </li>
+            </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
 
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-        <footer>
-        <hr />
-            <p class="text-center">&copy; <%: DateTime.Now.Year %> - eCommerce</p>
-        </footer>
-    </div>
-
-
-
-
+<div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <footer>
+    <hr />
+        <p class="text-center">&copy; <%: DateTime.Now.Year %> - eCommerce</p>
+    </footer>
+</div>
 
 
 </form>

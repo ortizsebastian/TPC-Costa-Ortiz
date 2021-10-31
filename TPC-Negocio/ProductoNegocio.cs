@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using TPC_Dominio;
 
 namespace TPC_Negocio
 {
-    class ProductoNegocio
+    public class ProductoNegocio
     {
         public List<Producto> Listar()
         {
@@ -28,6 +29,7 @@ namespace TPC_Negocio
                     objeto.Nombre = (string)Datos.Lector["NOMBRE"];
                     objeto.Descripcion = (string)Datos.Lector["DESCRIPCION"];
                     objeto.Precio = (decimal)Datos.Lector["PRECIO"];
+                    objeto.Stock = (int)Datos.Lector["STOCK"];
 
                     if (!(Datos.Lector["IMG_URL"] is DBNull))
                         objeto.ImgUrl = (string)Datos.Lector["IMG_URL"];

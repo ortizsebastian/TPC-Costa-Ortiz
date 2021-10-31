@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <div style="padding-left: 7rem !important; padding-bottom: 2.5rem !important; padding-top: 2rem !important;">
+    <div style="padding-left: 7rem !important; padding-bottom: 4rem !important; padding-top: 7rem !important;">
         <div class="card w-50 shadow-lg">
             <div class="card-body">
 
@@ -36,8 +36,8 @@
                             </label>
 
                             <div class="mb-3">
-                                <a class="btn btn-dark" href="#">Crear</a>
-                                <a class="btn btn-dark" href="Inicio.aspx">Volver</a>
+                                <a class="btn btn-dark shadow-lg" href="#">Crear</a>
+                                <a class="btn btn-dark shadow-lg" href="Inicio.aspx">Volver</a>
                             </div>
 
                             <hr>
