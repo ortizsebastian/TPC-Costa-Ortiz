@@ -18,10 +18,10 @@ namespace TPC_Negocio
             Conexion = new SqlConnection("server=.\\SQLEXPRESS; database=ECOMMERCE_DB; integrated security=true");
             Comando = new SqlCommand();
         }
-        public void SetConsulta(string consulta)
+        public void SetConsulta(string Consulta)
         {
             Comando.CommandType = System.Data.CommandType.Text;
-            Comando.CommandText = consulta;
+            Comando.CommandText = Consulta;
         }
         public void EjecutarLectura()
         {
@@ -39,7 +39,6 @@ namespace TPC_Negocio
         public void EjecutarAccion()
         {
             Comando.Connection = Conexion;
-
             try
             {
                 Conexion.Open();
@@ -50,9 +49,9 @@ namespace TPC_Negocio
                 throw ex;
             }
         }
-        public void SetParametro(string nombre, object valor)
+        public void SetParametro(string Nombre, object valor)
         {
-            Comando.Parameters.AddWithValue("nombre", valor);
+            Comando.Parameters.AddWithValue("Nombre", valor);
         }
         public void CerrarConexion()
         {

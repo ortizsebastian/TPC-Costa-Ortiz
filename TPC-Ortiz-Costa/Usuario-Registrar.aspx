@@ -7,7 +7,7 @@
 
 
     <div style="padding-left: 7rem !important; padding-bottom: 4rem !important; padding-top: 7rem !important;">
-        <div class="card w-50 shadow-lg">
+        <div class="card w-50 shadow-lg border-1 border-dark">
             <div class="card-body">
 
                 <div class="container mt-5">

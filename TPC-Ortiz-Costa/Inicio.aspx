@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="input-group rounded" style="padding-top: 8rem; padding-left: 7rem; padding-right: 7rem;">
-      <input type="search" class="form-control rounded w-75 mx-0 shadow-lg" placeholder=" Buscar Artículo" aria-label="Search" aria-describedby="search-addon" />
+      <input type="search" class="form-control rounded w-75 mx-0 shadow-lg border-1 border-dark" placeholder=" Buscar Artículo" aria-label="Search" aria-describedby="search-addon" />
       <button id="search-button shadow-lg" type="button" class="btn btn-dark">
         <i class="fas fa-search"></i>
       </button>
@@ -26,15 +26,15 @@
 
     <a href="VerDetalle.aspx" style="text-decoration: none; color: inherit;">
     <div class="col shadow-lg">
-        <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
+        <div class="card h-100 border-1 border-dark" style="min-height: 29rem !important; max-height: 29rem !important;">
+            <img src="<%: Producto.ImgUrl %>" class="card-img-top mx-auto" alt="..." style="width: 45% !important;">
             <div class="card-body">
                 <h5 class="card-title"><%: Producto.Nombre %></h5>
                 <p class="card-text"><%: Producto.Descripcion %></p>
             </div>
             <asp:ImageButton ImageUrl="Img/Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" /> 
             <div class="card-footer">
-                <small class="text-muted">Precio: <%: decimal.Round(Producto.Precio) %></small><br>
+                <small class="text-muted">Precio: $<%: decimal.Round(Producto.Precio) %></small><br>
                 <small class="text-muted">Stock: <%: Producto.Stock %></small>
             </div>
         </div>
@@ -44,103 +44,6 @@
     <%
     }  
     %>
-
-    <a href="VerDetalle.aspx" style="text-decoration: none; color: inherit;">
-    <div class="col shadow-lg">
-        <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Producto 2</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <asp:ImageButton ImageUrl="Img/Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
-            <div class="card-footer">
-                <small class="text-muted">Precio y Stock.</small>
-            </div>
-        </div>
-    </div>
-    </a>
-
-    <a href="VerDetalle.aspx" style="text-decoration: none; color: inherit;">
-    <div class="col shadow-lg">
-        <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Producto 3</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <asp:ImageButton ImageUrl="Img/Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
-            <div class="card-footer">
-                <small class="text-muted">Precio y Stock.</small>
-            </div>
-        </div>
-    </div>
-    </a>
-
-    <a href="VerDetalle.aspx" style="text-decoration: none; color: inherit;">
-    <div class="col shadow-lg">
-        <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Producto 4</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <asp:ImageButton ImageUrl="Img/Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
-            <div class="card-footer">
-                <small class="text-muted">Precio y Stock.</small>
-            </div>
-        </div>
-    </div>
-    </a>
-
-    <a href="VerDetalle.aspx" style="text-decoration: none; color: inherit;">
-    <div class="col shadow-lg">
-        <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Producto 5</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <asp:ImageButton ImageUrl="Img/Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
-            <div class="card-footer">
-                <small class="text-muted">Precio y Stock.</small>
-            </div>
-        </div>
-    </div>
-    </a>
-
-    <a href="VerDetalle.aspx" style="text-decoration: none; color: inherit;">
-    <div class="col shadow-lg">
-        <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Producto 6</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <asp:ImageButton ImageUrl="Img/Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
-            <div class="card-footer">
-                <small class="text-muted">Precio y Stock.</small>
-            </div>
-        </div>
-    </div>
-    </a>
-
-    <a href="VerDetalle.aspx" style="text-decoration: none; color: inherit;">
-    <div class="col shadow-lg">
-        <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Producto 7</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <asp:ImageButton ImageUrl="Img/Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" />
-            <div class="card-footer">
-                <small class="text-muted">Precio y Stock.</small>
-            </div>
-        </div>
-    </div>
-    </a>
-
 
 
 </div>
@@ -152,7 +55,7 @@
     </svg>
 
     <div style="padding-top: 3rem !important;">
-        <div class="alert alert-dark d-flex w-25 mx-auto justify-content-center shadow-lg" role="alert">
+        <div class="alert alert-dark d-flex w-25 mx-auto justify-content-center shadow-lg border-1 border-dark" role="alert">
             <svg class="bi flex-shrink-0 me-2 my-auto" width="24" height="24" role="img" aria-label="Info:">
                 <use xlink:href="#info-fill" />
             </svg>
@@ -163,7 +66,7 @@
     </div>
 
 
-    <div class="card w-75 shadow-lg mx-auto">
+    <div class="card w-75 shadow-lg mx-auto border-1 border-dark">
         <div class="card-body">
             <div class="container py-4">
 
@@ -214,7 +117,7 @@
 
 
 <footer class="text-center text-lg-start text-muted" style="background-color: white !important; padding-top: 8rem !important;">
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-1 border-dark">
 
     <div class="me-5 d-none d-lg-block">
       <span>Contáctanos en nuestras Redes Sociales:</span>

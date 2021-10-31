@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using TPC_Dominio;
 
 namespace TPC_Negocio
@@ -20,16 +19,16 @@ namespace TPC_Negocio
                 Datos.SetConsulta("SELECT ID, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL FROM PRODUCTOS");
                 Datos.EjecutarLectura();
 
+                //Diferencias al parsear con 'Convert' y con '(int)' ??
+
                 while (Datos.Lector.Read())
                 {
                     Producto objeto = new Producto();
-
-                    objeto.ID = (int)Datos.Lector["ID"];
-
+                    objeto.ID = Convert.ToInt32(Datos.Lector["ID"]);
                     objeto.Nombre = (string)Datos.Lector["NOMBRE"];
                     objeto.Descripcion = (string)Datos.Lector["DESCRIPCION"];
                     objeto.Precio = (decimal)Datos.Lector["PRECIO"];
-                    objeto.Stock = (int)Datos.Lector["STOCK"];
+                    objeto.Stock = Convert.ToInt32(Datos.Lector["STOCK"]);
 
                     if (!(Datos.Lector["IMG_URL"] is DBNull))
                         objeto.ImgUrl = (string)Datos.Lector["IMG_URL"];
