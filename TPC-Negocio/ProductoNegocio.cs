@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TPC_Dominio;
+using TPC_Conexion;
 
 namespace TPC_Negocio
 {
@@ -46,6 +47,26 @@ namespace TPC_Negocio
             {
                 Datos.CerrarConexion();
             }
+        }
+
+        public Producto Buscar(int IDProducto)
+        {
+            AccesoDatos Datos = new AccesoDatos();
+            Datos.SetConsulta("SELECT ID, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL FROM PRODUCTOS WHERE ID = '" + IDProducto + "'");
+            Datos.EjecutarLectura();
+
+            Datos.Lector.Read();
+            Producto objeto = new Producto();
+            objeto.ID = Convert.ToInt32(Datos.Lector["ID"]);
+            objeto.Nombre = (string)Datos.Lector["NOMBRE"];
+            objeto.Descripcion = (string)Datos.Lector["DESCRIPCION"];
+            objeto.Precio = (decimal)Datos.Lector["PRECIO"];
+            objeto.Stock = Convert.ToInt32(Datos.Lector["STOCK"]);
+
+            if (!(Datos.Lector["IMG_URL"] is DBNull))
+                objeto.ImgUrl = (string)Datos.Lector["IMG_URL"];
+
+            return objeto;
         }
     }
 }

@@ -16,7 +16,6 @@
     </div>
 
 
-
 <div class="row row-cols-1 row-cols-md-3 g-4 mx-5 my-5" style="padding-top: 1rem !important;">
 
 
@@ -24,9 +23,9 @@
     {        
     %>
 
-    <a href="VerDetalle.aspx" style="text-decoration: none; color: inherit;">
+    <a href="VerDetalle.aspx?ID=<%: Producto.ID %>" style="text-decoration: none; color: inherit;">
     <div class="col shadow-lg">
-        <div class="card h-100 border-1 border-dark" style="min-height: 29rem !important; max-height: 29rem !important;">
+        <div class="card border-1 border-dark" style="min-height: 28rem !important; max-height: 28rem !important;">
             <img src="<%: Producto.ImgUrl %>" class="card-img-top mx-auto" alt="..." style="width: 45% !important;">
             <div class="card-body">
                 <h5 class="card-title"><%: Producto.Nombre %></h5>
@@ -120,7 +119,7 @@
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-1 border-dark">
 
     <div class="me-5 d-none d-lg-block">
-      <span>Contáctanos en nuestras Redes Sociales:</span>
+      <span><i>Contáctanos en nuestras Redes Sociales:</i></span>
     </div>
 
     <div>
@@ -153,7 +152,7 @@
             <i class="fas fa-gem me-3"></i>Ecommerce
           </h6>
           <p>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+           Las mejores marcas de indumentaria y accesorios al alcance de la palma de tu mano.
           </p>
         </div>
 

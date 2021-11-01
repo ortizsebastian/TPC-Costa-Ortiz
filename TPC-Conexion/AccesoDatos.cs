@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace TPC_Negocio
+namespace TPC_Conexion
 {
     public class AccesoDatos
     {

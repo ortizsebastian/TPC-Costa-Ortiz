@@ -4,12 +4,25 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="padding-top: 5rem;">
-    <div class="alert alert-primary mx-5 my-5" role="alert">
-      <h4 class="alert-heading">Well done!</h4>
-      <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-      <hr>
-      <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+
+    <div style="padding-top: 10rem !important; padding-left: 5rem !important; padding-bottom: 7rem !important;">
+    <div class="card mb-3 shadow-lg border-1 border-dark" style="min-width: 1240px; max-width: 1240px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="<%:Producto.ImgUrl %>" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%:Producto.Nombre %></h5>
+                    <p class="card-text"><%:Producto.Descripcion %></p>
+                    <hr>
+                    <p class="card-text"><small class="text-muted">Precio: $<%:decimal.Round(Producto.Precio) %></small></p>
+                    <p class="card-text"><small class="text-muted">Stock: <%:Producto.Stock %></small></p>
+                    <hr>
+                    <asp:ImageButton ImageUrl="Img/Agregar.png" class="d-flex align-items-center mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" /> 
+                </div>
+            </div>
+        </div>
     </div>
     </div>
 

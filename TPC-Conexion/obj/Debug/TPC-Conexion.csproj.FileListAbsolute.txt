@@ -1,0 +1,6 @@
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Conexion\bin\Debug\TPC-Conexion.dll
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Conexion\bin\Debug\TPC-Conexion.pdb
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Conexion\obj\Debug\TPC-Conexion.csproj.AssemblyReference.cache
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Conexion\obj\Debug\TPC-Conexion.csproj.CoreCompileInputs.cache
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Conexion\obj\Debug\TPC-Conexion.dll
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Conexion\obj\Debug\TPC-Conexion.pdb

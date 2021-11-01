@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2B0048C2-A33B-46C9-8176-27FB0EB9F07D}</ProjectGuid>
+    <ProjectGuid>{E17974DF-4ED7-4578-A780-A38BDF2EC7C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TPC_Negocio</RootNamespace>
-    <AssemblyName>TPC-Negocio</AssemblyName>
+    <RootNamespace>TPC_Conexion</RootNamespace>
+    <AssemblyName>TPC-Conexion</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,18 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductoNegocio.cs" />
+    <Compile Include="AccesoDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TPC-Conexion\TPC-Conexion.csproj">
-      <Project>{e17974df-4ed7-4578-a780-a38bdf2ec7c1}</Project>
-      <Name>TPC-Conexion</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TPC-Dominio\TPC-Dominio.csproj">
-      <Project>{CB5CD0CA-2E7E-4CD5-B344-E9323BD4888D}</Project>
-      <Name>TPC-Dominio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

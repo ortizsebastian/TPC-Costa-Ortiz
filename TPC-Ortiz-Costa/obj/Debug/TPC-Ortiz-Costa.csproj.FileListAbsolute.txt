@@ -78,3 +78,5 @@ D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Dominio.
 D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Negocio.dll
 D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Dominio.pdb
 D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Negocio.pdb
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Conexion.dll
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Ortiz-Costa\bin\TPC-Conexion.pdb
