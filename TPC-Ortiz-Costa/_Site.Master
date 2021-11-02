@@ -36,9 +36,9 @@
 
                <div class="Carrito">
                    <li class="nav-item">
-                    <a href="Carrito.aspx" class="nav-link navbar-link-2 waves-effect">
-                        <span class="badge badge-pill red">0</span>
-                        <i class="fas fa-shopping-cart pl-0"></i></a>
+                    <a href="Carrito.aspx" class="nav-link navbar-link-2 waves-effect" style="color:#ffffff">
+                        <span class="badge badge-pill red" style="color:#ffffff">0</span>
+                        <i class="fas fa-shopping-cart pl-0" style="color:#ffffff"></i></a>
                     </li>
                    </div>
                    

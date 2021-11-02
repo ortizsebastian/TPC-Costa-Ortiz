@@ -93,8 +93,8 @@ body {
 
 
 .Carrito {
-    position: fixed;
-    left: 1250px;
+position: absolute;
+right: 0;
 }
 
 body.active .wrapper .sidebar {
