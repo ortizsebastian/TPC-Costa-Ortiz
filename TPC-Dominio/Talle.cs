@@ -9,10 +9,10 @@ namespace TPC_Dominio
     public class Talle
     {
         public int Id { get; set; }
-        public string Nombre { get; set; }
+        public string Medida { get; set; }
         public override string ToString()
         {
-            return Nombre;
+            return Medida;
         }
     }
 }

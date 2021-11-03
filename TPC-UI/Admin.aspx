@@ -6,10 +6,8 @@
 
     <div style="padding-top: 5rem;">
         <div class="alert alert-dark mx-5 my-5" role="alert">
-            <h4 class="alert-heading">Hacer ABM acá.</h4>
-            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-            <hr>
-            <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+            <h4 class="alert-heading">Hacer un ABM acá.</h4>
+            <p>Solo debe estar disponible esta opción si se logeo como Usuario, y a su vez, si es del tipo 'Admin'.</p>
         </div>
     </div>
 

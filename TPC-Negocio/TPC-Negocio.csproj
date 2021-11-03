@@ -45,8 +45,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TPC-Conexion\TPC-Database.csproj">
-      <Project>{e17974df-4ed7-4578-a780-a38bdf2ec7c1}</Project>
+    <ProjectReference Include="..\TPC-Database\TPC-Database.csproj">
+      <Project>{E17974DF-4ED7-4578-A780-A38BDF2EC7C1}</Project>
       <Name>TPC-Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\TPC-Dominio\TPC-Dominio.csproj">

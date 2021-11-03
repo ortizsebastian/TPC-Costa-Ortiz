@@ -76,7 +76,7 @@ namespace TPC_Negocio
 
             objeto.Talle = new Talle();
             objeto.Talle.Id = (int)Datos.Lector["ID_TALLE"];
-            objeto.Talle.Nombre = (string)Datos.Lector["TALLE"];
+            objeto.Talle.Medida = (string)Datos.Lector["TALLE"];
 
             objeto.Categoria = new Categoria();
             objeto.Categoria.Id = (int)Datos.Lector["ID_CATEGORIA"];

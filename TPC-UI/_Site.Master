@@ -18,11 +18,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        
         <header>
-
             <div class="wrapper">
                 <div class="section">
-
                     <div class="top_navbar">
                         <div class="hamburger">
                             <a href="#">
@@ -67,7 +66,10 @@
                 hamburger.addEventListener("click", function () {
                     document.querySelector("body").classList.toggle("active");
                 });
-
+                document.getElementById("close", function () {
+                    defaultSidebar.hide();
+                });
+                document.querySelector("body").classList.toggle("active");
             </script>
         </header>
 

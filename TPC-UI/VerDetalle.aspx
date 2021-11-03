@@ -16,10 +16,12 @@
                     <h5 class="card-title"><%:Producto.Nombre %></h5>
                     <p class="card-text"><%:Producto.Descripcion %></p>
                     <hr>
-                    <p class="card-text"><small class="text-muted">Precio: $<%:decimal.Round(Producto.Precio) %></small></p>
-                    <p class="card-text"><small class="text-muted">Stock: <%:Producto.Stock %></small></p>
+                    <p class="card-text"><small class="text-muted"><span>Precio: $<%:decimal.Round(Producto.Precio) %></span><span class="px-5">Stock: <%:Producto.Stock %></span><span>Talles disponibles: <%:Producto.Talle.Medida %></span></small></p>
                     <hr>
-                    <asp:ImageButton ImageUrl="Img/Agregar.png" class="d-flex align-items-center mx-auto" style="width: 10% !important;" AlternateText="No Image available" runat="server" /> 
+                    <p class="card-text"><small class="text-muted"><span>Marca: <%:Producto.Marca.Nombre %></span><span class="px-5">Categoría: <%:Producto.Categoria.Nombre %></span><span>Genero: <%:Producto.Genero.Nombre %></span></small></p>
+                    <hr>               
+
+                    <asp:ImageButton ImageUrl="Img/Agregar.png" class="d-flex align-items-center mx-auto" style="width: 10% !important; padding-top: 1.5rem !important;" runat="server" /> 
                 </div>
             </div>
         </div>
