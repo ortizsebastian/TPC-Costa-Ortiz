@@ -14,9 +14,9 @@ namespace TPC_Ortiz_Costa
         public Producto Producto { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(Request.QueryString["ID"]);
+            int Id = Convert.ToInt32(Request.QueryString["Id"]);
             ProductoNegocio Datos = new ProductoNegocio();
-            Producto = Datos.Buscar(ID);
+            Producto = Datos.Buscar(Id);
         }
     }
 }

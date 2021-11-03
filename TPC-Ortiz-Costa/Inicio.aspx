@@ -23,7 +23,7 @@
     {        
     %>
 
-    <a href="VerDetalle.aspx?ID=<%: Producto.ID %>" style="text-decoration: none; color: inherit;">
+    <a href="VerDetalle.aspx?Id=<%: Producto.Id %>" style="text-decoration: none; color: inherit;">
     <div class="col shadow-lg">
         <div class="card border-1 border-dark" style="min-height: 28rem !important; max-height: 28rem !important;">
             <img src="<%: Producto.ImgUrl %>" class="card-img-top mx-auto" alt="..." style="width: 45% !important;">

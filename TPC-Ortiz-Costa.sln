@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPC-Dominio", "TPC-Dominio\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPC-Negocio", "TPC-Negocio\TPC-Negocio.csproj", "{2B0048C2-A33B-46C9-8176-27FB0EB9F07D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPC-Conexion", "TPC-Conexion\TPC-Conexion.csproj", "{E17974DF-4ED7-4578-A780-A38BDF2EC7C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPC-Database", "TPC-Conexion\TPC-Database.csproj", "{E17974DF-4ED7-4578-A780-A38BDF2EC7C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,39 +4,204 @@ GO
 USE ECOMMERCE_DB
 GO
 
-CREATE TABLE PRODUCTOS(
-	ID BIGINT NOT NULL PRIMARY KEY IDENTITY(1,1), 
-	NOMBRE VARCHAR(100) NOT NULL,
-	DESCRIPCION VARCHAR(500) NOT NULL,
-	PRECIO MONEY NOT NULL,
-	STOCK BIGINT NOT NULL,
-	IMG_URL VARCHAR(1000) NULL,
+CREATE TABLE GENEROS(
+	ID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
+	,NOMBRE VARCHAR(1) NOT NULL
+	,ESTADO BIT NOT NULL DEFAULT(1)
 )
 GO
 
-INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL)
-VALUES ('Borcego Founder', 'Borcego urbano de cuero acordonado CAT.',22000,12,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2021/7_15/0/106/199/6997940.jpg');
+CREATE TABLE MARCAS(
+	ID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
+	,NOMBRE VARCHAR(50) NOT NULL
+	,ESTADO BIT NOT NULL DEFAULT(1)
+)
+GO
 
-INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL)
-VALUES ('Remera OTW Boys -LOGO', '100% Algodón. Remera para niños. Grifa de marca en ruedo de marca.',2200,18,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/3_16/0/97/139/6392774.jpg');
+CREATE TABLE CATEGORIAS(
+	ID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
+	,NOMBRE VARCHAR(50) NOT NULL
+	,ESTADO BIT NOT NULL DEFAULT(1)
+)
+GO
 
-INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL)
-VALUES ('Billetera Basica Volante', 'Billetera Hush Puppies de hombre en cuero, costuras a tono y tarjetero.',3900,15,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2013/10_23/0/8/77/544130.jpg');
+CREATE TABLE TALLES(
+	ID INT NOT NULL PRIMARY KEY IDENTITY(1,1)
+	,MEDIDA VARCHAR(3) NOT NULL 
+	,ESTADO BIT NOT NULL DEFAULT(1)
+)
+GO
 
-INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL)
-VALUES ('Zapatillas AIR Force', 'Nike Air Force 1 07 con capas de cuero sintético, te ofrece un look urbano y moderno lleno de texturas y ritmo.',12500,5,'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw8abed4db/products/NI_315115-112/NI_315115-112-1.JPG');
+CREATE TABLE PRODUCTOS(
+	ID BIGINT NOT NULL PRIMARY KEY IDENTITY(1,1)
+	,NOMBRE VARCHAR(100) NOT NULL
+	,DESCRIPCION VARCHAR(500) NOT NULL
+	,PRECIO MONEY NOT NULL CHECK(PRECIO > 0)
+	,STOCK BIGINT NOT NULL CHECK(STOCK >= 0)
+	,IMG_URL VARCHAR(1000) NULL
+	,ID_GENERO INT NOT NULL FOREIGN KEY REFERENCES GENEROS(ID)
+	,ID_TALLE INT NOT NULL FOREIGN KEY REFERENCES TALLES(ID)
+	,ID_CATEGORIA INT NOT NULL FOREIGN KEY REFERENCES CATEGORIAS(ID)
+	,ID_MARCA INT NOT NULL FOREIGN KEY REFERENCES MARCAS(ID)
+	,ESTADO BIT NOT NULL DEFAULT(1)
+)
+GO
 
-INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL)
-VALUES ('Gorro TNF Standard Issue Beanie', 'Un clásico para estar al aire libre, este gorro de tela polar de secado rápido ahora cuenta con tecnología FlashDry™ para un verdadero secado rápido.',8190,10,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2018/6_1/0/46/4/3015836.jpg');
+INSERT INTO GENEROS (NOMBRE) VALUES ('M') --ID 1 = Masculino
+INSERT INTO GENEROS (NOMBRE) VALUES ('F') --ID 2 = Femenino
+INSERT INTO GENEROS (NOMBRE) VALUES ('U') --ID 3 = Unisex
+INSERT INTO GENEROS (NOMBRE) VALUES ('N') --ID 4 = Niños
 
-INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL)
-VALUES ('Remera VANS Classic', '100% Algodón. Remera masculina. Escote redondo.',7200,10,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2021/10_6/0/108/98/7103176.jpg');
+INSERT INTO TALLES (MEDIDA) VALUES ('XS') --ID 1
+INSERT INTO TALLES (MEDIDA) VALUES ('S')  --ID 2
+INSERT INTO TALLES (MEDIDA) VALUES ('M')  --ID 3
+INSERT INTO TALLES (MEDIDA) VALUES ('L')  --ID 4
+INSERT INTO TALLES (MEDIDA) VALUES ('XL')  --ID 5
+INSERT INTO TALLES (MEDIDA) VALUES ('XXL') --ID 6
+INSERT INTO TALLES (MEDIDA) VALUES (34) --ID 7
+INSERT INTO TALLES (MEDIDA) VALUES (35) --ID 8
+INSERT INTO TALLES (MEDIDA) VALUES (36) --ID 9
+INSERT INTO TALLES (MEDIDA) VALUES (37) --ID 10
+INSERT INTO TALLES (MEDIDA) VALUES (38) --ID 11
+INSERT INTO TALLES (MEDIDA) VALUES (39) --ID 12
+INSERT INTO TALLES (MEDIDA) VALUES (40) --ID 13
+INSERT INTO TALLES (MEDIDA) VALUES (41) --ID 14
+INSERT INTO TALLES (MEDIDA) VALUES (42) --ID 15
+INSERT INTO TALLES (MEDIDA) VALUES (43) --ID 16
+INSERT INTO TALLES (MEDIDA) VALUES (44) --ID 17
+INSERT INTO TALLES (MEDIDA) VALUES (45) --ID 18
+INSERT INTO TALLES (MEDIDA) VALUES (46) --ID 19
+INSERT INTO TALLES (MEDIDA) VALUES (47) --ID 20
+INSERT INTO TALLES (MEDIDA) VALUES ('...') --ID 21
 
-INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL)
-VALUES ('Mochila Startle BackPack', 'La mochila Startle Backpack tiene un compartimento acolchado para laptop que se adapta a la mayoría de laptops de 15 " (38 cm).',6400,5,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2020/11_11/0/90/216/5953624.jpg');
+INSERT INTO CATEGORIAS (NOMBRE) VALUES ('REMERAS') --ID 1
+INSERT INTO CATEGORIAS (NOMBRE) VALUES ('PANTALONES') --ID 2
+INSERT INTO CATEGORIAS (NOMBRE) VALUES ('ZAPATILLAS') --ID 3
+INSERT INTO CATEGORIAS (NOMBRE) VALUES ('CAMPERAS') --ID 4
+INSERT INTO CATEGORIAS (NOMBRE) VALUES ('BUZOS') --ID 5
+INSERT INTO CATEGORIAS (NOMBRE) VALUES ('ACCESORIOS') --ID 6
 
-INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL)
-VALUES ('Campera NeedlePoint Jacket', 'Campera canguro Unisex. Detalles bordeados. Estampa en el delantero y parte trasera.',14200,7,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/8_25/0/107/108/7040162.jpg');
+INSERT INTO MARCAS (NOMBRE) VALUES ('THE NORTH FACE') --ID 1
+INSERT INTO MARCAS (NOMBRE) VALUES ('NIKE') --ID 2
+INSERT INTO MARCAS (NOMBRE) VALUES ('ADIDAS') --ID 3
+INSERT INTO MARCAS (NOMBRE) VALUES ('PUMA') --ID 4
+INSERT INTO MARCAS (NOMBRE) VALUES ('VANS') --ID 5
 
-INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL)
-VALUES ('Pantalón Puma Classics Cargo Wv', 'Pantalón deportivo o casual. El cordón de la cintura elástica te permite personalizar el ajuste.',7000,15, 'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw93c41525/products/PU_532160-01/PU_532160-01-1.JPG');
+INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+VALUES (
+	'Zapatilla VANS Filmore Decon'
+	,'Las Filmore Decon son zapatillas de corte bajo confeccionadas con una lona duradera.'
+	,9400
+	,12
+	,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2020/12_21/0/93/213/6149508.jpg'
+	,2
+	,3
+	,3
+	,5
+);
+
+INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+VALUES (
+	'Remera OTW Boys -LOGO'
+	,'100% Algodón. Remera para niños. Grifa de marca en ruedo de marca.'
+	,2200
+	,18
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/3_16/0/97/139/6392774.jpg'
+	,4
+	,2
+	,1
+	,5
+);
+
+INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+VALUES (
+	'Zapatilla AIR Force'
+	,'Nike Air Force 1 07 con capas de cuero sintético, te ofrece un look urbano y moderno.'
+	,12500
+	,5
+	,'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw8abed4db/products/NI_315115-112/NI_315115-112-1.JPG'
+	,3
+	,10
+	,1
+	,2
+);
+
+INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+VALUES (
+	'Gorro TNF Standard Issue Beanie'
+	,'Un clásico para estar al aire libre, de tela polar con un secado rápido.'
+	,8190
+	,10
+	,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2018/6_1/0/46/4/3015836.jpg'
+	,3
+	,21
+	,6
+	,1
+);
+
+INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+VALUES (
+	'Remera VANS Classic'
+	,'100% Algodón. Remera masculina. Escote redondo.'
+	,7200
+	,10
+	,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2021/10_6/0/108/98/7103176.jpg'
+	,1
+	,5
+	,1
+	,5
+);
+
+INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+VALUES (
+	'Mochila Startle BackPack'
+	,'La mochila Startle Backpack tiene un compartimento acolchado para laptop.'
+	,6400
+	,5
+	,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2020/11_11/0/90/216/5953624.jpg'
+	,3
+	,21
+	,6
+	,5
+);
+
+INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+VALUES (
+	'Campera NeedlePoint Jacket'
+	,'Campera canguro Unisex. Detalles bordeados. Estampa en el delantero y parte trasera.'
+	,14200
+	,7
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/8_25/0/107/108/7040162.jpg'
+	,3
+	,4
+	,4
+	,5
+);
+
+INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+VALUES (
+	'Pantalón Puma Classics Cargo Wv'
+	,'Pantalón deportivo o casual. El cordón de la cintura elástica te permite personalizar el ajuste.'
+	,7000
+	,15
+	,'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw93c41525/products/PU_532160-01/PU_532160-01-1.JPG'
+	,1
+	,3
+	,2
+	,4
+);
+
+INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+VALUES (
+	'Zapatilla Adidas Forum Low'
+	,'Cuero Sintético/ Suela: Goma. Mix de materiales Low.'
+	,12900
+	,14
+	,'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwb55abc9b/products/AD_H01924/AD_H01924-1.JPG'
+	,1
+	,17
+	,3
+	,3
+);
+
+SELECT * FROM PRODUCTOS

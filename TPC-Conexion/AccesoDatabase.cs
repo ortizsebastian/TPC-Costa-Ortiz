@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace TPC_Conexion
+namespace TPC_Database
 {
-    public class AccesoDatos
+    public class AccesoDatabase
     {
         private SqlConnection Conexion;
 
         private SqlCommand Comando;
         public SqlDataReader Lector { get; set; }
-        public AccesoDatos()
+        public AccesoDatabase()
         {
             Conexion = new SqlConnection("server=.\\SQLEXPRESS; database=ECOMMERCE_DB; integrated security=true");
             Comando = new SqlCommand();

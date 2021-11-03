@@ -8,11 +8,17 @@ namespace TPC_Dominio
 {
     public class Producto
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public decimal Precio { get; set; }
         public int Stock { get; set; }
         public string ImgUrl { get; set; }
+        public Genero Genero { get; set; }
+        public Talle Talle { get; set; }
+        public Categoria Categoria { get; set; }
+        public Marca Marca { get; set; }
+        public bool Estado { get; set; }
+
     }
 }
