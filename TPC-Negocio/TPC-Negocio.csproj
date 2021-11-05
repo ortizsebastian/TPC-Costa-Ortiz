@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaNegocio.cs" />
+    <Compile Include="MarcaNegocio.cs" />
     <Compile Include="ProductoNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TalleNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TPC-Database\TPC-Database.csproj">

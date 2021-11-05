@@ -8,6 +8,8 @@
         <div class="alert alert-dark mx-5 my-5" role="alert">
             <h4 class="alert-heading">Hacer un ABM acá.</h4>
             <p>Solo debe estar disponible esta opción si se logeo como Usuario, y a su vez, si es del tipo 'Admin'.</p>
+            <a href="Admin-AgregarProducto.aspx">Agregar Productos</a><br />
+            <a href="Admin-AgregarProducto-Componentes.aspx">Agregar Composición del Producto</a>
         </div>
     </div>
 

@@ -22,17 +22,18 @@ namespace TPC_Negocio
 
                 while (Datos.Lector.Read())
                 {
-                    Producto objeto = new Producto();
-                    objeto.Id = Convert.ToInt32(Datos.Lector["ID"]);
-                    objeto.Nombre = (string)Datos.Lector["NOMBRE"];
-                    objeto.Descripcion = (string)Datos.Lector["DESCRIPCION"];
-                    objeto.Precio = (decimal)Datos.Lector["PRECIO"];
-                    objeto.Stock = Convert.ToInt32(Datos.Lector["STOCK"]);
+                    Producto Objeto = new Producto();
+
+                    Objeto.Id = Convert.ToInt32(Datos.Lector["ID"]);
+                    Objeto.Nombre = (string)Datos.Lector["NOMBRE"];
+                    Objeto.Descripcion = (string)Datos.Lector["DESCRIPCION"];
+                    Objeto.Precio = (decimal)Datos.Lector["PRECIO"];
+                    Objeto.Stock = Convert.ToInt32(Datos.Lector["STOCK"]);
 
                     if (!(Datos.Lector["IMG_URL"] is DBNull))
-                        objeto.ImgUrl = (string)Datos.Lector["IMG_URL"];
+                        Objeto.ImgUrl = (string)Datos.Lector["IMG_URL"];
 
-                    Lista.Add(objeto);
+                    Lista.Add(Objeto);
                 }
 
                 return Lista;
@@ -54,40 +55,71 @@ namespace TPC_Negocio
             Datos.EjecutarLectura();
 
             Datos.Lector.Read();
-            Producto objeto = new Producto();
+            Producto Objeto = new Producto();
 
-            objeto.Id = Convert.ToInt32(Datos.Lector["ID"]);
-            objeto.Nombre = (string)Datos.Lector["NOMBRE"];
-            objeto.Descripcion = (string)Datos.Lector["DESCRIPCION"];
-            objeto.Precio = (decimal)Datos.Lector["PRECIO"];
-            objeto.Stock = Convert.ToInt32(Datos.Lector["STOCK"]);
+            Objeto.Id = Convert.ToInt32(Datos.Lector["ID"]);
+            Objeto.Nombre = (string)Datos.Lector["NOMBRE"];
+            Objeto.Descripcion = (string)Datos.Lector["DESCRIPCION"];
+            Objeto.Precio = (decimal)Datos.Lector["PRECIO"];
+            Objeto.Stock = Convert.ToInt32(Datos.Lector["STOCK"]);
 
             if (!(Datos.Lector["IMG_URL"] is DBNull))
-                objeto.ImgUrl = (string)Datos.Lector["IMG_URL"];
+                Objeto.ImgUrl = (string)Datos.Lector["IMG_URL"];
 
-            objeto.Nombre = (string)Datos.Lector["NOMBRE"];
-            objeto.Descripcion = (string)Datos.Lector["DESCRIPCION"];
-            objeto.Precio = (decimal)Datos.Lector["PRECIO"];
-            objeto.Stock = Convert.ToInt32(Datos.Lector["STOCK"]);
+            Objeto.Nombre = (string)Datos.Lector["NOMBRE"];
+            Objeto.Descripcion = (string)Datos.Lector["DESCRIPCION"];
+            Objeto.Precio = (decimal)Datos.Lector["PRECIO"];
+            Objeto.Stock = Convert.ToInt32(Datos.Lector["STOCK"]);
 
-            objeto.Genero = new Genero();
-            objeto.Genero.Id = (int)Datos.Lector["ID_GENERO"];
-            objeto.Genero.Nombre = (string)Datos.Lector["GENERO"];
+            Objeto.Genero = new Genero();
+            Objeto.Genero.Id = (int)Datos.Lector["ID_GENERO"];
+            Objeto.Genero.Nombre = (string)Datos.Lector["GENERO"];
 
-            objeto.Talle = new Talle();
-            objeto.Talle.Id = (int)Datos.Lector["ID_TALLE"];
-            objeto.Talle.Medida = (string)Datos.Lector["TALLE"];
+            Objeto.Talle = new Talle();
+            Objeto.Talle.Id = (int)Datos.Lector["ID_TALLE"];
+            Objeto.Talle.Medida = (string)Datos.Lector["TALLE"];
 
-            objeto.Categoria = new Categoria();
-            objeto.Categoria.Id = (int)Datos.Lector["ID_CATEGORIA"];
-            objeto.Categoria.Nombre = (string)Datos.Lector["CATEGORIA"];
+            Objeto.Categoria = new Categoria();
+            Objeto.Categoria.Id = (int)Datos.Lector["ID_CATEGORIA"];
+            Objeto.Categoria.Nombre = (string)Datos.Lector["CATEGORIA"];
 
-            objeto.Marca = new Marca();
-            objeto.Marca.Id = (int)Datos.Lector["ID_MARCA"];
-            objeto.Marca.Nombre = (string)Datos.Lector["MARCA"];
+            Objeto.Marca = new Marca();
+            Objeto.Marca.Id = (int)Datos.Lector["ID_MARCA"];
+            Objeto.Marca.Nombre = (string)Datos.Lector["MARCA"];
 
-            objeto.Estado = (bool)Datos.Lector["ESTADO"];
-            return objeto;
+            Objeto.Estado = (bool)Datos.Lector["ESTADO"];
+            return Objeto;
+        }
+
+
+        public void Agregar(Producto Producto)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+
+            try
+            {
+                Datos.SetConsulta("INSERT INTO PRODUCTOS (NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA) values (@ID, @NOMBRE, @DESCRIPCION, @PRECIO, @STOCK, @IMG, @GENERO, @TALLE, @CATEGORIA, @MARCA");
+
+                Datos.SetParametro("@NOMBRE", Producto.Nombre);
+                Datos.SetParametro("@DESCRIPCION", Producto.Descripcion);
+                Datos.SetParametro("@PRECIO", Producto.Precio);
+                Datos.SetParametro("@STOCK", Producto.Stock);
+                Datos.SetParametro("@IMG", Producto.ImgUrl);
+                Datos.SetParametro("@GENERO", Producto.Genero.Id);
+                Datos.SetParametro("@TALLE", Producto.Talle.Id);
+                Datos.SetParametro("@CATEGORIA", Producto.Categoria.Id);
+                Datos.SetParametro("@MARCA", Producto.Marca.Id);
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
         }
     }
 }
