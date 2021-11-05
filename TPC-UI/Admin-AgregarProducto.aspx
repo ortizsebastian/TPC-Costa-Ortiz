@@ -16,30 +16,27 @@
                         <form>
                             <div class="mb-3">
                                 <label>Nombre</label>
-                                <input class="form-control" placeholder="Nombre">
+                                <asp:TextBox ID="txtNombre" class="form-control" placeholder="Nombre" runat="server"></asp:TextBox>
                             </div>
-
                             <div class="mb-3">
                                 <label>Descripción</label>
-                                <input class="form-control" placeholder="Descripción">
+                                <asp:TextBox ID="txtDescripcion" class="form-control" placeholder="Descripción" runat="server"></asp:TextBox>
                             </div>
-
                             <div class="mb-3">
                                 <label>Precio</label>
-                                <input class="form-control" placeholder="Precio">
+                                <asp:TextBox ID="txtPrecio" class="form-control" placeholder="Precio" runat="server"></asp:TextBox>
                             </div>
-
                             <div class="mb-3">
                                 <label>Stock</label>
-                                <input class="form-control" placeholder="Stock">
+                                <asp:TextBox ID="txtStock" class="form-control" placeholder="Stock" runat="server"></asp:TextBox>
                             </div>
-
                             <div class="mb-3">
                                 <label>Imagén</label>
-                                <input class="form-control" placeholder="Imagén">
+                                <asp:TextBox ID="txtImg" class="form-control" placeholder="Imagén" runat="server"></asp:TextBox>
                             </div>
                         </form>
                     </div>
+
 
                     <div class="col mx-3">
                         <form>
@@ -49,7 +46,7 @@
                                     <option>Disabled select</option>
                                 </select>
                             </div>
-
+                            
                             <div class="mb-3">
                                 <label for="disabledSelect">Talle</label>
                                 <select id="disabledSelect2" class="form-select">
@@ -70,14 +67,13 @@
                                     <option>Disabled select</option>
                                 </select>
                             </div>
-
                         </form>
                     </div>
                 </div>
 
                 <div class="mb-3 mx-4">
                     <hr>
-                    <button type="submit" class="btn btn-dark shadow-lg">Agregar</button>
+                    <asp:Button Text="Agregar" ID="btnAgregar" class="btn btn-dark shadow-lg" runat="server" OnClick="btnAgregar_Click"/>
                     <a class="btn btn-dark shadow-lg">Limpiar</a>
                 </div>
 
