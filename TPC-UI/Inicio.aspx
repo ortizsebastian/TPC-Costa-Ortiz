@@ -13,52 +13,49 @@
       </button>
     </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4 mx-5 my-5" style="padding-top: 1rem !important;">
 
+    <div class="row row-cols-1 row-cols-md-3 g-4 mx-5" style="margin-top: 3rem;">
 
-<%--Investigar como hacer para no repetir el mismo Producto, pero si mostrar mas todos los talle disponibles--%>
-
-<% foreach (var Producto in ListaProductos)
-    {        
-    %>
-
-    <a href="VerDetalle.aspx?Id=<%: Producto.Id %>" style="text-decoration: none; color: inherit;">
-    <div class="col shadow-lg">
-        <div class="card border-1 border-dark" style="min-height: 23rem !important; max-height: 23rem !important;">
-            <img src="<%: Producto.ImgUrl %>" class="card-img-top mx-auto" alt="..." style="width: 45% !important;">
-            <div class="card-body py-2">
-                <h5 class="card-title"><%: Producto.Nombre %></h5>
+        <% foreach (var Producto in ListaProductos)
+           {
+        %>
+            <a href="VerDetalle.aspx?Id=<%: Producto.Id %>" style="text-decoration: none; color: inherit;">
+            <div class="col">
+                <div class="card h-100 border-1 border-dark shadow-lg">
+                    <img class="card-img-top w-50 mx-auto" src="<%: Producto.ImgUrl %>">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><%: Producto.Nombre %></h5>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
+                            <div>
+                                <small class="text-muted">Precio: $<%: decimal.Round(Producto.Precio) %></small><br>
+                                <small class="text-muted">Stock: <%: Producto.Stock %></small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-secondary">
+                                <i class="fa fa-shopping-cart"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <asp:ImageButton ImageUrl="Img/Agregar.png" class="mt-auto my-3 mx-auto" style="width: 10% !important;" runat="server" /> 
-            <div class="card-footer">
-                <small class="text-muted">Precio: $<%: decimal.Round(Producto.Precio) %></small><br>
-                <small class="text-muted">Stock: <%: Producto.Stock %></small>
+            </a>
+        <%
+           }
+        %>
+    </div>
+
+
+    
+    <div class="my-3" style="padding-top: 4rem !important;">
+        <div class="card h-100 border-1 border-dark shadow-lg w-25 mx-auto">
+            <div class="card-body">
+                <h5 class="my-auto text-center">¡Envíanos un mensaje!</h5>
             </div>
         </div>
     </div>
-    </a>
 
-    <%
-    }  
-    %>
 
-</div>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-        </symbol>
-    </svg>
-
-    <div style="padding-top: 3rem !important;">
-        <div class="alert alert-dark d-flex w-25 mx-auto justify-content-center shadow-lg border-1 border-dark" role="alert">
-            <svg class="bi flex-shrink-0 me-2 my-auto" width="24" height="24" role="img" aria-label="Info:">
-                <use xlink:href="#info-fill" />
-            </svg>
-            <div>
-                <h5 class="my-auto">¡Envíanos un mensaje!</h5>
-            </div>
-        </div>
-    </div>
 
     <div class="card w-75 shadow-lg mx-auto border-1 border-dark">
         <div class="card-body">
@@ -94,7 +91,7 @@
                     </div>
 
                     <div class="d-grid">
-                        <button class="btn btn-dark mx-auto shadow-lg" id="submitButton" type="submit" style="width:20% !important; border-radius: 40px;">Enviar</button>
+                        <button class="btn btn-dark mx-auto shadow-lg border-1 border-white" id="submitButton" type="submit" style="width:26% !important; border-radius: 40px;">Enviar</button>
                     </div>
 
                 </form>
@@ -130,7 +127,7 @@
       </a>
     </div>
   </section>
-
+    
   <section>
     <div class="container text-center text-md-start mt-5">
       <div class="row mt-3">
@@ -144,7 +141,7 @@
         </div>
 
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 mx-auto">
             Newsletter
           </h6>
           <p>
@@ -183,6 +180,6 @@
       </div>
     </div>
   </section>
-</footer>
 
+</footer>
 </asp:Content>
