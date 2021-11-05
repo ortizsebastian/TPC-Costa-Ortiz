@@ -8,20 +8,20 @@ using TPC_Dominio;
 
 namespace TPC_Negocio
 {
-    public class CategoriaNegocio
+    public class GeneroNegocio
     {
-        public List<Categoria> Listar()
+        public List<Genero> Listar()
         {
-            List<Categoria> Lista = new List<Categoria>();
+            List<Genero> Lista = new List<Genero>();
             AccesoDatabase Datos = new AccesoDatabase();
             try
             {
-                Datos.SetConsulta("SELECT ID, NOMBRE FROM CATEGORIAS");
+                Datos.SetConsulta("SELECT ID, NOMBRE FROM GENEROS");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
                 {
-                    Categoria Objeto = new Categoria();
+                    Genero Objeto = new Genero();
                     Objeto.Id = Convert.ToInt32(Datos.Lector["ID"]);
                     Objeto.Nombre = (string)Datos.Lector["NOMBRE"];
                     Lista.Add(Objeto);
@@ -37,24 +37,6 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
-        public void Agregar(Categoria Categoria)
-        {
-            AccesoDatabase Datos = new AccesoDatabase();
-
-            try
-            {
-                Datos.SetConsulta("INSERT INTO CATEGORIAS (NOMBRE) values (@NOMBRE)");
-                Datos.SetParametro("@NOMBRE", Categoria.Nombre);
-                Datos.EjecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Datos.CerrarConexion();
-            }
-        }
     }
+
 }

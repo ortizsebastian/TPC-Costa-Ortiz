@@ -11,6 +11,35 @@ namespace TPC_Negocio
 {
     public class MarcaNegocio
     {
+        public List<Marca> Listar()
+        {
+            List<Marca> Lista = new List<Marca>();
+            AccesoDatabase Datos = new AccesoDatabase();
+            try
+            {
+                Datos.SetConsulta("SELECT ID, NOMBRE FROM MARCAS");
+                Datos.EjecutarLectura();
+
+                while (Datos.Lector.Read())
+                {
+                    Marca Objeto = new Marca();
+                    Objeto.Id = Convert.ToInt32(Datos.Lector["ID"]);
+                    Objeto.Nombre = (string)Datos.Lector["NOMBRE"];    
+                    Lista.Add(Objeto);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
+
         public void Agregar(Marca Marca)
         {
             AccesoDatabase Datos = new AccesoDatabase();
@@ -18,9 +47,7 @@ namespace TPC_Negocio
             try
             {
                 Datos.SetConsulta("INSERT INTO MARCAS (NOMBRE) values (@NOMBRE)");
-
                 Datos.SetParametro("@NOMBRE", Marca.Nombre);
-
                 Datos.EjecutarAccion();
             }
             catch (Exception ex)

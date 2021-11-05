@@ -42,30 +42,19 @@
                         <form>
                             <div class="mb-3">
                                 <label for="disabledSelect">Genero</label>
-                                <select id="disabledSelect1" class="form-select">
-                                    <option>Disabled select</option>
-                                </select>
+                                <asp:DropDownList ID="ddlGenero" runat="server" class="form-select"></asp:DropDownList>
                             </div>
-                            
-                            <div class="mb-3">
-                                <label for="disabledSelect">Talle</label>
-                                <select id="disabledSelect2" class="form-select">
-                                    <option>Disabled select</option>
-                                </select>
-                            </div>
-
                             <div class="mb-3">
                                 <label for="disabledSelect">Categoría</label>
-                                <select id="disabledSelect3" class="form-select">
-                                    <option>Disabled select</option>
-                                </select>
-                            </div>
-
+                                <asp:DropDownList ID="ddlCategoria" runat="server" class="form-select"></asp:DropDownList>
+                            </div>                      
                             <div class="mb-3">
                                 <label for="disabledSelect">Marca</label>
-                                <select id="disabledSelect4" class="form-select">
-                                    <option>Disabled select</option>
-                                </select>
+                                <asp:DropDownList ID="ddlMarca" runat="server" class="form-select"></asp:DropDownList>
+                            </div>
+                            <div class="mb-3">
+                                <label for="disabledSelect">Talle</label>
+                                <asp:DropDownList ID="ddlTalle" runat="server" class="form-select"></asp:DropDownList>
                             </div>
                         </form>
                     </div>
@@ -80,12 +69,5 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 
 </asp:Content>

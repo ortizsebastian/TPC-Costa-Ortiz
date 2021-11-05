@@ -49,9 +49,9 @@ namespace TPC_Database
                 throw ex;
             }
         }
-        public void SetParametro(string Nombre, object valor)
+        public void SetParametro(string Nombre, object Valor)
         {
-            Comando.Parameters.AddWithValue("Nombre", valor);
+            Comando.Parameters.AddWithValue(Nombre, Valor);
         }
         public void CerrarConexion()
         {

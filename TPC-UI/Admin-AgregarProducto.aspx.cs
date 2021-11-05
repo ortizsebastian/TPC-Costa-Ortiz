@@ -13,25 +13,38 @@ namespace TPC_Ortiz_Costa
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                GeneroNegocio GeneroNegocio = new GeneroNegocio();
+                ddlGenero.DataSource = GeneroNegocio.Listar();
+                ddlGenero.DataBind();
 
+                TalleNegocio TalleNegocio = new TalleNegocio();
+                ddlTalle.DataSource = TalleNegocio.Listar();
+                ddlTalle.DataBind();
+
+                CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
+                ddlCategoria.DataSource = CategoriaNegocio.Listar();
+                ddlCategoria.DataBind();
+
+                MarcaNegocio MarcaNegocio = new MarcaNegocio();
+                ddlMarca.DataSource = MarcaNegocio.Listar();
+                ddlMarca.DataBind();
+            }
         }
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Producto Producto = new Producto();
 
-            Producto.Nombre = txtNombre.ToString();
-            Producto.Descripcion = txtDescripcion.ToString();
-            Producto.Precio = Convert.ToInt32(txtPrecio);
-            Producto.Stock = Convert.ToInt32(txtStock);
-            Producto.ImgUrl = txtImg.ToString();
+            Producto.Nombre = txtNombre.Text;
+            Producto.Descripcion = txtDescripcion.Text;
+            Producto.Precio = decimal.Parse(txtPrecio.Text);
+            Producto.Stock = Convert.ToInt32(txtStock.Text);
+            Producto.ImgUrl = txtImg.Text;
 
-            Producto.Categoria.Nombre = "ASD";
-            Producto.Genero.Nombre = "ASD";
-            Producto.Marca.Nombre = "ASD";
-            Producto.Talle.Medida = "ASD";
+            //Producto.Genero = (Genero)ddlGenero.SelectedItem;       
 
             ProductoNegocio Negocio = new ProductoNegocio();
-
             Negocio.Agregar(Producto);
         }
     }
