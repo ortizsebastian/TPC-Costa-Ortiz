@@ -11,9 +11,11 @@ namespace TPC_Ortiz_Costa
 {
     public partial class Admin : System.Web.UI.Page
     {
+        public List<Producto> ListaProductos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ProductoNegocio Negocio = new ProductoNegocio();
+            ListaProductos = Negocio.Listar();
         }
     }
 }

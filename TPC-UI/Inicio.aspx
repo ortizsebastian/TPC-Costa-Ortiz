@@ -32,7 +32,7 @@
                                 <small class="text-muted">Precio: $<%: decimal.Round(Producto.Precio) %></small><br>
                                 <small class="text-muted">Stock: <%: Producto.Stock %></small>
                             </div>
-                            <button class="btn btn-sm btn-outline-secondary">
+                            <button class="btn btn-sm btn-outline-secondary shadow-lg">
                                 <i class="fa fa-shopping-cart"></i> Agregar
                             </button>
                         </div>
@@ -46,7 +46,6 @@
     </div>
 
 
-    
     <div class="my-3" style="padding-top: 4rem !important;">
         <div class="card h-100 border-1 border-dark shadow-lg w-25 mx-auto">
             <div class="card-body">
@@ -54,7 +53,6 @@
             </div>
         </div>
     </div>
-
 
 
     <div class="card w-75 shadow-lg mx-auto border-1 border-dark">
