@@ -5,42 +5,24 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="padding-left: 7rem !important; padding-bottom: 4rem !important; padding-top: 7rem !important;">
-        <div class="card w-50 shadow-lg border-1 border-dark">
-            <div class="card-body">
-                <div class="container mt-4 d-flex justify-content-between">
-
-                    <div class="col mx-4 my-auto">
-                        <form>
-
-                            <div class="mb-3">
-                                <label>Talle</label>
-                                <input class="form-control" placeholder="Talle">
-                            </div>
-
-                            <div class="mb-3">
-                                <label>Categoría</label>
-                                <input class="form-control" placeholder="Categoría">
-                            </div>
-
-                            <div class="mb-3">
-                                <label>Marca</label>
-                                <input class="form-control" placeholder="Marca">
-                            </div>
-
-                        </form>
-                    </div>
+    <div class="mx-5" style="padding-top: 7rem !important; padding-bottom: 4rem !important;">
+        <div class="card card-body w-50 shadow-lg border-1 border-dark">
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Marca</label>
+                    <asp:TextBox runat="server" class="form-control" ID="txtMarca" /> 
                 </div>
-
-                <div class="mb-3 mx-4">
-                    <hr>
-                    <button type="submit" class="btn btn-dark shadow-lg">Agregar</button>
-                    <a class="btn btn-dark shadow-lg">Limpiar</a>
+                <div class="mb-3">
+                    <label class="form-label">Talle</label>
+                    <asp:TextBox runat="server" class="form-control" ID="txtTalle" /> 
                 </div>
-
-            </div>
+                <div class="mb-3">
+                    <label class="form-label">Categoría</label>
+                    <asp:TextBox runat="server" class="form-control" ID="txtCategoria" /> 
+                </div>
+                <asp:Button ID="btnAgregar" class="btn btn-dark w-25 mx-auto shadow-lg" Text="Agregar" runat="server" OnClick="btnAgregar_Click"  />
+            </form>
         </div>
     </div>
-
 
 </asp:Content>

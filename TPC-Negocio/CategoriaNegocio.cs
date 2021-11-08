@@ -56,5 +56,28 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
+        public int BuscarPorString(string Nombre)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+            try
+            {
+                Datos.SetConsulta("SELECT ID FROM CATEGORIAS WHERE NOMBRE = '" + Nombre + "'");
+                Datos.EjecutarLectura();
+                Datos.Lector.Read();
+
+                int Id = Convert.ToInt32(Datos.Lector["ID"]);
+
+                return Id;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+
+        }
     }
 }

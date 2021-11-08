@@ -2,10 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
-
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
 
     <div style="padding-left: 7rem !important; padding-bottom: 4rem !important; padding-top: 7rem !important;">
         <div class="card w-50 shadow-lg border-1 border-dark">
@@ -37,7 +34,6 @@
                         </form>
                     </div>
 
-
                     <div class="col mx-3">
                         <form>
                             <div class="mb-3">
@@ -59,14 +55,8 @@
                         </form>
                     </div>
                 </div>
-
-                <div class="mb-3 mx-4">
-                    <hr>
-                    <asp:Button Text="Agregar" ID="btnAgregar" class="btn btn-dark shadow-lg" runat="server" OnClick="btnAgregar_Click"/>
-                    <a class="btn btn-dark shadow-lg">Limpiar</a>
-                </div>
-
             </div>
+            <asp:Button Text="Agregar" ID="btnAgregar" class="btn btn-dark d-flex justify-content-center mx-auto my-3 shadow-lg" runat="server" OnClick="btnAgregar_Click"/>
         </div>
     </div>
 
