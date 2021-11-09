@@ -10,9 +10,5 @@ namespace TPC_Dominio
     {
         public int Id { get; set; }
         public string Medida { get; set; }
-        public override string ToString()
-        {
-            return Medida;
-        }
     }
 }

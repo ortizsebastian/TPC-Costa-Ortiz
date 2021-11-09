@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Admin-AgregarProducto-Componentes.aspx.cs" Inherits="TPC_Ortiz_Costa.Admin_AgregarProducto_Componentes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Admin-Componentes.aspx.cs" Inherits="TPC_Ortiz_Costa.Admin_AgregarProducto_Componentes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -10,19 +10,23 @@
             <form>
                 <div class="mb-3">
                     <label class="form-label">Marca</label>
-                    <asp:TextBox runat="server" class="form-control" ID="txtMarca" /> 
+                    <asp:textbox runat="server" class="form-control" id="txtMarca" /> 
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Talle</label>
-                    <asp:TextBox runat="server" class="form-control" ID="txtTalle" /> 
+                    <asp:textbox runat="server" class="form-control" id="txtTalle" /> 
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Categoría</label>
-                    <asp:TextBox runat="server" class="form-control" ID="txtCategoria" /> 
+                    <asp:textbox runat="server" class="form-control" id="txtCategoria" /> 
                 </div>
-                <asp:Button ID="btnAgregar" class="btn btn-dark w-25 mx-auto shadow-lg" Text="Agregar" runat="server" OnClick="btnAgregar_Click"  />
+                <asp:button id="btnAgregar" class="btn btn-dark w-25 mx-auto shadow-lg" text="Agregar" runat="server" onclick="btnAgregar_Click"  />
             </form>
         </div>
     </div>
+
+
+
+
 
 </asp:Content>

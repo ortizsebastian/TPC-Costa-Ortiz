@@ -105,8 +105,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin-AgregarProducto-Componentes.aspx" />
-    <Content Include="Admin-AgregarProducto.aspx" />
+    <Content Include="Admin-Componentes.aspx" />
+    <Content Include="Admin-Productos.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -166,19 +166,19 @@
     <Content Include="_Site.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin-AgregarProducto-Componentes.aspx.cs">
-      <DependentUpon>Admin-AgregarProducto-Componentes.aspx</DependentUpon>
+    <Compile Include="Admin-Componentes.aspx.cs">
+      <DependentUpon>Admin-Componentes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin-AgregarProducto-Componentes.aspx.designer.cs">
-      <DependentUpon>Admin-AgregarProducto-Componentes.aspx</DependentUpon>
+    <Compile Include="Admin-Componentes.aspx.designer.cs">
+      <DependentUpon>Admin-Componentes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin-AgregarProducto.aspx.cs">
-      <DependentUpon>Admin-AgregarProducto.aspx</DependentUpon>
+    <Compile Include="Admin-Productos.aspx.cs">
+      <DependentUpon>Admin-Productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin-AgregarProducto.aspx.designer.cs">
-      <DependentUpon>Admin-AgregarProducto.aspx</DependentUpon>
+    <Compile Include="Admin-Productos.aspx.designer.cs">
+      <DependentUpon>Admin-Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>

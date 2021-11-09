@@ -19,6 +19,5 @@ namespace TPC_Dominio
         public Categoria Categoria { get; set; }
         public Marca Marca { get; set; }
         public bool Estado { get; set; }
-
     }
 }
