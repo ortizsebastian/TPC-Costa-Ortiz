@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using TPC_Database;
 using TPC_Dominio;
 
-
 namespace TPC_Negocio
 {
     public class MarcaNegocio

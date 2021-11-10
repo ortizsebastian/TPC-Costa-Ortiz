@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TPC_Dominio;
 using TPC_Database;
+using TPC_Dominio;
+using TPC_Dominio;
 
 namespace TPC_Negocio
 {
-    public class ProductoNegocio
+    public class ArticuloNegocio
     {
-        public List<Producto> Listar()
+        public List<Articulo> Listar()
         {
-            List<Producto> Lista = new List<Producto>();
+            List<Articulo> Lista = new List<Articulo>();
             AccesoDatabase Datos = new AccesoDatabase();
 
             try
@@ -22,7 +23,7 @@ namespace TPC_Negocio
 
                 while (Datos.Lector.Read())
                 {
-                    Producto Objeto = new Producto();
+                    Articulo Objeto = new Articulo();
 
                     Objeto.Codigo = (string)Datos.Lector["CODIGO"];
                     Objeto.Id = (int)(Datos.Lector["ID"]);
@@ -69,17 +70,17 @@ namespace TPC_Negocio
             }
         }
 
-        public Producto Buscar(int IdProducto)
+        public Articulo Buscar(int IdArticulo)
         {
             AccesoDatabase Datos = new AccesoDatabase();
 
             try
             {
-                Datos.SetConsulta("SELECT P.CODIGO, P.ID, P.NOMBRE, P.DESCRIPCION, P.PRECIO, P.STOCK, P.IMG_URL, P.ESTADO, G.NOMBRE AS GENERO, T.MEDIDA AS TALLE, C.NOMBRE AS CATEGORIA, M.NOMBRE AS MARCA, P.ID_GENERO, P.ID_MARCA, P.ID_TALLE, P.ID_CATEGORIA FROM PRODUCTOS AS P JOIN GENEROS AS G ON P.ID_GENERO = G.ID JOIN TALLES AS T ON P.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON P.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON P.ID_MARCA = M.ID WHERE P.ID = '" + IdProducto + "'");
+                Datos.SetConsulta("SELECT P.CODIGO, P.ID, P.NOMBRE, P.DESCRIPCION, P.PRECIO, P.STOCK, P.IMG_URL, P.ESTADO, G.NOMBRE AS GENERO, T.MEDIDA AS TALLE, C.NOMBRE AS CATEGORIA, M.NOMBRE AS MARCA, P.ID_GENERO, P.ID_MARCA, P.ID_TALLE, P.ID_CATEGORIA FROM PRODUCTOS AS P JOIN GENEROS AS G ON P.ID_GENERO = G.ID JOIN TALLES AS T ON P.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON P.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON P.ID_MARCA = M.ID WHERE P.ID = '" + IdArticulo + "'");
                 Datos.EjecutarLectura();
 
                 Datos.Lector.Read();
-                Producto Objeto = new Producto();
+                Articulo Objeto = new Articulo();
 
                 Objeto.Codigo = (string)Datos.Lector["CODIGO"];
                 Objeto.Id = (int)(Datos.Lector["ID"]);
@@ -120,7 +121,7 @@ namespace TPC_Negocio
             }
         }
 
-        public void Agregar(Producto Producto)
+        public void Agregar(Articulo Articulo)
         {
             AccesoDatabase Datos = new AccesoDatabase();
 
@@ -128,16 +129,16 @@ namespace TPC_Negocio
             {
                 Datos.SetConsulta("INSERT INTO PRODUCTOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA) values (@CODIGO, @NOMBRE, @DESCRIPCION, @PRECIO, @STOCK, @IMG, @ID_GENERO, @ID_TALLE, @ID_CATEGORIA, @ID_MARCA)");
 
-                Datos.SetParametro("@CODIGO", Producto.Codigo);
-                Datos.SetParametro("@NOMBRE", Producto.Nombre);
-                Datos.SetParametro("@DESCRIPCION", Producto.Descripcion);
-                Datos.SetParametro("@PRECIO", Producto.Precio);
-                Datos.SetParametro("@STOCK", Producto.Stock);
-                Datos.SetParametro("@IMG", Producto.ImgUrl);
-                Datos.SetParametro("@ID_GENERO", Producto.Genero.Id);
-                Datos.SetParametro("@ID_TALLE", Producto.Talle.Id);
-                Datos.SetParametro("@ID_CATEGORIA", Producto.Categoria.Id);
-                Datos.SetParametro("@ID_MARCA", Producto.Marca.Id);
+                Datos.SetParametro("@CODIGO", Articulo.Codigo);
+                Datos.SetParametro("@NOMBRE", Articulo.Nombre);
+                Datos.SetParametro("@DESCRIPCION", Articulo.Descripcion);
+                Datos.SetParametro("@PRECIO", Articulo.Precio);
+                Datos.SetParametro("@STOCK", Articulo.Stock);
+                Datos.SetParametro("@IMG", Articulo.ImgUrl);
+                Datos.SetParametro("@ID_GENERO", Articulo.Genero.Id);
+                Datos.SetParametro("@ID_TALLE", Articulo.Talle.Id);
+                Datos.SetParametro("@ID_CATEGORIA", Articulo.Categoria.Id);
+                Datos.SetParametro("@ID_MARCA", Articulo.Marca.Id);
 
                 Datos.EjecutarAccion();
             }

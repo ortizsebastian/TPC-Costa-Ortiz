@@ -106,8 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin-Componentes.aspx" />
-    <Content Include="Admin-Productos.aspx" />
-    <Content Include="Admin.aspx" />
+    <Content Include="Admin-Articulos.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -178,19 +177,12 @@
     <Compile Include="Admin-Componentes.aspx.designer.cs">
       <DependentUpon>Admin-Componentes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin-Productos.aspx.cs">
-      <DependentUpon>Admin-Productos.aspx</DependentUpon>
+    <Compile Include="Admin-Articulos.aspx.cs">
+      <DependentUpon>Admin-Articulos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin-Productos.aspx.designer.cs">
-      <DependentUpon>Admin-Productos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Admin-Articulos.aspx.designer.cs">
+      <DependentUpon>Admin-Articulos.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

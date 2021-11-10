@@ -14,16 +14,16 @@
 
 
     <div class="my-3 mx-5" style="padding-top: 5rem !important; padding-left: 0.7rem !important; padding-bottom: 1rem !important;">
-        <asp:ImageButton class="btn shadow-lg border-1 border-dark" style="width: 70px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
+        <asp:ImageButton class="btn shadow-lg border-1 border-dark" style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
     </div>
 
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mx-5">
 
-        <% foreach (var Producto in ListaProductos)
+        <% foreach (var Articulo in ListaArticulos)
            {
         %>
-            <a href="VerDetalle.aspx?Id=<%: Producto.Id %>" style="text-decoration: none; color: inherit;">
+            <a href="VerDetalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
             <div class="col">
                 <div class="card h-100 border-1 border-dark shadow-lg">
                     
@@ -32,19 +32,19 @@
                         <asp:ImageButton ImageUrl="~/Img/delete.png" class="btn shadow-sm border-1 border-dark" style="width: 50px;"  runat="server" ID="btnEliminar" OnClick="btnEliminar_Click" />
                     </div>
 
-                    <img class="card-img-top w-50 mx-auto" src="<%: Producto.ImgUrl %>">
+                    <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
                     <div class="card-body">
-                        <h5 class="card-title text-center"><%: Producto.Nombre %></h5>
-                        <p class="text-center" style="font-size: 15px !important;"><i>Código: </i><%: Producto.Codigo %></p>
+                        <h5 class="card-title text-center"><%: Articulo.Nombre %></h5>
+                        <p class="text-center" style="font-size: 15px !important;"><i>Código: </i><%: Articulo.Codigo %></p>
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
                             <div>
-                                <small class="text-muted my-auto">Precio: $<%: decimal.Round(Producto.Precio) %></small><br>
-                                <small class="text-muted my-auto">Stock: <%: Producto.Stock %></small>
+                                <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
+                                <small class="text-muted">Stock: <%: Articulo.Stock %></small>
                             </div>
 
-                            <asp:ImageButton ImageUrl="~/Img/add.png" runat="server" class="btn btn-sm border-1 border-dark shadow-lg" style="width: 70px; height: 60px"/>
+                            <asp:ImageButton ImageUrl="~/Img/add.png" runat="server" class="btn btn-sm border-1 border-dark shadow-lg" style="width: 60px; height: 50px"/>
 
                         </div>
                     </div>
@@ -152,13 +152,13 @@
             Newsletter
           </h6>
           <p>
-            <a href="#!" class="text-reset" style="text-decoration:none !important;">Producto 1</a>
+            <a href="#!" class="text-reset" style="text-decoration:none !important;">Articulo 1</a>
           </p>
           <p>
-            <a href="#!" class="text-reset" style="text-decoration:none !important;">Producto 2</a>
+            <a href="#!" class="text-reset" style="text-decoration:none !important;">Articulo 2</a>
           </p>
           <p>
-            <a href="#!" class="text-reset" style="text-decoration:none !important;">Producto 3</a>
+            <a href="#!" class="text-reset" style="text-decoration:none !important;">Articulo 3</a>
           </p>
         </div>
 

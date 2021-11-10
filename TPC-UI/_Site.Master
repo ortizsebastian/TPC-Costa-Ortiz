@@ -45,7 +45,7 @@
 
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="Admin.aspx" style="text-decoration: none !important;">Sección Administrador</a>
+                            <a href="Admin-Componentes.aspx" style="text-decoration: none !important;">Componentes</a>
                         </li>
                         <li class="nav-item">
                             <a href="Inicio.aspx" style="text-decoration: none !important;">Inicio</a>

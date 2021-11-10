@@ -8,7 +8,7 @@
     <div style="padding-top: 5rem;">
         <div class="card card-body mx-5 my-5 w-50">
             <h4>Mostrar Carrito acá.</h4>
-            <p>Dar como opciones agregar, eliminar producto desde botones con el + o -. Mostrar precio total también.</p>
+            <p>Dar como opciones agregar, eliminar Articulo desde botones con el + o -. Mostrar precio total también.</p>
         </div>
     </div>
 

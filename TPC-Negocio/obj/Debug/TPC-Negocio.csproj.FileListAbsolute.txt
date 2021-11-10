@@ -9,3 +9,5 @@ D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\obj\Debug\TPC-Negoci
 D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\obj\Debug\TPC-Negocio.pdb
 D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\bin\Debug\TPC-Conexion.dll
 D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\bin\Debug\TPC-Conexion.pdb
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\bin\Debug\Negocio.dll
+D:\Archivos de programa\Desktop\TPC-Ortiz-Costa\TPC-Negocio\bin\Debug\Dominio.dll

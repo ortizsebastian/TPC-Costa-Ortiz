@@ -9,13 +9,13 @@ using TPC_Negocio;
 
 namespace TPC_Ortiz_Costa
 {
-    public partial class Admin_Productos : System.Web.UI.Page
+    public partial class Admin_Articulos : System.Web.UI.Page
     {
-        public List<Producto> ListaProductos { get; set; }
+        public List<Articulo> ListaArticulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ProductoNegocio Negocio = new ProductoNegocio();
-            ListaProductos = Negocio.Listar();
+            ArticuloNegocio Negocio = new ArticuloNegocio();
+            ListaArticulos = Negocio.Listar();
 
             if (!IsPostBack)
             {
@@ -47,27 +47,27 @@ namespace TPC_Ortiz_Costa
         }
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Producto Producto = new Producto();
-            Producto.Nombre = txtNombre.Text;
-            Producto.Descripcion = txtDescripcion.Text;
-            Producto.Precio = decimal.Parse(txtPrecio.Text);
-            Producto.Stock = Convert.ToInt32(txtStock.Text);
-            Producto.ImgUrl = txtImg.Text;
+            Articulo Articulo = new Articulo();
+            Articulo.Nombre = txtNombre.Text;
+            Articulo.Descripcion = txtDescripcion.Text;
+            Articulo.Precio = decimal.Parse(txtPrecio.Text);
+            Articulo.Stock = Convert.ToInt32(txtStock.Text);
+            Articulo.ImgUrl = txtImg.Text;
 
-            Producto.Genero = new Genero();
-            Producto.Genero.Id = int.Parse(ddlGenero.SelectedValue);
+            Articulo.Genero = new Genero();
+            Articulo.Genero.Id = int.Parse(ddlGenero.SelectedValue);
 
-            Producto.Marca = new Marca();
-            Producto.Marca.Id = int.Parse(ddlMarca.SelectedValue);
+            Articulo.Marca = new Marca();
+            Articulo.Marca.Id = int.Parse(ddlMarca.SelectedValue);
 
-            Producto.Categoria = new Categoria();
-            Producto.Categoria.Id = int.Parse(ddlCategoria.SelectedValue);
+            Articulo.Categoria = new Categoria();
+            Articulo.Categoria.Id = int.Parse(ddlCategoria.SelectedValue);
 
-            Producto.Talle = new Talle();
-            Producto.Talle.Id = int.Parse(ddlTalle.SelectedValue);
+            Articulo.Talle = new Talle();
+            Articulo.Talle.Id = int.Parse(ddlTalle.SelectedValue);
 
-            ProductoNegocio Negocio = new ProductoNegocio();
-            Negocio.Agregar(Producto);
+            ArticuloNegocio Negocio = new ArticuloNegocio();
+            Negocio.Agregar(Articulo);
         }
     }
 }
