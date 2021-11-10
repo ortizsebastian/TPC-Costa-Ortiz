@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="input-group rounded" style="padding-top: 8rem; padding-left: 7rem; padding-right: 7rem;">
@@ -14,7 +13,12 @@
     </div>
 
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 mx-5" style="margin-top: 3rem;">
+    <div class="my-3 mx-5" style="padding-top: 5rem !important;">
+        <a href="Admin-Productos.aspx" class="fa fa-upload card card-body shadow-lg border-1 border-dark" style="border-radius: 30px; text-decoration: none; color: inherit;"></a>
+        <i class="fa fa-trash card card-body shadow-lg border-1 border-dark mx-3" style="border-radius: 30px; text-decoration: none; color: inherit;"></i>
+        <a href="Admin-Productos.aspx" class="fas fa-edit card card-body shadow-lg border-1 border-dark" style="border-radius: 30px; text-decoration: none; color: inherit;"></a>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mx-5">
 
         <% foreach (var Producto in ListaProductos)
            {
@@ -22,9 +26,13 @@
             <a href="VerDetalle.aspx?Id=<%: Producto.Id %>" style="text-decoration: none; color: inherit;">
             <div class="col">
                 <div class="card h-100 border-1 border-dark shadow-lg">
+                    <div class="form-check p-1">
+                        <input class="form-check-input m-1 p-1 border-1 border-dark" style="width: 25px; height: 25px;" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    </div>
                     <img class="card-img-top w-50 mx-auto" src="<%: Producto.ImgUrl %>">
                     <div class="card-body">
                         <h5 class="card-title text-center"><%: Producto.Nombre %></h5>
+                        <p class="text-center" style="font-size: 15px !important;"><i>Código: </i><%: Producto.Codigo %></p>
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
@@ -45,7 +53,6 @@
         %>
     </div>
 
-
     <div class="my-3" style="padding-top: 4rem !important;">
         <div class="card h-100 border-1 border-dark shadow-lg w-25 mx-auto">
             <div class="card-body">
@@ -53,7 +60,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="card w-75 shadow-lg mx-auto border-1 border-dark">
         <div class="card-body">

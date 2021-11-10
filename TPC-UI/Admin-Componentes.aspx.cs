@@ -9,7 +9,7 @@ using TPC_Negocio;
 
 namespace TPC_Ortiz_Costa
 {
-    public partial class Admin_AgregarProducto_Componentes : System.Web.UI.Page
+    public partial class Admin_Componentes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

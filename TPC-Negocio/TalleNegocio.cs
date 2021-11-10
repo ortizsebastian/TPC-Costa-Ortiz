@@ -23,7 +23,7 @@ namespace TPC_Negocio
                 while (Datos.Lector.Read())
                 {
                     Talle Objeto = new Talle();
-                    Objeto.Id = Convert.ToInt32(Datos.Lector["ID"]);
+                    Objeto.Id = (int)(Datos.Lector["ID"]);
                     Objeto.Medida = (string)Datos.Lector["MEDIDA"];
                     Lista.Add(Objeto);
                 }
@@ -66,7 +66,7 @@ namespace TPC_Negocio
                 Datos.EjecutarLectura();
                 Datos.Lector.Read();
 
-                int Id = Convert.ToInt32(Datos.Lector["ID"]);
+                int Id = (int)(Datos.Lector["ID"]);
 
                 return Id;
             }

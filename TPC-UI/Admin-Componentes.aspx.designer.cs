@@ -11,7 +11,7 @@ namespace TPC_Ortiz_Costa
 {
 
 
-    public partial class Admin_AgregarProducto_Componentes
+    public partial class Admin_Componentes
     {
 
         /// <summary>

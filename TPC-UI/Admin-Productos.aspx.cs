@@ -9,7 +9,7 @@ using TPC_Negocio;
 
 namespace TPC_Ortiz_Costa
 {
-    public partial class Admin_AgregarProducto : System.Web.UI.Page
+    public partial class Admin_Productos : System.Web.UI.Page
     {
         public List<Producto> ListaProductos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
@@ -19,23 +19,28 @@ namespace TPC_Ortiz_Costa
 
             if (!IsPostBack)
             {
+
                 MarcaNegocio MarcaNegocio = new MarcaNegocio();
                 ddlMarca.DataSource = MarcaNegocio.Listar();
+                ddlMarca.DataTextField = "Nombre";
                 ddlMarca.DataValueField = "Id";
                 ddlMarca.DataBind();
 
                 GeneroNegocio GeneroNegocio = new GeneroNegocio();
                 ddlGenero.DataSource = GeneroNegocio.Listar();
+                ddlGenero.DataTextField = "Nombre";
                 ddlGenero.DataValueField = "Id";
                 ddlGenero.DataBind();
 
                 TalleNegocio TalleNegocio = new TalleNegocio();
                 ddlTalle.DataSource = TalleNegocio.Listar();
+                ddlTalle.DataTextField = "Medida";
                 ddlTalle.DataValueField = "Id";
                 ddlTalle.DataBind();
 
                 CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
                 ddlCategoria.DataSource = CategoriaNegocio.Listar();
+                ddlCategoria.DataTextField = "Nombre";
                 ddlCategoria.DataValueField = "Id";
                 ddlCategoria.DataBind();
             }
