@@ -21,7 +21,7 @@
                     <p class="card-text"><small class="text-muted"><span>Marca: <%:Producto.Marca.Nombre %></span><span class="px-5">Categoría: <%:Producto.Categoria.Nombre %></span><span>Genero: <%:Producto.Genero.Nombre %></span></small></p>
                     <hr>               
 
-                    <asp:ImageButton ImageUrl="Img/Agregar.png" class="d-flex align-items-center mx-auto" style="width: 10% !important; padding-top: 1.5rem !important;" runat="server" /> 
+                    <asp:ImageButton ImageUrl="Img/add.png" class="d-flex align-items-center mx-auto" style="width: 10% !important; padding-top: 1.5rem !important;" runat="server" /> 
                 </div>
             </div>
         </div>

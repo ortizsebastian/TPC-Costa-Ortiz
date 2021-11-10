@@ -13,11 +13,11 @@
     </div>
 
 
-    <div class="my-3 mx-5" style="padding-top: 5rem !important;">
-        <a href="Admin-Productos.aspx" class="fa fa-upload card card-body shadow-lg border-1 border-dark" style="border-radius: 30px; text-decoration: none; color: inherit;"></a>
-        <i class="fa fa-trash card card-body shadow-lg border-1 border-dark mx-3" style="border-radius: 30px; text-decoration: none; color: inherit;"></i>
-        <a href="Admin-Productos.aspx" class="fas fa-edit card card-body shadow-lg border-1 border-dark" style="border-radius: 30px; text-decoration: none; color: inherit;"></a>
+    <div class="my-3 mx-5" style="padding-top: 5rem !important; padding-left: 0.7rem !important; padding-bottom: 1rem !important;">
+        <asp:ImageButton class="btn shadow-lg border-1 border-dark" style="width: 70px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
     </div>
+
+
     <div class="row row-cols-1 row-cols-md-3 g-4 mx-5">
 
         <% foreach (var Producto in ListaProductos)
@@ -26,9 +26,12 @@
             <a href="VerDetalle.aspx?Id=<%: Producto.Id %>" style="text-decoration: none; color: inherit;">
             <div class="col">
                 <div class="card h-100 border-1 border-dark shadow-lg">
-                    <div class="form-check p-1">
-                        <input class="form-check-input m-1 p-1 border-1 border-dark" style="width: 25px; height: 25px;" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    
+                    <div class="my-2">                   
+                        <asp:ImageButton ImageUrl="~/Img/edit.png" class="btn shadow-sm border-1 border-dark mx-2" style="width: 50px;" runat="server" ID="btnModificar" OnClick="btnModificar_Click" />
+                        <asp:ImageButton ImageUrl="~/Img/delete.png" class="btn shadow-sm border-1 border-dark" style="width: 50px;"  runat="server" ID="btnEliminar" OnClick="btnEliminar_Click" />
                     </div>
+
                     <img class="card-img-top w-50 mx-auto" src="<%: Producto.ImgUrl %>">
                     <div class="card-body">
                         <h5 class="card-title text-center"><%: Producto.Nombre %></h5>
@@ -37,12 +40,12 @@
                     <div class="card-footer">
                         <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
                             <div>
-                                <small class="text-muted">Precio: $<%: decimal.Round(Producto.Precio) %></small><br>
-                                <small class="text-muted">Stock: <%: Producto.Stock %></small>
+                                <small class="text-muted my-auto">Precio: $<%: decimal.Round(Producto.Precio) %></small><br>
+                                <small class="text-muted my-auto">Stock: <%: Producto.Stock %></small>
                             </div>
-                            <button class="btn btn-sm btn-outline-secondary shadow-lg">
-                                <i class="fa fa-shopping-cart"></i> Agregar
-                            </button>
+
+                            <asp:ImageButton ImageUrl="~/Img/add.png" runat="server" class="btn btn-sm border-1 border-dark shadow-lg" style="width: 70px; height: 60px"/>
+
                         </div>
                     </div>
                 </div>
