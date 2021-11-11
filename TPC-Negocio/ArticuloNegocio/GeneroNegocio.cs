@@ -14,6 +14,7 @@ namespace TPC_Negocio
         {
             List<Genero> Lista = new List<Genero>();
             AccesoDatabase Datos = new AccesoDatabase();
+
             try
             {
                 Datos.SetConsulta("SELECT ID, NOMBRE FROM GENEROS");

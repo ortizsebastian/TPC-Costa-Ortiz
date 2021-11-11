@@ -14,6 +14,7 @@ namespace TPC_Negocio
         {
             List<Categoria> Lista = new List<Categoria>();
             AccesoDatabase Datos = new AccesoDatabase();
+
             try
             {
                 Datos.SetConsulta("SELECT ID, NOMBRE FROM CATEGORIAS");

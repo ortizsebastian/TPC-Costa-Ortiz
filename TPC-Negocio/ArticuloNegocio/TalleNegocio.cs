@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using TPC_Database;
 using TPC_Dominio;
 
-
 namespace TPC_Negocio
 {
     public class TalleNegocio
@@ -15,6 +14,7 @@ namespace TPC_Negocio
         {
             List<Talle> Lista = new List<Talle>();
             AccesoDatabase Datos = new AccesoDatabase();
+
             try
             {
                 Datos.SetConsulta("SELECT ID, MEDIDA FROM TALLES");

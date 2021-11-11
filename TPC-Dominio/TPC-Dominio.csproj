@@ -53,6 +53,7 @@
     <Compile Include="Articulo\Talle.cs" />
     <Compile Include="Cliente\Usuario.cs" />
     <Compile Include="Venta\Envio.cs" />
+    <Compile Include="Venta\Pago.cs" />
     <Compile Include="Venta\Venta.cs" />
   </ItemGroup>
   <ItemGroup />
