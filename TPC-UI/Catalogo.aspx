@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="TPC_Ortiz_Costa.Web_Inicio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Catalogo.aspx.cs" Inherits="TPC_UI.Web_Catalogo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -28,8 +28,8 @@
                 <div class="card h-100 border-1 border-dark shadow-lg">
                     
                     <div class="my-2">                   
-                        <asp:ImageButton ImageUrl="~/Img/edit.png" class="btn shadow-sm border-1 border-dark mx-2" style="width: 50px;" runat="server" ID="btnModificar" OnClick="btnModificar_Click" />
-                        <asp:ImageButton ImageUrl="~/Img/delete.png" class="btn shadow-sm border-1 border-dark" style="width: 50px;"  runat="server" ID="btnEliminar" OnClick="btnEliminar_Click" />
+                        <asp:ImageButton ImageUrl="~/Img/edit.png" class="btn shadow-sm border-1 border-dark shadow-lg mx-2" style="width: 45px;" runat="server" ID="btnModificar" OnClick="btnModificar_Click" />
+                        <asp:ImageButton ImageUrl="~/Img/delete.png" class="btn shadow-sm border-1 border-dark shadow-sm" style="width: 45px;"  runat="server" ID="btnBaja" OnClick="btnBaja_Click" />
                     </div>
 
                     <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
@@ -44,7 +44,7 @@
                                 <small class="text-muted">Stock: <%: Articulo.Stock %></small>
                             </div>
 
-                            <asp:ImageButton ImageUrl="~/Img/add.png" runat="server" class="btn btn-sm border-1 border-dark shadow-lg" style="width: 60px; height: 50px"/>
+                            <asp:ImageButton ImageUrl="~/Img/add.png" runat="server" class="btn btn-sm border-1 border-dark shadow-lg" style="width: 60px; height: 50px" ID="btnAgregar" OnClick="btnAgregar_Click" />
 
                         </div>
                     </div>

@@ -7,12 +7,14 @@ using System.Web.UI.WebControls;
 using TPC_Dominio;
 using TPC_Negocio;
 
-namespace TPC_Ortiz_Costa
+namespace TPC_UI
 {
-    public partial class Web_Inicio : System.Web.UI.Page
+    public partial class Web_Catalogo : System.Web.UI.Page
     {
         public List<Articulo> ListaArticulos { get; set; }
-        public int Id { get; set; }
+
+        //public int Id { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio Negocio = new ArticuloNegocio();
@@ -22,11 +24,15 @@ namespace TPC_Ortiz_Costa
         {
             Response.Redirect("Admin-Articulos.aspx");
         }
+        protected void btnBaja_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
         protected void btnModificar_Click(object sender, ImageClickEventArgs e)
         {
             
         }
-        protected void btnEliminar_Click(object sender, ImageClickEventArgs e)
+        protected void btnAgregar_Click(object sender, ImageClickEventArgs e)
         {
 
         }

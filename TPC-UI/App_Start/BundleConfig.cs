@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Optimization;
 using System.Web.UI;
 
-namespace TPC_Ortiz_Costa
+namespace TPC_UI
 {
     public class BundleConfig
     {

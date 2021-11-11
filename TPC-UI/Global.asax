@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="TPC_Ortiz_Costa.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="TPC_UI.Global" Language="C#" %>

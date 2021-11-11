@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TPC_Ortiz_Costa
+namespace TPC_UI
 {
     public partial class Carrito : System.Web.UI.Page
     {

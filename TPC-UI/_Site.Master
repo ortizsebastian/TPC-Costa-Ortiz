@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Site.master.cs" Inherits="TPC_Ortiz_Costa._Site" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Site.master.cs" Inherits="TPC_UI._Site" %>
 
 <!DOCTYPE html>
 
@@ -48,13 +48,13 @@
                             <a href="Admin-Componentes.aspx" style="text-decoration: none !important;">Componentes</a>
                         </li>
                         <li class="nav-item">
-                            <a href="Inicio.aspx" style="text-decoration: none !important;">Inicio</a>
+                            <a href="Catalogo.aspx" style="text-decoration: none !important;">Catálogo</a>
                         </li>
                         <li class="nav-item">
                             <a href="Usuario-Ingresar.aspx" style="text-decoration: none !important;">Ingresar</a>
                         </li>
                         <li class="nav-item">
-                            <a href="Inicio.aspx" style="text-decoration: none !important;">Salir</a>
+                            <a href="#" style="text-decoration: none !important;">Salir</a>
                         </li>
                     </ul>
                 </div>

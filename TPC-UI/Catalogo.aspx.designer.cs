@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TPC_Ortiz_Costa
+namespace TPC_UI
 {
 
 
-    public partial class Web_Inicio
+    public partial class Web_Catalogo
     {
 
         /// <summary>
@@ -33,12 +33,21 @@ namespace TPC_Ortiz_Costa
         protected global::System.Web.UI.WebControls.ImageButton btnModificar;
 
         /// <summary>
-        /// Control btnEliminar.
+        /// Control btnBaja.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnEliminar;
+        protected global::System.Web.UI.WebControls.ImageButton btnBaja;
+
+        /// <summary>
+        /// Control btnAgregar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnAgregar;
     }
 }

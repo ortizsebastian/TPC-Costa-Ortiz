@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Usuario-Registrar.aspx.cs" Inherits="TPC_Ortiz_Costa.Usuario_Registrar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Usuario-Registrar.aspx.cs" Inherits="TPC_UI.Usuario_Registrar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -35,7 +35,7 @@
 
                             <div class="mb-3">
                                 <a class="btn btn-dark shadow-lg" href="#">Crear</a>
-                                <a class="btn btn-dark shadow-lg" href="Inicio.aspx">Volver</a>
+                                <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>
                             </div>
 
                             <hr>

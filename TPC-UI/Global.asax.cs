@@ -7,7 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace TPC_Ortiz_Costa
+namespace TPC_UI
 {
     public class Global : HttpApplication
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Usuario-Ingresar.aspx.cs" Inherits="TPC_Ortiz_Costa.Usuario_Ingresar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Usuario-Ingresar.aspx.cs" Inherits="TPC_UI.Usuario_Ingresar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -32,7 +32,7 @@
 
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-dark shadow-lg">Conectar</button>
-                                <a class="btn btn-dark shadow-lg" href="Inicio.aspx">Volver</a>
+                                <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>
                             </div>
 
                             <hr>

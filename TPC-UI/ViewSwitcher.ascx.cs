@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.FriendlyUrls.Resolvers;
 
-namespace TPC_Ortiz_Costa
+namespace TPC_UI
 {
     public partial class ViewSwitcher : System.Web.UI.UserControl
     {
