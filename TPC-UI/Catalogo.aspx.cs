@@ -13,8 +13,6 @@ namespace TPC_UI
     {
         public List<Articulo> ListaArticulos { get; set; }
 
-        //public int Id { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio Negocio = new ArticuloNegocio();
@@ -31,10 +29,6 @@ namespace TPC_UI
         protected void btnModificar_Click(object sender, ImageClickEventArgs e)
         {
             
-        }
-        protected void btnAgregar_Click(object sender, ImageClickEventArgs e)
-        {
-
         }
     }
 }

@@ -12,7 +12,6 @@
       </button>
     </div>
 
-
     <div class="my-3 mx-5" style="padding-top: 5rem !important; padding-left: 0.7rem !important; padding-bottom: 1rem !important;">
         <asp:ImageButton class="btn shadow-lg border-1 border-dark" style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
     </div>
@@ -23,34 +22,34 @@
         <% foreach (var Articulo in ListaArticulos)
            {
         %>
-            <a href="VerDetalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
             <div class="col">
-                <div class="card h-100 border-1 border-dark shadow-lg">
-                    
+                <div class="card h-100 border-1 border-dark shadow-lg">                   
+                    <a href="VerDetalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
                     <div class="my-2">                   
                         <asp:ImageButton ImageUrl="~/Img/edit.png" class="btn shadow-sm border-1 border-dark shadow-lg mx-2" style="width: 45px;" runat="server" ID="btnModificar" OnClick="btnModificar_Click" />
                         <asp:ImageButton ImageUrl="~/Img/delete.png" class="btn shadow-sm border-1 border-dark shadow-sm" style="width: 45px;"  runat="server" ID="btnBaja" OnClick="btnBaja_Click" />
                     </div>
-
-                    <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
-                    <div class="card-body">
-                        <h5 class="card-title text-center"><%: Articulo.Nombre %></h5>
-                        <p class="text-center" style="font-size: 15px !important;"><i>Código: </i><%: Articulo.Codigo %></p>
-                    </div>
-                    <div class="card-footer">
+                        <div class="card bg-transparent border-0">
+                            <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><%: Articulo.Nombre %></h5>
+                                <p class="text-center" style="font-size: 15px !important;"><i>Código: </i><%: Articulo.Codigo %></p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="card-footer">               
                         <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
                             <div>
                                 <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
                                 <small class="text-muted">Stock: <%: Articulo.Stock %></small>
-                            </div>
-
-                            <asp:ImageButton ImageUrl="~/Img/add.png" runat="server" class="btn btn-sm border-1 border-dark shadow-lg" style="width: 60px; height: 50px" ID="btnAgregar" OnClick="btnAgregar_Click" />
-
+                            </div>                   
+                            <button class="btn btn-sm btn-outline-dark border-1 border-dark shadow-lg">
+                                <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="fa fa-shopping-cart" style="text-decoration: none; color: inherit;"> Agregar</a> 
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            </a>
         <%
            }
         %>

@@ -5,11 +5,40 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="padding-top: 5rem;">
-        <div class="card card-body mx-5 my-5 w-50">
-            <h4>Mostrar Carrito acá.</h4>
-            <p>Dar como opciones agregar, eliminar Articulo desde botones con el + o -. Mostrar precio total también.</p>
+    <div class="card card-body"></div>
+
+    <% if (Contenido != null)
+        {
+    %>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mx-5" style="padding-top: 5rem !important; padding-bottom: 5rem !important;">
+
+        <% foreach (var Articulo in Contenido)
+            {
+        %>
+            <div class="col">
+                <div class="card h-100 border-1 border-dark shadow-lg">
+
+                    <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><%: Articulo.Nombre %></h5>
+                        <p class="text-center" style="font-size: 15px !important;"><i>Código: </i><%: Articulo.Codigo %></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
+                            <div>
+                                <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
+                                <small class="text-muted">Stock: <%: Articulo.Stock %></small>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <%
+            }
+        %>
         </div>
-    </div>
+
+    <%} %>
 
 </asp:Content>
