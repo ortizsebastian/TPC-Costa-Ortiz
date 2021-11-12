@@ -106,10 +106,7 @@ namespace TPC_UI
                 Negocio.Modificar(Articulo);
                 Response.Redirect("Catalogo.aspx");
             }
-            else
-            {
-                Negocio.Agregar(Articulo);
-            }
+            Negocio.Agregar(Articulo);
         }
     }
 }
