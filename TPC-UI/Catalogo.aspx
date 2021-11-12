@@ -43,9 +43,9 @@
                                 <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
                                 <small class="text-muted">Stock: <%: Articulo.Stock %></small>
                             </div>                   
-                            <button class="btn btn-sm btn-outline-dark border-1 border-dark shadow-lg">
-                                <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="fa fa-shopping-cart" style="text-decoration: none; color: inherit;"> Agregar</a> 
-                            </button>
+                            <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="btn btn-sm border-1 border-dark shadow-lg" style="text-decoration: none; color: inherit;">
+                                <img src="/Img/add.png" style="width: 40px;"/>
+                            </a>
                         </div>
                     </div>
                 </div>

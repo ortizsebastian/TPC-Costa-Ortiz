@@ -11,7 +11,7 @@ namespace TPC_UI
 {
     public partial class Carrito : System.Web.UI.Page
     {
-        public List<Articulo> Contenido { get; set; } 
+        public List<Articulo> Contenido { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["Id"] != null)
@@ -36,6 +36,21 @@ namespace TPC_UI
                     Carrito.Add(Articulo);
                     Session["Carrito"] = Carrito;
                 }
+            }
+            else if (Request.QueryString["Remove"] != null)
+            {
+                int Id = int.Parse(Request.QueryString["Remove"]);
+
+                Contenido = (List<Articulo>)Session["Carrito"];
+                foreach (var Articulo in Contenido)
+                {
+                    if (Articulo.Id == Id)
+                    {
+                        Contenido.Remove(Articulo);
+                        break;
+                    }
+                }
+                Session["Carrito"] = Contenido;
             }
             Contenido = (List<Articulo>)Session["Carrito"];
         }
