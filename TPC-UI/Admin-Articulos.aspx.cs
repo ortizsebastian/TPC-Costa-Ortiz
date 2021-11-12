@@ -11,43 +11,71 @@ namespace TPC_UI
 {
     public partial class Admin_Articulos : System.Web.UI.Page
     {
-        public List<Articulo> ListaArticulos { get; set; }
+        public bool Modificar { get; set; }
+        public int Id { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio Negocio = new ArticuloNegocio();
-            ListaArticulos = Negocio.Listar();
-
             if (!IsPostBack)
             {
-
                 MarcaNegocio MarcaNegocio = new MarcaNegocio();
                 ddlMarca.DataSource = MarcaNegocio.Listar();
-                ddlMarca.DataTextField = "Nombre";
                 ddlMarca.DataValueField = "Id";
+                ddlMarca.DataTextField = "Nombre";
                 ddlMarca.DataBind();
 
                 GeneroNegocio GeneroNegocio = new GeneroNegocio();
                 ddlGenero.DataSource = GeneroNegocio.Listar();
-                ddlGenero.DataTextField = "Nombre";
                 ddlGenero.DataValueField = "Id";
+                ddlGenero.DataTextField = "Nombre";
                 ddlGenero.DataBind();
 
                 TalleNegocio TalleNegocio = new TalleNegocio();
                 ddlTalle.DataSource = TalleNegocio.Listar();
-                ddlTalle.DataTextField = "Medida";
                 ddlTalle.DataValueField = "Id";
+                ddlTalle.DataTextField = "Medida";
                 ddlTalle.DataBind();
 
                 CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
                 ddlCategoria.DataSource = CategoriaNegocio.Listar();
-                ddlCategoria.DataTextField = "Nombre";
                 ddlCategoria.DataValueField = "Id";
+                ddlCategoria.DataTextField = "Nombre";
                 ddlCategoria.DataBind();
+            }
+            if (Request.QueryString["Modify"] != null)
+            {
+                Modificar = true;
+                Id = int.Parse(Request.QueryString["Modify"]);
+            }
+            if ((Request.QueryString["Modify"] != null) && !IsPostBack)
+            {
+                ArticuloNegocio Negocio = new ArticuloNegocio();
+                Articulo Articulo = new Articulo();
+                Articulo = Negocio.Buscar(Id);
+
+                txtCodigo.Text = Articulo.Codigo;
+                txtNombre.Text = Articulo.Nombre;
+                txtDescripcion.Text = Articulo.Descripcion;
+                txtPrecio.Text = (decimal.Round(Articulo.Precio)).ToString();
+                txtStock.Text = Articulo.Stock.ToString();
+                txtImg.Text = Articulo.ImgUrl;
+
+                ddlGenero.SelectedItem.Value = Articulo.Genero.Id.ToString();
+                ddlGenero.SelectedItem.Text = Articulo.Genero.Nombre;
+
+                ddlMarca.SelectedItem.Value = Articulo.Marca.Id.ToString();
+                ddlMarca.SelectedItem.Text = Articulo.Marca.Nombre;
+
+                ddlTalle.SelectedItem.Value = Articulo.Talle.Id.ToString();
+                ddlTalle.SelectedItem.Text = Articulo.Talle.Medida;
+
+                ddlCategoria.SelectedItem.Value = Articulo.Categoria.Id.ToString();
+                ddlCategoria.SelectedItem.Text = Articulo.Categoria.Nombre;
             }
         }
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Articulo Articulo = new Articulo();
+            Articulo.Codigo = txtCodigo.Text;
             Articulo.Nombre = txtNombre.Text;
             Articulo.Descripcion = txtDescripcion.Text;
             Articulo.Precio = decimal.Parse(txtPrecio.Text);
@@ -55,19 +83,33 @@ namespace TPC_UI
             Articulo.ImgUrl = txtImg.Text;
 
             Articulo.Genero = new Genero();
-            Articulo.Genero.Id = int.Parse(ddlGenero.SelectedValue);
+            Articulo.Genero.Id = int.Parse(ddlGenero.SelectedItem.Value);
+            Articulo.Genero.Nombre = ddlGenero.SelectedItem.Text;
 
             Articulo.Marca = new Marca();
-            Articulo.Marca.Id = int.Parse(ddlMarca.SelectedValue);
+            Articulo.Marca.Id = int.Parse(ddlMarca.SelectedItem.Value);
+            Articulo.Marca.Nombre = ddlMarca.SelectedItem.Text;
 
             Articulo.Categoria = new Categoria();
-            Articulo.Categoria.Id = int.Parse(ddlCategoria.SelectedValue);
+            Articulo.Categoria.Id = int.Parse(ddlCategoria.SelectedItem.Value);
+            Articulo.Categoria.Nombre = ddlCategoria.SelectedItem.Text;
 
             Articulo.Talle = new Talle();
-            Articulo.Talle.Id = int.Parse(ddlTalle.SelectedValue);
+            Articulo.Talle.Id = int.Parse(ddlTalle.SelectedItem.Value);
+            Articulo.Talle.Medida = ddlTalle.SelectedItem.Text;
 
             ArticuloNegocio Negocio = new ArticuloNegocio();
-            Negocio.Agregar(Articulo);
+            
+            if(Modificar)
+            {
+                Articulo.Id = Id;
+                Negocio.Modificar(Articulo);
+                Response.Redirect("Catalogo.aspx");
+            }
+            else
+            {
+                Negocio.Agregar(Articulo);
+            }
         }
     }
 }

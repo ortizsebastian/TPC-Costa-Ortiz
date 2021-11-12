@@ -15,8 +15,8 @@
         <% foreach (var Articulo in Contenido)
             {
         %>
-            <div class="col" style="width: 25% !important;">
-                <div class="card h-100 border-1 border-dark shadow-lg">
+            <div class="col" style="width: 25%;">
+                <div class="card border-1 border-dark shadow-lg">
                     <div class="m-2">
                         <a href="Carrito.aspx?Remove=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-sm">
                             <img src="/Img/delete.png" style="width: 30px;" />

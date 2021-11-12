@@ -15,20 +15,18 @@ namespace TPC_UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Request.QueryString["Delete"] != null)
+            {
+                int Id = int.Parse(Request.QueryString["Delete"]);       
+                ArticuloNegocio Objeto = new ArticuloNegocio();
+                Objeto.Eliminar(Id);
+            }
             ArticuloNegocio Negocio = new ArticuloNegocio();
             ListaArticulos = Negocio.Listar();
         }
         protected void btnAlta_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Admin-Articulos.aspx");
-        }
-        protected void btnBaja_Click(object sender, ImageClickEventArgs e)
-        {
-
-        }
-        protected void btnModificar_Click(object sender, ImageClickEventArgs e)
-        {
-            
         }
     }
 }

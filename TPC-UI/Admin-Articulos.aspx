@@ -12,6 +12,10 @@
                     <div class="col mx-3">
                         <form>
                             <div class="mb-3">
+                                <label>Código</label>
+                                <asp:TextBox ID="txtCodigo" class="form-control" placeholder="Código" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="mb-3">
                                 <label>Nombre</label>
                                 <asp:TextBox ID="txtNombre" class="form-control" placeholder="Nombre" runat="server"></asp:TextBox>
                             </div>

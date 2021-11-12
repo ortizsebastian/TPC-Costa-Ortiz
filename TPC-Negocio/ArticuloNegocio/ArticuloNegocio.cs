@@ -17,7 +17,7 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("SELECT P.CODIGO, P.ID, P.NOMBRE, P.DESCRIPCION, P.PRECIO, P.STOCK, P.IMG_URL, P.ESTADO, G.NOMBRE AS GENERO, T.MEDIDA AS TALLE, C.NOMBRE AS CATEGORIA, M.NOMBRE AS MARCA, P.ID_GENERO, P.ID_MARCA, P.ID_TALLE, P.ID_CATEGORIA FROM ARTICULOS AS P JOIN GENEROS AS G ON P.ID_GENERO = G.ID JOIN TALLES AS T ON P.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON P.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON P.ID_MARCA = M.ID");
+                Datos.SetConsulta("SELECT A.CODIGO, A.ID, A.NOMBRE, A.DESCRIPCION, A.PRECIO, A.STOCK, A.IMG_URL, A.ESTADO, G.NOMBRE AS GENERO, T.MEDIDA AS TALLE, C.NOMBRE AS CATEGORIA, M.NOMBRE AS MARCA, A.ID_GENERO, A.ID_MARCA, A.ID_TALLE, A.ID_CATEGORIA FROM ARTICULOS AS A JOIN GENEROS AS G ON A.ID_GENERO = G.ID JOIN TALLES AS T ON A.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON A.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON A.ID_MARCA = M.ID");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
@@ -69,13 +69,13 @@ namespace TPC_Negocio
             }
         }
 
-        public Articulo Buscar(int IdArticulo)
+        public Articulo Buscar(int Id)
         {
             AccesoDatabase Datos = new AccesoDatabase();
 
             try
             {
-                Datos.SetConsulta("SELECT P.CODIGO, P.ID, P.NOMBRE, P.DESCRIPCION, P.PRECIO, P.STOCK, P.IMG_URL, P.ESTADO, G.NOMBRE AS GENERO, T.MEDIDA AS TALLE, C.NOMBRE AS CATEGORIA, M.NOMBRE AS MARCA, P.ID_GENERO, P.ID_MARCA, P.ID_TALLE, P.ID_CATEGORIA FROM ARTICULOS AS P JOIN GENEROS AS G ON P.ID_GENERO = G.ID JOIN TALLES AS T ON P.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON P.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON P.ID_MARCA = M.ID WHERE P.ID = '" + IdArticulo + "'");
+                Datos.SetConsulta("SELECT A.CODIGO, A.ID, A.NOMBRE, A.DESCRIPCION, A.PRECIO, A.STOCK, A.IMG_URL, A.ESTADO, G.NOMBRE AS GENERO, T.MEDIDA AS TALLE, C.NOMBRE AS CATEGORIA, M.NOMBRE AS MARCA, A.ID_GENERO, A.ID_MARCA, A.ID_TALLE, A.ID_CATEGORIA FROM ARTICULOS AS A JOIN GENEROS AS G ON A.ID_GENERO = G.ID JOIN TALLES AS T ON A.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON A.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON A.ID_MARCA = M.ID WHERE A.ID = '" + Id + "'");
                 Datos.EjecutarLectura();
 
                 Datos.Lector.Read();
@@ -126,7 +126,7 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA) values (@CODIGO, @NOMBRE, @DESCRIPCION, @PRECIO, @STOCK, @IMG, @ID_GENERO, @ID_TALLE, @ID_CATEGORIA, @ID_MARCA)");
+                Datos.SetConsulta("INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA) VALUES (@CODIGO, @NOMBRE, @DESCRIPCION, @PRECIO, @STOCK, @IMG, @ID_GENERO, @ID_TALLE, @ID_CATEGORIA, @ID_MARCA)");
 
                 Datos.SetParametro("@CODIGO", Articulo.Codigo);
                 Datos.SetParametro("@NOMBRE", Articulo.Nombre);
@@ -138,6 +138,45 @@ namespace TPC_Negocio
                 Datos.SetParametro("@ID_TALLE", Articulo.Talle.Id);
                 Datos.SetParametro("@ID_CATEGORIA", Articulo.Categoria.Id);
                 Datos.SetParametro("@ID_MARCA", Articulo.Marca.Id);
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
+        public void Eliminar(int Id)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+
+            try
+            {
+                Datos.SetConsulta("DELETE FROM ARTICULOS WHERE ID = '" + Id + "'");
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+        public void Modificar(Articulo Articulo)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+
+            try
+            {
+                Datos.SetConsulta("UPDATE ARTICULOS SET CODIGO = '" + Articulo.Codigo + "', NOMBRE = '" + Articulo.Nombre + "', " + "DESCRIPCION = '" + Articulo.Descripcion + "', STOCK = '" + Articulo.Stock + "', PRECIO = '" + Articulo.Precio + "', ID_GENERO = '" + Articulo.Genero.Id + "', ID_CATEGORIA = '" + Articulo.Categoria.Id + "', ID_TALLE = '" + Articulo.Talle.Id + "', ID_MARCA = '" + Articulo.Marca.Id + "', IMG_URL = '" + Articulo.ImgUrl + "' " + " WHERE ID = '" + Articulo.Id + "'");
 
                 Datos.EjecutarAccion();
             }
