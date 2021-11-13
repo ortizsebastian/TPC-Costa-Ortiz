@@ -5,11 +5,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="input-group rounded" style="padding-top: 8rem; padding-left: 7rem; padding-right: 7rem;">
-      <input type="search" class="form-control rounded w-75 mx-0 shadow-lg border-1 border-dark" placeholder=" Buscar Artículo" aria-label="Search" aria-describedby="search-addon" />
-      <button id="search-button shadow-lg" type="button" class="btn btn-dark">
-        <i class="fas fa-search"></i>
-      </button>
+        <div class="input-group rounded" style="padding-top: 8rem; padding-left: 7rem; padding-right: 7rem;">
+
     </div>
 
     <div class="my-3 mx-5" style="padding-top: 5rem !important; padding-left: 0.7rem !important; padding-bottom: 1rem !important;">
