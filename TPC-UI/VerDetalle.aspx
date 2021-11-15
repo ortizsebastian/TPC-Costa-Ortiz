@@ -12,16 +12,16 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"><%:Articulo.Nombre %></h5>
-                    <p class="card-text"><%:Articulo.Descripcion %></p>
+                    <h3 class="card-title"><%:Articulo.Nombre %></h3>
+                    <p class="card-text" style="padding-top: 5rem !important;"><%:Articulo.Descripcion %></p>
                     <hr>
                     <p class="card-text"><small class="text-muted"><span>Precio: $<%:decimal.Round(Articulo.Precio) %></span><span class="px-5">Stock: <%:Articulo.Stock %></span><span>Talles disponibles: <%:Articulo.Talle.Medida %></span></small></p>
                     <hr>
                     <p class="card-text"><small class="text-muted"><span>Marca: <%:Articulo.Marca.Nombre %></span><span class="px-5">Categoría: <%:Articulo.Categoria.Nombre %></span><span>Genero: <%:Articulo.Genero.Nombre %></span></small></p>
                     <hr>               
 
-                    <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="d-flex align-items-center mx-auto " style="width: 10% !important; padding-top: 1.5rem !important; text-decoration: none; color: inherit;">
-                        <img src="/Img/add.png" class="btn shadow-lg border-1 border-dark" style="width: 70px;" />
+                    <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="d-flex align-items-center mx-auto " style="width: 10% !important; text-decoration: none; color: inherit;">
+                        <img src="/Img/add.png" class="btn shadow-lg border-secondary" style="width: 70px;" />
                     </a>
                 </div>
             </div>

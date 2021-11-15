@@ -23,12 +23,6 @@ namespace TPC_UI
                 ddlMarca.DataTextField = "Nombre";
                 ddlMarca.DataBind();
 
-                GeneroNegocio GeneroNegocio = new GeneroNegocio();
-                ddlGenero.DataSource = GeneroNegocio.Listar();
-                ddlGenero.DataValueField = "Id";
-                ddlGenero.DataTextField = "Nombre";
-                ddlGenero.DataBind();
-
                 TalleNegocio TalleNegocio = new TalleNegocio();
                 ddlTalle.DataSource = TalleNegocio.Listar();
                 ddlTalle.DataValueField = "Id";
@@ -40,6 +34,13 @@ namespace TPC_UI
                 ddlCategoria.DataValueField = "Id";
                 ddlCategoria.DataTextField = "Nombre";
                 ddlCategoria.DataBind();
+
+                GeneroNegocio Negocio = new GeneroNegocio();
+                ddlGenero.DataSource = Negocio.Listar();
+                ddlGenero.DataValueField = "Id";
+                ddlGenero.DataTextField = "Nombre";
+                ddlGenero.DataBind();
+
             }
             if (Request.QueryString["Modify"] != null)
             {
@@ -104,9 +105,12 @@ namespace TPC_UI
             {
                 Articulo.Id = Id;
                 Negocio.Modificar(Articulo);
-                Response.Redirect("Catalogo.aspx");
             }
-            Negocio.Agregar(Articulo);
+            else
+            {
+                Negocio.Agregar(Articulo);
+            }
+            Response.Redirect("Catalogo.aspx");
         }
     }
 }
