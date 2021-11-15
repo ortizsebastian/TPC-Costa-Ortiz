@@ -120,3 +120,12 @@ body.active .wrapper .section {
     border-radius: 50%;
     border: none;
 }
+
+
+.carousel-cell {
+    width: 100%;
+}
+
+.carousel-cell:before {
+        display: block;
+    }
