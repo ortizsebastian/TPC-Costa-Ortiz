@@ -34,7 +34,7 @@
                         </div>
 
               <input type="search" class="Search-bar" 
-                  placeholder=" Buscar Artículo" aria-label="Search" aria-describedby="search-addon" />
+                  placeholder="Buscar Artículo" aria-label="Search" aria-describedby="search-addon" />
                             
          <button class="Search-btn">
              <i class="fas fa-search icon"></i>

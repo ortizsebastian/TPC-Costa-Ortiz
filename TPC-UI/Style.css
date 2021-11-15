@@ -121,11 +121,27 @@ body.active .wrapper .section {
     border: none;
 }
 
-
 .carousel-cell {
     width: 100%;
 }
 
 .carousel-cell:before {
         display: block;
-    }
+}
+
+.Agregar-btn {
+    
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 30px 55px 10px;
+}
+
+.P-alta{
+    margin-top: auto;
+}
+
+.P-alta p{
+    font-weight: bold;
+}

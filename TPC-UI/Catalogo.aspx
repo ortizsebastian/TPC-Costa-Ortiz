@@ -5,28 +5,31 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <div class="input-group rounded">
+            <div class="input-group rounded">
 
     </div>
 
 
     <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
       <div class="carousel-cell">
-        <img class="w3-image" src="https://business-intelligence.grupobit.net/hs-fs/hubfs/Imagen_Blog_BIT_1600x478px_240119.jpg?width=1600&name=Imagen_Blog_BIT_1600x478px_240119.jpg">
+        <img class="w3-image" style="width: 100%" src="https://business-intelligence.grupobit.net/hs-fs/hubfs/Imagen_Blog_BIT_1600x478px_240119.jpg?width=1600&name=Imagen_Blog_BIT_1600x478px_240119.jpg">
       </div>
       <!-- <div class="carousel-cell">
-        <img class="w3-image" src="URL-IMAGEN!!">
+        <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">
       </div>
       <div class="carousel-cell">
-        <img class="w3-image" src="URL-IMAGEN!!">
+        <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">
       </div> -->
     </div> 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-    <div class="my-3 mx-5" style="padding-top: 5rem !important; padding-left: 0.7rem !important; padding-bottom: 1rem !important;">
-        <asp:ImageButton class="btn shadow-lg border-1 border-dark" style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
+    <div class="Agregar-btn">
+        <asp:ImageButton class="btn" style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
+        <div class="P-alta">
+        <p >Cargar producto</p>
+            </div>
     </div>
 
 
