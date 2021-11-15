@@ -1,20 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Admin-Componentes.aspx.cs" Inherits="TPC_UI.Admin_Componentes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style>
     .table-responsive {
@@ -134,7 +128,7 @@
     });
 </script>
 
-    <div class="mx-4" style="padding-bottom: 4rem !important; padding-top: 7rem !important;">
+        <div class="mx-4" style="padding-bottom: 4rem !important; padding-top: 7rem !important;">
         <div class="card w-75 shadow-lg border-1 border-dark">
             <div clss="card-body">
                 <div class="container">
@@ -161,7 +155,6 @@
                                         <th>Talle</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     <%foreach (var item in ListaMarca)
                                         { %>
@@ -170,13 +163,12 @@
                                             <td><%:ListaCategoria[1].Nombre %></td>
                                             <td><%:ListaTalle[1].Medida %></td>
                                             <td>
-                                                <a href="#" class="edit" title="" data-toggle="tooltip" data-original-title="Edit"><i class="material-icons"></i></a>
-                                                <a href="#" class="delete" title="" data-toggle="tooltip" data-original-title="Delete"><i class="material-icons"></i></a>
+                                                <a href="#" class="edit" title="" data-toggle="tooltip" data-original-title="Modificar"><i class="material-icons"></i></a>
+                                                <a href="#" class="delete" title="" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
                                             </td>
                                         </tr>
                                     <% } %>
                                 </tbody>
-
                             </table>
                         </div>
                     </div>
@@ -185,31 +177,30 @@
         </div>
     </div>
 
-
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content border-1 border-dark shadow-lg">
                 <form>
-                    <div class="modal-header">
-                        <h4 class="modal-title">Agregar Componente</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div class="modal-header border-0">
+                        <h4 class="modal-title">Agregar <b>Componentes</b></h4>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">X</button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
+                        <div class="form-group my-3">
                             <label>Categoría</label>
                             <input type="text" class="form-control" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group my-3">
                             <label>Talle</label>
                             <input type="email" class="form-control" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group my-3">
                             <label>Marca</label>
                             <input type="text" class="form-control" required>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                    <div class="modal-footer border-0">
+                        <input type="button" class="btn btn-dark" data-dismiss="modal" value="Cancelar">
                         <input type="submit" class="btn btn-success" value="Agregar">
                     </div>
                 </form>

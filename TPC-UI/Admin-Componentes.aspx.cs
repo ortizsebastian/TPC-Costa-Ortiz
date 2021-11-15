@@ -24,6 +24,15 @@ namespace TPC_UI
             ListaMarca = MarcaNegocio.Listar();
             ListaTalle = TalleNegocio.Listar();
             ListaCategoria = CategoriaNegocio.Listar();
+
+            //gvTalle.DataSource = TalleNegocio.Listar();
+            //gvTalle.DataBind();
+
+            //gvMarca.DataSource = MarcaNegocio.Listar();
+            //gvMarca.DataBind();
+
+            //gvCategoria.DataSource = CategoriaNegocio.Listar();
+            //gvCategoria.DataBind();
         }
         //protected void btnAgregar_Click(object sender, EventArgs e)
         //{

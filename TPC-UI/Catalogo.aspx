@@ -5,33 +5,34 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-            <div class="input-group rounded">
-
+    <div class="input-group rounded">
     </div>
 
-
     <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
-      <div class="carousel-cell">
-        <img class="w3-image" style="width: 100%" src="https://business-intelligence.grupobit.net/hs-fs/hubfs/Imagen_Blog_BIT_1600x478px_240119.jpg?width=1600&name=Imagen_Blog_BIT_1600x478px_240119.jpg">
-      </div>
-      <!-- <div class="carousel-cell">
+        <div class="carousel-cell">
+            <img class="w3-image" style="width: 100%" src="https://business-intelligence.grupobit.net/hs-fs/hubfs/Imagen_Blog_BIT_1600x478px_240119.jpg?width=1600&name=Imagen_Blog_BIT_1600x478px_240119.jpg">
+        </div>
+        <!-- <div class="carousel-cell">
         <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">
       </div>
       <div class="carousel-cell">
         <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">
       </div> -->
-    </div> 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-    <div class="Agregar-btn">
-        <asp:ImageButton class="btn" style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
-        <div class="P-alta">
-        <p >Cargar producto</p>
-            </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <div style="padding-top: 1rem !important;">
+        <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
+            <div class="Agregar-btn">
+                <asp:ImageButton class="btn" Style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
+                <div class="P-alta">
+                    <p>Cargar Artículo</p>
+                </div>
+            </div>
+        </a>
+    </div>
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mx-5">
 
@@ -78,7 +79,7 @@
     <div class="my-3" style="padding-top: 4rem !important;">
         <div class="card h-100 border-1 border-dark shadow-lg w-25 mx-auto">
             <div class="card-body">
-                <h5 class="my-auto text-center">¡Envíanos un mensaje!</h5>
+                <h5 class="my-auto text-center"><b>¡Envíanos un mensaje!</b></h5>
             </div>
         </div>
     </div>
