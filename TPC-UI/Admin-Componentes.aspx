@@ -129,8 +129,8 @@
 </script>
 
         <div class="mx-4" style="padding-bottom: 4rem !important; padding-top: 7rem !important;">
-        <div class="card w-75 shadow-lg border-1 border-dark">
-            <div clss="card-body">
+        <div style="border: 1px solid black; border-radius: 5px">
+            <div class="card-body">
                 <div class="container">
                     <div class="table-responsive">
                         <div class="table-wrapper">
