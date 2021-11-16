@@ -33,7 +33,6 @@
                                 <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
                                 <small class="text-muted">Stock: <%: Articulo.Stock %></small>
                             </div>
-
                         </div>
                     </div>
                 </div>

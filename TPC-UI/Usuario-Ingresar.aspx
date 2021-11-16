@@ -36,8 +36,8 @@
                             </div>
 
                             <hr>
-                            <p class="mb-0">¿Eres nuevo? <a href="Usuario-Registrar.aspx" style="text-decoration: none;">Crear cuenta</a></p>
-                            <p class="mb-0">¿Olvidaste tu contraseña? <a href="Usuario-Restablecer.aspx" style="text-decoration: none;">Recuperar contraseña</a></p>
+                            <p class="mb-0">¿Eres nuevo? <a href="Usuario-Registrar.aspx" style="text-decoration: none; color: blue;">Crear cuenta</a></p>
+                            <p class="mb-0">¿Olvidaste tu contraseña? <a href="Usuario-Restablecer.aspx" style="text-decoration: none; color: blue;">Recuperar contraseña</a></p>
 
                         </form>
                     </div>

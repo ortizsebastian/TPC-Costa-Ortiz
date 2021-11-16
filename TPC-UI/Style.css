@@ -1,7 +1,4 @@
-﻿.body-body {
-    
-}
-
+﻿
 * {
     list-style: none;
     text-decoration: none;
@@ -157,8 +154,8 @@ body.active .wrapper .section {
     display: flex;
     justify-content: center;
     float: right;
-    width: 220px;
-    height: 50px;
+    width: 225px;
+    height: 55px;
     text-decoration: none;
 
 }

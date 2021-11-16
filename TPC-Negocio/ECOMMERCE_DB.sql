@@ -176,7 +176,7 @@ VALUES (
 	,12
 	,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2020/12_21/0/93/213/6149508.jpg'
 	,2
-	,3
+	,12
 	,3
 	,5
 );
@@ -205,7 +205,7 @@ VALUES (
 	,'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw8abed4db/products/NI_315115-112/NI_315115-112-1.JPG'
 	,3
 	,10
-	,1
+	,3
 	,2
 );
 

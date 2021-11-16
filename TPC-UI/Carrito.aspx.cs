@@ -14,6 +14,7 @@ namespace TPC_UI
         public List<Articulo> Contenido { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Request.QueryString["Id"] != null)
             {
                 int Id = int.Parse(Request.QueryString["Id"]);
@@ -53,6 +54,7 @@ namespace TPC_UI
                 Session["Carrito"] = Contenido;
             }
             Contenido = (List<Articulo>)Session["Carrito"];
+            Session["Cantidad"] = (List<Articulo>)Session["Carrito"];
         }
     }
 }

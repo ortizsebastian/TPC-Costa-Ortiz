@@ -39,7 +39,7 @@
                             </div>
 
                             <hr>
-                            <p class="mb-0">¿Olvidaste tu contraseña? <a href="Usuario-Restablecer.aspx" style="text-decoration: none;">Recuperar contraseña</a></p>
+                            <p class="mb-0">¿Olvidaste tu contraseña? <a href="Usuario-Restablecer.aspx" style="text-decoration: none; color: blue;">Recuperar contraseña</a></p>
 
                         </form>
                     </div>
