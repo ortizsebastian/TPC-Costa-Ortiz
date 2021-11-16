@@ -14,10 +14,10 @@
         <div class="carousel-cell">
             <img class="w3-image" style="width: 100%" src="https://business-intelligence.grupobit.net/hs-fs/hubfs/Imagen_Blog_BIT_1600x478px_240119.jpg?width=1600&name=Imagen_Blog_BIT_1600x478px_240119.jpg">
         </div>
-        <!-- <div class="carousel-cell">
-        <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">
+         <div class="carousel-cell">
+        <img class="w3-image" style="width: 100%;" src="https://i.postimg.cc/fWtBZ3Fz/Envio-GTT.jpg">
       </div>
-      <div class="carousel-cell">
+      <!--<div class="carousel-cell">
         <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">
       </div> -->
     </div>
