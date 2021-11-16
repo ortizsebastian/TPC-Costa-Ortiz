@@ -51,7 +51,7 @@
                             <img src="/Img/delete.png" style="width: 25px;" />
                         </a>
                     </div>
-                    <a href="VerDetalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
+                    <a href="Catalogo-Detalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
                         <div class="card bg-transparent border-0">
                             <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
                             <div class="card-body">

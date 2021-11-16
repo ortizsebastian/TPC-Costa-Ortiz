@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="Admin-Componentes.aspx" />
     <Content Include="Admin-Articulos.aspx" />
+    <Content Include="Admin-Usuarios.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -163,7 +164,7 @@
     <Content Include="Usuario-Ingresar.aspx" />
     <Content Include="Usuario-Registrar.aspx" />
     <Content Include="Usuario-Restablecer.aspx" />
-    <Content Include="VerDetalle.aspx" />
+    <Content Include="Catalogo-Detalle.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Catalogo.aspx" />
     <Content Include="Web.config" />
@@ -184,6 +185,13 @@
     </Compile>
     <Compile Include="Admin-Articulos.aspx.designer.cs">
       <DependentUpon>Admin-Articulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-Usuarios.aspx.cs">
+      <DependentUpon>Admin-Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin-Usuarios.aspx.designer.cs">
+      <DependentUpon>Admin-Usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -226,12 +234,12 @@
     <Compile Include="Usuario-Restablecer.aspx.designer.cs">
       <DependentUpon>Usuario-Restablecer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VerDetalle.aspx.cs">
-      <DependentUpon>VerDetalle.aspx</DependentUpon>
+    <Compile Include="Catalogo-Detalle.aspx.cs">
+      <DependentUpon>Catalogo-Detalle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VerDetalle.aspx.designer.cs">
-      <DependentUpon>VerDetalle.aspx</DependentUpon>
+    <Compile Include="Catalogo-Detalle.aspx.designer.cs">
+      <DependentUpon>Catalogo-Detalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
