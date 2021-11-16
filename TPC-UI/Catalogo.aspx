@@ -4,10 +4,12 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+    <div class="body-body">
 
     <div class="input-group rounded">
     </div>
-
+    
     <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
         <div class="carousel-cell">
             <img class="w3-image" style="width: 100%" src="https://business-intelligence.grupobit.net/hs-fs/hubfs/Imagen_Blog_BIT_1600x478px_240119.jpg?width=1600&name=Imagen_Blog_BIT_1600x478px_240119.jpg">
@@ -40,7 +42,7 @@
            {
         %>
             <div class="col">
-                <div class="card border-1 border-dark shadow-lg">                   
+                <div class="card border-1 border-dark">                   
                     <div class="my-2">                   
                         <a href="Admin-Articulos.aspx?Modify=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-lg mx-2">
                             <img src="/Img/edit.png" style="width: 25px;" />
@@ -76,86 +78,14 @@
         %>
     </div>
 
-    <div class="my-3" style="padding-top: 4rem !important;">
-        <div class="card h-100 border-1 border-dark shadow-lg w-25 mx-auto">
-            <div class="card-body">
-                <h5 class="my-auto text-center"><b>¡Envíanos un mensaje!</b></h5>
-            </div>
-        </div>
-    </div>
+        <!-- Cartel de  pagos/Envios/Seguridad  (referencia wpp) -->
 
-    <div class="card w-75 shadow-lg mx-auto border-1 border-dark">
-        <div class="card-body">
-            <div class="container py-4">
+</div>
 
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-
-                    <div class="mb-3">
-                        <label class="form-label" for="name">Nombre</label>
-                        <input class="form-control" id="name" type="text" placeholder="Nombre" data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="name:required">El nombre es requerido.</div>
-                    </div>
-               
-                    <div class="mb-3">
-                        <label class="form-label" for="emailAddress">Email</label>
-                        <input class="form-control" id="emailAddress" type="email" placeholder="Email" data-sb-validations="required, email" />
-                        <div class="invalid-feedback" data-sb-feedback="emailAddress:required">El Email es requerido.</div>
-                        <div class="invalid-feedback" data-sb-feedback="emailAddress:email">El Email es invalido.</div>
-                    </div>
-            
-                    <div class="mb-3">
-                        <label class="form-label" for="message">Mensaje</label>
-                        <textarea class="form-control" id="message" type="text" placeholder="Mensaje" style="height: 10rem;" data-sb-validations="required"></textarea>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">El mensaje es requerido.</div>
-                    </div>
-
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3">Mensaje enviado correctamente.</div>
-                    </div>
-
-                    <div class="d-none" id="submitErrorMessage">
-                        <div class="text-center text-danger mb-3">Error enviando mensaje.</div>
-                    </div>
-
-                    <div class="d-grid">
-                        <button class="btn btn-dark mx-auto shadow-lg border-1 border-white" id="submitButton" type="submit" style="width:26% !important; border-radius: 40px;">Enviar</button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
 
 <footer class="text-center text-lg-start text-muted" style="background-color: transparent !important; padding-top: 8rem !important;">
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-1 border-dark">
-
-    <div class="me-5 d-none d-lg-block">
-      <span><i>Contáctanos en nuestras Redes Sociales:</i></span>
-    </div>
-
-    <div>
-      <a href="#" class="me-4 text-reset" style="text-decoration:none !important;">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="#" class="me-4 text-reset" style="text-decoration:none !important;">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#" class="me-4 text-reset" style="text-decoration:none !important;">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="#" class="me-4 text-reset" style="text-decoration:none !important;">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="#" class="me-4 text-reset" style="text-decoration:none !important;">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="#" class="me-4 text-reset" style="text-decoration:none !important;">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </section>
     
-  <section>
+  <section style="border-top: 1px solid black">
     <div class="container text-center text-md-start mt-5">
       <div class="row mt-3">
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">

@@ -42,7 +42,7 @@
 
                         <div class="Carrito">
                             <li class="nav-item">
-                                <a href="Carrito.aspx" class="nav-link navbar-link-2 waves-effect" style="color: #ffffff">
+                                <a href="Carrito.aspx" class="nav-link navbar-link-2 waves-effect" style="color: #ffffff;">
                                     <span class="badge badge-pill red" style="color: #ffffff">0</span>
                                     <i class="fas fa-shopping-cart pl-0" style="color: #ffffff"></i></a>
                             </li>
@@ -57,13 +57,16 @@
 
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="Admin-Componentes.aspx" style="text-decoration: none !important;">Componentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="Catalogo.aspx" style="text-decoration: none !important;">Catálogo</a>
+                            <a href="Catalogo.aspx" style="text-decoration: none !important;">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a href="Usuario-Ingresar.aspx" style="text-decoration: none !important;">Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Admin-Componentes.aspx" style="text-decoration: none !important;">Componentes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Contacto.aspx" style="text-decoration: none !important;">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" style="text-decoration: none !important;">Salir</a>
