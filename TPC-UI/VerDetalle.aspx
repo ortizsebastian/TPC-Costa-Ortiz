@@ -4,7 +4,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="padding-top: 10rem !important; padding-left: 5rem !important; padding-bottom: 7rem !important;">
+    <div style="padding-top: 6rem; padding-bottom: 6rem; display: flex; justify-content: center;">
     <div class="card mb-3 shadow-lg border-1 border-dark" style="min-width: 1240px; max-width: 1240px;">
         <div class="row g-0">
             <div class="col-md-4">
@@ -20,9 +20,12 @@
                     <p class="card-text"><small class="text-muted"><span>Marca: <%:Articulo.Marca.Nombre %></span><span class="px-5">Categoría: <%:Articulo.Categoria.Nombre %></span><span>Genero: <%:Articulo.Genero.Nombre %></span></small></p>
                     <hr>               
 
-                    <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="d-flex align-items-center mx-auto " style="width: 10% !important; text-decoration: none; color: inherit;">
-                        <img src="/Img/add.png" class="btn shadow-lg border-secondary" style="width: 70px;" />
+
+                    <a href="Carrito.aspx?Id=<%: Articulo.Id %>"  class="btn-agregarAlCarro">
+                        <img src="/Img/add.png" class="img-btn"/>
+                        <p class="p-Ag-carrito">Agregar al carrito</p>
                     </a>
+
                 </div>
             </div>
         </div>
