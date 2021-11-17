@@ -127,7 +127,7 @@ body.active .wrapper .section {
 }
 
 .carousel-cell:before {
-        display: block;
+    display: block;
 }
 
 .Agregar-btn {
@@ -171,3 +171,6 @@ body.active .wrapper .section {
     font-weight: bold;
     color: black;
 }
+
+
+

@@ -4,30 +4,34 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <div class="body-body">
 
-    <div class="input-group rounded">
-    </div>
-    
-    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
-        <div class="carousel-cell">
-            <img class="w3-image" style="width: 100%" src="https://business-intelligence.grupobit.net/hs-fs/hubfs/Imagen_Blog_BIT_1600x478px_240119.jpg?width=1600&name=Imagen_Blog_BIT_1600x478px_240119.jpg">
+<div class="body-body">
+
+        <div class="input-group rounded"></div>
+
+        <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
+
+            <div class="carousel-cell">
+                <img class="w3-image" style="width: 100%" src="https://business-intelligence.grupobit.net/hs-fs/hubfs/Imagen_Blog_BIT_1600x478px_240119.jpg?width=1600&name=Imagen_Blog_BIT_1600x478px_240119.jpg">
+            </div>
+
+            <div class="carousel-cell">
+                <img class="w3-image" style="width: 100%;" src="https://i.postimg.cc/fWtBZ3Fz/Envio-GTT.jpg">
+            </div>
+
+<%--            <div class="carousel-cell">
+                <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">
+            </div>--%>
+
         </div>
-         <div class="carousel-cell">
-        <img class="w3-image" style="width: 100%;" src="https://i.postimg.cc/fWtBZ3Fz/Envio-GTT.jpg">
-      </div>
-      <!--<div class="carousel-cell">
-        <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">
-      </div> -->
-    </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     <div style="padding-top: 1rem !important;">
         <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
-            <div class="Agregar-btn">
+            <div class="Agregar-btn shadow-lg">
                 <asp:ImageButton class="btn" Style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
                 <div class="P-alta">
                     <p>Cargar Artículo</p>

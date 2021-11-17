@@ -131,6 +131,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Img\edit.png" />
     <Content Include="Img\modify.png" />
+    <Content Include="Img\vans.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -162,6 +163,7 @@
     <Content Include="Style.css" />
     <Content Include="Img\upload.png" />
     <Content Include="Usuario-Ingresar.aspx" />
+    <Content Include="Usuario-Perfil.aspx" />
     <Content Include="Usuario-Registrar.aspx" />
     <Content Include="Usuario-Restablecer.aspx" />
     <Content Include="Catalogo-Detalle.aspx" />
@@ -219,6 +221,13 @@
     </Compile>
     <Compile Include="Usuario-Ingresar.aspx.designer.cs">
       <DependentUpon>Usuario-Ingresar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario-Perfil.aspx.cs">
+      <DependentUpon>Usuario-Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario-Perfil.aspx.designer.cs">
+      <DependentUpon>Usuario-Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario-Registrar.aspx.cs">
       <DependentUpon>Usuario-Registrar.aspx</DependentUpon>
