@@ -147,29 +147,44 @@
                                     </div>
                                 </div>
                             </div>
-                            <table class="table table-striped table-hover table-bordered">
-                                <thead>                        
-                                    <tr>
-                                        <th>Marca</th>
-                                        <th>Categoría</th>
-                                        <th>Talle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <%foreach (var item in ListaMarca)
-                                        { %>
-                                        <tr>
-                                            <td><%:item.Nombre %></td>
-                                            <td><%:ListaCategoria[1].Nombre %></td>
-                                            <td><%:ListaTalle[1].Medida %></td>
-                                            <td>
-                                                <a href="#" class="edit" title="" data-toggle="tooltip" data-original-title="Modificar"><i class="material-icons"></i></a>
-                                                <a href="#" class="delete" title="" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
-                                            </td>
-                                        </tr>
-                                    <% } %>
-                                </tbody>
-                            </table>
+                            
+                                <asp:GridView ID="gvMarca" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover table-bordered"> 
+                                    <Columns>
+                                        <asp:BoundField HeaderText="Marca" DataField="Nombre" />
+                                    </Columns>
+                                    <Columns>
+                                        <asp:ButtonField Text="Eliminar" ControlStyle-CssClass="btn btn-danger"/>
+                                    </Columns>
+                                    <Columns>
+                                        <asp:ButtonField Text="Modificar" ControlStyle-CssClass="btn btn-success"/>
+                                    </Columns>
+                                </asp:GridView>
+
+                                <asp:GridView ID="gvTalle" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover table-bordered">
+                                    <Columns>
+                                        <asp:BoundField HeaderText="Talle" DataField="Medida" />
+                                    </Columns>
+                                    <Columns>
+                                        <asp:ButtonField Text="Eliminar" ControlStyle-CssClass="btn btn-danger"/>
+                                    </Columns>
+                                    <Columns>
+                                        <asp:ButtonField Text="Modificar" ControlStyle-CssClass="btn btn-success"/>
+                                    </Columns>
+                                </asp:GridView>
+
+                                <asp:GridView ID="gvCategoria" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover table-bordered">
+                                    <Columns>
+                                        <asp:BoundField HeaderText="Categoría" DataField="Nombre" />
+                                    </Columns>
+                                    <Columns>
+                                        <asp:ButtonField Text="Eliminar" ControlStyle-CssClass="btn btn-danger"/>
+                                    </Columns>
+                                    <Columns>
+                                        <asp:ButtonField Text="Modificar" ControlStyle-CssClass="btn btn-success"/>
+                                    </Columns>
+                                </asp:GridView>
+
+                            
                         </div>
                     </div>
                 </div>
@@ -188,20 +203,20 @@
                     <div class="modal-body">
                         <div class="form-group my-3">
                             <label>Categoría</label>
-                            <input type="text" class="form-control" required>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtCategoria"/>
                         </div>
                         <div class="form-group my-3">
                             <label>Talle</label>
-                            <input type="email" class="form-control" required>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtTalle"/>
                         </div>
                         <div class="form-group my-3">
                             <label>Marca</label>
-                            <input type="text" class="form-control" required>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtMarca"/>
                         </div>
                     </div>
                     <div class="modal-footer border-0">
                         <input type="button" class="btn btn-dark" data-dismiss="modal" value="Cancelar">
-                        <input type="submit" class="btn btn-success" value="Agregar">
+                        <asp:Button Text="Agregar" CssClass="btn btn-success" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click"  />
                     </div>
                 </form>
             </div>

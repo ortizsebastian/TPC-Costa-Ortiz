@@ -8,7 +8,7 @@
     <div class="card card-body"></div>
 
     <% if (Contenido != null)
-        {
+       {
     %>
         <div class="row row-cols-1 row-cols-md-3 g-4 mx-5" style="padding-top: 5rem !important; padding-bottom: 5rem !important;">
 
@@ -42,6 +42,10 @@
         %>
         </div>
 
-    <%} %>
+     <%}
+       else
+       {
+             Response.Redirect("Catalogo.aspx");
+       }%>
 
 </asp:Content>
