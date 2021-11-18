@@ -17,6 +17,19 @@ namespace TPC_UI
             int Id = Convert.ToInt32(Request.QueryString["Id"]);
             ArticuloNegocio Datos = new ArticuloNegocio();
             Articulo = Datos.Buscar(Id);
+
+            if(Articulo.Marca.Estado == false)
+            {
+                Articulo.Marca.Nombre = "Desconocido";
+            }
+            else if (Articulo.Categoria.Estado == false)
+            {
+                Articulo.Categoria.Nombre = "Desconocida";
+            }
+            else if (Articulo.Talle.Estado == false)
+            {
+                Articulo.Talle.Medida = "Desconocido";
+            }
         }
     }
 }

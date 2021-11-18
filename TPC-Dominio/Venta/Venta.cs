@@ -9,10 +9,10 @@ namespace TPC_Dominio
     public class Venta
     {
         public int Id { get; set; }
-        public int IdCliente { get; set; }
-        public int IdCarrito { get; set; }
-        public int IdEnvio { get; set; }
-        public int IdPago { get; set; }
+        public Cliente Cliente { get; set; }
+        public Carrito Carrito { get; set; }
+        public Envio Envio { get; set; }
+        public string Pago { get; set; } //Se elimino la clase Pago.
         public bool Estado { get; set; }
     }
 }

@@ -35,12 +35,6 @@ namespace TPC_UI
                 ddlCategoria.DataTextField = "Nombre";
                 ddlCategoria.DataBind();
 
-                GeneroNegocio Negocio = new GeneroNegocio();
-                ddlGenero.DataSource = Negocio.Listar();
-                ddlGenero.DataValueField = "Id";
-                ddlGenero.DataTextField = "Nombre";
-                ddlGenero.DataBind();
-
             }
             if (Request.QueryString["Modify"] != null)
             {
@@ -59,9 +53,6 @@ namespace TPC_UI
                 txtPrecio.Text = (decimal.Round(Articulo.Precio)).ToString();
                 txtStock.Text = Articulo.Stock.ToString();
                 txtImg.Text = Articulo.ImgUrl;
-
-                ddlGenero.SelectedItem.Value = Articulo.Genero.Id.ToString();
-                ddlGenero.SelectedItem.Text = Articulo.Genero.Nombre;
 
                 ddlMarca.SelectedItem.Value = Articulo.Marca.Id.ToString();
                 ddlMarca.SelectedItem.Text = Articulo.Marca.Nombre;
@@ -82,10 +73,6 @@ namespace TPC_UI
             Articulo.Precio = decimal.Parse(txtPrecio.Text);
             Articulo.Stock = Convert.ToInt32(txtStock.Text);
             Articulo.ImgUrl = txtImg.Text;
-
-            Articulo.Genero = new Genero();
-            Articulo.Genero.Id = int.Parse(ddlGenero.SelectedItem.Value);
-            Articulo.Genero.Nombre = ddlGenero.SelectedItem.Text;
 
             Articulo.Marca = new Marca();
             Articulo.Marca.Id = int.Parse(ddlMarca.SelectedItem.Value);

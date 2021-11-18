@@ -17,7 +17,7 @@
                         <hr>
                         <p class="card-text"><small class="text-muted"><span>Precio: $<%:decimal.Round(Articulo.Precio) %></span><span class="px-5">Stock: <%:Articulo.Stock %></span><span>Talles disponibles: <%:Articulo.Talle.Medida %></span></small></p>
                         <hr>
-                        <p class="card-text"><small class="text-muted"><span>Marca: <%:Articulo.Marca.Nombre %></span><span class="px-5">Categoría: <%:Articulo.Categoria.Nombre %></span><span>Genero: <%:Articulo.Genero.Nombre %></span></small></p>
+                        <p class="card-text"><small class="text-muted"><span>Marca: <%:Articulo.Marca.Nombre %></span><span class="px-5">Categoría: <%:Articulo.Categoria.Nombre %></span></small></p>
                         <hr>
 
                         <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="btn-agregarAlCarro my-4 shadow-lg">

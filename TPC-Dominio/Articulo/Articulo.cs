@@ -15,7 +15,6 @@ namespace TPC_Dominio
         public decimal Precio { get; set; }
         public int Stock { get; set; }
         public string ImgUrl { get; set; }
-        public Genero Genero { get; set; }
         public Talle Talle { get; set; }
         public Categoria Categoria { get; set; }
         public Marca Marca { get; set; }

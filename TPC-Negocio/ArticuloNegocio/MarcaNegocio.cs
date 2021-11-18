@@ -17,14 +17,15 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("SELECT ID, NOMBRE FROM MARCAS");
+                Datos.SetConsulta("SELECT ID, NOMBRE, ESTADO FROM MARCAS");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
                 {
                     Marca Objeto = new Marca();
                     Objeto.Id = (int)(Datos.Lector["ID"]);
-                    Objeto.Nombre = (string)Datos.Lector["NOMBRE"];    
+                    Objeto.Nombre = (string)Datos.Lector["NOMBRE"];
+                    Objeto.Estado = (bool)Datos.Lector["ESTADO"];
                     Lista.Add(Objeto);
                 }
                 return Lista;
@@ -38,7 +39,25 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
+        public void BajaLogica(int Id)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
 
+            try
+            {
+                Datos.SetConsulta("UPDATE MARCAS SET ESTADO = '" + 0 + "'" + " WHERE ID = '" + Id + "'");
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
 
         public void Agregar(Marca Marca)
         {

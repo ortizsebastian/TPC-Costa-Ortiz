@@ -17,6 +17,25 @@ namespace TPC_UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Request.QueryString["IdRemoveC"] != null)
+            {
+                int Id = int.Parse(Request.QueryString["IdRemoveC"]);
+                CategoriaNegocio Negocio = new CategoriaNegocio();
+                Negocio.BajaLogica(Id);
+            }
+            else if(Request.QueryString["IdRemoveM"] != null)
+            {
+                int Id = int.Parse(Request.QueryString["IdRemoveM"]);
+                MarcaNegocio Negocio = new MarcaNegocio();
+                Negocio.BajaLogica(Id);
+            }
+            else if(Request.QueryString["IdRemoveT"] != null)
+            {
+                int Id = int.Parse(Request.QueryString["IdRemoveT"]);
+                TalleNegocio Negocio = new TalleNegocio();
+                Negocio.BajaLogica(Id);
+            }
+
             MarcaNegocio MarcaNegocio = new MarcaNegocio();
             TalleNegocio TalleNegocio = new TalleNegocio();
             CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
@@ -25,14 +44,6 @@ namespace TPC_UI
             ListaTalle = TalleNegocio.Listar();
             ListaCategoria = CategoriaNegocio.Listar();
 
-            gvTalle.DataSource = TalleNegocio.Listar();
-            gvTalle.DataBind();
-
-            gvMarca.DataSource = MarcaNegocio.Listar();
-            gvMarca.DataBind();
-
-            gvCategoria.DataSource = CategoriaNegocio.Listar();
-            gvCategoria.DataBind();
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)

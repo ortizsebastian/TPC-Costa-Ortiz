@@ -42,10 +42,6 @@
                     <div class="col mx-3">
 
                             <div class="mb-3">
-                                <label for="disabledSelect">Genero</label>
-                                <asp:DropDownList ID="ddlGenero" runat="server" CssClass="form-select"></asp:DropDownList>
-                            </div>
-                            <div class="mb-3">
                                 <label for="disabledSelect">Categoría</label>
                                 <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-select"></asp:DropDownList>
                             </div>                      

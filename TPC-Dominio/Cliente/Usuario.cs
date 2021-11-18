@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPC_Dominio
 {
-    public class Usuario
+    public class Usuario : Persona
     {
         public int Id { get; set; }
         public string Username { get; set; }

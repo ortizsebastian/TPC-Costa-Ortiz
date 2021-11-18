@@ -17,7 +17,7 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("SELECT ID, NOMBRE FROM CATEGORIAS");
+                Datos.SetConsulta("SELECT ID, NOMBRE, ESTADO FROM CATEGORIAS");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
@@ -25,6 +25,7 @@ namespace TPC_Negocio
                     Categoria Objeto = new Categoria();
                     Objeto.Id = (int)(Datos.Lector["ID"]);
                     Objeto.Nombre = (string)Datos.Lector["NOMBRE"];
+                    Objeto.Estado = (bool)Datos.Lector["ESTADO"];
                     Lista.Add(Objeto);
                 }
                 return Lista;
@@ -57,6 +58,27 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
+
+        public void BajaLogica(int Id)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+
+            try
+            {
+                Datos.SetConsulta("UPDATE CATEGORIAS SET ESTADO = '" + 0 + "'" + " WHERE ID = '" + Id + "'");
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
         public int BuscarPorString(string Nombre)
         {
             AccesoDatabase Datos = new AccesoDatabase();

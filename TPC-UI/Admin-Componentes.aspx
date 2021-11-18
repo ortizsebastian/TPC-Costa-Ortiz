@@ -148,43 +148,66 @@
                                 </div>
                             </div>
                             
-                                <asp:GridView ID="gvMarca" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover table-bordered"> 
-                                    <Columns>
-                                        <asp:BoundField HeaderText="Marca" DataField="Nombre" />
-                                    </Columns>
-                                    <Columns>
-                                        <asp:ButtonField Text="Eliminar" ControlStyle-CssClass="btn btn-danger"/>
-                                    </Columns>
-                                    <Columns>
-                                        <asp:ButtonField Text="Modificar" ControlStyle-CssClass="btn btn-success"/>
-                                    </Columns>
-                                </asp:GridView>
-
-                                <asp:GridView ID="gvTalle" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover table-bordered">
-                                    <Columns>
-                                        <asp:BoundField HeaderText="Talle" DataField="Medida" />
-                                    </Columns>
-                                    <Columns>
-                                        <asp:ButtonField Text="Eliminar" ControlStyle-CssClass="btn btn-danger"/>
-                                    </Columns>
-                                    <Columns>
-                                        <asp:ButtonField Text="Modificar" ControlStyle-CssClass="btn btn-success"/>
-                                    </Columns>
-                                </asp:GridView>
-
-                                <asp:GridView ID="gvCategoria" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover table-bordered">
-                                    <Columns>
-                                        <asp:BoundField HeaderText="Categoría" DataField="Nombre" />
-                                    </Columns>
-                                    <Columns>
-                                        <asp:ButtonField Text="Eliminar" ControlStyle-CssClass="btn btn-danger"/>
-                                    </Columns>
-                                    <Columns>
-                                        <asp:ButtonField Text="Modificar" ControlStyle-CssClass="btn btn-success"/>
-                                    </Columns>
-                                </asp:GridView>
-
+                             <table class="table table-striped table-hover table-bordered w-25">
+                                <thead>                        
+                                    <tr>
+                                        <th>Marca</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%foreach (var item in ListaMarca)
+                                        { %>
+                                        <tr>
+                                            <td style="width: 130px;"><%:item.Nombre %></td>
+                                            <td>
+                                                <a href="#" class="edit" data-toggle="tooltip" data-original-title="Modificar"><i class="material-icons"></i></a>
+                                                <a href="Admin-Componentes.aspx?IdRemoveM=<%:item.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>                                       
                             
+                             <table class="table table-striped table-hover table-bordered w-25">
+                                <thead>                        
+                                    <tr>
+                                        <th>Categoría</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%foreach (var item in ListaCategoria)
+                                        { %>
+                                        <tr>
+                                            <td style="width: 130px;"><%:item.Nombre %></td>
+                                            <td>
+                                                <a href="#" class="edit" data-toggle="tooltip" data-original-title="Modificar"><i class="material-icons"></i></a>
+                                                <a href="Admin-Componentes.aspx?IdRemoveC=<%:item.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+
+                             <table class="table table-striped table-hover table-bordered w-25">
+                                <thead>                        
+                                    <tr>
+                                        <th>Talle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%foreach (var item in ListaTalle)
+                                        { %>
+                                        <tr>
+                                            <td style="width: 130px;"><%:item.Medida %></td>
+                                            <td>
+                                                <a href="#" class="edit" data-toggle="tooltip" data-original-title="Modificar"><i class="material-icons"></i></a>
+                                                <a href="Admin-Componentes.aspx?IdRemoveT=<%:item.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>

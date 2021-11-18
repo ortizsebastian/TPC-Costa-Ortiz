@@ -17,7 +17,7 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("SELECT ID, MEDIDA FROM TALLES");
+                Datos.SetConsulta("SELECT ID, MEDIDA, ESTADO FROM TALLES");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
@@ -25,6 +25,7 @@ namespace TPC_Negocio
                     Talle Objeto = new Talle();
                     Objeto.Id = (int)(Datos.Lector["ID"]);
                     Objeto.Medida = (string)Datos.Lector["MEDIDA"];
+                    Objeto.Estado = (bool)Datos.Lector["ESTADO"];
                     Lista.Add(Objeto);
                 }
                 return Lista;
@@ -38,6 +39,27 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
+
+        public void BajaLogica(int Id)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+
+            try
+            {
+                Datos.SetConsulta("UPDATE TALLES SET ESTADO = '" + 0 + "'" + " WHERE ID = '" + Id + "'");
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
         public void Agregar(Talle Talle)
         {
             AccesoDatabase Datos = new AccesoDatabase();
