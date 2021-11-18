@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TPC_Database;
 using TPC_Dominio;
 
-namespace TPC_Negocio.ClienteNegocio
+namespace TPC_Negocio
 {
     public class UsuarioNegocio
     {
@@ -17,7 +17,7 @@ namespace TPC_Negocio.ClienteNegocio
 
             try
             {
-                Datos.SetConsulta("SELECT U.ID, U.USERNAME, U.PASSWORD, U.EMAIL, T.TIPO AS TIPO FROM USUARIOS AS U JOIN USUARIOS_TIPOS AS T ON U.ID_TIPO = T.ID");
+                Datos.SetConsulta("SELECT ID, USERNAME, PASSWORD, EMAIL FROM USUARIOS");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
@@ -28,7 +28,6 @@ namespace TPC_Negocio.ClienteNegocio
                     Objeto.Username = (string)Datos.Lector["USERNAME"];
                     Objeto.Password = (string)Datos.Lector["PASSWORD"];
                     Objeto.Email = (string)Datos.Lector["EMAIL"];
-                    Objeto.Tipo = (string)Datos.Lector["TIPO"];
             
                     Lista.Add(Objeto);
                 }
@@ -45,36 +44,29 @@ namespace TPC_Negocio.ClienteNegocio
             }
         }
 
-        //public void Agregar(Articulo Articulo)
-        //{
-        //    AccesoDatabase Datos = new AccesoDatabase();
+        public void Agregar(Usuario Usuario)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+            try
+            {
+                Datos.SetConsulta("INSERT INTO USUARIOS (USERNAME, PASSWORD, EMAIL) VALUES (@USERNAME, @PASSWORD, @EMAIL)");
 
-        //    try
-        //    {
-        //        Datos.SetConsulta("INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_GENERO, ID_TALLE, ID_CATEGORIA, ID_MARCA) VALUES (@CODIGO, @NOMBRE, @DESCRIPCION, @PRECIO, @STOCK, @IMG, @ID_GENERO, @ID_TALLE, @ID_CATEGORIA, @ID_MARCA)");
+                Datos.SetParametro("@USERNAME", Usuario.Username);
+                Datos.SetParametro("@PASSWORD", Usuario.Password);
+                Datos.SetParametro("@EMAIL", Usuario.Email);
 
-        //        Datos.SetParametro("@CODIGO", Articulo.Codigo);
-        //        Datos.SetParametro("@NOMBRE", Articulo.Nombre);
-        //        Datos.SetParametro("@DESCRIPCION", Articulo.Descripcion);
-        //        Datos.SetParametro("@PRECIO", Articulo.Precio);
-        //        Datos.SetParametro("@STOCK", Articulo.Stock);
-        //        Datos.SetParametro("@IMG", Articulo.ImgUrl);
-        //        Datos.SetParametro("@ID_GENERO", Articulo.Genero.Id);
-        //        Datos.SetParametro("@ID_TALLE", Articulo.Talle.Id);
-        //        Datos.SetParametro("@ID_CATEGORIA", Articulo.Categoria.Id);
-        //        Datos.SetParametro("@ID_MARCA", Articulo.Marca.Id);
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
 
-        //        Datos.EjecutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        Datos.CerrarConexion();
-        //    }
-        //}
         //public void Eliminar(int Id)
         //{
         //    AccesoDatabase Datos = new AccesoDatabase();

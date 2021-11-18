@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TPC_Dominio;
+using TPC_Negocio;
 
 namespace TPC_UI
 {
@@ -12,6 +14,17 @@ namespace TPC_UI
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+        protected void btnCrear_Click(object sender, EventArgs e)
+        {
+            Usuario Usuario = new Usuario();
+            Usuario.Username = txtUsername.Text;
+            Usuario.Password = txtPassword.Text;
+            Usuario.Email = txtEmail.Text;
+
+            UsuarioNegocio Negocio = new UsuarioNegocio();
+            Negocio.Agregar(Usuario);
+            Response.Redirect("Usuario-Ingresar.aspx");
         }
     }
 }
