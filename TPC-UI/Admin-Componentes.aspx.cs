@@ -11,38 +11,28 @@ namespace TPC_UI
 {
     public partial class Admin_Componentes : System.Web.UI.Page
     {
-        public List<Marca> ListaMarca { get; set; }
-        public List<Categoria> ListaCategoria { get; set; }
-        public List<Talle> ListaTalle { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["IdRemoveC"] != null)
+            if(!IsPostBack)
             {
-                int Id = int.Parse(Request.QueryString["IdRemoveC"]);
-                CategoriaNegocio Negocio = new CategoriaNegocio();
-                Negocio.BajaLogica(Id);
-            }
-            else if(Request.QueryString["IdRemoveM"] != null)
-            {
-                int Id = int.Parse(Request.QueryString["IdRemoveM"]);
-                MarcaNegocio Negocio = new MarcaNegocio();
-                Negocio.BajaLogica(Id);
-            }
-            else if(Request.QueryString["IdRemoveT"] != null)
-            {
-                int Id = int.Parse(Request.QueryString["IdRemoveT"]);
-                TalleNegocio Negocio = new TalleNegocio();
-                Negocio.BajaLogica(Id);
-            }
-          
-            MarcaNegocio MarcaNegocio = new MarcaNegocio();
-            TalleNegocio TalleNegocio = new TalleNegocio();
-            CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
+                MarcaNegocio MarcaNegocio = new MarcaNegocio();
+                ddlMarca.DataSource = MarcaNegocio.Listar().FindAll(x => x.Estado == true);
+                ddlMarca.DataTextField = "Nombre";
+                ddlMarca.DataValueField = "Id";
+                ddlMarca.DataBind();
 
-            ListaMarca = MarcaNegocio.Listar().FindAll(x => x.Estado == true);
-            ListaTalle = TalleNegocio.Listar().FindAll(x => x.Estado == true);
-            ListaCategoria = CategoriaNegocio.Listar().FindAll(x => x.Estado == true);
+                TalleNegocio TalleNegocio = new TalleNegocio();
+                ddlTalle.DataSource = TalleNegocio.Listar().FindAll(x => x.Estado == true);
+                ddlTalle.DataTextField = "Medida";
+                ddlTalle.DataValueField = "Id";
+                ddlTalle.DataBind();
+
+                CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
+                ddlCategoria.DataSource = CategoriaNegocio.Listar().FindAll(x => x.Estado == true);
+                ddlCategoria.DataTextField = "Nombre";
+                ddlCategoria.DataValueField = "Id";
+                ddlCategoria.DataBind();
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -72,6 +62,31 @@ namespace TPC_UI
                 CategoriaNegocio Negocio = new CategoriaNegocio();
                 Negocio.Agregar(Categoria);
                 txtCategoria.Text = "";
+            }
+            Response.Redirect("Admin-Componentes.aspx");
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(ddlMarca.SelectedItem.Value) != -1)
+            {
+                MarcaNegocio Negocio = new MarcaNegocio();
+                int Id = int.Parse(ddlMarca.SelectedItem.Value);
+                Negocio.BajaLogica(Id);
+            }
+
+            if (int.Parse(ddlTalle.SelectedItem.Value) != -1)
+            {
+                TalleNegocio Negocio = new TalleNegocio();
+                int Id = int.Parse(ddlTalle.SelectedItem.Value);
+                Negocio.BajaLogica(Id);
+            }
+
+            if (int.Parse(ddlCategoria.SelectedItem.Value) != -1)
+            {
+                CategoriaNegocio Negocio = new CategoriaNegocio();
+                int Id = int.Parse(ddlCategoria.SelectedItem.Value);
+                Negocio.BajaLogica(Id);
             }
             Response.Redirect("Admin-Componentes.aspx");
         }

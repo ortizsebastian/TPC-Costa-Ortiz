@@ -17,7 +17,6 @@ namespace TPC_UI
         {
             if (!IsPostBack)
             {
-
                 CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
                 ddlCategoria.DataSource = CategoriaNegocio.Listar().FindAll(x => x.Estado == true);
                 ddlCategoria.DataValueField = "Id";
@@ -35,8 +34,6 @@ namespace TPC_UI
                 ddlTalle.DataValueField = "Id";
                 ddlTalle.DataTextField = "Medida";
                 ddlTalle.DataBind();
-
-
             }
             if (Request.QueryString["Modify"] != null)
             {
@@ -61,17 +58,29 @@ namespace TPC_UI
                     ddlMarca.SelectedItem.Value = Articulo.Marca.Id.ToString();
                     ddlMarca.SelectedItem.Text = Articulo.Marca.Nombre;
                 }
+                else
+                {
+                    ddlMarca.Items.Insert(0, new ListItem("Seleccionar", "NA"));
+                }
 
                 if(Articulo.Talle.Estado)
                 {
                     ddlTalle.SelectedItem.Value = Articulo.Talle.Id.ToString();
                     ddlTalle.SelectedItem.Text = Articulo.Talle.Medida;
                 }
+                else
+                {
+                    ddlTalle.Items.Insert(0, new ListItem("Seleccionar", "NA"));
+                }
 
-                if(Articulo.Categoria.Estado)
+                if (Articulo.Categoria.Estado)
                 {
                     ddlCategoria.SelectedItem.Value = Articulo.Categoria.Id.ToString();
                     ddlCategoria.SelectedItem.Text = Articulo.Categoria.Nombre;
+                }
+                else
+                {
+                    ddlCategoria.Items.Insert(0, new ListItem("Seleccionar", "NA"));
                 }
             }
         }

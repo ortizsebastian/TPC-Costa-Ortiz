@@ -142,68 +142,55 @@
                                     <div class="col-sm-4">                                       
                                         <div class="search-box">
                                             <input type="text" class="form-control" placeholder="Search…">
-                                            <a href="#addEmployeeModal" class="btn btn-success my-4 form-control" data-toggle="modal"><i class="material-icons"></i><span>Agregar Componente</span></a>                                                                                                               
+                                            <a href="#addEmployeeModal" class="btn btn-success my-4 form-control" data-toggle="modal"><i class="material-icons"></i><span>Agregar Componente</span></a>                                                                                                                                                           
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                             <table class="table table-striped table-hover table-bordered w-25">
-                                <thead>                        
-                                    <tr>
-                                        <th>Marca</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <%foreach (var M in ListaMarca)
-                                        { %>
-                                        <tr>
-                                            <td style="width: 130px;"><%:M.Nombre %></td>
-                                            <td>
-                                                <a href="Admin-Componentes.aspx?IdRemoveM=<%:M.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
-                                            </td>
-                                        </tr>
-                                    <% } %>
-                                </tbody>
-                            </table>                                       
-                            
-                             <table class="table table-striped table-hover table-bordered w-25">
-                                <thead>                        
-                                    <tr>
-                                        <th>Categoría</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <%foreach (var C in ListaCategoria)
-                                        { %>
-                                        <tr>
-                                            <td style="width: 130px;"><%:C.Nombre %></td>
-                                            <td>
-                                               <a href="Admin-Componentes.aspx?IdRemoveC=<%:C.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
-                                            </td>
-                                        </tr>
-                                    <% } %>
-                                </tbody>
-                            </table>
 
-                             <table class="table table-striped table-hover table-bordered w-25">
-                                <thead>                        
-                                    <tr>
-                                        <th>Talle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <%foreach (var T in ListaTalle)
-                                        { %>
-                                        <tr>
-                                            <td style="width: 130px;"><%:T.Medida %></td>
-                                            <td>
-                                                <a href="Admin-Componentes.aspx?IdRemoveT=<%:T.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
-                                            </td>
-                                        </tr>
-                                    <% } %>
-                                </tbody>
-                            </table>
+                            <div>
+                                <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-danger mx-auto" ID="btnEliminar" onclick="btnEliminar_Click" />
+                            </div>
+
+                            <div class="card-group py-1">
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Marcas</h5>
+                                        <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlMarca">
+                                            <Items>
+                                                <asp:ListItem Text="Seleccionar" Value="-1" />
+                                            </Items>
+                                        </asp:DropDownList>
+
+                                   </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Categorías</h5>
+                                        <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlCategoria">                                           
+                                            <Items>
+                                                <asp:ListItem Text="Seleccionar" Value="-1" />
+                                            </Items>
+                                        </asp:DropDownList>
+                                   </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Talles</h5>
+                                        <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlTalle">
+                                             <Items>
+                                                <asp:ListItem Text="Seleccionar" Value="-1" />
+                                            </Items>
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
 
                         </div>
                     </div>
