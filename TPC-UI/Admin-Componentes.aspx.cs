@@ -35,15 +35,14 @@ namespace TPC_UI
                 TalleNegocio Negocio = new TalleNegocio();
                 Negocio.BajaLogica(Id);
             }
-
+          
             MarcaNegocio MarcaNegocio = new MarcaNegocio();
             TalleNegocio TalleNegocio = new TalleNegocio();
             CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
 
-            ListaMarca = MarcaNegocio.Listar();
-            ListaTalle = TalleNegocio.Listar();
-            ListaCategoria = CategoriaNegocio.Listar();
-
+            ListaMarca = MarcaNegocio.Listar().FindAll(x => x.Estado == true);
+            ListaTalle = TalleNegocio.Listar().FindAll(x => x.Estado == true);
+            ListaCategoria = CategoriaNegocio.Listar().FindAll(x => x.Estado == true);
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -74,6 +73,7 @@ namespace TPC_UI
                 Negocio.Agregar(Categoria);
                 txtCategoria.Text = "";
             }
+            Response.Redirect("Admin-Componentes.aspx");
         }
     }
 }

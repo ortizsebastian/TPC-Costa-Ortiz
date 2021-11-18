@@ -20,7 +20,7 @@ namespace TPC_UI
 
             if(Articulo.Marca.Estado == false)
             {
-                Articulo.Marca.Nombre = "Desconocido";
+                Articulo.Marca.Nombre = "Desconocida";
             }
             else if (Articulo.Categoria.Estado == false)
             {

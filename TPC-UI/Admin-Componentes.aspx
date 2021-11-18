@@ -155,13 +155,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <%foreach (var item in ListaMarca)
+                                    <%foreach (var M in ListaMarca)
                                         { %>
                                         <tr>
-                                            <td style="width: 130px;"><%:item.Nombre %></td>
+                                            <td style="width: 130px;"><%:M.Nombre %></td>
                                             <td>
-                                                <a href="#" class="edit" data-toggle="tooltip" data-original-title="Modificar"><i class="material-icons"></i></a>
-                                                <a href="Admin-Componentes.aspx?IdRemoveM=<%:item.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
+                                                <a href="Admin-Componentes.aspx?IdRemoveM=<%:M.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
                                             </td>
                                         </tr>
                                     <% } %>
@@ -175,13 +174,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <%foreach (var item in ListaCategoria)
+                                    <%foreach (var C in ListaCategoria)
                                         { %>
                                         <tr>
-                                            <td style="width: 130px;"><%:item.Nombre %></td>
+                                            <td style="width: 130px;"><%:C.Nombre %></td>
                                             <td>
-                                                <a href="#" class="edit" data-toggle="tooltip" data-original-title="Modificar"><i class="material-icons"></i></a>
-                                                <a href="Admin-Componentes.aspx?IdRemoveC=<%:item.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
+                                               <a href="Admin-Componentes.aspx?IdRemoveC=<%:C.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
                                             </td>
                                         </tr>
                                     <% } %>
@@ -195,13 +193,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <%foreach (var item in ListaTalle)
+                                    <%foreach (var T in ListaTalle)
                                         { %>
                                         <tr>
-                                            <td style="width: 130px;"><%:item.Medida %></td>
+                                            <td style="width: 130px;"><%:T.Medida %></td>
                                             <td>
-                                                <a href="#" class="edit" data-toggle="tooltip" data-original-title="Modificar"><i class="material-icons"></i></a>
-                                                <a href="Admin-Componentes.aspx?IdRemoveT=<%:item.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
+                                                <a href="Admin-Componentes.aspx?IdRemoveT=<%:T.Id %>" class="delete" data-toggle="tooltip" data-original-title="Borrar"><i class="material-icons"></i></a>
                                             </td>
                                         </tr>
                                     <% } %>
@@ -224,18 +221,26 @@
                         <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">X</button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group my-3">
-                            <label>Categoría</label>
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtCategoria"/>
-                        </div>
-                        <div class="form-group my-3">
-                            <label>Talle</label>
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtTalle"/>
-                        </div>
-                        <div class="form-group my-3">
-                            <label>Marca</label>
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtMarca"/>
-                        </div>
+
+
+                    <div class="form-group my-3">
+                        <label>Categoría</label>
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtCategoria" />
+                    </div>
+
+
+                    <div class="form-group my-3">
+                        <label>Marca</label>
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtMarca" />
+                    </div>
+
+
+                    <div class="form-group my-3">
+                        <label>Talle</label>
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtTalle" />
+                    </div>
+
+
                     </div>
                     <div class="modal-footer border-0">
                         <input type="button" class="btn btn-dark" data-dismiss="modal" value="Cancelar">

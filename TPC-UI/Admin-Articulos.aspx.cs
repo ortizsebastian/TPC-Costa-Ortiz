@@ -17,23 +17,25 @@ namespace TPC_UI
         {
             if (!IsPostBack)
             {
+
+                CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
+                ddlCategoria.DataSource = CategoriaNegocio.Listar().FindAll(x => x.Estado == true);
+                ddlCategoria.DataValueField = "Id";
+                ddlCategoria.DataTextField = "Nombre";
+                ddlCategoria.DataBind();
+
                 MarcaNegocio MarcaNegocio = new MarcaNegocio();
-                ddlMarca.DataSource = MarcaNegocio.Listar();
+                ddlMarca.DataSource = MarcaNegocio.Listar().FindAll(x => x.Estado == true);
                 ddlMarca.DataValueField = "Id";
                 ddlMarca.DataTextField = "Nombre";
                 ddlMarca.DataBind();
 
                 TalleNegocio TalleNegocio = new TalleNegocio();
-                ddlTalle.DataSource = TalleNegocio.Listar();
+                ddlTalle.DataSource = TalleNegocio.Listar().FindAll(x => x.Estado == true);
                 ddlTalle.DataValueField = "Id";
                 ddlTalle.DataTextField = "Medida";
                 ddlTalle.DataBind();
 
-                CategoriaNegocio CategoriaNegocio = new CategoriaNegocio();
-                ddlCategoria.DataSource = CategoriaNegocio.Listar();
-                ddlCategoria.DataValueField = "Id";
-                ddlCategoria.DataTextField = "Nombre";
-                ddlCategoria.DataBind();
 
             }
             if (Request.QueryString["Modify"] != null)
@@ -54,14 +56,23 @@ namespace TPC_UI
                 txtStock.Text = Articulo.Stock.ToString();
                 txtImg.Text = Articulo.ImgUrl;
 
-                ddlMarca.SelectedItem.Value = Articulo.Marca.Id.ToString();
-                ddlMarca.SelectedItem.Text = Articulo.Marca.Nombre;
+                if (Articulo.Marca.Estado)
+                {
+                    ddlMarca.SelectedItem.Value = Articulo.Marca.Id.ToString();
+                    ddlMarca.SelectedItem.Text = Articulo.Marca.Nombre;
+                }
 
-                ddlTalle.SelectedItem.Value = Articulo.Talle.Id.ToString();
-                ddlTalle.SelectedItem.Text = Articulo.Talle.Medida;
+                if(Articulo.Talle.Estado)
+                {
+                    ddlTalle.SelectedItem.Value = Articulo.Talle.Id.ToString();
+                    ddlTalle.SelectedItem.Text = Articulo.Talle.Medida;
+                }
 
-                ddlCategoria.SelectedItem.Value = Articulo.Categoria.Id.ToString();
-                ddlCategoria.SelectedItem.Text = Articulo.Categoria.Nombre;
+                if(Articulo.Categoria.Estado)
+                {
+                    ddlCategoria.SelectedItem.Value = Articulo.Categoria.Id.ToString();
+                    ddlCategoria.SelectedItem.Text = Articulo.Categoria.Nombre;
+                }
             }
         }
         protected void btnAgregar_Click(object sender, EventArgs e)
