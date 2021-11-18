@@ -60,7 +60,7 @@ namespace TPC_UI
                 }
                 else
                 {
-                    ddlMarca.Items.Insert(0, new ListItem("Seleccionar", "NA"));
+                    ddlMarca.Items.Insert(0, new ListItem("Seleccionar", "-1"));
                 }
 
                 if(Articulo.Talle.Estado)
@@ -70,7 +70,7 @@ namespace TPC_UI
                 }
                 else
                 {
-                    ddlTalle.Items.Insert(0, new ListItem("Seleccionar", "NA"));
+                    ddlTalle.Items.Insert(0, new ListItem("Seleccionar", "-1"));
                 }
 
                 if (Articulo.Categoria.Estado)
@@ -80,7 +80,7 @@ namespace TPC_UI
                 }
                 else
                 {
-                    ddlCategoria.Items.Insert(0, new ListItem("Seleccionar", "NA"));
+                    ddlCategoria.Items.Insert(0, new ListItem("Seleccionar", "-1"));
                 }
             }
         }
