@@ -12,9 +12,9 @@ namespace TPC_UI
     public partial class Carrito : System.Web.UI.Page
     {
         public List<Articulo> Contenido { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
-        {
-            
+        {     
             if (Request.QueryString["Id"] != null)
             {
                 int Id = int.Parse(Request.QueryString["Id"]);
@@ -48,6 +48,10 @@ namespace TPC_UI
                     if (Articulo.Id == Id)
                     {
                         Contenido.Remove(Articulo);
+                        if(Contenido.Count() == 0)
+                        {
+                            Response.Redirect("Catalogo.aspx");
+                        }
                         break;
                     }
                 }

@@ -21,8 +21,8 @@ namespace TPC_UI
                 ArticuloNegocio Objeto = new ArticuloNegocio();
                 Objeto.Eliminar(Id);
             }
-            ArticuloNegocio Negocio = new ArticuloNegocio();
-            ListaArticulos = Negocio.Listar();
+            ArticuloNegocio ArticuloNegocio = new ArticuloNegocio();
+            ListaArticulos = ArticuloNegocio.Listar();
         }
         protected void btnAlta_Click(object sender, ImageClickEventArgs e)
         {

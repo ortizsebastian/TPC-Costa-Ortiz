@@ -16,17 +16,17 @@
 
                         <form class="shadow p-4">
                             <div class="mb-3">
-                                <label for="username">Usuario</label>
-                                <input class="form-control" name="username" id="username" placeholder="Usuario">
+                                <label for="username">Usuario</label>                               
+                                <asp:TextBox runat="server" class="form-control" ID="txtUsername" />
                             </div>
 
                             <div class="mb-3">
                                 <label for="username">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                <asp:TextBox runat="server" class="form-control" ID="txtEmail" />  
                             </div>
 
                             <div class="mb-3">
-                                <a class="btn btn-dark shadow-lg" href="#">Buscar</a>
+                                <asp:Button OnClick="btnBuscar_Click" CssClass="btn btn-dark shadow-lg" ID="btnBuscar" Text="Buscar" runat="server" />                               
                                 <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>
                             </div>
                             <hr>

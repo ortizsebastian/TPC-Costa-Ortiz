@@ -29,7 +29,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-    <div style="padding-top: 1rem !important;">
+
+
+    <div style="padding-top: 3rem !important;">
+    <%if (Session["User"] != null)
+      {%>
         <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
             <div class="Agregar-btn shadow-lg">
                 <asp:ImageButton class="btn" Style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
@@ -38,7 +42,9 @@
                 </div>
             </div>
         </a>
+    <%}%>
     </div>
+  
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mx-5">
 
@@ -47,14 +53,20 @@
         %>
             <div class="col">
                 <div class="card border-1 border-dark">                   
-                    <div class="my-2">                   
-                        <a href="Admin-Articulos.aspx?Modify=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-lg mx-2">
-                            <img src="/Img/edit.png" style="width: 25px;" />
-                        </a>
-                        <a href="Catalogo.aspx?Delete=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-sm">
-                            <img src="/Img/delete.png" style="width: 25px;" />
-                        </a>
-                    </div>
+                                             
+                    <%if (Session["User"] != null)
+                      {%>
+                        <div class="my-2">
+                            <a href="Admin-Articulos.aspx?Modify=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-lg mx-2">
+                                <img src="/Img/edit.png" style="width: 25px;" />
+                            </a>
+                            <a href="Catalogo.aspx?Delete=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-sm">
+                                <img src="/Img/delete.png" style="width: 25px;" />
+                            </a>
+                        </div>
+                    <%}%>
+
+                    
                     <a href="Catalogo-Detalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
                         <div class="card bg-transparent border-0">
                             <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">

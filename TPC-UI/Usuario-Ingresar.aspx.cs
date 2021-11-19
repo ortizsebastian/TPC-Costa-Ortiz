@@ -19,16 +19,19 @@ namespace TPC_UI
         {
             Usuario Usuario = new Usuario();
             UsuarioNegocio Negocio = new UsuarioNegocio();
-            Usuario = Negocio.Listar().Find(x => x.Username == txtUsername.Text);
 
-            if (Usuario != null)
+            Usuario.Username = txtUsername.Text;
+            Usuario.Password = txtPassword.Text;
+
+            if(Negocio.Login(Usuario))
             {
-                Usuario = Negocio.Listar().Find(x => x.Password == txtPassword.Text);
-                if(Usuario != null)
-                {
-                    int Id = Usuario.Id;
-                    Response.Redirect("Catalogo.aspx?ID=" + Id);
-                }
+                Session.Add("User", Usuario);
+                Response.Redirect("Catalogo.aspx");
+            }
+            else
+            {
+                Session.Add("Error", "Usuario y/o Contraseña incorresctos.");
+                Response.Redirect("Error.aspx");
             }
         }
     }
