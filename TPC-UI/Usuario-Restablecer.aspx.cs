@@ -13,7 +13,11 @@ namespace TPC_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] != null)
+            {
+                Session.Add("Error", "Dirección incorrecta.");
+                Response.Redirect("Error.aspx");
+            }
         }
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -21,13 +25,28 @@ namespace TPC_UI
             Usuario Usuario = new Usuario();
 
             Usuario = Negocio.Listar().Find(x => x.Username == txtUsername.Text);
-            if(Usuario != null)
+            if(Usuario != null && Usuario.Email == txtEmail.Text)
             {
-                if(Usuario.Email == txtEmail.Text)
-                {
-                    Response.Redirect("Usuario-Restablecer.aspx");
-                }
+                Session.Add("Restablecer", Usuario);
+                Response.Redirect("Usuario-Restablecer.aspx");
             }
+            Session.Add("Error", "Email y/o Usuario inexistente.");
+            Response.Redirect("Error.aspx");
+        }
+
+        protected void btnRestablecer_Click(object sender, EventArgs e)
+        {
+            Usuario Usuario = new Usuario();
+            Usuario = (Usuario)Session["Restablecer"];
+
+            if(txtRestablecer.Text == txtVerificar.Text)
+            {
+                Usuario.Password = txtRestablecer.Text;
+                UsuarioNegocio Negocio = new UsuarioNegocio();
+                Negocio.Modificar(Usuario);
+                Response.Redirect("Catalogo.aspx");
+            }
+            //Mostrar mensaje de error en la validación. 
         }
     }
 }

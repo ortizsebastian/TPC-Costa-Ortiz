@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
     <form id="form1" runat="server">
         
         <header>
@@ -45,7 +46,7 @@
         
                                 <span  class="nav-link navbar-link-2 waves-effect" style="color: #ffffff;">
                                     
-                                <%if (Session["User"] != null)
+                                <%if (Usuario != null)
                                   {
                                 %>
                                     <a href="Usuario-Perfil.aspx" style="text-decoration: none; color: #ffffff;" class="mx-5"><%: Usuario.Username %></a>
@@ -73,25 +74,34 @@
                         <li class="nav-item">
                             <a href="Contacto.aspx" style="text-decoration: none !important;">Contacto</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="Usuario-Ingresar.aspx" style="text-decoration: none !important;">Ingresar</a>
-                        </li>
 
-                        <%if (Session["User"] != null)
+                        <%if(Usuario == null)
                           {%>
                             <li class="nav-item">
-                                <a href="Admin-Componentes.aspx" style="text-decoration: none !important;">Componentes</a>
+                                <a href="Usuario-Ingresar.aspx" style="text-decoration: none !important;">Ingresar</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="Admin-Usuarios.aspx" style="text-decoration: none !important;">Usuarios</a>
-                            </li>
+                        <%}%>
+
+                        <%if (Usuario != null)
+                          {%>
+
+                            <%if (Usuario.Tipo == true)
+                              {%> 
+                                <li class="nav-item">
+                                    <a href="Admin-Componentes.aspx" style="text-decoration: none !important;">Componentes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="Admin-Usuarios.aspx" style="text-decoration: none !important;">Usuarios</a>
+                                </li>
+                            <%}%>
+
                             <li class="nav-item">
                                 <a href="Usuario-Perfil.aspx" style="text-decoration: none !important;">Perfil</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" style="text-decoration: none !important;">Salir</a>
+                                <asp:Button Text="Salir" runat="server" ID="btnSalir" CssClass="btn btn-outline-danger mx-4 my-5" OnClick="btnSalir_Click" />
                             </li>
-                        <%} %>
+                        <%}%>
 
                     </ul>
                 </div>

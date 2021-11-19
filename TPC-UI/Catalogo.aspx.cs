@@ -13,8 +13,15 @@ namespace TPC_UI
     {
         public List<Articulo> ListaArticulos { get; set; }
 
+        public Usuario Usuario { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["Usuario"] != null)
+            {
+                Usuario = (Usuario)Session["Usuario"];
+            }
+
             if(Request.QueryString["Delete"] != null)
             {
                 int Id = int.Parse(Request.QueryString["Delete"]);       

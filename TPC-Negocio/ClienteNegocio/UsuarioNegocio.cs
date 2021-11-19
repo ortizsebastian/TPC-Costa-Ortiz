@@ -43,7 +43,6 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
-
         public Usuario Buscar(int Id)
         {
             AccesoDatabase Datos = new AccesoDatabase();
@@ -73,7 +72,6 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
-
         public void Agregar(Usuario Usuario)
         {
             AccesoDatabase Datos = new AccesoDatabase();
@@ -113,6 +111,25 @@ namespace TPC_Negocio
                     return true;
                 }
                 return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
+        public void Modificar(Usuario Usuario) //Solo modifica Password, generalizarla para poder modificar todas las propiedades.
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+            try
+            {
+                Datos.SetConsulta("UPDATE USUARIOS SET PASSWORD = '" + Usuario.Password + " WHERE ID = '" + Usuario.Id + "'");
+                
+                Datos.EjecutarAccion();
             }
             catch (Exception ex)
             {

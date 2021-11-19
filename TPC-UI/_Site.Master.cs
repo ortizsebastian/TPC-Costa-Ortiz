@@ -22,10 +22,15 @@ namespace TPC_UI
             {
                 Cantidad = Lista.Count();
             }
-            if(Session["User"] != null)
+            if(Session["Usuario"] != null)
             {
-                Usuario = (Usuario)Session["User"];
+                Usuario = (Usuario)Session["Usuario"];
             }
+        }
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Catalogo.aspx");
         }
     }
 }

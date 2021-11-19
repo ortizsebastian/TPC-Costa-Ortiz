@@ -13,7 +13,11 @@ namespace TPC_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] != null)
+            {
+                Session.Add("Error", "Dirección incorrecta.");
+                Response.Redirect("Error.aspx");
+            }
         }
         protected void btnCrear_Click(object sender, EventArgs e)
         {

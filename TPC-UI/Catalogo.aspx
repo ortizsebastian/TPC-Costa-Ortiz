@@ -32,7 +32,7 @@
 
 
     <div style="padding-top: 3rem !important;">
-    <%if (Session["User"] != null)
+    <%if (Usuario != null && Usuario.Tipo == true)
       {%>
         <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
             <div class="Agregar-btn shadow-lg">
@@ -54,7 +54,7 @@
             <div class="col">
                 <div class="card border-1 border-dark">                   
                                              
-                    <%if (Session["User"] != null)
+                    <%if (Usuario != null && Usuario.Tipo == true)
                       {%>
                         <div class="my-2">
                             <a href="Admin-Articulos.aspx?Modify=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-lg mx-2">

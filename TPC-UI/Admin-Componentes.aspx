@@ -183,7 +183,7 @@
 
 
 
-
+    
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content border-1 border-dark shadow-lg">
@@ -194,24 +194,20 @@
                     </div>
                     <div class="modal-body">
 
-
                     <div class="form-group my-3">
                         <label>Categoría</label>
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtCategoria" />
                     </div>
-
 
                     <div class="form-group my-3">
                         <label>Marca</label>
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtMarca" />
                     </div>
 
-
                     <div class="form-group my-3">
                         <label>Talle</label>
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtTalle" />
                     </div>
-
 
                     </div>
                     <div class="modal-footer border-0">

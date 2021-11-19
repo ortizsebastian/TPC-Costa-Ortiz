@@ -11,7 +11,11 @@ namespace TPC_Ortiz_Costa
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] == null)
+            {
+                Session.Add("Error", "Dirección incorrecta.");
+                Response.Redirect("Error.aspx");
+            }
         }
     }
 }

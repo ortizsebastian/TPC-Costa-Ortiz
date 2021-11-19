@@ -13,7 +13,11 @@ namespace TPC_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] != null)
+            {
+                Session.Add("Error", "Dirección incorrecta.");
+                Response.Redirect("Error.aspx");
+            }
         }
         protected void btnConectar_Click(object sender, EventArgs e)
         {
@@ -25,7 +29,7 @@ namespace TPC_UI
 
             if(Negocio.Login(Usuario))
             {
-                Session.Add("User", Usuario);
+                Session.Add("Usuario", Usuario);
                 Response.Redirect("Catalogo.aspx");
             }
             else

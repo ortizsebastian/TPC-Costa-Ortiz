@@ -11,7 +11,10 @@ namespace TPC_Ortiz_Costa
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["Error"] == null)
+            {
+                Session.Add("Error", "Dirección invalida.");
+            }
         }
     }
 }
