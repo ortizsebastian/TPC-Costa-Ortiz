@@ -128,76 +128,61 @@
     });
 </script>
 
-        <div class="mx-4" style="padding-bottom: 4rem !important; padding-top: 7rem !important;">
-        <div style="border: 1px solid black; border-radius: 5px">
-            <div class="card-body">
-                <div class="container">
-                    <div class="table-responsive">
-                        <div class="table-wrapper">
-                            <div class="table-title">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2>Componentes<b> de Artículos</b></h2>
-                                    </div>
-                                    <div class="col-sm-4">                                       
-                                        <div class="search-box">
-                                            <input type="text" class="form-control" placeholder="Search…">
-                                            <a href="#addEmployeeModal" class="btn btn-success my-4 form-control" data-toggle="modal"><i class="material-icons"></i><span>Agregar Componente</span></a>                                                                                                                                                           
-                                        </div>
-                                    </div>
+                
+            <div style="padding-bottom: 4rem !important; padding-top: 7rem !important;">
+                        <div class="card-body shadow-lg w-75 mx-auto">
+
+
+                            <div class="card w-25 my-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Marcas</h5>
+                                    <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlMarca">
+                                        <Items>
+                                            <asp:ListItem Text="Seleccionar" Value="-1" />
+                                        </Items>
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+
+                            <div class="card w-25 my-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Categorías</h5>
+                                    <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlCategoria">
+                                        <Items>
+                                            <asp:ListItem Text="Seleccionar" Value="-1" />
+                                        </Items>
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+
+                            <div class="card w-25 my-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Talles</h5>
+                                    <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlTalle">
+                                        <Items>
+                                            <asp:ListItem Text="Seleccionar" Value="-1" />
+                                        </Items>
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-4">
+                                <div class="search-box">
+                                    <input type="text" class="form-control" placeholder="Search…">
+                                    <a href="#addEmployeeModal" class="btn btn-success my-4 form-control" data-toggle="modal"><i class="material-icons"></i><span>Agregar Componente</span></a>
                                 </div>
                             </div>
 
                             <div>
-                                <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-danger mx-auto" ID="btnEliminar" onclick="btnEliminar_Click" />
+                                <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-danger mx-auto" ID="btnEliminar" OnClick="btnEliminar_Click" />
                             </div>
 
-                            <div class="card-group py-1">
-
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Marcas</h5>
-                                        <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlMarca">
-                                            <Items>
-                                                <asp:ListItem Text="Seleccionar" Value="-1" />
-                                            </Items>
-                                        </asp:DropDownList>
-
-                                   </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Categorías</h5>
-                                        <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlCategoria">                                           
-                                            <Items>
-                                                <asp:ListItem Text="Seleccionar" Value="-1" />
-                                            </Items>
-                                        </asp:DropDownList>
-                                   </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Talles</h5>
-                                        <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlTalle">
-                                             <Items>
-                                                <asp:ListItem Text="Seleccionar" Value="-1" />
-                                            </Items>
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-
-                        </div>
                     </div>
-                </div>
             </div>
-        </div>
-    </div>
+
+
+
 
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
