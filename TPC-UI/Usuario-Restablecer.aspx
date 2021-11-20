@@ -68,7 +68,6 @@
     </script>
 
 
-
     <div style="display: flex; justify-content: center; padding-bottom: 4rem !important; padding-top: 7rem !important;">
         <div class="card w-50 shadow-lg border-1 border-dark">
             <div class="card-body">
@@ -104,12 +103,12 @@
                         <form class="shadow p-4">
                             <div class="mb-3">
                                 <label for="username">Nueva Contraseña</label>
-                                <asp:TextBox runat="server" class="form-control" ID="txtRestablecer" />
+                                <asp:TextBox runat="server" class="form-control" ID="txtRestablecer" type="password" />
                             </div>
 
                             <div class="mb-3">
                                 <label for="username">Verificar Contraseña</label>
-                                <asp:TextBox runat="server" class="form-control" ID="txtVerificar" />
+                                <asp:TextBox runat="server" class="form-control" ID="txtVerificar" type="password" />
                             </div>
 
                             <div class="mb-3">
@@ -123,6 +122,5 @@
             </div>
         </div>
     </div>
-
 
 </asp:Content>

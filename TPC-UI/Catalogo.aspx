@@ -2,8 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
-
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="body-body">
@@ -24,14 +22,14 @@
         <div style="padding-top: 3rem !important;">
             <%if (Usuario != null && Usuario.Tipo == true)
                 {%>
-            <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
-                <div class="Agregar-btn shadow-lg">
-                    <asp:ImageButton class="btn" Style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
-                    <div class="P-alta">
-                        <p>Cargar Artículo</p>
+                <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
+                    <div class="Agregar-btn shadow-lg">
+                        <asp:ImageButton class="btn" Style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
+                        <div class="P-alta">
+                            <p>Cargar Artículo</p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
             <%}%>
         </div>
 
@@ -40,49 +38,51 @@
             <% foreach (var Articulo in ListaArticulos)
                 {
             %>
-            <div class="col">
-                <div class="card border-1 border-dark">
+                <div class="col">
+                    <div class="card border-1 border-dark">
 
-                    <%if (Usuario != null && Usuario.Tipo == true)
-                        {%>
-                    <div class="my-2">
-                        <a href="Admin-Articulos.aspx?Modify=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-lg mx-2">
-                            <img src="/Img/edit.png" style="width: 25px;" />
-                        </a>
-                        <a href="Catalogo.aspx?Delete=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-sm">
-                            <img src="/Img/delete.png" style="width: 25px;" />
-                        </a>
-                    </div>
-                    <%}%>
-
-
-                    <a href="Catalogo-Detalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
-                        <div class="card bg-transparent border-0">
-                            <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
-                            <div class="card-body">
-                                <h5 class="card-title text-center"><%: Articulo.Nombre %></h5>
-                                <p class="text-center" style="font-size: 15px !important;"><i>Código: </i><%: Articulo.Codigo %></p>
+                        <%if (Usuario != null && Usuario.Tipo == true)
+                            {%>
+                            <div class="my-2">
+                                <a href="Admin-Articulos.aspx?Modify=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-lg mx-2">
+                                    <img src="/Img/edit.png" style="width: 25px;" />
+                                </a>
+                                <a href="Catalogo.aspx?Delete=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-sm">
+                                    <img src="/Img/delete.png" style="width: 25px;" />
+                                </a>
                             </div>
-                        </div>
-                    </a>
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
-                            <div>
-                                <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
-                                <small class="text-muted">Stock: <%: Articulo.Stock %></small>
+                        <%}%>
+
+
+                        <a href="Catalogo-Detalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
+                            <div class="card bg-transparent border-0">
+                                <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center"><%: Articulo.Nombre %></h5>
+                                    <p class="text-center" style="font-size: 15px !important;"><i>Código: </i><%: Articulo.Codigo %></p>
+                                </div>
                             </div>
-                            <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="btn btn-sm border-1 border-dark shadow-lg" style="text-decoration: none; color: inherit;">
-                                <img src="/Img/add.png" style="width: 40px;" />
-                            </a>
+                        </a>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
+                                <div>
+                                    <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
+                                    <small class="text-muted">Stock: <%: Articulo.Stock %></small>
+                                </div>
+                                <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="btn btn-sm border-1 border-dark shadow-lg" style="text-decoration: none; color: inherit;">
+                                    <img src="/Img/add.png" style="width: 40px;" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <%
                 }
             %>
         </div>
+
         <!-- Cartel de  pagos/Envios/Seguridad  (referencia wpp) -->
+
     </div>
 
 

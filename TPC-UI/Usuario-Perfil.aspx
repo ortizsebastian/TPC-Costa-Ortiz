@@ -5,8 +5,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="padding-top: 5rem !important;">
-        <div class="card w-75 mx-auto">
+    <div style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="card w-75 mx-auto border-1 border-dark">
             <div class="card-body shadow-lg">
 
                 <div class="container rounded bg-white mt-5">

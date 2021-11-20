@@ -57,7 +57,7 @@
 
                             <div class="mb-3">
                                 <label for="Password">Contraseña</label>
-                                <asp:TextBox runat="server" CssClass="form-control" ID="txtPassword" placeholder="Contraseña" />
+                                <asp:TextBox runat="server" CssClass="form-control" type="password" ID="txtPassword" placeholder="Contraseña" />
                             </div>
 
                             <label class="mb-3">

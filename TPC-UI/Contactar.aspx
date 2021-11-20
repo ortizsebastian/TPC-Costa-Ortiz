@@ -3,10 +3,9 @@
 </asp:Content>
 
 
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="card"></div>
+   
     <div class="my-3" style="padding-top: 5rem !important;">
         <div class="card h-100 border-1 border-dark shadow-lg w-25 mx-auto">
             <div class="card-body">
@@ -18,8 +17,6 @@
     <div class="card w-75 shadow-lg mx-auto border-1 border-dark">
         <div class="card-body">
             <div class="container py-4">
-
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
 
                     <div class="mb-3">
                         <label class="form-label" for="name">Nombre</label>
@@ -52,7 +49,7 @@
                         <button class="btn btn-dark mx-auto shadow-lg border-1 border-white" id="submitButton" type="submit" style="width: 26% !important; border-radius: 40px;">Enviar</button>
                     </div>
 
-                </form>
+
             </div>
         </div>
     </div>
