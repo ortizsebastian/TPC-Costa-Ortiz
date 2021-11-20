@@ -128,7 +128,7 @@ namespace TPC_Negocio
             AccesoDatabase Datos = new AccesoDatabase();
             try
             {
-                Datos.SetConsulta("UPDATE USUARIOS SET PASSWORD = '" + Usuario.Password + " WHERE ID = '" + Usuario.Id + "'");
+                Datos.SetConsulta("UPDATE USUARIOS SET PASSWORD = '" + Usuario.Password + "' WHERE ID = '" + Usuario.Id + "'");
                 
                 Datos.EjecutarAccion();
             }

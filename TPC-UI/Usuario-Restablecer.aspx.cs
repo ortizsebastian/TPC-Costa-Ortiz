@@ -19,6 +19,7 @@ namespace TPC_Ortiz_Costa
                 Response.Redirect("Error.aspx");
             }
         }
+
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             UsuarioNegocio Negocio = new UsuarioNegocio();
@@ -46,7 +47,6 @@ namespace TPC_Ortiz_Costa
                 Negocio.Modificar(Usuario);
                 Response.Redirect("Catalogo.aspx");
             }
-            //Mostrar mensaje de error en la validación. 
         }
     }
 }

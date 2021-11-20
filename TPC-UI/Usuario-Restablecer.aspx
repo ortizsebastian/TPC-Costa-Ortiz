@@ -6,37 +6,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script>
-        function validar() {
-            var Usuario = document.getElementById("<%:txtUsername.ClientID %>");
-                    var Email = document.getElementById("<%:txtEmail.ClientID %>");
-
-            var Flag = true;
-
-            if (Usuario === "" || Usuario === null) {
-                Usuario.removeClass("is-valid");
-                Usuario.addClass("is-invalid");
-                Flag = false;
-            }
-            else {
-                Usuario.removeClass("is-invalid");
-                Usuario.addClass("is-valid");
-                Flag = true;
-            }
-            if (Email === "" || Email === null) {
-                Email.removeClass("is-valid");
-                Email.addClass("is-invalid");
-                Flag = false;
-            }
-            else {
-                Email.removeClass("is-invalid");
-                Email.addClass("is-valid");
-                Flag = true;
-            }
-            return Flag;
-        }
-    </script>
-
     <div style="display: flex; justify-content: center; padding-bottom: 4rem !important; padding-top: 7rem !important;">
         <div class="card w-50 shadow-lg border-1 border-dark">
             <div class="card-body">
@@ -60,7 +29,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <asp:Button OnClientClick="return validar();" OnClick="btnBuscar_Click" CssClass="btn btn-dark shadow-lg" ID="btnBuscar" Text="Buscar" runat="server" />
+                                <asp:Button OnClick="btnBuscar_Click" CssClass="btn btn-dark shadow-lg" ID="btnBuscar" Text="Buscar" runat="server" />
                                 <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>
                             </div>
                             <hr>

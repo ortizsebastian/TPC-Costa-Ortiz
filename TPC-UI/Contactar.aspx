@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="card"></div>
-    <div class="my-3" style="padding-top: 7rem !important;">
+    <div class="my-3" style="padding-top: 5rem !important;">
         <div class="card h-100 border-1 border-dark shadow-lg w-25 mx-auto">
             <div class="card-body">
                 <h5 class="my-auto text-center"><b>¡Envíanos un mensaje!</b></h5>

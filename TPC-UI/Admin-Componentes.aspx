@@ -46,7 +46,7 @@
                 <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-danger mx-auto" ID="btnEliminar" OnClick="btnEliminar_Click" />
             </div>
 
-            <div>
+            <div class="w-25">
                 <div class="form-group my-3">
                     <label>Categoría</label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="txtCategoria" />
