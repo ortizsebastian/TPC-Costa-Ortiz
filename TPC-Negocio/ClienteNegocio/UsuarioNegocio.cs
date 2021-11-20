@@ -43,6 +43,7 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
+ 
         public Usuario Buscar(int Id)
         {
             AccesoDatabase Datos = new AccesoDatabase();
@@ -51,16 +52,16 @@ namespace TPC_Negocio
             {
                 Datos.SetConsulta("SELECT ID, USERNAME, PASSWORD, EMAIL FROM USUARIOS WHERE ID =" + Id);
                 Datos.EjecutarLectura();
-
-                Datos.Lector.Read();
-
                 Usuario Objeto = new Usuario();
 
-                Objeto.Id = (int)(Datos.Lector["ID"]);
-                Objeto.Username = (string)Datos.Lector["USERNAME"];
-                Objeto.Password = (string)Datos.Lector["PASSWORD"];
-                Objeto.Email = (string)Datos.Lector["EMAIL"];
-
+                if(Datos.Lector.Read())
+                {
+                    Objeto.Id = (int)(Datos.Lector["ID"]);
+                    Objeto.Username = (string)Datos.Lector["USERNAME"];
+                    Objeto.Password = (string)Datos.Lector["PASSWORD"];
+                    Objeto.Email = (string)Datos.Lector["EMAIL"];
+                }
+                                  
                 return Objeto;
             }
             catch (Exception ex)

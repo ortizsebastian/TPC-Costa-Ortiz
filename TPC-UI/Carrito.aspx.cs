@@ -1,20 +1,20 @@
-﻿using TPC_Dominio;
-using TPC_Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TPC_Dominio;
+using TPC_Negocio;
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
     public partial class Carrito : System.Web.UI.Page
     {
         public List<Articulo> Contenido { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
-        {     
+        {
             if (Request.QueryString["Id"] != null)
             {
                 int Id = int.Parse(Request.QueryString["Id"]);
@@ -48,7 +48,7 @@ namespace TPC_UI
                     if (Articulo.Id == Id)
                     {
                         Contenido.Remove(Articulo);
-                        if(Contenido.Count() == 0)
+                        if (Contenido.Count() == 0)
                         {
                             Response.Redirect("Catalogo.aspx");
                         }

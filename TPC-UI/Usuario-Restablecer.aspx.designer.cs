@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
 
 

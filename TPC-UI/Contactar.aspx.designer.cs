@@ -11,7 +11,7 @@ namespace TPC_Ortiz_Costa
 {
 
 
-    public partial class Carrito
+    public partial class Contactar
     {
     }
 }

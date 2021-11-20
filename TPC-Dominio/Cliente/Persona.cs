@@ -10,7 +10,7 @@ namespace TPC_Dominio
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public Direccion Direccion { get; set; }
-        public DateTime Nacimiento { get; set; }
+        public string Telefono { get; set; }
+        public Domicilio Domicilio { get; set; }
     }
 }

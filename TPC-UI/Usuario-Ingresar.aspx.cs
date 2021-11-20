@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TPC_Dominio;
 using TPC_Negocio;
+using TPC_Dominio;
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
     public partial class Usuario_Ingresar : System.Web.UI.Page
     {
@@ -27,14 +27,14 @@ namespace TPC_UI
             Usuario.Username = txtUsername.Text;
             Usuario.Password = txtPassword.Text;
 
-            if(Negocio.Login(Usuario))
+            if (Negocio.Login(Usuario))
             {
                 Session.Add("Usuario", Usuario);
                 Response.Redirect("Catalogo.aspx");
             }
             else
             {
-                Session.Add("Error", "Usuario y/o Contraseña incorresctos.");
+                Session.Add("Error", "Usuario y/o Contraseña incorrectos.");
                 Response.Redirect("Error.aspx");
             }
         }

@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 using TPC_Dominio;
 using TPC_Negocio;
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
-    public partial class VerDetalle : System.Web.UI.Page
+    public partial class Catalogo_Detalle : System.Web.UI.Page
     {
         public Articulo Articulo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
@@ -18,7 +18,7 @@ namespace TPC_UI
             ArticuloNegocio Datos = new ArticuloNegocio();
             Articulo = Datos.Buscar(Id);
 
-            if(Articulo.Marca.Estado == false)
+            if (Articulo.Marca.Estado == false)
             {
                 Articulo.Marca.Nombre = "Desconocida";
             }

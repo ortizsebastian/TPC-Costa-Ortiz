@@ -9,7 +9,7 @@ namespace TPC_Dominio
     public class Envio 
     {
         public int Id { get; set; }
-        public Direccion Direccion { get; set; }
+        public Domicilio Domicilio { get; set; }
         public int Estado { get; set; } 
     } 
 }

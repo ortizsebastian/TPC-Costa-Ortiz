@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 using TPC_Dominio;
 using TPC_Negocio;
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
-    public partial class Web_Catalogo : System.Web.UI.Page
+    public partial class Catalogo : System.Web.UI.Page
     {
         public List<Articulo> ListaArticulos { get; set; }
 
@@ -17,20 +17,22 @@ namespace TPC_UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["Usuario"] != null)
+            if (Session["Usuario"] != null)
             {
                 Usuario = (Usuario)Session["Usuario"];
             }
 
-            if(Request.QueryString["Delete"] != null)
+            if (Request.QueryString["Delete"] != null)
             {
-                int Id = int.Parse(Request.QueryString["Delete"]);       
+                int Id = int.Parse(Request.QueryString["Delete"]);
                 ArticuloNegocio Objeto = new ArticuloNegocio();
                 Objeto.Eliminar(Id);
             }
             ArticuloNegocio ArticuloNegocio = new ArticuloNegocio();
             ListaArticulos = ArticuloNegocio.Listar();
+
         }
+
         protected void btnAlta_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Admin-Articulos.aspx");

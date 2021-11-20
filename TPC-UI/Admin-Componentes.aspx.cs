@@ -4,21 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TPC_Dominio;
 using TPC_Negocio;
+using TPC_Dominio;
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
     public partial class Admin_Componentes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["Usuario"] == null)
+            if (Session["Usuario"] == null)
             {
                 Session.Add("Error", "Dirección incorrecta.");
                 Response.Redirect("Error.aspx");
             }
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 MarcaNegocio MarcaNegocio = new MarcaNegocio();
                 ddlMarca.DataSource = MarcaNegocio.Listar().FindAll(x => x.Estado == true);

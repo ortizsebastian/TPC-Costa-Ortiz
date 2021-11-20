@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using TPC_Dominio;
 using TPC_Negocio;
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
     public partial class Usuario_Restablecer : System.Web.UI.Page
     {
@@ -25,7 +25,7 @@ namespace TPC_UI
             Usuario Usuario = new Usuario();
 
             Usuario = Negocio.Listar().Find(x => x.Username == txtUsername.Text);
-            if(Usuario != null && Usuario.Email == txtEmail.Text)
+            if (Usuario != null && Usuario.Email == txtEmail.Text)
             {
                 Session.Add("Restablecer", Usuario);
                 Response.Redirect("Usuario-Restablecer.aspx");
@@ -39,7 +39,7 @@ namespace TPC_UI
             Usuario Usuario = new Usuario();
             Usuario = (Usuario)Session["Restablecer"];
 
-            if(txtRestablecer.Text == txtVerificar.Text)
+            if (txtRestablecer.Text == txtVerificar.Text)
             {
                 Usuario.Password = txtRestablecer.Text;
                 UsuarioNegocio Negocio = new UsuarioNegocio();

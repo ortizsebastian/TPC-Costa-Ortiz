@@ -5,11 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TPC_Dominio;
-using TPC_Negocio;
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
-    public partial class _Site : System.Web.UI.MasterPage
+    public partial class Site : System.Web.UI.MasterPage
     {
         public int Cantidad { get; set; } = 0;
         public Usuario Usuario { get; set; }
@@ -18,11 +17,11 @@ namespace TPC_UI
             List<Articulo> Lista = new List<Articulo>();
             Lista = (List<Articulo>)Session["Cantidad"];
 
-            if(Lista != null)
+            if (Lista != null)
             {
                 Cantidad = Lista.Count();
             }
-            if(Session["Usuario"] != null)
+            if (Session["Usuario"] != null)
             {
                 Usuario = (Usuario)Session["Usuario"];
             }

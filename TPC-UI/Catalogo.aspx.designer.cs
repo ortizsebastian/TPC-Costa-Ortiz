@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
 
 
-    public partial class Web_Catalogo
+    public partial class Catalogo
     {
 
         /// <summary>

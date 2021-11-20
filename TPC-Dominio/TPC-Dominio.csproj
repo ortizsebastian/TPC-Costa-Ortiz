@@ -45,7 +45,7 @@
     <Compile Include="Articulo\Marca.cs" />
     <Compile Include="Articulo\Articulo.cs" />
     <Compile Include="Cliente\Cliente.cs" />
-    <Compile Include="Cliente\Direccion.cs" />
+    <Compile Include="Cliente\Domicilio.cs" />
     <Compile Include="Venta\Carrito.cs" />
     <Compile Include="Cliente\Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,8 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Catalogo-Detalle.aspx.cs" Inherits="TPC_UI.VerDetalle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Catalogo-Detalle.aspx.cs" Inherits="TPC_Ortiz_Costa.Catalogo_Detalle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
 
     <div style="padding-top: 6rem; padding-bottom: 6rem; display: flex; justify-content: center;">
         <div class="card mb-3 shadow-lg border-1 border-dark" style="min-width: 1240px; max-width: 1240px;">
@@ -29,5 +32,6 @@
             </div>
         </div>
     </div>
+
 
 </asp:Content>

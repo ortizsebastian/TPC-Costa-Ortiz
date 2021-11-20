@@ -1,9 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Usuario-Ingresar.aspx.cs" Inherits="TPC_UI.Usuario_Ingresar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuario-Ingresar.aspx.cs" Inherits="TPC_Ortiz_Costa.Usuario_Ingresar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
 
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+
 
     <div style="display: flex; justify-content: center; padding-bottom: 4rem !important; padding-top: 7rem !important;">
         <div class="card w-50 shadow-lg border-1 border-dark">
@@ -17,12 +20,12 @@
 
                             <div class="mb-3">
                                 <label for="username">Usuario</label>
-                                <asp:TextBox runat="server" CssClass="form-control" ID="txtUsername" /> 
+                                <asp:TextBox runat="server" CssClass="form-control" ID="txtUsername" placeholder="Usuario" />
                             </div>
 
                             <div class="mb-3">
                                 <label for="Password">Contraseña</label>
-                                <asp:TextBox runat="server" CssClass="form-control" ID="txtPassword" /> 
+                                <asp:TextBox runat="server" CssClass="form-control" ID="txtPassword" placeholder="Contraseña" />
                             </div>
 
                             <label class="mb-3">
@@ -31,7 +34,7 @@
                             </label>
 
                             <div class="mb-3">
-                                <asp:Button Text="Conectar" CssClass="btn btn-dark shadow-lg" runat="server" ID="btnConectar" OnClick="btnConectar_Click"/>
+                                <asp:Button Text="Conectar" CssClass="btn btn-dark shadow-lg" runat="server" ID="btnConectar" OnClick="btnConectar_Click" />
                                 <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>
                             </div>
 

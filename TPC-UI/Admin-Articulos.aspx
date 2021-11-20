@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/_Site.Master" AutoEventWireup="true" CodeBehind="Admin-Articulos.aspx.cs" Inherits="TPC_UI.Admin_Articulos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Admin-Articulos.aspx.cs" Inherits="TPC_Ortiz_Costa.Admin_Articulos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
+
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -41,25 +43,24 @@
 
                     <div class="col mx-3">
 
-                            <div class="mb-3">
-                                <label for="disabledSelect">Categoría</label>
-                                <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-select"></asp:DropDownList>
-                            </div>                      
-                            <div class="mb-3">
-                                <label for="disabledSelect">Marca</label>
-                                <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-select"></asp:DropDownList>
-                            </div>
-                            <div class="mb-3">
-                                <label for="disabledSelect">Talle</label>
-                                <asp:DropDownList ID="ddlTalle" runat="server" CssClass="form-select"></asp:DropDownList>
-                            </div>
-                
+                        <div class="mb-3">
+                            <label for="disabledSelect">Categoría</label>
+                            <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-select"></asp:DropDownList>
+                        </div>
+                        <div class="mb-3">
+                            <label for="disabledSelect">Marca</label>
+                            <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-select"></asp:DropDownList>
+                        </div>
+                        <div class="mb-3">
+                            <label for="disabledSelect">Talle</label>
+                            <asp:DropDownList ID="ddlTalle" runat="server" CssClass="form-select"></asp:DropDownList>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <asp:Button Text="Agregar" ID="btnAgregar" class="btn btn-dark d-flex justify-content-center mx-auto my-3 shadow-lg" runat="server" OnClick="btnAgregar_Click"/>
+            <asp:Button Text="Agregar" ID="btnAgregar" class="btn btn-dark d-flex justify-content-center mx-auto my-3 shadow-lg" runat="server" OnClick="btnAgregar_Click" />
         </div>
     </div>
-
 
 </asp:Content>

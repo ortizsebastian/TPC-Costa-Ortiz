@@ -9,11 +9,16 @@ namespace TPC_Ortiz_Costa
 {
     public partial class Error : System.Web.UI.Page
     {
+        public string Mensaje { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["Error"] == null)
+            if (Session["Error"] == null)
             {
-                Session.Add("Error", "Dirección invalida.");
+                Response.Redirect("Catalogo.aspx");
+            }
+            else
+            {
+                Mensaje = Session["Error"].ToString();
             }
         }
     }

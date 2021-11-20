@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TPC_Dominio;
 using TPC_Negocio;
+using TPC_Dominio;
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
     public partial class Admin_Articulos : System.Web.UI.Page
     {
@@ -69,7 +69,7 @@ namespace TPC_UI
                     ddlMarca.Items.Insert(0, new ListItem("Seleccionar", "-1"));
                 }
 
-                if(Articulo.Talle.Estado)
+                if (Articulo.Talle.Estado)
                 {
                     ddlTalle.SelectedItem.Value = Articulo.Talle.Id.ToString();
                     ddlTalle.SelectedItem.Text = Articulo.Talle.Medida;
@@ -113,8 +113,8 @@ namespace TPC_UI
             Articulo.Talle.Medida = ddlTalle.SelectedItem.Text;
 
             ArticuloNegocio Negocio = new ArticuloNegocio();
-            
-            if(Modificar)
+
+            if (Modificar)
             {
                 Articulo.Id = Id;
                 Negocio.Modificar(Articulo);

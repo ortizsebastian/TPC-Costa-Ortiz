@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TPC_Ortiz_Costa
 {
-    public partial class Admin_Usuarios : System.Web.UI.Page
+    public partial class Contactar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

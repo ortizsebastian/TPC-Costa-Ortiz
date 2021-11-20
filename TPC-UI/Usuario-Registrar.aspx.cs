@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using TPC_Dominio;
 using TPC_Negocio;
 
-namespace TPC_UI
+namespace TPC_Ortiz_Costa
 {
     public partial class Usuario_Registrar : System.Web.UI.Page
     {
@@ -19,6 +19,7 @@ namespace TPC_UI
                 Response.Redirect("Error.aspx");
             }
         }
+
         protected void btnCrear_Click(object sender, EventArgs e)
         {
             Usuario Usuario = new Usuario();

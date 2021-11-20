@@ -1,5 +1,4 @@
-﻿
-* {
+﻿* {
     list-style: none;
     text-decoration: none;
     margin: 0;
@@ -19,48 +18,48 @@
     z-index: 2;
 }
 
-.wrapper .sidebar .profile {
-    margin-bottom: 30px;
-    text-align: center;
-}
+    .wrapper .sidebar .profile {
+        margin-bottom: 30px;
+        text-align: center;
+    }
 
-.wrapper .sidebar .profile img {
-    display: block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border-color: #002A4C;
-    border-width: 5px;
-    border-style: solid;
-    margin: 0 auto;
-    align-items: center;
-}
+        .wrapper .sidebar .profile img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border-color: #002A4C;
+            border-width: 5px;
+            border-style: solid;
+            margin: 0 auto;
+            align-items: center;
+        }
 
-.wrapper .sidebar .profile h3 {
-    color: #ffffff;
-    margin: 10px 0 5px;
-}
+        .wrapper .sidebar .profile h3 {
+            color: #ffffff;
+            margin: 10px 0 5px;
+        }
 
-.wrapper .sidebar ul li a {
-    display: block;
-    padding: 13px 30px;
-    border-bottom: 1px solid #10558d;
-    color: rgb(241, 237, 237);
-    font-size: 16px;
-    position: relative;
-}
+    .wrapper .sidebar ul li a {
+        display: block;
+        padding: 13px 30px;
+        border-bottom: 1px solid #10558d;
+        color: rgb(241, 237, 237);
+        font-size: 16px;
+        position: relative;
+    }
 
-.wrapper .sidebar ul li a:hover,
-.wrapper .sidebar ul li a.active {
-    color: #0c7db1;
-    background: white;
-    border-right: 2px solid rgb(5, 68, 104);
-}
+        .wrapper .sidebar ul li a:hover,
+        .wrapper .sidebar ul li a.active {
+            color: #0c7db1;
+            background: white;
+            border-right: 2px solid rgb(5, 68, 104);
+        }
 
-.wrapper .sidebar ul li a:hover:before,
-.wrapper .sidebar ul li a.active:before {
-    display: block;
-}
+            .wrapper .sidebar ul li a:hover:before,
+            .wrapper .sidebar ul li a.active:before {
+                display: block;
+            }
 
 .wrapper .section {
     width: calc(100% - 225px);
@@ -70,21 +69,21 @@
     z-index: 2;
 }
 
-.wrapper .section .top_navbar {
-    background: #054E8A;
-    height: 50px;
-    display: flex;
-    align-items: center;
-}
+    .wrapper .section .top_navbar {
+        background: #054E8A;
+        height: 50px;
+        display: flex;
+        align-items: center;
+    }
 
-.wrapper .section .top_navbar .hamburger a {
-    font-size: 28px;
-    color: #f4fbff;
-}
+        .wrapper .section .top_navbar .hamburger a {
+            font-size: 28px;
+            color: #f4fbff;
+        }
 
-.wrapper .section .top_navbar .hamburger a:hover {
-    color: #a2ecff;
-}
+            .wrapper .section .top_navbar .hamburger a:hover {
+                color: #a2ecff;
+            }
 
 body.active .wrapper .sidebar {
     left: -225px;
@@ -96,7 +95,7 @@ body.active .wrapper .section {
 }
 
 .Carrito {
-    position: absolute;  
+    position: absolute;
     right: 0;
 }
 
@@ -126,9 +125,9 @@ body.active .wrapper .section {
     width: 100%;
 }
 
-.carousel-cell:before {
-    display: block;
-}
+    .carousel-cell:before {
+        display: block;
+    }
 
 .Agregar-btn {
     background-color: white;
@@ -139,13 +138,13 @@ body.active .wrapper .section {
     margin: 30px 55px 10px;
 }
 
-.P-alta{
+.P-alta {
     margin-top: auto;
 }
 
-.P-alta p{
-    font-weight: bold;
-}
+    .P-alta p {
+        font-weight: bold;
+    }
 
 .btn-agregarAlCarro {
     background-color: white;
@@ -157,7 +156,6 @@ body.active .wrapper .section {
     width: 225px;
     height: 55px;
     text-decoration: none;
-
 }
 
 .img-btn {
@@ -171,8 +169,3 @@ body.active .wrapper .section {
     font-weight: bold;
     color: black;
 }
-
-
-
-
-
