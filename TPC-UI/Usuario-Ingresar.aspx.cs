@@ -21,6 +21,10 @@ namespace TPC_Ortiz_Costa
         }
         protected void btnConectar_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
+
             Usuario Usuario = new Usuario();
             UsuarioNegocio Negocio = new UsuarioNegocio();
 

@@ -5,6 +5,51 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <script>
+    function Validar() {
+        var User = document.getElementById("<%: txtUsername.ClientID %>");
+        var Pass = document.getElementById("<%: txtPassword.ClientID %>");
+        var Email = document.getElementById("<%: txtEmail.ClientID %>");
+        var Flag = true;
+
+        if (User.value === "" || User.value === null) {
+
+            User.classList.remove("is-valid");
+            User.classList.add("is-invalid");        
+            Flag = false;
+        }
+        else {
+            User.classList.remove("is-invalid");
+            User.classList.add("is-valid");
+            Flag = true;
+        }
+        if (Pass.value === "" || Pass.value === null) {
+
+            Pass.classList.remove("is-valid");
+            Pass.classList.add("is-invalid");
+            Flag = false;
+        }
+        else {
+            Pass.classList.remove("is-invalid");
+            Pass.classList.add("is-valid");
+            Flag = true;
+        }
+        if (Email.value === "" || Email.value === null) {
+
+            Email.classList.remove("is-valid");
+            Email.classList.add("is-invalid");
+            Flag = false;
+        }
+        else {
+            Email.classList.remove("is-invalid");
+            Email.classList.add("is-valid");
+            Flag = true;
+        }
+        return Flag;
+    }
+    </script>
+
+
     <div style="display: flex; justify-content: center; padding-bottom: 4rem !important; padding-top: 7rem !important;">
         <div class="card w-50 shadow-lg border-1 border-dark">
             <div class="card-body">
@@ -34,7 +79,7 @@
                             </label>
 
                             <div class="mb-3">
-                                <asp:Button Text="Crear" CssClass="btn btn-dark shadow-lg" runat="server" ID="btnCrear" OnClick="btnCrear_Click" />
+                                <asp:Button Text="Crear" CssClass="btn btn-dark shadow-lg" runat="server" ID="btnCrear" OnClientClick="return Validar();" OnClick="btnCrear_Click" />
                                 <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>
                             </div>
 
