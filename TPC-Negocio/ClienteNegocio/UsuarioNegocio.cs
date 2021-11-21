@@ -43,14 +43,14 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
- 
+        
         public Usuario Buscar(int Id)
         {
             AccesoDatabase Datos = new AccesoDatabase();
 
             try
             {
-                Datos.SetConsulta("SELECT ID, USERNAME, PASSWORD, EMAIL FROM USUARIOS WHERE ID =" + Id);
+                Datos.SetConsulta("SELECT ID, USERNAME, PASSWORD, EMAIL, NOMBRE, APELLIDO, TELEFONO FROM USUARIOS WHERE ID =" + Id);
                 Datos.EjecutarLectura();
                 Usuario Objeto = new Usuario();
 
@@ -60,6 +60,9 @@ namespace TPC_Negocio
                     Objeto.Username = (string)Datos.Lector["USERNAME"];
                     Objeto.Password = (string)Datos.Lector["PASSWORD"];
                     Objeto.Email = (string)Datos.Lector["EMAIL"];
+                    Objeto.Nombre = (string)Datos.Lector["NOMBRE"];
+                    Objeto.Apellido = (string)Datos.Lector["APELLIDO"];
+                    Objeto.Telefono = (string)Datos.Lector["TELEFONO"];
                 }
                                   
                 return Objeto;
@@ -123,13 +126,38 @@ namespace TPC_Negocio
             }
         }
 
-        public void Modificar(Usuario Usuario) //Solo modifica Password, generalizarla para poder modificar todas las propiedades.
+        public void Modificar(Usuario Usuario)
         {
             AccesoDatabase Datos = new AccesoDatabase();
             try
             {
+                if(Usuario.Domicilio.Id == 0)
+                {
+                    Datos.SetConsulta("UPDATE USUARIOS SET NOMBRE = '" + Usuario.Nombre + "', APELLIDO = '" + Usuario.Apellido + "', " + "EMAIL = '" + Usuario.Email + "', TELEFONO = '" + Usuario.Telefono + "' WHERE ID = '" + Usuario.Id + "'");  
+                }
+                else
+                {
+                    Datos.SetConsulta("UPDATE USUARIOS SET NOMBRE = '" + Usuario.Nombre + "', APELLIDO = '" + Usuario.Apellido + "', " + "EMAIL = '" + Usuario.Email + "', TELEFONO = '" + Usuario.Telefono + "', ID_DOMICILIO = '" + Usuario.Domicilio.Id + "' WHERE ID = '" + Usuario.Id + "'");
+                }
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
+        public void ModificarPass(Usuario Usuario)
+        { 
+            AccesoDatabase Datos = new AccesoDatabase();
+            try
+            {
                 Datos.SetConsulta("UPDATE USUARIOS SET PASSWORD = '" + Usuario.Password + "' WHERE ID = '" + Usuario.Id + "'");
-                
+
                 Datos.EjecutarAccion();
             }
             catch (Exception ex)

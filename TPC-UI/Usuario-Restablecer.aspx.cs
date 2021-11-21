@@ -44,7 +44,7 @@ namespace TPC_Ortiz_Costa
             {
                 Usuario.Password = txtRestablecer.Text;
                 UsuarioNegocio Negocio = new UsuarioNegocio();
-                Negocio.Modificar(Usuario);
+                Negocio.ModificarPass(Usuario);
                 Response.Redirect("Catalogo.aspx");
             }
         }

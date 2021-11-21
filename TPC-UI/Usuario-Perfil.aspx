@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-md-4 border-right">
                             <div class="d-flex flex-column align-items-center text-center p-3 py-3">
-                                <img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span>
+                                <img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90">
                             </div>
                             <center>
                                 <input type="file" name="Foto" class="py-3" />
@@ -23,41 +23,41 @@
                             <div class="p-3 py-5">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <div>
-                                        <h6>Cambiar Contraseña</h6>
+                                        <asp:Button Text="Cambiar Contraseña" CssClass="btn btn-outline-light text-black" runat="server" ID="btnPass" OnClick="btnPass_Click" />                                
                                     </div>
-                                    <h6 class="text-right">Editar Perfil</h6>
+                                    <asp:Button Text="Editar Perfil" CssClass="btn btn-outline-light text-right text-black" runat="server" ID="btnEditar" OnClick="btnEditar_Click" />
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-md-6">
-                                        <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" placeholder="Nombre" Text="" />
+                                        <asp:TextBox ReadOnly="true" runat="server" ID="txtNombre" CssClass="form-control" placeholder="Nombre" Text="" />
                                     </div>
                                     <div class="col-md-6">
-                                        <asp:TextBox runat="server" ID="txtApellido" CssClass="form-control" placeholder="Apellido" Text="" />
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-6">
-                                        <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" placeholder="Email" Text="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <asp:TextBox runat="server" ID="txtTelefono" CssClass="form-control" placeholder="Télefono" Text="" />
+                                        <asp:TextBox ReadOnly="true" runat="server" ID="txtApellido" CssClass="form-control" placeholder="Apellido" Text="" />
                                     </div>
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-md-6">
-                                        <asp:TextBox runat="server" ID="txtCalle" CssClass="form-control" placeholder="Calle" Text="" />
+                                        <asp:TextBox ReadOnly="true" runat="server" ID="txtEmail" CssClass="form-control" placeholder="Email" Text="" />
                                     </div>
                                     <div class="col-md-6">
-                                        <asp:TextBox runat="server" ID="txtNumero" CssClass="form-control" placeholder="Numero" Text="" />
+                                        <asp:TextBox ReadOnly="true" runat="server" ID="txtTelefono" CssClass="form-control" placeholder="Télefono" Text="" />
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <asp:TextBox ReadOnly="true" runat="server" ID="txtCalle" CssClass="form-control" placeholder="Calle" Text="" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:TextBox ReadOnly="true" runat="server" ID="txtNumero" CssClass="form-control" placeholder="Numero" Text="" />
                                     </div>
                                     <div class="col-md-6 my-3">
-                                        <asp:TextBox runat="server" ID="txtProvincia" CssClass="form-control" placeholder="Provincia" Text="" />
+                                        <asp:TextBox ReadOnly="true" runat="server" ID="txtProvincia" CssClass="form-control" placeholder="Provincia" Text="" />
                                     </div>
                                 </div>
 
                                 <div class="mt-5 text-right">
-                                    <button class="btn btn-primary profile-button mx-auto" type="button">Guardar</button>
-                                    <button class="btn btn-success profile-button mx-auto" type="button">Historial</button>
+                                    <asp:Button Text="Guardar" runat="server" CssClass="btn btn-primary profile-button mx-auto" ID="btnGuardar" OnClick="btnGuardar_Click" /> 
+                                    <asp:Button Text="Historial" runat="server" CssClass="btn btn-success profile-button mx-auto" ID="btnHistorial" OnClick="btnHistorial_Click" />
                                 </div>
                             </div>
                         </div>
