@@ -21,3 +21,4 @@ D:\Archivos de programa\Desktop\TPC-Costa-Ortiz\TPC-Negocio\obj\Debug\TPC-Negoci
 D:\Archivos de programa\Desktop\TPC-Costa-Ortiz\TPC-Negocio\obj\Debug\TPC-Negocio.csproj.CopyComplete
 D:\Archivos de programa\Desktop\TPC-Costa-Ortiz\TPC-Negocio\obj\Debug\TPC-Negocio.dll
 D:\Archivos de programa\Desktop\TPC-Costa-Ortiz\TPC-Negocio\obj\Debug\TPC-Negocio.pdb
+D:\Archivos de programa\Desktop\TPC-Costa-Ortiz\TPC-Negocio\obj\Debug\TPC-Negocio.csproj.AssemblyReference.cache

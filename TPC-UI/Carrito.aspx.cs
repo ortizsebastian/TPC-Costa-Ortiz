@@ -13,6 +13,8 @@ namespace TPC_Ortiz_Costa
     {
         public List<Articulo> Contenido { get; set; }
 
+        public decimal Total { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["Id"] != null)
@@ -59,6 +61,15 @@ namespace TPC_Ortiz_Costa
             }
             Contenido = (List<Articulo>)Session["Carrito"];
             Session["Cantidad"] = (List<Articulo>)Session["Carrito"];
+
+
+            List<Articulo> Lista = new List<Articulo>();
+            Lista = (List<Articulo>)Session["Carrito"];
+
+            foreach (var item in Lista)
+            {
+                Total += item.Precio;
+            }
         }
     }
 }

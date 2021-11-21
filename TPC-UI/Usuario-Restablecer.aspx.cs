@@ -13,11 +13,7 @@ namespace TPC_Ortiz_Costa
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] != null)
-            {
-                Session.Add("Error", "Dirección incorrecta.");
-                Response.Redirect("Error.aspx");
-            }
+
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -28,7 +24,7 @@ namespace TPC_Ortiz_Costa
             Usuario = Negocio.Listar().Find(x => x.Username == txtUsername.Text);
             if (Usuario != null && Usuario.Email == txtEmail.Text)
             {
-                Session.Add("Restablecer", Usuario);
+                Session["Usuario"] = Usuario;
                 Response.Redirect("Usuario-Restablecer.aspx");
             }
             Session.Add("Error", "Email y/o Usuario inexistente.");
@@ -38,13 +34,14 @@ namespace TPC_Ortiz_Costa
         protected void btnRestablecer_Click(object sender, EventArgs e)
         {
             Usuario Usuario = new Usuario();
-            Usuario = (Usuario)Session["Restablecer"];
+            Usuario = (Usuario)Session["Usuario"];
 
             if (txtRestablecer.Text == txtVerificar.Text)
             {
                 Usuario.Password = txtRestablecer.Text;
                 UsuarioNegocio Negocio = new UsuarioNegocio();
                 Negocio.ModificarPass(Usuario);
+                Session["Usuario"] = null;
                 Response.Redirect("Catalogo.aspx");
             }
         }

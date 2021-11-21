@@ -128,8 +128,8 @@ namespace TPC_Ortiz_Costa
 
         protected void btnPass_Click(object sender, EventArgs e)
         {
-            Session.Add("Restablecer", Usuario);
-            Session["Usuario"] = null;
+
+            Session.Add("Restablecer", Usuario);        
             Response.Redirect("Usuario-Restablecer.aspx");
         }
     }

@@ -41,7 +41,7 @@
             var Verificar = document.getElementById("<%: txtVerificar.ClientID %>");
             var Flag = true;
 
-            if (Restablecer.value === "" || Restablecer.value === null) {
+            if ((Restablecer.value === "" || Restablecer.value === null) && (Restablecer.value === Pass.value)) {
 
                 Restablecer.classList.remove("is-valid");
                 Restablecer.classList.add("is-invalid");
@@ -52,7 +52,7 @@
                 Restablecer.classList.add("is-valid");
                 Flag = true;
             }
-            if (Pass.value === "" || Pass.value === null) {
+            if ((Pass.value === "" || Pass.value === null) && (Restablecer.value === Pass.value)) {
 
                 Verificar.classList.remove("is-valid");
                 Verificar.classList.add("is-invalid");
@@ -77,7 +77,7 @@
                         <div class="mb-3">
                         </div>
 
-                        <%if (Session["Restablecer"] == null)
+                        <%if (Session["Usuario"] == null)
                             {%>                        
                             <div class="mb-3">
                                 <label for="username">Usuario</label>
