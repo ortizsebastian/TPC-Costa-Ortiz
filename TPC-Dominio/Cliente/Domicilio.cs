@@ -10,7 +10,7 @@ namespace TPC_Dominio
     {
         public int Id { get; set; }
         public string Calle { get; set; }
-        public int Numero { get; set; }
+        public string Numero { get; set; }
         public string Provincia { get; set; }
     }
 }

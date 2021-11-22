@@ -43,8 +43,76 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
-        
-        public Usuario Buscar(int Id)
+
+
+
+        public Usuario BuscarCompleto(int Id) //Pasandole el ID del Usuario busca el objeto Persona completo.
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+
+            try
+            {
+                Datos.SetConsulta("SELECT U.ID, U.USERNAME, U.PASSWORD, U.TIPO, U.NOMBRE, U.APELLIDO, U.TELEFONO, U.EMAIL, D.CALLE, D.NUMERO, D.PROVINCIA, D.ID FROM USUARIOS AS U JOIN DOMICILIOS AS D ON U.ID = D.ID  WHERE U.ID =" + Id);
+                Datos.EjecutarLectura();
+
+                Usuario Objeto = new Usuario();
+
+                if (Datos.Lector.Read())
+                {
+                    Objeto.Id = (int)Datos.Lector["ID"];
+                    Objeto.Username = (string)Datos.Lector["USERNAME"];
+                    Objeto.Password = (string)Datos.Lector["PASSWORD"];
+                    Objeto.Tipo = (bool)Datos.Lector["TIPO"];
+                    
+                    if(Datos.Lector["NOMBRE"] != DBNull.Value)
+                    {
+                        Objeto.Nombre = (string)Datos.Lector["NOMBRE"];
+                    }
+                    if(Datos.Lector["APELLIDO"] != DBNull.Value)
+                    {
+                        Objeto.Apellido = (string)Datos.Lector["APELLIDO"];
+                    }
+                    if(Datos.Lector["TELEFONO"] != DBNull.Value)
+                    {
+                        Objeto.Telefono = (string)Datos.Lector["TELEFONO"];
+                    }
+                    if(Datos.Lector["EMAIL"] != DBNull.Value)
+                    {
+                        Objeto.Email = (string)Datos.Lector["EMAIL"];
+                    }                
+
+                    Objeto.Domicilio = new Domicilio();
+                    if(Datos.Lector["ID"] != DBNull.Value)
+                    {
+                        Objeto.Domicilio.Id = (int)Datos.Lector["ID"];
+                        if(Datos.Lector["CALLE"] != DBNull.Value)
+                        {
+                            Objeto.Domicilio.Calle = (string)Datos.Lector["CALLE"];
+                        }
+                        if (Datos.Lector["NUMERO"] != DBNull.Value)
+                        {
+                            Objeto.Domicilio.Numero = (string)Datos.Lector["NUMERO"];
+                        }
+                        if (Datos.Lector["PROVINCIA"] != DBNull.Value)
+                        {
+                            Objeto.Domicilio.Provincia = (string)Datos.Lector["PROVINCIA"];
+                        }
+                    }           
+                }
+                return Objeto;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+    
+
+    public Usuario Buscar(int Id)
         {
             AccesoDatabase Datos = new AccesoDatabase();
 
@@ -131,14 +199,8 @@ namespace TPC_Negocio
             AccesoDatabase Datos = new AccesoDatabase();
             try
             {
-                if(Usuario.Domicilio.Id == 0)
-                {
-                    Datos.SetConsulta("UPDATE USUARIOS SET NOMBRE = '" + Usuario.Nombre + "', APELLIDO = '" + Usuario.Apellido + "', " + "EMAIL = '" + Usuario.Email + "', TELEFONO = '" + Usuario.Telefono + "' WHERE ID = '" + Usuario.Id + "'");  
-                }
-                else
-                {
-                    Datos.SetConsulta("UPDATE USUARIOS SET NOMBRE = '" + Usuario.Nombre + "', APELLIDO = '" + Usuario.Apellido + "', " + "EMAIL = '" + Usuario.Email + "', TELEFONO = '" + Usuario.Telefono + "', ID_DOMICILIO = '" + Usuario.Domicilio.Id + "' WHERE ID = '" + Usuario.Id + "'");
-                }
+                Datos.SetConsulta("UPDATE USUARIOS SET NOMBRE = '" + Usuario.Nombre + "', APELLIDO = '" + Usuario.Apellido + "', " + "EMAIL = '" + Usuario.Email + "', TELEFONO = '" + Usuario.Telefono + "', ID_DOMICILIO = '" + Usuario.Domicilio.Id + "' WHERE ID = '" + Usuario.Id + "'");
+                
                 Datos.EjecutarAccion();
             }
             catch (Exception ex)

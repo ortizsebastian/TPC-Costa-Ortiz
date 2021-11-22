@@ -22,96 +22,100 @@ namespace TPC_Ortiz_Costa
             Usuario = (Usuario)Session["Usuario"];
 
             UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
-            Usuario = UsuarioNegocio.Buscar(Usuario.Id);
+            Usuario = UsuarioNegocio.BuscarCompleto(Usuario.Id);
 
-            txtEmail.Text = Usuario.Email;
+            if (!IsPostBack)
+            {
+                if (Usuario.Nombre != null && Usuario.Nombre != "")
+                {
+                    txtNombre.Text = Usuario.Nombre;
+                }
+                if (Usuario.Apellido != null && Usuario.Apellido != "")
+                {
+                    txtApellido.Text = Usuario.Apellido;
+                }
+                if (Usuario.Email != null && Usuario.Email != "")
+                {
+                    txtEmail.Text = Usuario.Email;
+                }
+                if (Usuario.Telefono != null && Usuario.Telefono != "")
+                {
+                    txtTelefono.Text = Usuario.Telefono;
+                }
 
-            if (Usuario.Nombre != null && Usuario.Nombre != "")
-            {
-                txtNombre.Text = Usuario.Nombre;
+                if (Usuario.Domicilio != null)
+                {
+                    if (Usuario.Domicilio.Calle != null && Usuario.Domicilio.Calle != "")
+                    {
+                        txtCalle.Text = Usuario.Domicilio.Calle;
+                    }
+                    if (Usuario.Domicilio.Numero != null && Usuario.Domicilio.Numero != "")
+                    {
+                        txtNumero.Text = Usuario.Domicilio.Numero;
+                    }
+                    if (Usuario.Domicilio.Provincia != null && Usuario.Domicilio.Provincia != "")
+                    {
+                        txtProvincia.Text = Usuario.Domicilio.Provincia;
+                    }
+                }
             }
-            if (Usuario.Apellido != null && Usuario.Apellido != "")
-            {
-                txtApellido.Text = Usuario.Apellido;
-            }
-            if (Usuario.Email != null && Usuario.Email != "")
-            {
-                txtEmail.Text = Usuario.Email;
-            }
-            if (Usuario.Telefono != null && Usuario.Telefono != "")
-            {
-                txtTelefono.Text = Usuario.Telefono;
-            }
-        }
-
-        protected void btnEditar_Click(object sender, EventArgs e)
-        {
-            txtNombre.ReadOnly = false;
-            txtApellido.ReadOnly = false;
-            txtTelefono.ReadOnly = false;
-            txtEmail.ReadOnly = false;
-            txtCalle.ReadOnly = false;
-            txtNumero.ReadOnly = false;
-            txtProvincia.ReadOnly = false;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Usuario User = new Usuario();
-            User.Id = Usuario.Id;
-            User.Domicilio = new Domicilio();
-
-            bool Flag = false;
-
-            if(txtCalle.Text != null && txtCalle.Text != "")
+            if (txtNombre.Text != null && txtNombre.Text != "")
             {
-                User.Domicilio.Calle = txtCalle.Text;
-                Flag = true;
+                Usuario.Nombre = txtNombre.Text;
+            }
+            if (txtApellido.Text != null && txtApellido.Text != "")
+            {
+                Usuario.Apellido = txtApellido.Text;
+            }
+            if (txtEmail.Text != null && txtEmail.Text != "")
+            {
+                Usuario.Email = txtEmail.Text;
+            }
+            if (txtTelefono.Text != null && txtTelefono.Text != "")
+            {
+                Usuario.Telefono = txtTelefono.Text;
+            }
+
+            if (txtCalle.Text != null && txtCalle.Text != "")
+            {
+                Usuario.Domicilio.Calle = txtCalle.Text;
             }
             if(txtNumero.Text != null && txtNumero.Text != "")
             {
-                User.Domicilio.Numero = int.Parse(txtNumero.Text);
-                Flag = true;
+                Usuario.Domicilio.Numero = txtNumero.Text;
             }
             if(txtProvincia.Text != null && txtProvincia.Text != "")
             {
-                User.Domicilio.Provincia = txtProvincia.Text;
-                Flag = true;
+                Usuario.Domicilio.Provincia = txtProvincia.Text;               
             }
 
-            if(Flag)
+
+            UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
+            UsuarioNegocio.Modificar(Usuario);
+            
+            int IdDomicilio = Usuario.Domicilio.Id;
+
+            if(IdDomicilio == 0)
             {
                 DomicilioNegocio DomicilioNegocio = new DomicilioNegocio();
-                DomicilioNegocio.Agregar(User.Domicilio);
-                User.Domicilio = DomicilioNegocio.Buscar(User.Domicilio);
-                Flag = false;
+                DomicilioNegocio.Agregar(Usuario.Domicilio);
+            }
+            else
+            {
+                DomicilioNegocio DomicilioNegocio = new DomicilioNegocio();
+                Domicilio Domicilio = new Domicilio();
+
+                Domicilio = DomicilioNegocio.Buscar(IdDomicilio);
+
+                Usuario.Domicilio.Id = Domicilio.Id;
+
+                DomicilioNegocio.Modificar(Usuario.Domicilio);
             }
 
-            if(txtNombre.Text != null && txtNombre.Text != "")
-            {
-                User.Nombre = txtNombre.Text;
-                Flag = true;
-            }
-            if(txtApellido.Text != null && txtApellido.Text != "")
-            {
-                User.Apellido = txtApellido.Text;
-                Flag = true;
-            }
-            if(txtEmail.Text != null && txtEmail.Text != "")
-            {
-                User.Email = txtEmail.Text;
-                Flag = true;
-            }
-            if(txtTelefono.Text != null && txtTelefono.Text != "")
-            {
-                User.Telefono = txtTelefono.Text;
-                Flag = true;
-            }
-            if(Flag)
-            {
-                UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
-                UsuarioNegocio.Modificar(User);
-            }
             txtNombre.ReadOnly = true;
             txtApellido.ReadOnly = true;
             txtTelefono.ReadOnly = true;
@@ -121,16 +125,38 @@ namespace TPC_Ortiz_Costa
             txtProvincia.ReadOnly = true;
         }
 
-        protected void btnHistorial_Click(object sender, EventArgs e)
+        protected void btnEditar_Click(object sender, EventArgs e)
         {
-
+            if (txtNombre.ReadOnly)
+            {
+                txtNombre.ReadOnly = false;
+                txtApellido.ReadOnly = false;
+                txtTelefono.ReadOnly = false;
+                txtEmail.ReadOnly = false;
+                txtCalle.ReadOnly = false;
+                txtNumero.ReadOnly = false;
+                txtProvincia.ReadOnly = false;
+            }
+            else
+            {
+                txtNombre.ReadOnly = true;
+                txtApellido.ReadOnly = true;
+                txtTelefono.ReadOnly = true;
+                txtEmail.ReadOnly = true;
+                txtCalle.ReadOnly = true;
+                txtNumero.ReadOnly = true;
+                txtProvincia.ReadOnly = true;
+            }
         }
 
         protected void btnPass_Click(object sender, EventArgs e)
+        { 
+            Response.Redirect("Usuario-Restablecer.aspx");
+        }
+
+        protected void btnHistorial_Click(object sender, EventArgs e)
         {
 
-            Session.Add("Restablecer", Usuario);        
-            Response.Redirect("Usuario-Restablecer.aspx");
         }
     }
 }
