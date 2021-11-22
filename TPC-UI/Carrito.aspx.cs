@@ -15,6 +15,8 @@ namespace TPC_Ortiz_Costa
 
         public decimal Total { get; set; }
 
+        public int Cantidad { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["Id"] != null)
@@ -69,6 +71,7 @@ namespace TPC_Ortiz_Costa
             foreach (var item in Lista)
             {
                 Total += item.Precio;
+                Cantidad++;
             }
         }
     }
