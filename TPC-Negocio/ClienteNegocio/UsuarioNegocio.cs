@@ -194,7 +194,7 @@ namespace TPC_Negocio
             }
         }
 
-        public void Modificar(Usuario Usuario)
+        public void Modificar(Usuario Usuario) //Error al utilizar en Perfil..
         {
             AccesoDatabase Datos = new AccesoDatabase();
             try
@@ -220,6 +220,24 @@ namespace TPC_Negocio
             {
                 Datos.SetConsulta("UPDATE USUARIOS SET PASSWORD = '" + Usuario.Password + "' WHERE ID = '" + Usuario.Id + "'");
 
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
+        public void ModificarTipo(int Id, int Tipo)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+            try
+            {
+                Datos.SetConsulta("UPDATE USUARIOS SET TIPO = '" + Tipo + "' WHERE ID = '" + Id + "'");
                 Datos.EjecutarAccion();
             }
             catch (Exception ex)

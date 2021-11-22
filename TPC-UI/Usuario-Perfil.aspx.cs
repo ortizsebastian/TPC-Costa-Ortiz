@@ -95,7 +95,7 @@ namespace TPC_Ortiz_Costa
 
 
             UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
-            UsuarioNegocio.Modificar(Usuario);
+            UsuarioNegocio.Modificar(Usuario); ///Revisar..
             
             int IdDomicilio = Usuario.Domicilio.Id;
 
