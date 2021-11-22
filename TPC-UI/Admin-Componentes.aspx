@@ -7,9 +7,11 @@
 
 
     <div style="padding-bottom: 4rem !important; padding-top: 7rem !important;">
-        <div class="card-body shadow-lg w-75 mx-auto">
+        <div class="w-75 mx-auto" >
 
-            <div class="card w-25 my-3">
+            <!-- Eliminar -->
+<div style="display: flex; flex-direction: column; float: right; margin: 10px;">
+            <div style="height:100px; width:300px; border: 1px solid silver; margin-bottom: 10px;">
                 <div class="card-body">
                     <h5 class="card-title">Marcas</h5>
                     <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlMarca">
@@ -20,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="card w-25 my-3">
+            <div style="height:100px; width:300px; border: 1px solid silver; margin-bottom: 10px;">
                 <div class="card-body">
                     <h5 class="card-title">Categorías</h5>
                     <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlCategoria">
@@ -31,7 +33,7 @@
                 </div>
             </div>
 
-            <div class="card w-25 my-3">
+            <div style="height:100px; width:300px; border: 1px solid silver; margin-bottom: 10px;">
                 <div class="card-body">
                     <h5 class="card-title">Talles</h5>
                     <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select p-1" ID="ddlTalle">
@@ -45,27 +47,34 @@
             <div>
                 <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-danger mx-auto" ID="btnEliminar" OnClick="btnEliminar_Click" />
             </div>
+</div>
+            <!-- Agregar -->
 
-            <div class="w-25">
-                <div class="form-group my-3">
+            <div style="display: flex; flex-direction: column; float: left; margin: 10px; ">
+
+                
+
+                <div class="card-body" style="height:100px; width:300px; border: 1px solid silver; margin-bottom: 10px; ">
                     <label>Categoría</label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="txtCategoria" />
                 </div>
 
-                <div class="form-group my-3">
+                <div class="card-body" style="height:100px; width:300px; border: 1px solid silver; margin-bottom: 10px;">
                     <label>Marca</label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="txtMarca" />
                 </div>
 
-                <div class="form-group my-3">
+                <div class="card-body" style="height:100px; width:300px; border: 1px solid silver; margin-bottom: 10px;">
                     <label>Talle</label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="txtTalle" />
                 </div>
 
-                <div class="modal-footer border-0">
+                <div >
                     <asp:Button Text="Agregar" CssClass="btn btn-success" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" />
                 </div>
             </div>
+                
+            <div style="  width: 2px; background-color: #888888; height: 450px; margin-left: 50%;"> </div>
 
         </div>
     </div>
