@@ -24,7 +24,7 @@ namespace TPC_Negocio
                 if (Datos.Lector.Read())
                 {
                     Objeto.Id = (int)Datos.Lector["ID"];
-                    if(Datos.Lector["CALLE"] != DBNull.Value)
+                    if (Datos.Lector["CALLE"] != DBNull.Value)
                         Objeto.Calle = (string)Datos.Lector["CALLE"];
                     if (Datos.Lector["NUMERO"] != DBNull.Value)
                         Objeto.Numero = (string)Datos.Lector["NUMERO"];
@@ -32,6 +32,29 @@ namespace TPC_Negocio
                         Objeto.Provincia = (string)Datos.Lector["PROVINCIA"];
                 }
                 return Objeto;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
+        public bool Existe(int Id)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+
+            try
+            {
+                Datos.SetConsulta("SELECT ID FROM DOMICILIOS WHERE ID = '" + Id + "'");
+                Datos.EjecutarLectura();
+
+                if (Datos.Lector.Read())
+                    return true;               
+                return false;
             }
             catch (Exception ex)
             {

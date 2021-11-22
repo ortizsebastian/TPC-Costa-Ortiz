@@ -22,7 +22,9 @@ namespace TPC_Ortiz_Costa
             Usuario = (Usuario)Session["Usuario"];
 
             UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
+            Usuario.Domicilio = new Domicilio();
             Usuario = UsuarioNegocio.BuscarCompleto(Usuario.Id);
+
 
             if (!IsPostBack)
             {
@@ -63,58 +65,51 @@ namespace TPC_Ortiz_Costa
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text != null && txtNombre.Text != "")
+            if (txtNombre.ReadOnly == true)
+                return;
+
+            if (txtNombre.Text != null)
             {
                 Usuario.Nombre = txtNombre.Text;
             }
-            if (txtApellido.Text != null && txtApellido.Text != "")
+            if (txtApellido.Text != null)
             {
                 Usuario.Apellido = txtApellido.Text;
             }
-            if (txtEmail.Text != null && txtEmail.Text != "")
+            if (txtEmail.Text != null)
             {
                 Usuario.Email = txtEmail.Text;
             }
-            if (txtTelefono.Text != null && txtTelefono.Text != "")
+            if (txtTelefono.Text != null)
             {
                 Usuario.Telefono = txtTelefono.Text;
             }
 
-            if (txtCalle.Text != null && txtCalle.Text != "")
+            if (txtCalle.Text != null)
             {
                 Usuario.Domicilio.Calle = txtCalle.Text;
             }
-            if(txtNumero.Text != null && txtNumero.Text != "")
+            if(txtNumero.Text != null)
             {
                 Usuario.Domicilio.Numero = txtNumero.Text;
             }
-            if(txtProvincia.Text != null && txtProvincia.Text != "")
+            if(txtProvincia.Text != null)
             {
                 Usuario.Domicilio.Provincia = txtProvincia.Text;               
             }
 
-
-            UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
-            UsuarioNegocio.Modificar(Usuario); ///Revisar..
-            
-            int IdDomicilio = Usuario.Domicilio.Id;
-
-            if(IdDomicilio == 0)
+            DomicilioNegocio DomicilioNegocio = new DomicilioNegocio();
+            if (DomicilioNegocio.Existe(Usuario.Domicilio.Id))
             {
-                DomicilioNegocio DomicilioNegocio = new DomicilioNegocio();
-                DomicilioNegocio.Agregar(Usuario.Domicilio);
+                DomicilioNegocio.Modificar(Usuario.Domicilio);
             }
             else
             {
-                DomicilioNegocio DomicilioNegocio = new DomicilioNegocio();
-                Domicilio Domicilio = new Domicilio();
-
-                Domicilio = DomicilioNegocio.Buscar(IdDomicilio);
-
-                Usuario.Domicilio.Id = Domicilio.Id;
-
-                DomicilioNegocio.Modificar(Usuario.Domicilio);
+                DomicilioNegocio.Agregar(Usuario.Domicilio);
             }
+
+            UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
+            UsuarioNegocio.Modificar(Usuario);
 
             txtNombre.ReadOnly = true;
             txtApellido.ReadOnly = true;

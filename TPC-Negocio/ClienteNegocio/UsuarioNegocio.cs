@@ -52,7 +52,7 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("SELECT U.ID, U.USERNAME, U.PASSWORD, U.TIPO, U.NOMBRE, U.APELLIDO, U.TELEFONO, U.EMAIL, D.CALLE, D.NUMERO, D.PROVINCIA, D.ID FROM USUARIOS AS U JOIN DOMICILIOS AS D ON U.ID = D.ID  WHERE U.ID =" + Id);
+                Datos.SetConsulta("SELECT U.ID, U.USERNAME, U.PASSWORD, U.TIPO, U.NOMBRE, U.APELLIDO, U.TELEFONO, U.EMAIL, D.CALLE, D.NUMERO, D.PROVINCIA, D.ID FROM USUARIOS AS U LEFT JOIN DOMICILIOS AS D ON U.ID = D.ID  WHERE U.ID =" + Id);
                 Datos.EjecutarLectura();
 
                 Usuario Objeto = new Usuario();
@@ -194,13 +194,13 @@ namespace TPC_Negocio
             }
         }
 
-        public void Modificar(Usuario Usuario) //Error al utilizar en Perfil..
+        public void Modificar(Usuario Usuario) 
         {
             AccesoDatabase Datos = new AccesoDatabase();
             try
             {
                 Datos.SetConsulta("UPDATE USUARIOS SET NOMBRE = '" + Usuario.Nombre + "', APELLIDO = '" + Usuario.Apellido + "', " + "EMAIL = '" + Usuario.Email + "', TELEFONO = '" + Usuario.Telefono + "', ID_DOMICILIO = '" + Usuario.Domicilio.Id + "' WHERE ID = '" + Usuario.Id + "'");
-                
+
                 Datos.EjecutarAccion();
             }
             catch (Exception ex)
