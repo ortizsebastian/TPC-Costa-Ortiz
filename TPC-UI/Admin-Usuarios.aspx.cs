@@ -16,6 +16,13 @@ namespace TPC_Ortiz_Costa
         public int Contador { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Request.QueryString["Remove"] != null)
+            {
+                int Id = int.Parse(Request.QueryString["Remove"]);
+                UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
+                UsuarioNegocio.Eliminar(Id);
+            }
+
             UsuarioNegocio Negocio = new UsuarioNegocio();
             ListaUsuario = Negocio.Listar();
             Contador = ListaUsuario.Count();
@@ -27,7 +34,7 @@ namespace TPC_Ortiz_Costa
                 UsuarioNegocio Usuario = new UsuarioNegocio();
                 int Tipo = int.Parse(Request.QueryString["Tipo"]);
                 
-                if(Tipo == 1) //No modifica el tipo y los toma erroneamente en el front..
+                if(Tipo == 1)
                 {
                     Usuario.ModificarTipo(Id, 0);
                 }

@@ -17,6 +17,12 @@ namespace TPC_Ortiz_Costa
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Request.QueryString["Logout"] != null)
+            {
+                Session["Usuario"] = null;
+                Response.Redirect("Catalogo.aspx");
+            }
+
             if (Session["Usuario"] != null)
             {
                 Usuario = (Usuario)Session["Usuario"];

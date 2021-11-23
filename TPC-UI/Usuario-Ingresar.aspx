@@ -48,16 +48,23 @@
                     <div class="col">
                         <div class="mb-3">
                         </div>
-                        <form class="shadow p-4">
 
-                            <div class="mb-3">
-                                <label for="username">Usuario</label>
-                                <asp:TextBox runat="server" CssClass="form-control" ID="txtUsername" placeholder="Usuario" />
+                            <div class="mb-3 needs-validation">
+                                <label for="validationServer01">Usuario</label>
+                                <asp:TextBox runat="server" CssClass="form-control" ID="txtUsername" placeholder="Usuario" ClientIDMode="Static" />                               
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="txtUsername"
+                                    ErrorMessage="* Obligatorio."
+                                    ForeColor="Red"                                     Font-Italic="true"                                     Font-Size="XX-Small">                                </asp:RequiredFieldValidator>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="Password">Contraseña</label>
-                                <asp:TextBox runat="server" CssClass="form-control" type="password" ID="txtPassword" placeholder="Contraseña" />
+                            <div class="mb-3 needs-validation">
+                                <label for="validationServer02">Contraseña</label>
+                                <asp:TextBox runat="server" CssClass="form-control" type="password" ID="txtPassword" placeholder="Contraseña" ClientIDMode="Static" />
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                    ControlToValidate="txtPassword"
+                                    ErrorMessage="* Obligatorio."
+                                    ForeColor="Red"                                     Font-Italic="true"                                     Font-Size="XX-Small">                                </asp:RequiredFieldValidator>
                             </div>
 
                             <label class="mb-3">
@@ -73,12 +80,13 @@
                             <hr>
                             <p class="mb-0">¿Eres nuevo? <a href="Usuario-Registrar.aspx" style="text-decoration: none; color: blue;">Crear cuenta</a></p>
                             <p class="mb-0">¿Olvidaste tu contraseña? <a href="Usuario-Restablecer.aspx" style="text-decoration: none; color: blue;">Recuperar contraseña</a></p>
-
-                        </form>
+   
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+
 
 </asp:Content>

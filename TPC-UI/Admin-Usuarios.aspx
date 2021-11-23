@@ -65,27 +65,33 @@
                             <div class="d-flex flex-row align-items-center">
                                 <i class="fa fa-check-circle checkicon mx-2"></i>
                                 <div class="ml-2">
-                                    <h6 class="mb-0"><%:Usuario.Username %></h6>
+                                    <h6 class="mb-0 text-black-50">Usuario: <b><%:Usuario.Username %></b></h6>
                                     <div class="d-flex flex-row mt-1 text-black-50 date-time">
-                                        <div><i class="fa fa-calendar-o"></i><span class="ml-2"><%:Usuario.Email %></span></div>
+                                        <div><i class="fa fa-calendar-o"></i><span class="ml-2">Email: <%:Usuario.Email %></span></div>
                                         <%if (Usuario.Tipo)
                                             {
-                                                Tipo = "Cliente";
+                                                Tipo = "Admin";
                                             }
                                             else
                                             {
-                                                Tipo = "Admin";
+                                                Tipo = "Cliente";
                                             }%>
-                                        <div class="ml-3"><i class="fa fa-clock-o"></i><span class="ml-2 mx-2"><%:Usuario.Tipo%></span></div>
+                                        <div class="ml-3"><i class="fa fa-clock-o"></i><span class="ml-2 mx-2"> Categoría: <b><%:Tipo%></b></span></div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row align-items-center">
-                                <div class="d-flex flex-column mr-2">
-                                    <div class="profile-image">
+                                <div class="d-flex flex-row mr-2">
+                                    <div>
                                         <a href="Admin-Usuarios.aspx?ID=<%:Usuario.Id %>&Tipo=<%:Convert.ToInt32(Usuario.Tipo) %>" class="btn btn-outline-danger mx-2">Cambiar Categoría</a>
                                     </div>
+                                    <%if (!Usuario.Tipo)
+                                      {%>
+                                        <div>
+                                            <a href="Admin-Usuarios.aspx?Remove=<%:Usuario.Id %>" class="btn btn-danger mx-2">Eliminar</a>
+                                        </div>
+                                    <%}%>
                                 </div>
                             </div>
                         </li>

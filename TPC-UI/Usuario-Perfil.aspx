@@ -23,9 +23,9 @@
                             <div class="p-3 py-5">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <div>
-                                        <asp:Button Text="Cambiar Contraseña" CssClass="btn btn-outline-light text-black" runat="server" ID="btnPass" OnClick="btnPass_Click" />                                
+                                        <asp:Button Text="Cambiar Contraseña" CssClass="btn btn-outline-light text-dark" runat="server" ID="btnPass" OnClick="btnPass_Click" />                                
                                     </div>
-                                    <asp:Button Text="Editar Perfil" CssClass="btn btn-outline-light text-right text-black" runat="server" ID="btnEditar" OnClick="btnEditar_Click" />
+                                    <asp:Button Text="Editar Perfil" CssClass="btn btn-outline-light text-right text-dark" runat="server" ID="btnEditar" OnClick="btnEditar_Click" />
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-md-6">

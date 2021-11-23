@@ -67,7 +67,6 @@
         }
     </script>
 
-
     <div style="display: flex; justify-content: center; padding-bottom: 4rem !important; padding-top: 7rem !important;">
         <div class="card w-50 shadow-lg border-1 border-dark">
             <div class="card-body">
@@ -79,41 +78,55 @@
 
                         <%if (Session["Usuario"] == null)
                             {%>                        
-                            <div class="mb-3">
-                                <label for="username">Usuario</label>
-                                <asp:TextBox runat="server" CssClass="form-control" ID="txtUsername" placeholder="Usuario" />
+                            <div class="mb-3 needs-validation">
+                                <label for="validationServer01">Usuario</label>
+                                <asp:TextBox runat="server" CssClass="form-control" ID="txtUsername" placeholder="Usuario" ClientIDMode="Static" />
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="txtUsername"
+                                    ErrorMessage="* Obligatorio."
+                                    ForeColor="Red"                                     Font-Italic="true"                                     Font-Size="XX-Small">                                </asp:RequiredFieldValidator>                                  
                             </div>
 
-                            <div class="mb-3">
-                                <label for="username">Email</label>
-                                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" placeholder="Email" />
+                            <div class="mb-3 needs-validation">
+                                <label for="validationServer02">Email</label>
+                                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" placeholder="Email" ClientIDMode="Static" />
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                    ControlToValidate="txtEmail"
+                                    ErrorMessage="* Obligatorio."
+                                    ForeColor="Red"                                     Font-Italic="true"                                     Font-Size="XX-Small">                                </asp:RequiredFieldValidator>                               
                             </div>
 
                             <div class="mb-3">
                                 <asp:Button OnClientClick="return ValidarBuscar();" OnClick="btnBuscar_Click" CssClass="btn btn-dark shadow-lg" ID="btnBuscar" Text="Buscar" runat="server" />
-                                <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>
+                                <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>                          
                             </div>
                             <hr>
-                            <p class="mb-0">Ingrese los datos de su cuenta para poder localizarla en nuestro sistema.</p>
-                       
+                            <p class="mb-0">Ingrese los datos de su cuenta para poder localizarla en nuestro sistema.</p>                       
                         <%}
                             else
                             {%>                
-                            <div class="mb-3">
-                                <label for="username">Nueva Contraseña</label>
-                                <asp:TextBox runat="server" class="form-control" ID="txtRestablecer" type="password" />
+                            <div class="mb-3 needs-validation">
+                                <label for="validationServer03">Nueva Contraseña</label>
+                                <asp:TextBox runat="server" class="form-control" ID="txtRestablecer" type="password" ClientIDMode="Static" />
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                                    ControlToValidate="txtRestablecer"
+                                    ErrorMessage="* Obligatorio."
+                                    ForeColor="Red"                                     Font-Italic="true"                                     Font-Size="XX-Small">                                </asp:RequiredFieldValidator>                                     
                             </div>
 
-                            <div class="mb-3">
-                                <label for="username">Verificar Contraseña</label>
-                                <asp:TextBox runat="server" class="form-control" ID="txtVerificar" type="password" />
+                            <div class="mb-3 needs-validation">
+                                <label for="validationServer04">Verificar Contraseña</label>
+                                <asp:TextBox runat="server" class="form-control" ID="txtVerificar" type="password" ClientIDMode="Static" />
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
+                                    ControlToValidate="txtVerificar"
+                                    ErrorMessage="* Obligatorio."
+                                    ForeColor="Red"                                     Font-Italic="true"                                     Font-Size="XX-Small">                                </asp:RequiredFieldValidator>                                     
                             </div>
 
                             <div class="mb-3">
                                 <asp:Button OnClientClick="return ValidarRestablecer();" OnClick="btnRestablecer_Click" CssClass="btn btn-dark shadow-lg" ID="btnRestablecer" Text="Restablecer" runat="server" />
                                 <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>
-                            </div>
-                        
+                            </div>                     
                         <%}%>
                     </div>
                 </div>

@@ -26,10 +26,5 @@ namespace TPC_Ortiz_Costa
                 Usuario = (Usuario)Session["Usuario"];
             }
         }
-        protected void btnSalir_Click(object sender, EventArgs e)
-        {
-            Session["Usuario"] = null;
-            Response.Redirect("Catalogo.aspx");
-        }
     }
 }

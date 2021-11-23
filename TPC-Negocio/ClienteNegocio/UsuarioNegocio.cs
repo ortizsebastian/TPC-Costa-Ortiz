@@ -17,7 +17,7 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("SELECT ID, USERNAME, PASSWORD, EMAIL FROM USUARIOS");
+                Datos.SetConsulta("SELECT ID, USERNAME, PASSWORD, EMAIL, TIPO FROM USUARIOS");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
@@ -28,6 +28,7 @@ namespace TPC_Negocio
                     Objeto.Username = (string)Datos.Lector["USERNAME"];
                     Objeto.Password = (string)Datos.Lector["PASSWORD"];
                     Objeto.Email = (string)Datos.Lector["EMAIL"];
+                    Objeto.Tipo = (bool)Datos.Lector["TIPO"];
 
                     Lista.Add(Objeto);
                 }
@@ -43,8 +44,6 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
-
-
 
         public Usuario BuscarCompleto(int Id) //Pasandole el ID del Usuario busca el objeto Persona completo.
         {
@@ -111,7 +110,6 @@ namespace TPC_Negocio
             }
         }
     
-
     public Usuario Buscar(int Id)
         {
             AccesoDatabase Datos = new AccesoDatabase();
@@ -249,5 +247,24 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
+
+        public void Eliminar(int Id)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+            try
+            {
+                Datos.SetConsulta("DELETE FROM USUARIOS WHERE ID = '" + Id + "'");
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
     }
 }
