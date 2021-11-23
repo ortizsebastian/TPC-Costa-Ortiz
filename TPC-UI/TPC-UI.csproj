@@ -73,11 +73,13 @@
     <Content Include="Carrito.aspx" />
     <Content Include="Catalogo-Detalle.aspx" />
     <Content Include="Catalogo.aspx" />
+    <Content Include="Comprar.aspx" />
     <Content Include="Contactar.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Img\add.png" />
     <Content Include="Img\delete.png" />
     <Content Include="Img\edit.png" />
+    <Content Include="Img\emoji.png" />
     <Content Include="Img\modify.png" />
     <Content Include="Img\upload.png" />
     <Content Include="Style.css" />
@@ -129,6 +131,13 @@
     </Compile>
     <Compile Include="Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comprar.aspx.cs">
+      <DependentUpon>Comprar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comprar.aspx.designer.cs">
+      <DependentUpon>Comprar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contactar.aspx.cs">
       <DependentUpon>Contactar.aspx</DependentUpon>

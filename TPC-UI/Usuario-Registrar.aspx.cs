@@ -15,7 +15,7 @@ namespace TPC_Ortiz_Costa
         {
             if (Session["Usuario"] != null)
             {
-                Session.Add("Error", "Dirección incorrecta.");
+                Session.Add("Error", "Dirección incorrecta o inexistente, vuelva a intentarlo o póngase en contacto con Soporte Técnico.");
                 Response.Redirect("Error.aspx");
             }
         }

@@ -88,7 +88,7 @@
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">
                         <div>
                             <a href="Catalogo.aspx" class="btn btn-dark btn-block btn-lg ml-2">Seguir Comprando</a> 
-                            <asp:Button ID="btnFinalizar" Text="Finalizar Compra" runat="server" CssClass="btn btn-warning btn-block btn-lg ml-2 pay-button mx-2" />
+                            <asp:Button ID="btnFinalizar" Text="Finalizar Compra" runat="server" OnClick="btnFinalizar_Click" CssClass="btn btn-warning btn-block btn-lg ml-2 pay-button mx-2" />
                         </div>
                     </div>
                 </div>

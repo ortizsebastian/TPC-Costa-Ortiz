@@ -27,7 +27,7 @@ namespace TPC_Ortiz_Costa
                 Session["Usuario"] = Usuario;
                 Response.Redirect("Usuario-Restablecer.aspx");
             }
-            Session.Add("Error", "Email y/o Usuario inexistente.");
+            Session.Add("Error", "Email y/o Usuario inexistente, vuelva a intentarlo o póngase en contacto con Soporte Técnico.");
             Response.Redirect("Error.aspx");
         }
 

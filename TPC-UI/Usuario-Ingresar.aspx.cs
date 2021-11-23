@@ -15,7 +15,7 @@ namespace TPC_Ortiz_Costa
         {
             if (Session["Usuario"] != null)
             {
-                Session.Add("Error", "Dirección incorrecta.");
+                Session.Add("Error", "No puede ingresar debido a que ya ha ingresado en el sistema, para dirigirse a la pantalla solicitada primero debe finalizar la sesión.");
                 Response.Redirect("Error.aspx");
             }
         }
@@ -38,7 +38,7 @@ namespace TPC_Ortiz_Costa
             }
             else
             {
-                Session.Add("Error", "Usuario y/o Contraseña incorrectos.");
+                Session.Add("Error", "Usuario y/o Contraseña inexistente, vuelva a intentarlo o póngase en contacto con Soporte Técnico.");
                 Response.Redirect("Error.aspx");
             }
         }

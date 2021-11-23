@@ -16,7 +16,23 @@ namespace TPC_Ortiz_Costa
         public int Contador { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["Remove"] != null)
+            if (Session["Usuario"] == null)
+            {
+                Session.Add("Error", "Dirección incorrecta o inexistente, vuelva a intentarlo o póngase en contacto con Soporte Técnico.");
+                Response.Redirect("Error.aspx");
+            }
+
+            if (Session["Usuario"] != null)
+            {
+                Usuario User = (Usuario)Session["Usuario"];
+                if (!User.Tipo)
+                {
+                    Session.Add("Error", "Usted no cuenta con los permisos necesarios para ingresar en esta sección.");
+                    Response.Redirect("Error.aspx");
+                }
+            }
+
+            if (Request.QueryString["Remove"] != null)
             {
                 int Id = int.Parse(Request.QueryString["Remove"]);
                 UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();

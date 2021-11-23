@@ -6,125 +6,117 @@
 
     <style>
         * {
-          -webkit-box-sizing: border-box;
-                  box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
         }
 
         body {
-          padding: 0;
-          margin: 0;
+            padding: 0;
+            margin: 0;
         }
 
         #notfound {
-          position: relative;
-          height: 100vh;
+            position: relative;
+            height: 100vh;
         }
 
-        #notfound .notfound {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          -webkit-transform: translate(-50%, -50%);
-              -ms-transform: translate(-50%, -50%);
-                  transform: translate(-50%, -50%);
-        }
+            #notfound .notfound {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
 
         .notfound {
-          max-width: 710px;
-          width: 100%;
-          padding-left: 190px;
-          line-height: 1.4;
-        }
-
-        .notfound .notfound-404 {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 150px;
-          height: 150px;
-        }
-
-        .notfound .notfound-404 h1 {
-          font-family: 'Passion One', cursive;
-          color: #00b5c3;
-          font-size: 150px;
-          letter-spacing: 15.5px;
-          margin: 0px;
-          font-weight: 900;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          -webkit-transform: translate(-50%, -50%);
-              -ms-transform: translate(-50%, -50%);
-                  transform: translate(-50%, -50%);
-        }
-
-        .notfound h2 {
-          font-family: 'Raleway', sans-serif;
-          color: #292929;
-          font-size: 28px;
-            font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 2.5px;
-          margin-top: 0;
-        }
-
-        .notfound p {
-          font-family: 'Raleway', sans-serif;
-          font-size: 14px;
-          font-weight: 400;
-          margin-top: 0;
-          margin-bottom: 15px;
-          color: #333;
-        }
-
-        .notfound a {
-          font-family: 'Raleway', sans-serif;
-          font-size: 14px;
-          text-decoration: none;
-          text-transform: uppercase;
-          background: #fff;
-          display: inline-block;
-          padding: 15px 30px;
-          border-radius: 40px;
-          color: #292929;
-          font-weight: 700;
-          -webkit-box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.3);
-                  box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.3);
-          -webkit-transition: 0.2s all;
-          transition: 0.2s all;
-        }
-
-        .notfound a:hover {
-          color: #fff;
-          background-color: #00b5c3;
-        }
-
-        @media only screen and (max-width: 480px) {
-          .notfound {
-            text-align: center;
-          }
-          .notfound .notfound-404 {
-            position: relative;
+            max-width: 560px;
             width: 100%;
-            margin-bottom: 15px;
-          }
-          .notfound {
-            padding-left: 15px;
-            padding-right: 15px;
-          }
+            padding-left: 160px;
+            line-height: 1.1;
+        }
+
+            .notfound .notfound-404 {
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: inline-block;
+                width: 140px;
+                height: 140px;
+                background-image: url('../Img/emoji.png');
+                background-size: cover;
+            }
+
+                .notfound .notfound-404:before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-transform: scale(2.4);
+                    -ms-transform: scale(2.4);
+                    transform: scale(2.4);
+                    border-radius: 50%;
+                    background-color: #f2f5f8;
+                    z-index: -1;
+                }
+
+            .notfound h1 {
+                font-family: 'Nunito', sans-serif;
+                font-size: 65px;
+                font-weight: 700;
+                margin-top: 0px;
+                margin-bottom: 10px;
+                color: #151723;
+                text-transform: uppercase;
+            }
+
+            .notfound h2 {
+                font-family: 'Nunito', sans-serif;
+                font-size: 21px;
+                font-weight: 400;
+                margin: 0;
+                text-transform: uppercase;
+                color: #151723;
+            }
+
+            .notfound p {
+                font-family: 'Nunito', sans-serif;
+                color: #999fa5;
+                font-weight: 400;
+            }
+
+            .notfound a {
+                font-family: 'Nunito', sans-serif;
+                display: inline-block;
+                font-weight: 700;
+                border-radius: 40px;
+                text-decoration: none;
+                color: #388dbc;
+            }
+
+        @media only screen and (max-width: 767px) {
+            .notfound .notfound-404 {
+                width: 110px;
+                height: 110px;
+            }
+
+            .notfound {
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 110px;
+            }
         }
     </style>
 
-	    <div id="notfound">
-		    <div class="notfound">
-			    <div class="notfound-404">
-				    <h1>:(</h1>
-			    </div>
-			    <h2>404 - Page not found</h2>
-			    <p><%:Mensaje%></p>
-			    <a href="#">Home</a>
-		    </div>
-	    </div>
+    <div id="notfound">
+        <div class="notfound">
+            <div class="notfound-404"></div>
+            <h1>404</h1>
+            <h2>Oops! Page Not Be Found</h2>
+            <p><%:Mensaje%></p>
+            <a href="Catalogo.aspx">Volver a la Homepage</a>
+        </div>
+    </div>
+
 
 </asp:Content>
