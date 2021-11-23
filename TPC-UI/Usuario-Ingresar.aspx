@@ -55,7 +55,10 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                                     ControlToValidate="txtUsername"
                                     ErrorMessage="* Obligatorio."
-                                    ForeColor="Red"                                     Font-Italic="true"                                     Font-Size="XX-Small">                                </asp:RequiredFieldValidator>
+                                    ForeColor="Red" 
+                                    Font-Italic="true" 
+                                    Font-Size="XX-Small">
+                                </asp:RequiredFieldValidator>
                             </div>
 
                             <div class="mb-3 needs-validation">
@@ -64,7 +67,10 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
                                     ControlToValidate="txtPassword"
                                     ErrorMessage="* Obligatorio."
-                                    ForeColor="Red"                                     Font-Italic="true"                                     Font-Size="XX-Small">                                </asp:RequiredFieldValidator>
+                                    ForeColor="Red" 
+                                    Font-Italic="true" 
+                                    Font-Size="XX-Small">
+                                </asp:RequiredFieldValidator>
                             </div>
 
                             <label class="mb-3">

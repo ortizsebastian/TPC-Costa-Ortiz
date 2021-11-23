@@ -22,9 +22,6 @@
             margin-bottom: 12px
         }
 
-        .list-group-item {
-        }
-
         .list li {
             list-style: none;
             padding: 10px;

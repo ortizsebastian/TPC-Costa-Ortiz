@@ -6,7 +6,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
     <div style="padding-top: 6rem; padding-bottom: 6rem; display: flex; justify-content: center;">
         <div class="card mb-3 shadow-lg border-1 border-dark" style="min-width: 1240px; max-width: 1240px;">
             <div class="row g-0">
@@ -32,6 +31,5 @@
             </div>
         </div>
     </div>
-
 
 </asp:Content>
