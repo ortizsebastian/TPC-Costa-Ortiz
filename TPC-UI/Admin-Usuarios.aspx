@@ -55,7 +55,7 @@
             }
     </style>
 
-    <div class="container mt-5" style="padding-top: 3rem !important; padding-bottom: 3rem !important;">
+    <div class="container mt-5" style="padding-top: 5rem !important; padding-bottom: 5rem !important;">
         <div class="card card-body shadow-sm border-1" style="border-radius: 15px !important;">
             <div class="row">
                 <div class="col-md-12">

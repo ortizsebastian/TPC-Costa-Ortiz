@@ -4,18 +4,16 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
     <style>
         .zoom {
             border-radius: 15px;
-            transition: transform .2s !important; /* Animation */
+            transition: transform .4s !important; /* Animation */
             box-shadow: 0 1px 2px rgba(0,0,0,0.15) !important;
         }
 
-            .zoom:hover {
-                z-index: 10 !important;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
-                transform: scale(1.3) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+            .zoom:hover {               
+                box-shadow: 0 5px 14px rgba(0,0,0,0.1) !important;
+                transform: scale(1.05) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
             }
     </style>
 
@@ -34,17 +32,16 @@
             </div>--%>
         </div>
 
-        <div style="padding-top: 3rem !important;">
+        <div style="padding-top: 5rem !important;">
             <%if (Usuario != null && Usuario.Tipo == true)
                 {%>
             <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
-                <div class="Agregar-btn shadow-lg mx-auto border-1" style="width: 75% !important; border-radius: 15px; border-color: lightgray !important;">
+                <div class="Agregar-btn shadow-sm mx-auto border-1" style="width: 78% !important; border-radius: 15px; border: 2px solid; border-color: lightgray !important;">
                     <asp:ImageButton class="btn" Style="width:60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
                 </div>
             </a>
             <%}%>
         </div>
-
 
 
         <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto" style="width: 80% !important">

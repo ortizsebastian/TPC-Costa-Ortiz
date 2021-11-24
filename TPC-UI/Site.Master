@@ -63,8 +63,8 @@
                 </div>
 
                 <div class="sidebar">
-                    <div class="profile">
-                        <img src="https://i.postimg.cc/jdd2fr04/last.png" alt="profile_picture">
+                    <div class="profile" style="padding-bottom: 6rem !important;">
+                        <%--<img src="https://i.postimg.cc/jdd2fr04/last.png" alt="profile_picture">--%>
                     </div>
 
                     <ul class="navbar-nav ml-auto">

@@ -57,7 +57,7 @@
                         <div class="card p-2 bg-transparent border-0">
                             <div class="input-group">
                                 <div class="input-group-append mx-auto">
-                                    <asp:Button style="z-index: 0" class="btn btn-light text-dark shadow-sm" Text="Retirar en la Sucursal" runat="server" />
+                                    <asp:Button style="z-index: 0" class="btn btn-light text-dark shadow-sm button" Text="Retiro en Sucursal" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -217,7 +217,7 @@
                                 </div>
                             </div>
                             <hr class="mb-4">
-                            <button class="btn btn-light shadow-sm button btn-lg btn-block" type="submit">Continuar</button>
+                            <button class="btn btn-light shadow-sm button btn-block" type="submit">Finalizar Compra</button>
                         </div>
                     </div>
                 </div>
