@@ -73,7 +73,7 @@
     <Content Include="Carrito.aspx" />
     <Content Include="Catalogo-Detalle.aspx" />
     <Content Include="Catalogo.aspx" />
-    <Content Include="Comprar.aspx" />
+    <Content Include="Pagar.aspx" />
     <Content Include="Contactar.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Img\add.png" />
@@ -132,12 +132,12 @@
     <Compile Include="Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Comprar.aspx.cs">
-      <DependentUpon>Comprar.aspx</DependentUpon>
+    <Compile Include="Pagar.aspx.cs">
+      <DependentUpon>Pagar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Comprar.aspx.designer.cs">
-      <DependentUpon>Comprar.aspx</DependentUpon>
+    <Compile Include="Pagar.aspx.designer.cs">
+      <DependentUpon>Pagar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contactar.aspx.cs">
       <DependentUpon>Contactar.aspx</DependentUpon>

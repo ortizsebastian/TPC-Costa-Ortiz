@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Comprar.aspx.cs" Inherits="TPC_Ortiz_Costa.Comprar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pagar.aspx.cs" Inherits="TPC_Ortiz_Costa.Comprar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -14,32 +14,23 @@
 
                     <%--Carrito--%>
                     <div class="col-md-4 order-md-2 mb-4">
-                        <h4 class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="text-muted">Your cart</span>
-                            <span class="badge badge-secondary badge-pill">3</span>
+                        <h4 class="d-flex justify-content-between align-items-center mb-2 mx-3">
+                            <span class="text-muted">Carrito</span>
+                            <span class="badge-pill"><%:Contenido %></span>
                         </h4>
                         <ul class="list-group mb-3">
+
+                            <% foreach (var Articulo in Carrito)
+                                {%>                             
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
-                                    <h6 class="my-0">Product name</h6>
-                                    <small class="text-muted">Brief description</small>
+                                    <h6 class="my-0"><%:Articulo.Nombre %></h6>
+                                    <small class="text-muted"><%:Articulo.Descripcion %></small>
                                 </div>
-                                <span class="text-muted">$12</span>
+                                <span class="text-muted">$<%:decimal.Round(Articulo.Precio) %></span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between lh-condensed">
-                                <div>
-                                    <h6 class="my-0">Second product</h6>
-                                    <small class="text-muted">Brief description</small>
-                                </div>
-                                <span class="text-muted">$8</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between lh-condensed">
-                                <div>
-                                    <h6 class="my-0">Third item</h6>
-                                    <small class="text-muted">Brief description</small>
-                                </div>
-                                <span class="text-muted">$5</span>
-                            </li>
+                            <%} %>
+
 <%--                            <li class="list-group-item d-flex justify-content-between bg-light">
                                 <div class="text-success">
                                     <h6 class="my-0">Promo code</h6>
@@ -49,14 +40,14 @@
                             </li>--%>
                             <li class="list-group-item d-flex justify-content-between">
                                 <span>Total ($)</span>
-                                <strong>$20</strong>
+                                <strong>$<%:decimal.Round(Precio) %></strong>
                             </li>
                         </ul>
 
                         <div class="card p-2 bg-transparent border-0">
                             <div class="input-group">
                                 <div class="input-group-append mx-auto">
-                                    <button type="submit" class="btn btn-outline-dark shadow-lg">Retirar en la Sucursal</button>
+                                    <asp:Button style="z-index: 0" class="btn btn-light text-dark shadow-sm" Text="Retirar en la Sucursal" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -64,26 +55,26 @@
 
                     <%--Direccion del Comprador--%>
                     <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Billing address</h4>
+                        <h4 class="mb-3">Información del Envío</h4>
                         <div class="needs-validation" novalidate="">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="firstName">First name</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                                    <label for="firstName">Nombre</label>
+                                    <asp:TextBox ID="txtNombre" placeholder="Nombre" CssClass="form-control" runat="server" />
                                     <div class="invalid-feedback">
                                         Valid first name is required.
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="lastName">Last name</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                                    <label for="lastName">Apellido</label>
+                                    <asp:TextBox ID="txtApellido" placeholder="Apellido" CssClass="form-control" runat="server" />
                                     <div class="invalid-feedback">
                                         Valid last name is required.
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="mb-3">
+<%--                            <div class="mb-3">
                                 <label for="username">Username</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -94,30 +85,25 @@
                                         Your username is required.
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
 
                             <div class="mb-3">
-                                <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                                <label for="email">Email <span class="text-muted">(Requerido)</span></label>
+                                <asp:TextBox ID="txtEmail" placeholder="ejemplo@ejemplo.com" CssClass="form-control" runat="server" />                            
                                 <div class="invalid-feedback">
                                     Please enter a valid email address for shipping updates.
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                                <label for="address">Domicilio</label>
+                                <asp:TextBox ID="txtDomicilio" placeholder="Av. 9 de Julio 2550" CssClass="form-control" runat="server" />                                                      
                                 <div class="invalid-feedback">
                                     Please enter your shipping address.
                                 </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                            </div>
-
-                            <div class="row">
+<%--                            <div class="row">
                                 <div class="col-md-5 mb-3">
                                     <label for="country">Country</label>
                                     <select class="form-select d-block w-100" id="country" required="">
@@ -145,48 +131,49 @@
                                         Zip code required.
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
+
                             <hr class="mb-4">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="same-address">
-                                <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                                <asp:RadioButton CssClass="custom-control-label"  runat="server" />
+                                <label class="custom-control-label" for="same-address">Usar el domicilio registrado en mi cuenta.</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="save-info">
-                                <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                                <asp:RadioButton CssClass="custom-control-label"  runat="server" />
+                                <label class="custom-control-label" for="save-info">Actualizar mi información personal para la próxima compra.</label>
                             </div>
                             <hr class="mb-4">
 
                             <%--Forma de pago--%>
-                            <h4 class="mb-3">Payment</h4>
+                            <h4 class="mb-3">Método de Pago</h4>
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                                    <label class="custom-control-label" for="credit">Credit card</label>
+                                    <asp:RadioButton CssClass="custom-control-label" runat="server" />
+                                    <label class="custom-control-label" for="credit">Tarjeta de Crédito</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                                    <label class="custom-control-label" for="debit">Debit card</label>
+                                    <asp:RadioButton CssClass="custom-control-label"  runat="server" />                                
+                                    <label class="custom-control-label" for="debit">Tarjeta de Débito</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                                    <label class="custom-control-label" for="paypal">Paypal</label>
+                                    <asp:RadioButton CssClass="custom-control-label"  runat="server" />
+                                    <label class="custom-control-label" for="paypal">Rapipago/Pago fácil</label>
                                 </div>
                             </div>
 
                             <%--Datos de la tarjeta--%>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="cc-name">Name on card</label>
+                                    <label for="cc-name">Títular</label>
                                     <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                                    <small class="text-muted">Full name as displayed on card</small>
+                                    <small class="text-muted">Nombre completo de la persona títular.</small>
                                     <div class="invalid-feedback">
                                         Name on card is required
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="cc-number">Credit card number</label>
-                                    <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                    <label for="cc-number">Número</label>
+                                    <input type="text" class="form-control" placeholder="" required="">
                                     <div class="invalid-feedback">
                                         Credit card number is required
                                     </div>
@@ -194,22 +181,33 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3 mb-3">
-                                    <label for="cc-expiration">Expiration</label>
-                                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                                    <label for="cc-expiration">Vencimiento</label>
+                                    <input type="text" class="form-control" id="Fecha" placeholder="" required="">
                                     <div class="invalid-feedback">
                                         Expiration date required
                                     </div>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">CVV</label>
-                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                    <input type="text" class="form-control" id="Código de seguridad" placeholder="" required="">
                                     <div class="invalid-feedback">
                                         Security code required
                                     </div>
                                 </div>
+                                <div class="col-md-3 mb-3 my-auto">
+                                    <asp:DropDownList AppendDataBoundItems="true" runat="server" class="form-select">
+                                        <Items>
+                                            <asp:ListItem Text="Coutas" Value="-1" />
+                                            <asp:ListItem Text="1" />
+                                            <asp:ListItem Text="3 s/interés" />
+                                            <asp:ListItem Text="6 s/interés" />
+                                            <asp:ListItem Text="12 s/interés" />
+                                        </Items>
+                                    </asp:DropDownList>
+                                </div>
                             </div>
                             <hr class="mb-4">
-                            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar</button>
                         </div>
                     </div>
                 </div>

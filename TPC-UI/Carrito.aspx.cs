@@ -74,11 +74,5 @@ namespace TPC_Ortiz_Costa
                 Cantidad++;
             }
         }
-
-        protected void btnFinalizar_Click(object sender, EventArgs e)
-        {
-            Session.Add("Comprar", Contenido);
-            Response.Redirect("Comprar.aspx");
-        }
     }
 }
