@@ -6,14 +6,24 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <style>
+        .button {
+            transition: all .5s ease !important;
+            border-radius: 15px !important;
+        }
 
-    <div style="padding-left: 7rem !important; padding-bottom: 4rem !important; padding-top: 7rem !important;">
-        <div class="card w-50 shadow-lg border-1 border-dark">
+            .button:hover {
+                color: white !important;
+                background-color: rgb(179, 0, 0) !important;
+            }
+    </style>
+
+    <div style="padding-bottom: 4rem !important; padding-top: 7rem !important;">
+        <div class="card w-50 mx-auto shadow-sm border-1" style="border-radius: 15px !important;">
             <div class="card-body">
                 <div class="container mt-4 d-flex justify-content-between">
 
                     <div class="col mx-3">
-                        <form>
                             <div class="mb-3">
                                 <label>Código</label>
                                 <asp:TextBox ID="txtCodigo" class="form-control" placeholder="Código" runat="server"></asp:TextBox>
@@ -38,7 +48,6 @@
                                 <label>Imagén</label>
                                 <asp:TextBox ID="txtImg" class="form-control" placeholder="Imagén" runat="server"></asp:TextBox>
                             </div>
-                        </form>
                     </div>
 
                     <div class="col mx-3">
@@ -59,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <asp:Button Text="Agregar" ID="btnAgregar" class="btn btn-dark d-flex justify-content-center mx-auto my-3 shadow-lg" runat="server" OnClick="btnAgregar_Click" />
+            <asp:Button Text="Agregar" ID="btnAgregar" class="btn btn-light shadow-sm button d-flex justify-content-center mx-auto my-3" runat="server" OnClick="btnAgregar_Click" />
         </div>
     </div>
 

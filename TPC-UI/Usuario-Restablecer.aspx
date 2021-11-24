@@ -5,6 +5,19 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <style>
+        .button {
+            transition: all .5s ease !important;
+            border-radius: 15px !important;           
+        }
+
+            .button:hover {
+                color: white !important;
+                background-color: rgb(179, 0, 0) !important;
+            }
+    </style>
+
+
     <script>
         function ValidarBuscar() {
             var User = document.getElementById("<%: txtUsername.ClientID %>");
@@ -68,7 +81,7 @@
     </script>
 
     <div style="display: flex; justify-content: center; padding-bottom: 4rem !important; padding-top: 7rem !important;">
-        <div class="card w-50 shadow-lg border-1 border-dark">
+        <div class="card w-50 shadow-sm border-1" style="border-radius: 15px;">
             <div class="card-body">
 
                 <div class="container mt-5">
@@ -103,8 +116,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <asp:Button OnClientClick="return ValidarBuscar();" OnClick="btnBuscar_Click" CssClass="btn btn-dark shadow-lg" ID="btnBuscar" Text="Buscar" runat="server" />
-                                <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>                          
+                                <asp:Button OnClientClick="return ValidarBuscar();" OnClick="btnBuscar_Click" CssClass="btn btn-light shadow-sm button " ID="btnBuscar" Text="Buscar" runat="server" />
+                                <a class="btn btn-light shadow-sm button" >Volver</a>
                             </div>
                             <hr>
                             <p class="mb-0">Ingrese los datos de su cuenta para poder localizarla en nuestro sistema.</p>                       
@@ -136,8 +149,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <asp:Button OnClientClick="return ValidarRestablecer();" OnClick="btnRestablecer_Click" CssClass="btn btn-dark shadow-lg" ID="btnRestablecer" Text="Restablecer" runat="server" />
-                                <a class="btn btn-dark shadow-lg" href="Catalogo.aspx">Volver</a>
+                                <asp:Button OnClientClick="return ValidarRestablecer();" OnClick="btnRestablecer_Click" CssClass="btn btn-light shadow-sm button" ID="btnRestablecer" Text="Restablecer" runat="server" />
+                                <a class="btn btn-light shadow-sm button" href="Catalogo.aspx">Volver</a>
                             </div>                     
                         <%}%>
                     </div>

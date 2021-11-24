@@ -4,13 +4,22 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <style>
+        .button {
+            transition: all .5s ease !important;
+            border-radius: 15px !important;           
+        }
+
+            .button:hover {
+                color: white !important;
+                background-color: rgb(179, 0, 0) !important;
+            }
+    </style>
 
     <div style="padding-top: 7rem; padding-bottom: 3rem">
-        <div class="bg-light card card-body shadow-lg mx-auto" style="width: 80% !important;">
+        <div class="card card-body shadow-sm mx-auto" style="width: 80% !important; border-radius: 15px !important;">
             <div class="container">
-
                 <div class="row">
-
 
                     <%--Carrito--%>
                     <div class="col-md-4 order-md-2 mb-4">
@@ -22,7 +31,7 @@
 
                             <% foreach (var Articulo in Carrito)
                                 {%>                             
-                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <li class="list-group-item d-flex justify-content-between lh-condensed border-0 shadow-sm"  style="border-radius: 15px !important;">
                                 <div>
                                     <h6 class="my-0"><%:Articulo.Nombre %></h6>
                                     <small class="text-muted"><%:Articulo.Descripcion %></small>
@@ -38,7 +47,8 @@
                                 </div>
                                 <span class="text-success">-$5</span>
                             </li>--%>
-                            <li class="list-group-item d-flex justify-content-between">
+
+                            <li class="list-group-item d-flex justify-content-between my-3 shadow-sm" style="border-radius: 15px !important;">
                                 <span>Total ($)</span>
                                 <strong>$<%:decimal.Round(Precio) %></strong>
                             </li>
@@ -207,7 +217,7 @@
                                 </div>
                             </div>
                             <hr class="mb-4">
-                            <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar</button>
+                            <button class="btn btn-light shadow-sm button btn-lg btn-block" type="submit">Continuar</button>
                         </div>
                     </div>
                 </div>

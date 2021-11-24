@@ -42,25 +42,31 @@
         .qty i {
             font-size: 11px
         }
+
+        .button {
+            transition: all .5s ease !important;
+            border-radius: 15px !important;
+        }
+
+            .button:hover {
+                color: white !important;
+                background-color: rgb(179, 0, 0) !important;
+            }
     </style>
 
     <%if (Contenido != null && Contenido.Count() != 0)
         {
     %>
-
     <div class="container mt-5 mb-5" style="padding-top: 3rem !important;">
+    <div class="card card-body shadow-sm border-1" style="border-radius: 15px !important;">
         <div class="d-flex justify-content-center row">
             <div class="col-md-8">
-                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded card card-body shadow-lg">
-                    <p class="mx-auto my-auto">Precio: $<%:decimal.Round(Total) %></p>
-                    <p class="mx-auto my-auto">Artículos: <%:Cantidad %></p>
-                </div>
 
                 <% 
                     foreach (var Articulo in Contenido)
                     {
                 %>
-                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded shadow-lg border-1 border-dark">
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 shadow-sm border-1" style="border-radius: 15px !important;">
                     <div class="mr-1">
                         <img class="rounded" src="<%:Articulo.ImgUrl %>" width="70"></div>
                     <div class="d-flex flex-column align-items-center product-details">
@@ -73,29 +79,35 @@
                     <div>
                         <h5 class="text-grey">$ <%:decimal.Round(Articulo.Precio) %></h5>
                     </div>
-                    <a href="Carrito.aspx?Remove=<%:Articulo.Id %>">
+                    <a href="Carrito.aspx?Remove=<%:Articulo.Id %>" style="text-decoration: none;">
                         <div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
                     </a>
                 </div>
                 <%
                     }
                 %>
-                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">
+
+                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded card card-body shadow-sm border-0" style="border-radius: 15px !important;">
+                    <p class="mx-auto my-auto">Precio: $<%:decimal.Round(Total) %></p>
+                    <p class="mx-auto my-auto">Artículos: <%:Cantidad %></p>
+                </div>
+
+                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white shadow-sm border-1" style="border-radius: 15px !important;">
                     <input type="text" class="form-control border-0 gift-card" placeholder="Código de Descuento / Gift Card">
-                    <button class="btn btn-outline-warning btn-sm ml-2" type="button">Aplicar</button></div>
+                    <button class="btn btn-outline-danger btn-sm ml-2" style="border-radius: 15px !important;" type="button">Aplicar</button></div>
 
                 <div>
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">
                         <div>
-                            <a href="Catalogo.aspx" class="btn btn-dark btn-block btn-lg ml-2">Seguir Comprando</a> 
-                            <a href="Pagar.aspx" class="btn btn-warning btn-block btn-lg ml-2 pay-button mx-2">Finalizar Compra</a>
+                            <a href="Catalogo.aspx" class="btn btn-light shadow-sm button  ml-2">Seguir Comprando</a> 
+                            <a href="Pagar.aspx" class="btn btn-light shadow-sm button  ml-2 mx-2">Finalizar Compra</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    </div>
      <%}
          else
          {

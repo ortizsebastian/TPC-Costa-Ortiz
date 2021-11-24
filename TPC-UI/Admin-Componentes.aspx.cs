@@ -51,6 +51,31 @@ namespace TPC_Ortiz_Costa
             }
         }
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(ddlMarca.SelectedItem.Value) != -1)
+            {
+                MarcaNegocio Negocio = new MarcaNegocio();
+                int Id = int.Parse(ddlMarca.SelectedItem.Value);
+                Negocio.BajaLogica(Id);
+            }
+
+            if (int.Parse(ddlTalle.SelectedItem.Value) != -1)
+            {
+                TalleNegocio Negocio = new TalleNegocio();
+                int Id = int.Parse(ddlTalle.SelectedItem.Value);
+                Negocio.BajaLogica(Id);
+            }
+
+            if (int.Parse(ddlCategoria.SelectedItem.Value) != -1)
+            {
+                CategoriaNegocio Negocio = new CategoriaNegocio();
+                int Id = int.Parse(ddlCategoria.SelectedItem.Value);
+                Negocio.BajaLogica(Id);
+            }
+            Response.Redirect("Admin-Componentes.aspx");
+        }
+
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             if (txtMarca.Text != "")
@@ -78,31 +103,6 @@ namespace TPC_Ortiz_Costa
                 CategoriaNegocio Negocio = new CategoriaNegocio();
                 Negocio.Agregar(Categoria);
                 txtCategoria.Text = "";
-            }
-            Response.Redirect("Admin-Componentes.aspx");
-        }
-
-        protected void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (int.Parse(ddlMarca.SelectedItem.Value) != -1)
-            {
-                MarcaNegocio Negocio = new MarcaNegocio();
-                int Id = int.Parse(ddlMarca.SelectedItem.Value);
-                Negocio.BajaLogica(Id);
-            }
-
-            if (int.Parse(ddlTalle.SelectedItem.Value) != -1)
-            {
-                TalleNegocio Negocio = new TalleNegocio();
-                int Id = int.Parse(ddlTalle.SelectedItem.Value);
-                Negocio.BajaLogica(Id);
-            }
-
-            if (int.Parse(ddlCategoria.SelectedItem.Value) != -1)
-            {
-                CategoriaNegocio Negocio = new CategoriaNegocio();
-                int Id = int.Parse(ddlCategoria.SelectedItem.Value);
-                Negocio.BajaLogica(Id);
             }
             Response.Redirect("Admin-Componentes.aspx");
         }

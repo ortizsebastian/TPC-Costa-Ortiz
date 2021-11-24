@@ -5,16 +5,27 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-   
+    <style>
+        .button {
+            transition: all .5s ease !important;
+            border-radius: 15px !important;
+        }
+
+            .button:hover {
+                color: white !important;
+                background-color: rgb(179, 0, 0) !important;
+            }
+    </style>
+
     <div class="my-3" style="padding-top: 5rem !important;">
-        <div class="card h-100 border-1 border-dark shadow-lg w-25 mx-auto">
+        <div class="card h-100 border-1 shadow-sm border-1 w-25 mx-auto" style="border-radius: 15px;">
             <div class="card-body">
-                <h5 class="my-auto text-center"><b>¡Envíanos un mensaje!</b></h5>
+                <h5 class="my-auto text-center"><i>¡Envíanos un mensaje!</i></h5>
             </div>
         </div>
     </div>
 
-    <div class="card w-75 shadow-lg mx-auto border-1 border-dark">
+    <div class="card w-75 mx-auto border-1 shadow-sm" style="border-radius: 15px;">
         <div class="card-body">
             <div class="container py-4">
 
@@ -46,15 +57,14 @@
                     </div>
 
                     <div class="d-grid">
-                        <button class="btn btn-dark mx-auto shadow-lg border-1 border-white" id="submitButton" type="submit" style="width: 26% !important; border-radius: 40px;">Enviar</button>
+                        <button class="btn btn-light button mx-auto shadow-sm" id="submitButton" type="submit" style="width: 20% !important; border-radius: 30px;">Enviar</button>
                     </div>
-
 
             </div>
         </div>
     </div>
 
-    <footer>
+    <footer style="padding-bottom: 3rem !important;">
         <section>
 
             <div style="display: flex; justify-content: center; margin: 10px;">

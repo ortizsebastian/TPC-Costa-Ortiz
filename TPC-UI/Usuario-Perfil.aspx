@@ -5,27 +5,39 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="padding-top: 5rem; padding-bottom: 5rem;">
-        <div class="card w-75 mx-auto border-1 border-dark">
-            <div class="card-body shadow-lg">
+    <style>
+        .button {
+            transition: all .5s ease !important;
+            border-radius: 15px !important;           
+        }
+
+            .button:hover {
+                color: white !important;
+                background-color: rgb(179, 0, 0) !important;
+            }
+    </style>
+
+    <div class="mx-auto" style="padding-top: 7rem; padding-bottom: 3rem; width: 80%;">
+        <div class="card w-75 mx-auto border-1 shadow-sm w-75" style="border-radius: 15px !important;">
+            <div class="card-body">
 
                 <div class="container rounded bg-white mt-5">
-                    <div class="row">
-                        <div class="col-md-4 border-right">
+                    <div class="row mx-auto">
+<%--                        <div class="col-md-4 border-right">
                             <div class="d-flex flex-column align-items-center text-center p-3 py-3">
                                 <img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90">
                             </div>
                             <center>
                                 <input type="file" name="Foto" class="py-3" />
                             </center>
-                        </div>
-                        <div class="col-md-8">
+                        </div>--%>
+                        <div class="col-md-8 mx-auto">
                             <div class="p-3 py-5">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <div>
-                                        <asp:Button Text="Cambiar Contraseña" CssClass="btn btn-outline-light text-dark" runat="server" ID="btnPass" OnClick="btnPass_Click" />                                
+                                        <asp:Button Text="Cambiar Contraseña" CssClass="btn btn-outline-light text-dark shadow-sm" runat="server" ID="btnPass" OnClick="btnPass_Click" style="border-radius: 15px !important;" />                                
                                     </div>
-                                    <asp:Button Text="Editar Perfil" CssClass="btn btn-outline-light text-right text-dark" runat="server" ID="btnEditar" OnClick="btnEditar_Click" />
+                                    <asp:Button Text="Editar Perfil" CssClass="btn btn-outline-light text-right text-dark shadow-sm" runat="server" ID="btnEditar" OnClick="btnEditar_Click" style="border-radius: 15px !important;" />
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-md-6">
@@ -56,8 +68,8 @@
                                 </div>
 
                                 <div class="mt-5 text-right">
-                                    <asp:Button Text="Guardar" runat="server" CssClass="btn btn-primary profile-button mx-auto" ID="btnGuardar" OnClick="btnGuardar_Click" /> 
-                                    <asp:Button Text="Historial" runat="server" CssClass="btn btn-success profile-button mx-auto" ID="btnHistorial" OnClick="btnHistorial_Click" />
+                                    <asp:Button Text="Guardar" runat="server" CssClass="btn btn-light shadow-sm button mx-auto" ID="btnGuardar" OnClick="btnGuardar_Click" /> 
+                                    <asp:Button Text="Historial" runat="server" CssClass="btn btn-light shadow-sm button mx-auto" ID="btnHistorial" OnClick="btnHistorial_Click" />
                                 </div>
                             </div>
                         </div>

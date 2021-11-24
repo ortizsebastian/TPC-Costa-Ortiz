@@ -130,9 +130,6 @@ body.active .wrapper .section {
     }
 
 .Agregar-btn {
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
     display: flex;
     justify-content: center;
     margin: 30px 55px 10px;
@@ -169,3 +166,4 @@ body.active .wrapper .section {
     font-weight: bold;
     color: black;
 }
+

@@ -4,6 +4,21 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+
+    <style>
+        .zoom {
+            border-radius: 15px;
+            transition: transform .2s !important; /* Animation */
+            box-shadow: 0 1px 2px rgba(0,0,0,0.15) !important;
+        }
+
+            .zoom:hover {
+                z-index: 10 !important;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+                transform: scale(1.3) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+            }
+    </style>
+
     <div class="body-body">
         <div class="input-group rounded"></div>
         <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
@@ -22,70 +37,61 @@
         <div style="padding-top: 3rem !important;">
             <%if (Usuario != null && Usuario.Tipo == true)
                 {%>
-                <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
-                    <div class="Agregar-btn shadow-lg">
-                        <asp:ImageButton class="btn" Style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
-                        <div class="P-alta">
-                            <p>Cargar Artículo</p>
-                        </div>
-                    </div>
-                </a>
+            <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
+                <div class="Agregar-btn shadow-lg mx-auto border-1" style="width: 75% !important; border-radius: 15px; border-color: lightgray !important;">
+                    <asp:ImageButton class="btn" Style="width:60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
+                </div>
+            </a>
             <%}%>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4 mx-5">
 
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto" style="width: 80% !important">
             <% foreach (var Articulo in ListaArticulos)
                 {
             %>
-                <div class="col">
-                    <div class="card border-1 border-dark">
-
-                        <%if (Usuario != null && Usuario.Tipo == true)
-                            {%>
-                            <div class="my-2">
-                                <a href="Admin-Articulos.aspx?Modify=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-lg mx-2">
-                                    <img src="/Img/edit.png" style="width: 25px;" />
-                                </a>
-                                <a href="Catalogo.aspx?Delete=<%:Articulo.Id %>" class="btn shadow-sm border-1 border-dark shadow-sm">
-                                    <img src="/Img/delete.png" style="width: 25px;" />
-                                </a>
-                            </div>
-                        <%}%>
-
-
-                        <a href="Catalogo-Detalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
-                            <div class="card bg-transparent border-0">
-                                <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center"><%: Articulo.Nombre %></h5>
-                                    <p class="text-center" style="font-size: 15px !important;"><i>Código: </i><%: Articulo.Codigo %></p>
-                                </div>
-                            </div>
+            <div class="col">
+                <div class="card border-1 shadow-sm zoom">
+                    <%if (Usuario != null && Usuario.Tipo == true)
+                        {%>
+                    <div class="my-2">
+                        <a href="Admin-Articulos.aspx?Modify=<%:Articulo.Id %>" class="btn shadow-sm border-1 shadow-sm mx-2" style="border-radius: 15px !important;">
+                            <img src="/Img/edit.png" style="width: 25px;" />
                         </a>
-                        <div class="card-footer">
-                            <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
-                                <div>
-                                    <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
-                                    <small class="text-muted">Stock: <%: Articulo.Stock %></small>
-                                </div>
-                                <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="btn btn-sm border-1 border-dark shadow-lg" style="text-decoration: none; color: inherit;">
-                                    <img src="/Img/add.png" style="width: 40px;" />
-                                </a>
+                        <a href="Catalogo.aspx?Delete=<%:Articulo.Id %>" class="btn shadow-sm border-1 shadow-sm" style="border-radius: 15px !important;">
+                            <img src="/Img/delete.png" style="width: 25px;" />
+                        </a>
+                    </div>
+                    <%}%>
+                    <a href="Catalogo-Detalle.aspx?Id=<%: Articulo.Id %>" style="text-decoration: none; color: inherit;">
+                        <div class="card bg-transparent border-0">
+                            <img class="card-img-top w-50 mx-auto" src="<%: Articulo.ImgUrl %>">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><%: Articulo.Nombre %></h5>
+                                <p class="text-center text-black-50" style="font-size: 11px !important;"><i>Código: <%: Articulo.Codigo %></i></p>
                             </div>
+                        </div>
+                    </a>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
+                            <div>
+                                <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
+                                <small class="text-muted">Talle: <%: Articulo.Talle.Medida %></small>
+                            </div>
+                            <a href="Carrito.aspx?Id=<%: Articulo.Id %>" class="btn btn-sm" style="text-decoration: none; color: inherit;">
+                                <img src="/Img/add.png" style="width: 40px;" />
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
             <%
                 }
             %>
         </div>
 
-        <!-- Cartel de  pagos/Envios/Seguridad  (referencia wpp) -->
-
     </div>
-
-
     <footer class="text-center text-lg-start text-muted" style="background-color: transparent !important; padding-top: 8rem !important;">
         <section style="border-top: 1px solid black">
             <div class="container text-center text-md-start mt-5">
