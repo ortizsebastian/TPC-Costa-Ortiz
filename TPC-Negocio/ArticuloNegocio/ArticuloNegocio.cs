@@ -17,7 +17,7 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("SELECT A.CODIGO, A.ID, A.NOMBRE, A.DESCRIPCION, A.PRECIO, A.STOCK, A.IMG_URL, A.ESTADO, T.MEDIDA AS TALLE, C.NOMBRE AS CATEGORIA, M.NOMBRE AS MARCA, A.ID_MARCA, A.ID_TALLE, A.ID_CATEGORIA FROM ARTICULOS AS A JOIN TALLES AS T ON A.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON A.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON A.ID_MARCA = M.ID");
+                Datos.SetConsulta("SELECT A.CODIGO, A.ID, A.NOMBRE, A.DESCRIPCION, A.PRECIO, A.STOCK, A.IMG_URL, A.IMG_URL2, A.ESTADO, T.MEDIDA AS TALLE, C.NOMBRE AS CATEGORIA, M.NOMBRE AS MARCA, A.ID_MARCA, A.ID_TALLE, A.ID_CATEGORIA FROM ARTICULOS AS A JOIN TALLES AS T ON A.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON A.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON A.ID_MARCA = M.ID");
                 Datos.EjecutarLectura();
 
                 while (Datos.Lector.Read())
@@ -33,6 +33,9 @@ namespace TPC_Negocio
 
                     if (!(Datos.Lector["IMG_URL"] is DBNull))
                         Objeto.ImgUrl = (string)Datos.Lector["IMG_URL"];
+
+                    if (!(Datos.Lector["IMG_URL2"] is DBNull))
+                        Objeto.ImgUrl2 = (string)Datos.Lector["IMG_URL2"];
 
                     Marca Marca = new Marca();
                     Objeto.Marca = Marca;
@@ -70,7 +73,7 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("SELECT A.CODIGO, A.ID, A.NOMBRE, A.DESCRIPCION, A.PRECIO, A.STOCK, A.IMG_URL, A.ESTADO, T.ESTADO AS T_ESTADO, T.MEDIDA AS TALLE, C.ESTADO AS C_ESTADO, C.NOMBRE AS CATEGORIA, M.ESTADO AS M_ESTADO, M.NOMBRE AS MARCA, A.ID_MARCA, A.ID_TALLE, A.ID_CATEGORIA FROM ARTICULOS AS A JOIN TALLES AS T ON A.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON A.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON A.ID_MARCA = M.ID WHERE A.ID = '" + Id + "'");
+                Datos.SetConsulta("SELECT A.CODIGO, A.ID, A.NOMBRE, A.DESCRIPCION, A.PRECIO, A.STOCK, A.IMG_URL, A.IMG_URL2, A.ESTADO, T.ESTADO AS T_ESTADO, T.MEDIDA AS TALLE, C.ESTADO AS C_ESTADO, C.NOMBRE AS CATEGORIA, M.ESTADO AS M_ESTADO, M.NOMBRE AS MARCA, A.ID_MARCA, A.ID_TALLE, A.ID_CATEGORIA FROM ARTICULOS AS A JOIN TALLES AS T ON A.ID_TALLE = T.ID JOIN CATEGORIAS AS C ON A.ID_CATEGORIA = C.ID JOIN MARCAS AS M ON A.ID_MARCA = M.ID WHERE A.ID = '" + Id + "'");
                 Datos.EjecutarLectura();
 
                 Datos.Lector.Read();
@@ -85,6 +88,9 @@ namespace TPC_Negocio
 
                 if (!(Datos.Lector["IMG_URL"] is DBNull))
                     Objeto.ImgUrl = (string)Datos.Lector["IMG_URL"];
+
+                if (!(Datos.Lector["IMG_URL2"] is DBNull))
+                    Objeto.ImgUrl2 = (string)Datos.Lector["IMG_URL2"];
 
                 Objeto.Talle = new Talle();
                 Objeto.Talle.Id = (int)Datos.Lector["ID_TALLE"];

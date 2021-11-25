@@ -95,7 +95,7 @@
                                         <img id="main-image" src="<%:Articulo.ImgUrl %>" width="250" />
                                     </div>
                                     <div class="thumbnail text-center">
-                                        <img onclick="change_image(this)" src="https://i.imgur.com/Rx7uKd0.jpg" width="70">
+                                        <img onclick="change_image(this)" src="<%:Articulo.ImgUrl2 %>" width="70">
                                         <img onclick="change_image(this)" src="<%:Articulo.ImgUrl %>" width="70">
                                     </div>
                                 </div>

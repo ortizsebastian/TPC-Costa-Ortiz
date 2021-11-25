@@ -58,6 +58,7 @@ CREATE TABLE ARTICULOS(
 	,PRECIO MONEY NOT NULL CHECK(PRECIO > 0)
 	,STOCK INT NOT NULL CHECK(STOCK > 0) DEFAULT(1)
 	,IMG_URL VARCHAR(1000) NULL
+	,IMG_URL2 VARCHAR(1000) NULL
 	,ID_TALLE INT NULL FOREIGN KEY REFERENCES TALLES(ID)
 	,ID_CATEGORIA INT NULL FOREIGN KEY REFERENCES CATEGORIAS(ID)
 	,ID_MARCA INT NULL FOREIGN KEY REFERENCES MARCAS(ID)
@@ -145,122 +146,130 @@ INSERT INTO MARCAS (NOMBRE) VALUES ('Puma') --ID 4
 INSERT INTO MARCAS (NOMBRE) VALUES ('Vans') --ID 5
 
 
-INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, IMG_URL2, ID_TALLE, ID_CATEGORIA, ID_MARCA)
 VALUES (
 	'ZA01'
-	,'Zapatilla Filmore Decon'
-	,'Las Filmore Decon son zapatillas de corte bajo confeccionadas con una lona duradera.'
-	,9400
+	,'Calzado U Old Skool'
+	,'Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle.'
+	,11900
 	,12
-	,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2020/12_21/0/93/213/6149508.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/10_2/0/108/78/7097954.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/10_2/0/108/78/7097949.jpg'
 	,12
 	,3
 	,5
 );
 
-INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, IMG_URL2, ID_TALLE, ID_CATEGORIA, ID_MARCA)
 VALUES (
 	'RA00'
-	,'Remera OTW Boys -LOGO'
-	,'100% Algodón. Remera para niños. Grifa de marca en ruedo de marca.'
-	,2200
+	,'Campera M Classic FULL ZIP II'
+	,'Campera canguro. Detalle de ribb en capucha y boca de bolsillos. Estampa VANS en el delantero y grifa en el lateral.'
+	,9700
 	,18
-	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/3_16/0/97/139/6392774.jpg'
-	,2
-	,1
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/3_16/0/97/138/6392554.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/3_16/0/97/138/6392544.jpg'
+	,5
+	,4
 	,5
 );
 
-INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, IMG_URL2, ID_TALLE, ID_CATEGORIA, ID_MARCA)
 VALUES (
 	'ZA02'
-	,'Zapatilla AIR Force'
-	,'Nike Air Force 1 07 con capas de cuero sintético, te ofrece un look urbano y moderno.'
-	,12500
+	,'Calzado U SK8-HI'
+	,'El legendario top alto con cordones inspirado en el clásico Old Skool de Vans, presenta una parte superior de lona reforzada, punteras reforzadas para resistir el desgaste repetido, suelas de caucho con gofres exclusivos y cuellos y talones acolchados para brindar soporte y flexibilidad.'
+	,13500
 	,5
-	,'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw8abed4db/products/NI_315115-112/NI_315115-112-1.JPG'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2018/1_23/0/38/86/2512509.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2018/1_23/0/38/86/2512514.jpg'
 	,10
 	,3
-	,2
+	,5
 );
 
-INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, IMG_URL2, ID_TALLE, ID_CATEGORIA, ID_MARCA)
 VALUES (
 	'G10I'
-	,'Gorro Standard Issue Beanie'
-	,'Un clásico para estar al aire libre, de tela polar con un secado rápido.'
-	,8190
+	,'Accesorio Skate Sling Bag'
+	,'Acampa y disfrutá tu tiempo al aire libre con esta gorra de estilo trucker. Hemos actualizado este popular diseño con una lona resistente, liviana y un mesh transpirable para una mejor ventilación. El lavado vintage le da un efecto gastado. Ajuste trasero a presión. MATERIAL: Lona 100% algodón. Mesh: 100% poliéster.'
+	,5600
 	,10
-	,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2018/6_1/0/46/4/3015836.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/10_21/0/108/192/7127142.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/10_21/0/108/192/7127132.jpg'
 	,21
 	,6
-	,1
+	,5
 );
 
-INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, IMG_URL2, ID_TALLE, ID_CATEGORIA, ID_MARCA)
 VALUES (
 	'RA0Q'
-	,'Remera Classic'
-	,'100% Algodón. Remera masculina. Escote redondo.'
+	,'Remera M Off The Wall Classic'
+	,'Todo el mundo quiere la remera perfecta. Con la remera de manga corta Off The Wall Classic no tendrás que buscar más y podrás concentrarte en cosas más importantes. Esta nueva remera es de algodón 100%. CALCE: CLASSIC.'
 	,7200
 	,10
-	,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2021/10_6/0/108/98/7103176.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/4_15/0/98/188/6470892.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/4_15/0/98/188/6470882.jpg'
 	,5
 	,1
 	,5
 );
 
-INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, IMG_URL2, ID_TALLE, ID_CATEGORIA, ID_MARCA)
 VALUES (
 	'AC0X'
-	,'Mochila Startle BackPack'
-	,'La mochila Startle Backpack tiene un compartimento acolchado para laptop.'
-	,6400
+	,'Calzado W Ultra Endurance'
+	,'La zapatilla Ultra Endurance es un calzado de trail running diseñado para lograr la mejor tracción y el calce más confortable. Pensada especialmente para correr por los senderos por más tiempo. CAPELLADA: Tecnología Ultra Airmesh y FlashDry ™ para mantener tus pies frescos y secos. Soporte de TPU y gamuza para el apoyo en la zona media del pie.'
+	,25700
 	,5
-	,'https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2020/11_11/0/90/216/5953624.jpg'
-	,21
-	,6
-	,5
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2018/2_27/0/39/31/2563979.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2018/2_27/0/39/31/2563984.jpg'
+	,11
+	,3
+	,1
 );
 
-INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, IMG_URL2, ID_TALLE, ID_CATEGORIA, ID_MARCA)
 VALUES (
 	'JA05'
-	,'Campera NeedlePoint Jacket'
-	,'Campera canguro Unisex. Detalles bordeados. Estampa en el delantero y parte trasera.'
-	,14200
+	,'Remera W Super Fun BF'
+	,'Remera escote redondo. Estampa en frente y espalda. Logo de Vans en el lateral. CALCE: BOYFRIEND TEE.'
+	,3500
 	,7
-	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/8_25/0/107/108/7040162.jpg'
-	,4
-	,4
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/11_11/0/109/82/7164591.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/11_11/0/109/82/7164586.jpg'
+	,1
+	,1
 	,5
 );
 
-INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, IMG_URL2, ID_TALLE, ID_CATEGORIA, ID_MARCA)
 VALUES (
 	'KS03'
-	,'Pantalón Classics Cargo Wv'
-	,'Pantalón deportivo o casual. El cordón de la cintura elástica te permite personalizar el ajuste.'
-	,7000
+	,'Buzo W Classic V II Hoodie'
+	,'La CLASSIC V II HOODIE, confeccionada en 60% algodón y 40% poliéster, destaca por su diseño de corte clásico, bolsillo frontal de tipo canguro y emblemático logotipo estampado en la parte delantera.'
+	,9300
 	,15
-	,'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw93c41525/products/PU_532160-01/PU_532160-01-1.JPG'
-	,3
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/8_25/0/107/110/7040544.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/8_25/0/107/110/7040534.jpg'
 	,2
-	,4
+	,5
+	,5
 );
 
-INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, ID_TALLE, ID_CATEGORIA, ID_MARCA)
+INSERT INTO ARTICULOS (CODIGO, NOMBRE, DESCRIPCION, PRECIO, STOCK, IMG_URL, IMG_URL2, ID_TALLE, ID_CATEGORIA, ID_MARCA)
 VALUES (
 	'ZX03'
-	,'Zapatilla Forum Low'
-	,'Cuero Sintético/ Suela: Goma. Mix de materiales Low.'
-	,12900
+	,'Calzado M Ultra Endurance'
+	,'La zapatilla Ultra Endurance es un calzado de trail running diseñado para lograr la mejor tracción y el calce más confortable. Pensada especialmente para correr por los senderos por más tiempo. CAPELLADA: Tecnología Ultra Airmesh y FlashDry ™ para mantener tus pies frescos y secos. Soporte de TPU y gamuza para el apoyo en la zona media del pie.'
+	,23700
 	,14
-	,'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwb55abc9b/products/AD_H01924/AD_H01924-1.JPG'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2017/5_18/0/27/167/1812325.jpg'
+	,'https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2017/9_11/0/33/8/2164904.jpg'
 	,17
 	,3
-	,3
+	,1
 );
 
 SELECT * FROM ARTICULOS
-SELECT * FROM CATEGORIAS
