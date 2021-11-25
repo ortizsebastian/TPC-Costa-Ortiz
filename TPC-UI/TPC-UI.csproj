@@ -82,7 +82,7 @@
     <Content Include="Img\emoji.png" />
     <Content Include="Img\modify.png" />
     <Content Include="Img\upload.png" />
-    <Content Include="Style.css" />
+    <Content Include="Styles.css" />
     <Content Include="Usuario-Ingresar.aspx" />
     <Content Include="Usuario-Perfil.aspx" />
     <Content Include="Usuario-Registrar.aspx" />

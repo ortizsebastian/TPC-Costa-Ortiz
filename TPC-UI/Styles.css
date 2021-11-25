@@ -1,13 +1,15 @@
-﻿* {
+﻿
+* {
     list-style: none;
     text-decoration: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 .wrapper .sidebar {
-    background: rgb(5, 68, 104);
+    background: #5B9279;
     position: fixed;
     top: 0;
     left: 0;
@@ -36,30 +38,35 @@
         }
 
         .wrapper .sidebar .profile h3 {
-            color: #ffffff;
+            color: #EAE6E5;
             margin: 10px 0 5px;
         }
 
     .wrapper .sidebar ul li a {
         display: block;
         padding: 13px 30px;
-        border-bottom: 1px solid #10558d;
-        color: rgb(241, 237, 237);
+        border-bottom: 1px solid #609c81;
+        color: #EAE6E5;
         font-size: 16px;
         position: relative;
     }
 
+
         .wrapper .sidebar ul li a:hover,
         .wrapper .sidebar ul li a.active {
-            color: #0c7db1;
-            background: white;
-            border-right: 2px solid rgb(5, 68, 104);
+            color: #12130F;
+            background: #8FCB9B;
+            /*border-right: 1px solid #12130F;*/
+
         }
 
             .wrapper .sidebar ul li a:hover:before,
             .wrapper .sidebar ul li a.active:before {
                 display: block;
             }
+
+
+
 
 .wrapper .section {
     width: calc(100% - 225px);
@@ -70,7 +77,7 @@
 }
 
     .wrapper .section .top_navbar {
-        background: #054E8A;
+        background: #35605A;
         height: 50px;
         display: flex;
         align-items: center;
@@ -82,7 +89,7 @@
         }
 
             .wrapper .section .top_navbar .hamburger a:hover {
-                color: #a2ecff;
+                color: #8FCB9B;
             }
 
 body.active .wrapper .sidebar {
@@ -93,6 +100,13 @@ body.active .wrapper .section {
     margin-left: 0;
     width: 100%;
 }
+
+
+
+
+
+
+
 
 .Carrito {
     position: absolute;
@@ -166,4 +180,3 @@ body.active .wrapper .section {
     font-weight: bold;
     color: black;
 }
-
