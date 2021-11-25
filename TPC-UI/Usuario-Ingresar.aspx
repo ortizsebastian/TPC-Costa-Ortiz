@@ -13,10 +13,16 @@
             border-radius: 15px !important;           
         }
 
-            .button:hover {
+            .button-silver:hover {
                 color: white !important;
-                background-color: rgb(179, 0, 0) !important;
+                background-color: silver !important;
             }
+
+            .button-green:hover {
+                color: white !important;
+                background-color: rgb(0,121,0) !important;
+            }
+
     </style>
 
     <script>
@@ -91,8 +97,8 @@
                             </label>
 
                             <div class="mb-3">
-                                <asp:Button Text="Conectar" OnClientClick="return Validar();" CssClass="btn btn-light shadow-sm button" runat="server" ID="btnConectar" OnClick="btnConectar_Click" />
-                                <a class="btn btn-light shadow-sm button" href="Catalogo.aspx">Volver</a>
+                                <asp:Button Text="Conectar" OnClientClick="return Validar();" CssClass="btn btn-light shadow-sm button button-green" runat="server" ID="btnConectar" OnClick="btnConectar_Click" />
+                                <a class="btn btn-light shadow-sm button text-dark" href="Catalogo.aspx">Volver</a>
                             </div>
 
                             <hr>

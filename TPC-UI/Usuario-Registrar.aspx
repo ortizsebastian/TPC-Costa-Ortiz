@@ -11,9 +11,9 @@
             border-radius: 15px !important;           
         }
 
-            .button:hover {
+            .button-green:hover {
                 color: white !important;
-                background-color: rgb(179, 0, 0) !important;
+                background-color: rgb(0,121,0) !important;
             }
     </style>
 
@@ -111,8 +111,8 @@
                             </label>
 
                             <div class="mb-3">
-                                <asp:Button Text="Crear" CssClass="btn btn-light shadow-sm button" runat="server" ID="btnCrear" OnClientClick="return Validar();" OnClick="btnCrear_Click" />
-                                <a class="btn btn-light shadow-sm button" href="Catalogo.aspx">Volver</a>
+                                <asp:Button Text="Crear" CssClass="btn button-green btn-light shadow-sm button" runat="server" ID="btnCrear" OnClientClick="return Validar();" OnClick="btnCrear_Click" />
+                                <a class="btn btn-light shadow-sm button text-dark" href="Catalogo.aspx">Volver</a>
                             </div>
 
                             <hr>

@@ -81,9 +81,13 @@
             border-radius: 15px !important;           
         }
 
-            .button:hover {
+            .button-red:hover {
                 color: white !important;
                 background-color: rgb(179, 0, 0) !important;
+            }
+            .button-green:hover {
+                color: white !important;
+                background-color: rgb(0,121,0) !important;
             }
 
         @media (max-width: 576px) {
@@ -101,40 +105,48 @@
     </style>
 
 
-    <div style="padding-top: 5rem !important; padding-bottom: 3rem !important;">
-        <div class="card w-50 mx-auto shadow-sm">
-            <div class="registration-form w-50 mx-auto">
+    <div style="padding-top: 5rem !important; padding-bottom: 7rem !important;">
+        <div class="card-body w-50 mx-auto shadow-sm">
 
-                <div class="form-group p-3">
+                <!-- Agregar -->
+
+                <div style="display: flex; flex-direction: column; float: left; margin: 15px; ">
+
+                <div class="card-body" style="height:100px; width:300px;">
                     <asp:TextBox runat="server" placeholder="Categoría" CssClass="form-control" ID="txtCategoria" />
                 </div>
-                <div class="form-group p-3">
+                <div class="card-body" style="height:100px; width:300px; margin-top: -20px">
                     <asp:TextBox runat="server" placeholder="Marca" CssClass="form-control" ID="txtMarca" />
                 </div>
-                <div class="form-group p-3">
+                <div class="card-body" style="height:100px; width:300px; margin-top: -20px">
                     <asp:TextBox runat="server" placeholder="Talle" CssClass="form-control" ID="txtTalle" />
                 </div>
                 <div class="form-group m-2">
                     <center>
-                        <asp:Button Text="Agregar" CssClass="btn btn-block account mx-auto btn-light button shadow-sm" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" />
+                        <asp:Button Text="Agregar" CssClass="btn btn-block account mx-auto btn-light button button-green shadow-sm" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" />
                     </center>
                 </div>
+                </div>
 
-                <div class="form-group p-3">
+                <!-- Eliminar -->
+
+                <div style="display: flex; flex-direction: column; float: right; margin: 15px;">
+
+                <div class="card-body" style="height:100px; width:300px;">
                     <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select" ID="ddlCategoria">
                         <Items>
                             <asp:ListItem Text="Seleccionar" Value="-1" />
                         </Items>
                     </asp:DropDownList>
                 </div>
-                <div class="form-group p-3">
+                <div class="card-body" style="height:100px; width:300px; margin-top: -20px">
                     <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select" ID="ddlMarca">
                         <Items>
                             <asp:ListItem Text="Seleccionar" Value="-1" />
                         </Items>
                     </asp:DropDownList>
                 </div>
-                <div class="form-group p-3">
+                <div class="card-body" style="height:100px; width:300px; margin-top: -20px">
                     <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select" ID="ddlTalle">
                         <Items>
                             <asp:ListItem Text="Seleccionar" Value="-1" />
@@ -143,15 +155,14 @@
                 </div>
                 <div class="form-group m-2">
                     <center>
-                        <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-block account mx-auto mb-3 btn-light button shadow-sm" ID="btnEliminar" OnClick="btnEliminar_Click" />
+                        <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-block account mx-auto mb-3 btn-light button button-red shadow-sm" ID="btnEliminar" OnClick="btnEliminar_Click" />
                     </center>
                 </div>
-            </div>
+               </div>
+
+            <div style="  width: 2px; background-color: #E9EAEB; height: 400px; margin-left: 50%;"> </div>
+
         </div>
     </div>
-
-
-
-
 
 </asp:Content>

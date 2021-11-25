@@ -11,9 +11,9 @@
             border-radius: 15px !important;           
         }
 
-            .button:hover {
+            .button-green:hover {
                 color: white !important;
-                background-color: rgb(179, 0, 0) !important;
+                background-color: rgb(0,121,0) !important;
             }
     </style>
 
@@ -68,8 +68,8 @@
                                 </div>
 
                                 <div class="mt-5 text-right">
-                                    <asp:Button Text="Guardar" runat="server" CssClass="btn btn-light shadow-sm button mx-auto" ID="btnGuardar" OnClick="btnGuardar_Click" /> 
-                                    <asp:Button Text="Historial" runat="server" CssClass="btn btn-light shadow-sm button mx-auto" ID="btnHistorial" OnClick="btnHistorial_Click" />
+                                    <asp:Button Text="Guardar" runat="server" CssClass="btn button-green  shadow-sm button mx-auto" ID="btnGuardar" OnClick="btnGuardar_Click" /> 
+                                    <asp:Button Text="Historial" runat="server" CssClass="btn button btn-outline-light text-dark shadow-sm" ID="btnHistorial" OnClick="btnHistorial_Click" />
                                 </div>
                             </div>
                         </div>

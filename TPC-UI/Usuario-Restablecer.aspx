@@ -11,9 +11,9 @@
             border-radius: 15px !important;           
         }
 
-            .button:hover {
+            .button-green:hover {
                 color: white !important;
-                background-color: rgb(179, 0, 0) !important;
+                background-color: rgb(0,121,0) !important;
             }
     </style>
 
@@ -116,8 +116,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <asp:Button OnClientClick="return ValidarBuscar();" OnClick="btnBuscar_Click" CssClass="btn btn-light shadow-sm button " ID="btnBuscar" Text="Buscar" runat="server" />
-                                <a class="btn btn-light shadow-sm button" >Volver</a>
+                                <asp:Button OnClientClick="return ValidarBuscar();" OnClick="btnBuscar_Click" CssClass="btn button-green btn-light shadow-sm button " ID="btnBuscar" Text="Buscar" runat="server" />
+                                <a class="btn btn-light shadow-sm button text-dark" >Volver</a>
                             </div>
                             <hr>
                             <p class="mb-0">Ingrese los datos de su cuenta para poder localizarla en nuestro sistema.</p>                       

@@ -36,7 +36,7 @@
             <%if (Usuario != null && Usuario.Tipo == true)
                 {%>
             <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
-                <div class="Agregar-btn shadow-sm mx-auto border-1" style="width: 78% !important; border-radius: 15px; border: 2px solid; border-color: lightgray !important;">
+                <div class="Agregar-btn shadow-sm mx-auto" style="width: 78% !important; border-radius: 15px; border: 2px solid; border-color: lightgray !important;">
                     <asp:ImageButton class="btn" Style="width:60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
                 </div>
             </a>
@@ -70,9 +70,9 @@
                             </div>
                         </div>
                     </a>
-                    <div class="card-footer">
+                    <div class="card-footer"">
                         <div class="d-flex justify-content-between w-100 position-relative top-40-percent">
-                            <div>
+                            <div >
                                 <small class="text-muted">Precio: $<%: decimal.Round(Articulo.Precio) %></small><br>
                                 <small class="text-muted">Talle: <%: Articulo.Talle.Medida %></small>
                             </div>

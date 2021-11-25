@@ -49,13 +49,7 @@
 
                                 <span class="nav-link navbar-link-2 waves-effect" style="color: #ffffff;">
 
-                                    <%if (Usuario != null)
-                                        {
-                                    %>
-                                        <a href="Usuario-Perfil.aspx" style="text-decoration: none; color: #ffffff;" class="mx-5"><%: Usuario.Username %></a>
-                                    <%
-                                        }
-                                    %>
+
                                     <a href="Carrito.aspx" style="text-decoration: none;">
                                         <span class="badge badge-pill red" style="color: #ffffff"><%:Cantidad %></span>
                                         <i class="fas fa-shopping-cart pl-0 mx-1" style="color: #ffffff"></i>
@@ -67,8 +61,16 @@
                 </div>
 
                 <div class="sidebar">
-                    <div class="profile" style="padding-bottom: 3rem !important;">
-                        <%--<img src="https://i.postimg.cc/jdd2fr04/last.png" alt="profile_picture">--%>
+                    <div class="profile">
+                        
+                                    <%if (Usuario != null)
+                                        {
+                                    %><p style="color: white;">Bienvenido,</p>
+                                        <a href="Usuario-Perfil.aspx" style="text-decoration: none; color: white;" class="mx-5"><%: Usuario.Username %></a>
+                                    <%
+                                        }
+                                    %>
+
                     </div>
 
                     <ul class="navbar-nav ml-auto">
