@@ -5,164 +5,135 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
     <style>
-        .registration-form {
-            padding: 80px 0 0 0;
+        .Card {
+            padding: 30px 40px;
+            margin-bottom: 60px;
+            border: none !important;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
         }
 
-            .registration-form form {
-                max-width: 600px;
-                margin: auto;
-                padding: 50px 70px;
-                border-top-left-radius: 30px;
-                border-top-right-radius: 30px;
-            }
-
-            .registration-form .form-icon {
-                text-align: center;
-                border-radius: 50%;
-                font-size: 40px;
-                color: white;
-                width: 100px;
-                height: 100px;
-                margin: auto;
-                margin-bottom: 50px;
-                line-height: 100px;
-            }
-
-            .registration-form .item {
-                border-radius: 20px;
-                margin-bottom: 25px;
-                padding: 10px 20px;
-            }
-
-            .registration-form .create-account {
-                border-radius: 30px;
-                padding: 10px 20px;
-                font-size: 18px;
-                font-weight: bold;
-                border: none;
-                color: darkblue;
-                margin-top: 20px;
-            }
-
-            .registration-form .social-media {
-                max-width: 600px;
-                margin: auto;
-                padding: 35px 0;
-                text-align: center;
-            }
-
-            .registration-form .social-icons {
-                margin-top: 30px;
-                margin-bottom: 16px;
-            }
-
-                .registration-form .social-icons a {
-                    font-size: 23px;
-                    margin: 0 3px;
-                    border: 1px solid;
-                    border-radius: 50%;
-                    width: 45px;
-                    display: inline-block;
-                    height: 45px;
-                    text-align: center;
-                    line-height: 45px;
-                }
-
-                    .registration-form .social-icons a:hover {
-                        text-decoration: none;
-                        opacity: 0.6;
-                    }
-
-        .button {
-            transition: all .5s ease !important;
-            border-radius: 15px !important;           
+        .blue-text {
+            color: #00BCD4
         }
 
-            .button-red:hover {
-                color: white !important;
-                background-color: rgb(179, 0, 0) !important;
-            }
-            .button-green:hover {
-                color: white !important;
-                background-color: rgb(0,121,0) !important;
+        .form-control-label {
+            margin-bottom: 0
+        }
+
+        txtbox,
+        textarea,
+        button {
+            padding: 8px 15px;
+            border-radius: 5px !important;
+            margin: 5px 0px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            font-size: 18px !important;
+            font-weight: 300
+        }
+
+            input:focus,
+            textarea:focus {
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+                border: 1px solid #00BCD4;
+                outline-width: 0;
+                font-weight: 400
             }
 
-        @media (max-width: 576px) {
-            .registration-form form {
-                padding: 50px 20px;
+        .btn-block {
+            text-transform: uppercase;
+            font-size: 15px !important;
+            font-weight: 400;
+            height: 43px;
+            cursor: pointer
+        }
+
+            .btn-block:hover {
+                color: #fff !important
             }
 
-            .registration-form .form-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 30px;
-                line-height: 70px;
-            }
+        button:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            outline-width: 0
         }
     </style>
 
 
+
     <div style="padding-top: 5rem !important; padding-bottom: 7rem !important;">
-        <div class="card-body w-50 mx-auto shadow-sm">
+        <div class="container-fluid px-1 py-5 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                    <h3>Componentes</h3>
+                    <p class="blue-text">
+                        En caso de eliminar un componente<br>
+                        en uso, se le asignara el componente "desconocido" al artículo afectado.
+                    </p>
+                    <div class="Card shadow-sm" style="border-radius: 15px;">
+                        <%--<h5 class="text-center mb-4">Subtítulo.</h5>--%>
+                        <div class="row justify-content-between text-left">
 
-                <!-- Agregar -->
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3 py-1">Categoría<span class="text-danger"> *</span></label>
+                                <asp:TextBox runat="server" CssClass="form-control px-3" ID="txtCategoria" />
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3 py-1">Categoría<span class="text-danger"> *</span></label>
+                                <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select txtbox px-3" ID="ddlCategoria">
+                                    <Items>
+                                        <asp:ListItem Text="Seleccionar" Value="-1" />
+                                    </Items>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3 py-1">Marca<span class="text-danger"> *</span></label>
+                                <asp:TextBox runat="server" CssClass="form-control px-3" ID="txtMarca" />
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3 py-1">Marca<span class="text-danger"> *</span></label>
+                                <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select txtbox px-3" ID="ddlMarca">
+                                    <Items>
+                                        <asp:ListItem Text="Seleccionar" Value="-1" />
+                                    </Items>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3 py-1">Talle<span class="text-danger"> *</span></label>
+                                <asp:TextBox runat="server" CssClass="form-control px-3" ID="txtTalle" />
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3 py-1">Talle<span class="text-danger"> *</span></label>
+                                <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select txtbox px-3" ID="ddlTalle">
+                                    <Items>
+                                        <asp:ListItem Text="Seleccionar" Value="-1" />
+                                    </Items>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
 
-                <div style="display: flex; flex-direction: column; float: left; margin: 15px; ">
-
-                <div class="card-body" style="height:100px; width:300px;">
-                    <asp:TextBox runat="server" placeholder="Categoría" CssClass="form-control" ID="txtCategoria" />
+                        <div class="row justify-content-between mt-3">
+                            <div class="form-group col-sm-6">
+                                <asp:Button Text="Agregar" CssClass="btn btn-light shadow-sm my-1" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-light shadow-sm my-1" ID="btnEliminar" OnClick="btnEliminar_Click" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body" style="height:100px; width:300px; margin-top: -20px">
-                    <asp:TextBox runat="server" placeholder="Marca" CssClass="form-control" ID="txtMarca" />
-                </div>
-                <div class="card-body" style="height:100px; width:300px; margin-top: -20px">
-                    <asp:TextBox runat="server" placeholder="Talle" CssClass="form-control" ID="txtTalle" />
-                </div>
-                <div class="form-group m-2">
-                    <center>
-                        <asp:Button Text="Agregar" CssClass="btn btn-block account mx-auto btn-light button button-green shadow-sm" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" />
-                    </center>
-                </div>
-                </div>
-
-                <!-- Eliminar -->
-
-                <div style="display: flex; flex-direction: column; float: right; margin: 15px;">
-
-                <div class="card-body" style="height:100px; width:300px;">
-                    <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select" ID="ddlCategoria">
-                        <Items>
-                            <asp:ListItem Text="Seleccionar" Value="-1" />
-                        </Items>
-                    </asp:DropDownList>
-                </div>
-                <div class="card-body" style="height:100px; width:300px; margin-top: -20px">
-                    <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select" ID="ddlMarca">
-                        <Items>
-                            <asp:ListItem Text="Seleccionar" Value="-1" />
-                        </Items>
-                    </asp:DropDownList>
-                </div>
-                <div class="card-body" style="height:100px; width:300px; margin-top: -20px">
-                    <asp:DropDownList AppendDataBoundItems="true" runat="server" CssClass="form-select" ID="ddlTalle">
-                        <Items>
-                            <asp:ListItem Text="Seleccionar" Value="-1" />
-                        </Items>
-                    </asp:DropDownList>
-                </div>
-                <div class="form-group m-2">
-                    <center>
-                        <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-block account mx-auto mb-3 btn-light button button-red shadow-sm" ID="btnEliminar" OnClick="btnEliminar_Click" />
-                    </center>
-                </div>
-               </div>
-
-            <div style="  width: 2px; background-color: #E9EAEB; height: 400px; margin-left: 50%;"> </div>
-
+            </div>
         </div>
     </div>
+
+
 
 </asp:Content>

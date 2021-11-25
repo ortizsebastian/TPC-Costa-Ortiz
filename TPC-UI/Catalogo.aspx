@@ -10,7 +10,6 @@
             transition: transform .4s !important; /* Animation */
             box-shadow: 0 1px 2px rgba(0,0,0,0.15) !important;
         }
-
             .zoom:hover {               
                 box-shadow: 0 5px 14px rgba(0,0,0,0.1) !important;
                 transform: scale(1.05) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
@@ -32,17 +31,71 @@
             </div>--%>
         </div>
 
-        <div style="padding-top: 5rem !important;">
-            <%if (Usuario != null && Usuario.Tipo == true)
-                {%>
+
+<section class="author-archive" style="padding-top: 5rem !important; padding-bottom: 0 !important;">
+        <div class="container">
+            <input type="radio" id="All" name="categories" value="All" checked>
+            <input type="radio" id="Remeras" name="categories" value="Remeras">
+            <input type="radio" id="Pantalones" name="categories" value="Pantalones">
+            <input type="radio" id="Calzados" name="categories" value="Calzados">
+            <input type="radio" id="Camperas" name="categories" value="Camperas">
+            <input type="radio" id="Buzos" name="categories" value="Buzos">
+            <input type="radio" id="Accesorios" name="categories" value="Accesorios">
+
+            <ol class="filters">
+                <li>
+                    <%--<label for="All">All</label>--%>
+                    <asp:Button ID="btnAll" for="All" Text="All" runat="server" CssClass="btn btn-light shadow-sm mx-2 my-1 button-green" style="border-radius: 15px;" />
+                </li>
+                <li>
+                    <%--<label for="Remeras">Remeras</label>--%>
+                    <asp:Button OnClick="btnRemeras_Click" ID="btnRemeras" for="Remeras" Text="Remeras" runat="server" CssClass="btn btn-light shadow-sm mx-2 my-1 button-green" style="border-radius: 15px;" />
+                </li>
+                <li>
+                    <%--<label for="Pantalones">Pantalones</label>--%>
+                    <asp:Button OnClick="btnPantalones_Click" ID="btnPantalones" for="Pantalones" Text="Pantalones" runat="server" CssClass="btn btn-light shadow-sm mx-2 my-1 button-green" style="border-radius: 15px;" />
+                </li>
+                <li>
+                    <%--<label for="Calzados">Calzados</label>--%>
+                    <asp:Button OnClick="btnCalzados_Click" ID="btnCalzados" for="Calzados" Text="Calzados" runat="server" CssClass="btn btn-light shadow-sm mx-2 my-1 button-green" style="border-radius: 15px;" />
+                </li>
+                <li>
+                    <%--<label for="Camperas">Camperas</label>--%>
+                    <asp:Button OnClick="btnCamperas_Click" ID="btnCamperas" for="Camperas" Text="Camperas" runat="server" CssClass="btn btn-light shadow-sm mx-2 my-1 button-green" style="border-radius: 15px;" />
+                </li>
+                <li>
+                    <%--<label for="Buzos">Buzos</label>--%>
+                    <asp:Button OnClick="btnBuzos_Click" ID="btnBuzos" for="Buzos" Text="Buzos" runat="server" CssClass="btn btn-light shadow-sm mx-2 my-1 button-green" style="border-radius: 15px;" />
+                </li>
+                <li>
+                    <%--<label for="Accesorios">Accesorios</label>--%>
+                    <asp:Button OnClick="btnAccesorios_Click" ID="btnAccesorios" for="Accesorios" Text="Accesorios" runat="server" CssClass="btn btn-light shadow-sm mx-2 my-1 button-green" style="border-radius: 15px;" />
+                </li>
+            </ol>
+        </div>
+    </section>
+
+        <%if (Usuario != null && Usuario.Tipo == true)
+            {%>
+        <div>
             <a href="Admin-Articulos.aspx" style="text-decoration: none; color: inherit;">
-                <div class="Agregar-btn shadow-sm mx-auto" style="width: 78% !important; border-radius: 15px; border: 2px solid; border-color: lightgray !important;">
-                    <asp:ImageButton class="btn" Style="width:60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
+                <div class="Agregar-btn shadow-sm mx-auto" style="width: 78% !important; border-radius: 15px; border: 1px solid; border-color: lightgray !important;">
+                    <asp:ImageButton class="btn" Style="width: 60px;" ImageUrl="~/Img/upload.png" runat="server" ID="btnAlta" OnClick="btnAlta_Click" />
                 </div>
             </a>
-            <%}%>
         </div>
+        <%}%>
 
+        <%if (Filtro)
+            {%>
+        <div class="my-3">
+            <div class="card h-100 border-1 shadow-sm border-1 w-25 mx-auto" style="border-radius: 15px;">
+                <div class="card-body">
+                    <h5 class="my-auto text-center"><i>No hay artículos para mostrar!</i></h5>
+                </div>
+            </div>
+        </div>
+        <%} %>
 
         <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto" style="width: 80% !important">
             <% foreach (var Articulo in ListaArticulos)

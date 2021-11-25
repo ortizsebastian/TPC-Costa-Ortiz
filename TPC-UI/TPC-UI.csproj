@@ -73,6 +73,7 @@
     <Content Include="Carrito.aspx" />
     <Content Include="Catalogo-Detalle.aspx" />
     <Content Include="Catalogo.aspx" />
+    <Content Include="Pagar-Mensaje.aspx" />
     <Content Include="Pagar.aspx" />
     <Content Include="Contactar.aspx" />
     <Content Include="Error.aspx" />
@@ -131,6 +132,13 @@
     </Compile>
     <Compile Include="Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pagar-Mensaje.aspx.cs">
+      <DependentUpon>Pagar-Mensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pagar-Mensaje.aspx.designer.cs">
+      <DependentUpon>Pagar-Mensaje.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pagar.aspx.cs">
       <DependentUpon>Pagar.aspx</DependentUpon>

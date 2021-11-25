@@ -20,14 +20,14 @@
     <div class="my-3" style="padding-top: 5rem !important;">
         <div class="card h-100 border-1 shadow-sm border-1 w-25 mx-auto" style="border-radius: 15px;">
             <div class="card-body">
-                <h5 class="my-auto text-center"><i>¡Envíanos un mensaje!</i></h5>
+                <h5 class="my-auto text-center"><i>Envíanos un mensaje!</i></h5>
             </div>
         </div>
     </div>
 
-    <div class="card w-75 mx-auto border-1 shadow-sm" style="border-radius: 15px;">
+    <div class="card w-50 mx-auto border-1 shadow-sm" style="border-radius: 15px;">
         <div class="card-body">
-            <div class="container py-4">
+            <div class="container w-75 mx-auto py-4">
 
                     <div class="mb-3">
                         <label class="form-label" for="name">Nombre</label>
@@ -64,14 +64,10 @@
         </div>
     </div>
 
-    <footer style="padding-bottom: 3rem !important;">
+    <footer style="padding-bottom: 4rem !important;">
         <section>
-
-            <div style="display: flex; justify-content: center; margin: 10px;">
-                <span><i>Contáctanos en nuestras Redes Sociales:</i></span>
-            </div>
-
-            <div style="display: flex; justify-content: center;">
+            <div class="my-3" style="display: flex; justify-content: center;">
+                <span class="mx-4"><i>Contáctanos en nuestras Redes Sociales: </i></span>
                 <a href="#" class="me-4 text-reset" style="text-decoration: none !important;">
                     <i class="fab fa-facebook-f"></i>
                 </a>
@@ -83,7 +79,6 @@
                 </a>
             </div>
         </section>
-
     </footer>
 
 </asp:Content>

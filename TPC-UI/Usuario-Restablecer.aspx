@@ -80,12 +80,12 @@
         }
     </script>
 
-    <div style="display: flex; justify-content: center; padding-bottom: 4rem !important; padding-top: 7rem !important;">
+    <div style="display: flex; justify-content: center; padding-bottom: 3rem !important; padding-top: 7rem !important;">
         <div class="card w-50 shadow-sm border-1" style="border-radius: 15px;">
             <div class="card-body">
 
                 <div class="container mt-5">
-                    <div class="col">
+                    <div class="col w-75 mx-auto mb-5">
                         <div class="mb-3">
                         </div>
 

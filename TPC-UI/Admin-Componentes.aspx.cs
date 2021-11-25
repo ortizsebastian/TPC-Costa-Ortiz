@@ -19,10 +19,10 @@ namespace TPC_Ortiz_Costa
                 Response.Redirect("Error.aspx");
             }
 
-            if(Session["Usuario"] != null)
+            if (Session["Usuario"] != null)
             {
                 Usuario User = (Usuario)Session["Usuario"];
-                if(!User.Tipo)
+                if (!User.Tipo)
                 {
                     Session.Add("Error", "Usted no cuenta con los permisos necesarios para ingresar en esta sección.");
                     Response.Redirect("Error.aspx");

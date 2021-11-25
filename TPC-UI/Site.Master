@@ -49,7 +49,6 @@
 
                                 <span class="nav-link navbar-link-2 waves-effect" style="color: #ffffff;">
 
-
                                     <a href="Carrito.aspx" style="text-decoration: none;">
                                         <span class="badge badge-pill red" style="color: #ffffff"><%:Cantidad %></span>
                                         <i class="fas fa-shopping-cart pl-0 mx-1" style="color: #ffffff"></i>
@@ -61,7 +60,7 @@
                 </div>
 
                 <div class="sidebar">
-                    <div class="profile">
+                    <div class="profile mt-4">
                         
                                     <%if (Usuario != null)
                                         {

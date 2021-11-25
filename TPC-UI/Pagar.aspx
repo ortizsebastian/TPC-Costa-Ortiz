@@ -57,7 +57,7 @@
                         <div class="card p-2 bg-transparent border-0">
                             <div class="input-group">
                                 <div class="input-group-append mx-auto">
-                                    <asp:Button style="z-index: 0" class="btn btn-light text-dark shadow-sm button" Text="Retiro en Sucursal" runat="server" />
+                                    <asp:Button OnClick="btnSucursal_Click" ID="btnSucursal" style="z-index: 0" class="btn btn-light text-dark shadow-sm button" Text="Retiro en Sucursal" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -71,16 +71,16 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName">Nombre</label>
                                     <asp:TextBox ID="txtNombre" placeholder="Nombre" CssClass="form-control" runat="server" />
-                                    <div class="invalid-feedback">
+<%--                                    <div class="invalid-feedback">
                                         Valid first name is required.
-                                    </div>
+                                    </div>--%>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="lastName">Apellido</label>
                                     <asp:TextBox ID="txtApellido" placeholder="Apellido" CssClass="form-control" runat="server" />
-                                    <div class="invalid-feedback">
+<%--                                    <div class="invalid-feedback">
                                         Valid last name is required.
-                                    </div>
+                                    </div>--%>
                                 </div>
                             </div>
 
@@ -100,17 +100,17 @@
                             <div class="mb-3">
                                 <label for="email">Email <span class="text-muted">(Requerido)</span></label>
                                 <asp:TextBox ID="txtEmail" placeholder="ejemplo@ejemplo.com" CssClass="form-control" runat="server" />                            
-                                <div class="invalid-feedback">
+<%--                                <div class="invalid-feedback">
                                     Please enter a valid email address for shipping updates.
-                                </div>
+                                </div>--%>
                             </div>
 
                             <div class="mb-3">
                                 <label for="address">Domicilio</label>
                                 <asp:TextBox ID="txtDomicilio" placeholder="Av. 9 de Julio 2550" CssClass="form-control" runat="server" />                                                      
-                                <div class="invalid-feedback">
+<%--                                <div class="invalid-feedback">
                                     Please enter your shipping address.
-                                </div>
+                                </div>--%>
                             </div>
 
 <%--                            <div class="row">
@@ -175,39 +175,39 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-name">Títular</label>
-                                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                    <input type="text" class="form-control" id="cc-name" placeholder="">
                                     <small class="text-muted">Nombre completo de la persona títular.</small>
-                                    <div class="invalid-feedback">
+<%--                                    <div class="invalid-feedback">
                                         Name on card is required
-                                    </div>
+                                    </div>--%>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-number">Número</label>
-                                    <input type="text" class="form-control" placeholder="" required="">
-                                    <div class="invalid-feedback">
+                                    <input type="text" class="form-control" placeholder="">
+<%--                                    <div class="invalid-feedback">
                                         Credit card number is required
-                                    </div>
+                                    </div>--%>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">Vencimiento</label>
-                                    <input type="text" class="form-control" id="Fecha" placeholder="" required="">
-                                    <div class="invalid-feedback">
+                                    <input type="text" class="form-control" id="Fecha" placeholder="">
+<%--                                    <div class="invalid-feedback">
                                         Expiration date required
-                                    </div>
+                                    </div>--%>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">CVV</label>
-                                    <input type="text" class="form-control" id="Código de seguridad" placeholder="" required="">
-                                    <div class="invalid-feedback">
+                                    <input type="text" class="form-control" id="Código de seguridad" placeholder="">
+<%--                                    <div class="invalid-feedback">
                                         Security code required
-                                    </div>
+                                    </div>--%>
                                 </div>
                                 <div class="col-md-3 mb-3 my-auto">
                                     <asp:DropDownList AppendDataBoundItems="true" runat="server" class="form-select">
                                         <Items>
-                                            <asp:ListItem Text="Coutas" Value="-1" />
+                                            <asp:ListItem Text="Cuotas" Value="-1" />
                                             <asp:ListItem Text="1" />
                                             <asp:ListItem Text="3 s/interés" />
                                             <asp:ListItem Text="6 s/interés" />
@@ -217,7 +217,7 @@
                                 </div>
                             </div>
                             <hr class="mb-4">
-                            <button class="btn btn-light shadow-sm button btn-block" type="submit">Finalizar Compra</button>
+                            <asp:Button ID="btnFinalizar" OnClick="btnFinalizar_Click" Text="Finalizar Compra" CssClass="btn btn-light shadow-sm button btn-block" runat="server" />
                         </div>
                     </div>
                 </div>

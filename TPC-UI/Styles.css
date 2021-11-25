@@ -218,10 +218,20 @@ input[type="radio"] {
         }
 
 
+.button-green {
+    border-radius: 15px !important;
+}
+
+    .button-green:hover {
+        background-color: #35605A !important;
+        color: white !important;
+    }
+
+
 /* FILTERING RULES
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-[value="All"]:checked ~ .filters [for="All"],
+/*[value="All"]:checked ~ .filters [for="All"],
 [value="Remeras"]:checked ~ .filters [for="Remeras"],
 [value="Pantalones"]:checked ~ .filters [for="Pantalones"],
 [value="Calzados"]:checked ~ .filters [for="Calzados"],
@@ -230,7 +240,7 @@ input[type="radio"] {
 [value="Accesorios"]:checked ~ .filters [for="Accesorios"] {
     background: var(--green);
     color: var(--white);
-}
+}*/
 
 [value="All"]:checked ~ .posts [data-category] {
     display: block;
