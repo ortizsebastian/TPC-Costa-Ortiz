@@ -44,14 +44,9 @@
                                 <label>Stock</label>
                                 <asp:TextBox ID="txtStock" class="form-control" placeholder="Stock" runat="server"></asp:TextBox>
                             </div>
-                            <div class="mb-3">
-                                <label>Imagén</label>
-                                <asp:TextBox ID="txtImg" class="form-control" placeholder="Imagén" runat="server"></asp:TextBox>
-                            </div>
                     </div>
 
                     <div class="col mx-3">
-
                         <div class="mb-3">
                             <label for="disabledSelect">Categoría</label>
                             <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-select"></asp:DropDownList>
@@ -64,7 +59,14 @@
                             <label for="disabledSelect">Talle</label>
                             <asp:DropDownList ID="ddlTalle" runat="server" CssClass="form-select"></asp:DropDownList>
                         </div>
-
+                        <div class="mb-3">
+                            <label>Imagén</label>
+                            <asp:TextBox ID="txtImg" class="form-control" placeholder="Url" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <label>Segunda Imagén</label>
+                            <asp:TextBox ID="txtImg2" class="form-control" placeholder="Url" runat="server"></asp:TextBox>
+                        </div>
                     </div>
                 </div>
             </div>

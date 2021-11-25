@@ -14,6 +14,7 @@
                 box-shadow: 0 5px 14px rgba(0,0,0,0.1) !important;
                 transform: scale(1.05) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
             }
+
     </style>
 
     <div class="body-body">
@@ -21,10 +22,10 @@
         <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
 
             <div class="carousel-cell">
-                <img class="w3-image" style="width: 100%" src="https://business-intelligence.grupobit.net/hs-fs/hubfs/Imagen_Blog_BIT_1600x478px_240119.jpg?width=1600&name=Imagen_Blog_BIT_1600x478px_240119.jpg">
+                <img class="w3-image" style="width: 100%" src="/Img/nikeCarrusel.jpg">
             </div>
             <div class="carousel-cell">
-                <img class="w3-image" style="width: 100%;" src="https://i.postimg.cc/fWtBZ3Fz/Envio-GTT.jpg">
+                <img class="w3-image" style="width: 100%;" src="/Img/vansCarrusel.jpg">
             </div>
             <%--        <div class="carousel-cell">
                 <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">

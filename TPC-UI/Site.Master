@@ -30,7 +30,7 @@
         <header>
             <div class="wrapper">
                 <div class="section">
-                    <div class="top_navbar">
+                    <div class="top_navbar blur">
                         <div class="hamburger">
                             <a href="#">
                                 <i class="fas fa-bars mx-3"></i>

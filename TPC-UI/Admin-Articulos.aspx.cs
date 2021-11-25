@@ -67,6 +67,7 @@ namespace TPC_Ortiz_Costa
                 txtPrecio.Text = (decimal.Round(Articulo.Precio)).ToString();
                 txtStock.Text = Articulo.Stock.ToString();
                 txtImg.Text = Articulo.ImgUrl;
+                txtImg2.Text = Articulo.ImgUrl2;
 
                 if (Articulo.Marca.Estado)
                 {
@@ -108,6 +109,7 @@ namespace TPC_Ortiz_Costa
             Articulo.Precio = decimal.Parse(txtPrecio.Text);
             Articulo.Stock = Convert.ToInt32(txtStock.Text);
             Articulo.ImgUrl = txtImg.Text;
+            Articulo.ImgUrl2 = txtImg2.Text;
 
             Articulo.Marca = new Marca();
             Articulo.Marca.Id = int.Parse(ddlMarca.SelectedItem.Value);
