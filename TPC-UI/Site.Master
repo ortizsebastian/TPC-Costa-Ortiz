@@ -30,6 +30,7 @@
         {
             background-image: url(/Img/bg.png);
             background-repeat: no-repeat;
+            background-size: cover;
         }
 
         #page-container {

@@ -49,6 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Articulo\Talle.cs" />
     <Compile Include="Cliente\Usuario.cs" />
+    <Compile Include="Venta\Carrito.cs" />
     <Compile Include="Venta\Venta.cs" />
   </ItemGroup>
   <ItemGroup />

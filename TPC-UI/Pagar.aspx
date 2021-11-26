@@ -16,6 +16,9 @@
             }
     </style>
 
+
+
+
     <div style="padding-top: 7rem; padding-bottom: 3rem">
         <div class="card card-body shadow-sm mx-auto" style="width: 80% !important; border-radius: 15px !important;">
             <div class="container">
@@ -24,7 +27,7 @@
                     <%--Carrito--%>
                     <div class="col-md-4 order-md-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-2 mx-3">
-                            <span class="text-muted">Carrito</span>
+                            <span class="text-muted"><b>Carrito</b></span>
                             <span class="badge-pill"><%:Contenido %></span>
                         </h4>
                         <ul class="list-group mb-3">
@@ -58,7 +61,7 @@
 
                     <%--Direccion del Comprador--%>
                     <div class="col-md-8 order-md-1">
-                        <h4 class="mb-3">Información del Envío</h4>
+                        <h4 class="mb-3"><b>Información del Envío</b></h4>
                         <div class="needs-validation" novalidate="">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -72,19 +75,6 @@
 
                                 </div>
                             </div>
-
-                            <%--                            <div class="mb-3">
-                                <label for="username">Username</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">@</span>
-                                    </div>
-                                    <input type="text" class="form-control" id="username" placeholder="Username" required="">
-                                    <div class="invalid-feedback" style="width: 100%;">
-                                        Your username is required.
-                                    </div>
-                                </div>
-                            </div>--%>
 
                             <div class="mb-3">
                                 <label for="email">Email <span class="text-muted">(Requerido)</span></label>
@@ -106,63 +96,29 @@
                                 </div>
                             </div>
                         </div>
-<%--                            <div class="row">
-                                <div class="col-md-5 mb-3">
-                                    <label for="country">Country</label>
-                                    <select class="form-select d-block w-100" id="country" required="">
-                                        <option value="">Choose...</option>
-                                        <option>United States</option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        Please select a valid country.
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <label for="state">State</label>
-                                    <select class="form-select d-block w-100" id="state" required="">
-                                        <option value="">Choose...</option>
-                                        <option>California</option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid state.
-                                    </div>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="zip">Zip</label>
-                                    <input type="text" class="form-control" id="zip" placeholder="" required="">
-                                    <div class="invalid-feedback">
-                                        Zip code required.
-                                    </div>
-                                </div>
-                            </div>--%>
 
                             <hr class="mb-4">
                             <div class="custom-control custom-checkbox">
-                                <asp:RadioButton CssClass="custom-control-label" runat="server" />
+                                <asp:CheckBox ID="cbxDomicilio" CssClass="custom-control-label" runat="server" />
                                 <label class="custom-control-label" for="same-address">Usar el domicilio registrado en mi cuenta.</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <asp:RadioButton CssClass="custom-control-label" runat="server" />
-                                <label class="custom-control-label" for="save-info">Actualizar mi información personal para la próxima compra.</label>
                             </div>
                             <hr class="mb-4">
 
                             <%--Forma de pago--%>
-                            <h4 class="mb-3">Método de Pago</h4>
+                            <h4 class="mb-3"><b>Método de Pago</b></h4>
                             <div class="d-block my-3">
-                                <div class="custom-control custom-radio">
-                                    <asp:CheckBox CssClass="custom-control-label" runat="server" ID="cbxCredito" />
-                                    <label class="custom-control-label" for="credit">Tarjeta de Crédito</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <asp:CheckBox CssClass="custom-control-label"  runat="server" ID="cbxDebito" />                                
-                                    <label class="custom-control-label" for="debit">Tarjeta de Débito</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <asp:CheckBox CssClass="custom-control-label"  runat="server" ID="cbxEfectivo" />
-                                    <label class="custom-control-label" for="paypal">Rapipago/Pago fácil</label>
+                                <div class="custom-control custom-radio w-25">
+                                    <asp:DropDownList ID="ddlPago" AppendDataBoundItems="true" runat="server" CssClass="form-select">
+                                        <Items>
+                                            <asp:ListItem Text="Seleccionar" Value="-1" />
+                                            <asp:ListItem Text="Efectivo" />
+                                            <asp:ListItem Text="Débito" />
+                                            <asp:ListItem Text="Crédito" />
+                                        </Items>
+                                    </asp:DropDownList>
                                 </div>
                             </div>
+                            <hr class="mb-4">
 
                             <%--Datos de la tarjeta--%>
                             <div class="row">
@@ -170,32 +126,24 @@
                                     <label for="cc-name">Títular</label>
                                     <input type="text" class="form-control" id="cc-name" placeholder="">
                                     <small class="text-muted">Nombre completo de la persona títular.</small>
-<%--                                    <div class="invalid-feedback">
-                                        Name on card is required
-                                    </div>--%>
+
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-number">Número</label>
                                     <input type="text" class="form-control" placeholder="">
-<%--                                    <div class="invalid-feedback">
-                                        Credit card number is required
-                                    </div>--%>
+
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">Vencimiento</label>
                                     <input type="text" class="form-control" id="Fecha" placeholder="">
-<%--                                    <div class="invalid-feedback">
-                                        Expiration date required
-                                    </div>--%>
+
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="cc-expiration">CVV</label>
                                     <input type="text" class="form-control" id="Código de seguridad" placeholder="">
-<%--                                    <div class="invalid-feedback">
-                                        Security code required
-                                    </div>--%>
+
                                 </div>
                                 <div class="col-md-3 mb-3 my-auto">
                                     <asp:DropDownList AppendDataBoundItems="true" runat="server" class="form-select">
@@ -216,38 +164,5 @@
                 </div>
             </div>
         </div>
-
-            <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-        <script src="../../assets/js/vendor/popper.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
-        <script src="../../assets/js/vendor/holder.min.js"></script>
-        <script>
-          // Example starter JavaScript for disabling form submissions if there are invalid fields
-          (function() {
-            'use strict';
-
-            window.addEventListener('load', function() {
-              // Fetch all the forms we want to apply custom Bootstrap validation styles to
-              var forms = document.getElementsByClassName('needs-validation');
-
-              // Loop over them and prevent submission
-              var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                  if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                  }
-                  form.classList.add('was-validated');
-                }, false);
-              });
-            }, false);
-          })();
-        </script>
-  
-    </div>
 
 </asp:Content>

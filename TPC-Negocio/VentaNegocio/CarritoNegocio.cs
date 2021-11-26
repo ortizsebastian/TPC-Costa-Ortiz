@@ -8,9 +8,9 @@ using TPC_Dominio;
 
 namespace TPC_Negocio
 {
-    public class VentaNegocio
+    public class CarritoNegocio
     {
-        public void Agregar(Venta Venta)
+        public void Agregar(int IdArticulo, int IdVenta)
         {
             AccesoDatabase Datos = new AccesoDatabase();
 

@@ -78,31 +78,22 @@ namespace TPC_Ortiz_Costa
         protected global::System.Web.UI.WebControls.TextBox txtProvincia;
 
         /// <summary>
-        /// Control cbxCredito.
+        /// Control cbxDomicilio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbxCredito;
+        protected global::System.Web.UI.WebControls.CheckBox cbxDomicilio;
 
         /// <summary>
-        /// Control cbxDebito.
+        /// Control ddlPago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbxDebito;
-
-        /// <summary>
-        /// Control cbxEfectivo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbxEfectivo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPago;
 
         /// <summary>
         /// Control btnFinalizar.

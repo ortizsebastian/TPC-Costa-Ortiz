@@ -16,6 +16,7 @@ namespace TPC_Ortiz_Costa
         public List<Articulo> Carrito { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             //if (Session["Carrito"] == null)
             //{
             //    Session.Add("Error", "Debe cargar artículos en el carrito para poder posteriormente finalizar su compra.");
@@ -23,7 +24,7 @@ namespace TPC_Ortiz_Costa
             //}
 
             //Carrito = (List<Articulo>)Session["Carrito"];
-            
+
             //foreach (var Articulo in Carrito)
             //{
             //    Precio += Articulo.Precio;
@@ -34,15 +35,14 @@ namespace TPC_Ortiz_Costa
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
             Venta Venta = new Venta();
-            Venta.Carrito = Carrito;
-            Venta.Precio = Precio;
+            Venta.Monto = Precio;
 
-            if (cbxCredito.Checked)
-                Venta.Pago = "Crédito";
-            else if (cbxDebito.Checked)
-                Venta.Pago = "Débito";
-            else
-                Venta.Pago = "Efectivo";
+            //if (cbxCredito.Checked)
+            //    Venta.Pago = "Crédito";
+            //else if (cbxDebito.Checked)
+            //    Venta.Pago = "Débito";
+            //else
+            //    Venta.Pago = "Efectivo";
 
             Venta.Domicilio = new Domicilio();
             Venta.Domicilio.Calle = txtCalle.Text;
@@ -50,11 +50,22 @@ namespace TPC_Ortiz_Costa
             Venta.Domicilio.Provincia = txtProvincia.Text;
 
             Venta.Usuario = new Usuario();
+            if (Session["Usuario"] != null)
+                Venta.Usuario = (Usuario)Session["Usuario"];        
             Venta.Usuario.Nombre = txtNombre.Text;
             Venta.Usuario.Apellido = txtApellido.Text;
 
             VentaNegocio VentaNegocio = new VentaNegocio();
-            //VentaNegocio.Agregar(Venta);
+            VentaNegocio.Agregar(Venta);
+
+            //Cómo puedo saber el ID de una Venta recién agregada?
+
+            CarritoNegocio CarritoNegocio = new CarritoNegocio();
+
+            foreach (var item in Carrito)
+            {
+                //CarritoNegocio.Agregar(/*IdVenta*/, item.Id);
+            }
 
             Session.Add("Venta", Venta);
             Response.Redirect("Pagar-Mensaje.aspx");
@@ -64,6 +75,8 @@ namespace TPC_Ortiz_Costa
         {
             if(!txtCalle.ReadOnly)
             {
+                cbxDomicilio.Checked = false;
+
                 txtCalle.Text = "";
                 txtCalle.ReadOnly = true;
                 
