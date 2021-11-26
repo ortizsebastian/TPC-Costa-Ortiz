@@ -19,12 +19,35 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
-
     <title>eCommerce</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
+    <style>
+        .bg
+        {
+            background-image: url(/Img/bg.png);
+            background-repeat: no-repeat;
+        }
+
+        #page-container {
+          position: relative;
+          min-height: 100vh;
+        }
+
+        #content-wrap {
+          padding-bottom: 2.5rem;    /* Footer height */
+        }
+
+        #footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 2.5rem;            /* Footer height */
+        }
+    </style>
 
     <form id="form1" runat="server">
         <header>
@@ -103,7 +126,7 @@
                             <li class="nav-item">
                                 <a href="Usuario-Perfil.aspx" style="text-decoration: none !important;">Perfil</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item section-logout">
                                 <a href="Catalogo.aspx?Logout=<%:true %>" style="text-decoration: none !important;">Salir</a>
                             </li>
                         <%}%>
@@ -124,14 +147,15 @@
             document.querySelector("body").classList.toggle("active");
         </script>
 
+
         <div>
-            <div class="card border-0">
+            <div class="card border-0 bg" id="page-container">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-                <footer>
-                    <hr />
-                    <p class="text-center">&copy; <%: DateTime.Now.Year %> - eCommerce</p>
+                <footer class="footer" style="background-color: #35605A;" id="content-wrap footer">
+                    <hr class="text-black-50" style="background-color: #35605A;" />
+                    <p class="text-center my-auto" style="color: white;">&copy; <%: DateTime.Now.Year %> - eCommerce | Costa Nicolás - Ortiz Sebastián</p>
                 </footer>
         </div>
     </form>

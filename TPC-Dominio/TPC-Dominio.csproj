@@ -44,14 +44,11 @@
     <Compile Include="Articulo\Categoria.cs" />
     <Compile Include="Articulo\Marca.cs" />
     <Compile Include="Articulo\Articulo.cs" />
-    <Compile Include="Cliente\Cliente.cs" />
     <Compile Include="Cliente\Domicilio.cs" />
-    <Compile Include="Venta\Carrito.cs" />
-    <Compile Include="Cliente\Persona.cs" />
+    <Compile Include="Cliente\Cliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Articulo\Talle.cs" />
     <Compile Include="Cliente\Usuario.cs" />
-    <Compile Include="Venta\Envio.cs" />
     <Compile Include="Venta\Venta.cs" />
   </ItemGroup>
   <ItemGroup />

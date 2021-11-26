@@ -29,24 +29,17 @@
                         </h4>
                         <ul class="list-group mb-3">
 
-                            <% foreach (var Articulo in Carrito)
+<%--                            <% foreach (var Articulo in Carrito)
                                 {%>                             
-                            <li class="list-group-item d-flex justify-content-between lh-condensed border-0 shadow-sm"  style="border-radius: 15px !important;">
+                            <li class="list-group-item d-flex justify-content-between lh-condensed border-0 shadow-sm mt-1"  style="border-radius: 15px !important;">
                                 <div>
                                     <h6 class="my-0"><%:Articulo.Nombre %></h6>
-                                    <small class="text-muted"><%:Articulo.Descripcion %></small>
+                                    <small class="text-muted">Talle: <%:Articulo.Talle.Medida %></small>
                                 </div>
                                 <span class="text-muted">$<%:decimal.Round(Articulo.Precio) %></span>
                             </li>
-                            <%} %>
+                            <%} %>--%>
 
-<%--                            <li class="list-group-item d-flex justify-content-between bg-light">
-                                <div class="text-success">
-                                    <h6 class="my-0">Promo code</h6>
-                                    <small>EXAMPLECODE</small>
-                                </div>
-                                <span class="text-success">-$5</span>
-                            </li>--%>
 
                             <li class="list-group-item d-flex justify-content-between my-3 shadow-sm" style="border-radius: 15px !important;">
                                 <span>Total ($)</span>
@@ -71,20 +64,16 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName">Nombre</label>
                                     <asp:TextBox ID="txtNombre" placeholder="Nombre" CssClass="form-control" runat="server" />
-<%--                                    <div class="invalid-feedback">
-                                        Valid first name is required.
-                                    </div>--%>
+
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="lastName">Apellido</label>
                                     <asp:TextBox ID="txtApellido" placeholder="Apellido" CssClass="form-control" runat="server" />
-<%--                                    <div class="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>--%>
+
                                 </div>
                             </div>
 
-<%--                            <div class="mb-3">
+                            <%--                            <div class="mb-3">
                                 <label for="username">Username</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -99,20 +88,24 @@
 
                             <div class="mb-3">
                                 <label for="email">Email <span class="text-muted">(Requerido)</span></label>
-                                <asp:TextBox ID="txtEmail" placeholder="ejemplo@ejemplo.com" CssClass="form-control" runat="server" />                            
-<%--                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>--%>
+                                <asp:TextBox ID="txtEmail" placeholder="ejemplo@ejemplo.com" CssClass="form-control" runat="server" />
                             </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="address">Calle</label>
+                                    <asp:TextBox ID="txtCalle" placeholder="Av. 9 de Julio" CssClass="form-control" runat="server" />
 
-                            <div class="mb-3">
-                                <label for="address">Domicilio</label>
-                                <asp:TextBox ID="txtDomicilio" placeholder="Av. 9 de Julio 2550" CssClass="form-control" runat="server" />                                                      
-<%--                                <div class="invalid-feedback">
-                                    Please enter your shipping address.
-                                </div>--%>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="address">Altura</label>
+                                    <asp:TextBox ID="txtAltura" placeholder="2550" CssClass="form-control" runat="server" />
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="address">Provincia</label>
+                                    <asp:TextBox ID="txtProvincia" placeholder="Buenos Aires" CssClass="form-control" runat="server" />
+                                </div>
                             </div>
-
+                        </div>
 <%--                            <div class="row">
                                 <div class="col-md-5 mb-3">
                                     <label for="country">Country</label>
@@ -145,11 +138,11 @@
 
                             <hr class="mb-4">
                             <div class="custom-control custom-checkbox">
-                                <asp:RadioButton CssClass="custom-control-label"  runat="server" />
+                                <asp:RadioButton CssClass="custom-control-label" runat="server" />
                                 <label class="custom-control-label" for="same-address">Usar el domicilio registrado en mi cuenta.</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <asp:RadioButton CssClass="custom-control-label"  runat="server" />
+                                <asp:RadioButton CssClass="custom-control-label" runat="server" />
                                 <label class="custom-control-label" for="save-info">Actualizar mi información personal para la próxima compra.</label>
                             </div>
                             <hr class="mb-4">
@@ -158,15 +151,15 @@
                             <h4 class="mb-3">Método de Pago</h4>
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                    <asp:RadioButton CssClass="custom-control-label" runat="server" />
+                                    <asp:CheckBox CssClass="custom-control-label" runat="server" ID="cbxCredito" />
                                     <label class="custom-control-label" for="credit">Tarjeta de Crédito</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <asp:RadioButton CssClass="custom-control-label"  runat="server" />                                
+                                    <asp:CheckBox CssClass="custom-control-label"  runat="server" ID="cbxDebito" />                                
                                     <label class="custom-control-label" for="debit">Tarjeta de Débito</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <asp:RadioButton CssClass="custom-control-label"  runat="server" />
+                                    <asp:CheckBox CssClass="custom-control-label"  runat="server" ID="cbxEfectivo" />
                                     <label class="custom-control-label" for="paypal">Rapipago/Pago fácil</label>
                                 </div>
                             </div>

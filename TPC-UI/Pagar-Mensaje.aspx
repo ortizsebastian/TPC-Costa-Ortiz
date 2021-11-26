@@ -13,7 +13,7 @@
                     <p class="lead"><strong>Por favor manténgase al tanto en su email</strong> le enviaremos el seguimiento de su compra.</p>
                     <hr class="text-black-50 w-75 mx-auto">
                     <p>
-                        Algún inconveniente? <a href="Contactar.aspx">Contactenos</a>
+                        Algún inconveniente? <a href="Contactar.aspx">Contactenos</a>.
                     </p>
                     <p class="lead">
                         <a class="btn btn-light button-green" href="Catalogo.aspx" role="button">Volver a la Homepage</a>

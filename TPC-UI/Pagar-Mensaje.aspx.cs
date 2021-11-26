@@ -11,7 +11,11 @@ namespace TPC_Ortiz_Costa
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["Venta"] == null)
+            {
+                Session.Add("Error", "Dirección incorrecta o inexistente, vuelva a intentarlo o póngase en contacto con Soporte Técnico.");
+                Response.Redirect("Error.aspx");
+            }
         }
     }
 }

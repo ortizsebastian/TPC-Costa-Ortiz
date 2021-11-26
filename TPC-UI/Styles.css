@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+
 }
 
 .wrapper .sidebar {
@@ -28,12 +29,11 @@
     .wrapper .sidebar ul li a {
         display: block;
         padding: 13px 30px;
-        border-bottom: 1px solid #609c81;
+        border-bottom: 1px solid #65a387;
         color: #EAE6E5;
         font-size: 16px;
         position: relative;
     }
-
 
         .wrapper .sidebar ul li a:hover,
         .wrapper .sidebar ul li a.active {

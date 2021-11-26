@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TPC_Dominio
 {
     //Lo puedo hacer asi o puedo sacar la herencia y agregar un IdPersona 
-    public class Usuario : Persona        
+    public class Usuario : Cliente        
     {
         public int Id { get; set; }
         public string Username { get; set; }

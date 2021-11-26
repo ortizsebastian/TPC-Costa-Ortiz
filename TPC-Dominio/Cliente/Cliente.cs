@@ -8,8 +8,9 @@ namespace TPC_Dominio
 {
     public class Cliente
     {
-        public int Id { get; set; }
-        public Usuario Usuario { get; set; }
-        public Carrito Carrito { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Telefono { get; set; }
+        public Domicilio Domicilio { get; set; }
     }
 }

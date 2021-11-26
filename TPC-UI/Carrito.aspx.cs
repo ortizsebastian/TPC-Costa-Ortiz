@@ -19,6 +19,9 @@ namespace TPC_Ortiz_Costa
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Request.QueryString["Id"] == null && Session["Carrito"] == null)
+                return;
+            
             if (Request.QueryString["Id"] != null)
             {
                 int Id = int.Parse(Request.QueryString["Id"]);
