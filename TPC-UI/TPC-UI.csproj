@@ -73,7 +73,6 @@
     <Content Include="Carrito.aspx" />
     <Content Include="Catalogo-Detalle.aspx" />
     <Content Include="Catalogo.aspx" />
-    <Content Include="Img\bg.png" />
     <Content Include="Img\nikeCarrusel.jpg" />
     <Content Include="Img\vansCarruseel.jpg" />
     <Content Include="Pagar-Mensaje.aspx" />

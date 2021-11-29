@@ -30,42 +30,62 @@ namespace TPC_Ortiz_Costa
             //    Precio += Articulo.Precio;
             //    Contenido++;
             //}
+
         }
 
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
             Venta Venta = new Venta();
             Venta.Monto = Precio;
-
-            //if (cbxCredito.Checked)
-            //    Venta.Pago = "Crédito";
-            //else if (cbxDebito.Checked)
-            //    Venta.Pago = "Débito";
-            //else
-            //    Venta.Pago = "Efectivo";
-
-            Venta.Domicilio = new Domicilio();
-            Venta.Domicilio.Calle = txtCalle.Text;
-            Venta.Domicilio.Numero = txtAltura.Text;
-            Venta.Domicilio.Provincia = txtProvincia.Text;
-
-            Venta.Usuario = new Usuario();
-            if (Session["Usuario"] != null)
-                Venta.Usuario = (Usuario)Session["Usuario"];        
-            Venta.Usuario.Nombre = txtNombre.Text;
-            Venta.Usuario.Apellido = txtApellido.Text;
+            Venta.Cuotas = int.Parse(ddlCuotas.SelectedValue);
+            Venta.Forma = ddlPago.SelectedItem.Text;
 
             VentaNegocio VentaNegocio = new VentaNegocio();
-            VentaNegocio.Agregar(Venta);
+            DomicilioNegocio DomicilioNegocio = new DomicilioNegocio();
 
-            //Cómo puedo saber el ID de una Venta recién agregada?
+            if (Session["Usuario"] != null)
+            {
+                Venta.Usuario = new Usuario();
+                Venta.Usuario = (Usuario)Session["Usuario"];
+
+                UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
+                Venta.Usuario = UsuarioNegocio.BuscarCompleto(Venta.Usuario.Id);
+
+                //Preguntar si quiere actualizar datos.
+
+                Venta.Usuario.Domicilio = new Domicilio();
+                Venta.Usuario.Domicilio.Calle = txtCalle.Text;
+                Venta.Usuario.Domicilio.Numero = txtAltura.Text;
+                Venta.Usuario.Domicilio.Provincia = txtProvincia.Text;
+            }
+            else
+            {
+                Venta.Cliente = new Cliente();
+                Venta.Cliente.Domicilio = new Domicilio();
+
+                Venta.Cliente.Domicilio.Calle = txtCalle.Text;
+                Venta.Cliente.Domicilio.Numero = txtAltura.Text;
+                Venta.Cliente.Domicilio.Provincia = txtProvincia.Text;
+                DomicilioNegocio.Agregar(Venta.Cliente.Domicilio);
+
+                int IdDomicilio = DomicilioNegocio.Listar().Last().Id;
+
+                Venta.Cliente.Nombre = txtNombre.Text;
+                Venta.Cliente.Apellido = txtApellido.Text;
+                Venta.Cliente.Telefono = txtTelefono.Text;
+
+                ClienteNegocio ClienteNegocio = new ClienteNegocio();
+
+                ClienteNegocio.Agregar(Venta.Cliente, IdDomicilio);
+
+                VentaNegocio.Agregar(Venta);
+            }
+
 
             CarritoNegocio CarritoNegocio = new CarritoNegocio();
+            CarritoNegocio.Agregar(Carrito);
 
-            foreach (var item in Carrito)
-            {
-                //CarritoNegocio.Agregar(/*IdVenta*/, item.Id);
-            }
+
 
             Session.Add("Venta", Venta);
             Response.Redirect("Pagar-Mensaje.aspx");
@@ -73,13 +93,13 @@ namespace TPC_Ortiz_Costa
 
         protected void btnSucursal_Click(object sender, EventArgs e)
         {
-            if(!txtCalle.ReadOnly)
+            if (!txtCalle.ReadOnly)
             {
                 cbxDomicilio.Checked = false;
 
                 txtCalle.Text = "";
                 txtCalle.ReadOnly = true;
-                
+
                 txtAltura.Text = "";
                 txtAltura.ReadOnly = true;
 

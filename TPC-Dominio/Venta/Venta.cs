@@ -10,9 +10,10 @@ namespace TPC_Dominio
     {
         public int Id { get; set; }
         public decimal Monto { get; set; }
-        public string Pago { get; set; }
+        public string Forma { get; set; }
+        public int Cuotas { get; set; }
         public Usuario Usuario { get; set; }
-        public Domicilio Domicilio { get; set; }
+        public Cliente Cliente { get; set; }
         public bool Estado { get; set; }
     }
 }

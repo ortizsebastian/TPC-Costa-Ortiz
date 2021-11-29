@@ -25,7 +25,7 @@
                 <img class="w3-image" style="width: 100%" src="/Img/nikeCarrusel.jpg">
             </div>
             <div class="carousel-cell">
-                <img class="w3-image" style="width: 100%;" src="/Img/vansCarruseel.jpg">
+                <img class="w3-image" style="width: 100%;" src="Img/vansCarruseel.jpg">
             </div>
             <%--        <div class="carousel-cell">
                 <img class="w3-image" style="width: 100%" src="URL-IMAGEN!!">

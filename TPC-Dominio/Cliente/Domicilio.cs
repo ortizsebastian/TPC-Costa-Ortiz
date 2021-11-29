@@ -12,5 +12,6 @@ namespace TPC_Dominio
         public string Calle { get; set; }
         public string Numero { get; set; }
         public string Provincia { get; set; }
+        public int Estado { get; set; }
     }
 }

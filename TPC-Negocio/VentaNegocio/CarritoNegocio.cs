@@ -10,13 +10,21 @@ namespace TPC_Negocio
 {
     public class CarritoNegocio
     {
-        public void Agregar(int IdArticulo, int IdVenta)
+        public void Agregar(List<Articulo> Carrito)
         {
             AccesoDatabase Datos = new AccesoDatabase();
 
             try
             {
-                
+                foreach (var Articulo in Carrito)
+                {
+                    Datos.SetConsulta("INSERT INTO CARRITOS (ID_VENTA, ID_ARTICULO) VALUES (@ID_VENTA, @ID_ARTICULO)");
+
+                    Datos.SetParametro("@ID_VENTA",);
+                    Datos.SetParametro("@ID_ARTICULO", Articulo.Id);
+
+                    Datos.EjecutarAccion();
+                }
             }
             catch (Exception ex)
             {

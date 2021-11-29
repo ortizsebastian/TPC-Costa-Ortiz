@@ -61,6 +61,21 @@
             box-shadow: none !important;
             outline-width: 0
         }
+
+         .button {
+            transition: all .5s ease !important;
+            border-radius: 15px !important;           
+        }
+
+            .button-red:hover {
+                color: white !important;
+                background-color: rgb(179, 0, 0) !important;
+            }
+            .button-green:hover {
+                color: white !important;
+                background-color: rgb(0,121,0) !important;
+            }
+
     </style>
 
 
@@ -122,10 +137,10 @@
 
                         <div class="row justify-content-between mt-3">
                             <div class="form-group col-sm-6">
-                                <asp:Button Text="Agregar" CssClass="btn btn-light shadow-sm my-1" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" />
+                                <asp:Button Text="Agregar" CssClass="btn button button-green btn-light shadow-sm my-1" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" />
                             </div>
                             <div class="form-group col-sm-6">
-                                <asp:Button Text="Eliminar" runat="server" CssClass="btn btn-light shadow-sm my-1" ID="btnEliminar" OnClick="btnEliminar_Click" />
+                                <asp:Button Text="Eliminar" runat="server" CssClass="btn button button-red btn-light shadow-sm my-1" ID="btnEliminar" OnClick="btnEliminar_Click" />
                             </div>
                         </div>
                     </div>

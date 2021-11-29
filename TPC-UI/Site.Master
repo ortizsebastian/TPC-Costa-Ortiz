@@ -26,14 +26,7 @@
 <body>
 
     <style>
-        .bg
-        {
-            background-image: url(/Img/bg.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        #page-container {
+        #page-container {            
           position: relative;
           min-height: 100vh;
         }

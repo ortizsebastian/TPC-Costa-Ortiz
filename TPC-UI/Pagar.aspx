@@ -77,8 +77,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="email">Email <span class="text-muted">(Requerido)</span></label>
-                                <asp:TextBox ID="txtEmail" placeholder="ejemplo@ejemplo.com" CssClass="form-control" runat="server" />
+                                <label for="email">Teléfono<span class="text-muted"> (Requerido)</span></label>
+                                <asp:TextBox ID="txtTelefono" placeholder="(+54) 011 XXXX XXXX" CssClass="form-control" runat="server" />
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -146,13 +146,13 @@
 
                                 </div>
                                 <div class="col-md-3 mb-3 my-auto">
-                                    <asp:DropDownList AppendDataBoundItems="true" runat="server" class="form-select">
+                                    <asp:DropDownList ID="ddlCuotas" AppendDataBoundItems="true" runat="server" class="form-select">
                                         <Items>
                                             <asp:ListItem Text="Cuotas" Value="-1" />
-                                            <asp:ListItem Text="1" />
-                                            <asp:ListItem Text="3 s/interés" />
-                                            <asp:ListItem Text="6 s/interés" />
-                                            <asp:ListItem Text="12 s/interés" />
+                                            <asp:ListItem value="1" Text="1" />
+                                            <asp:ListItem value="3" Text="3 s/interés" />
+                                            <asp:ListItem value="6" Text="6 s/interés" />
+                                            <asp:ListItem value="12" Text="12 s/interés" />
                                         </Items>
                                     </asp:DropDownList>
                                 </div>
