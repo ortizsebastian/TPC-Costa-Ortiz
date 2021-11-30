@@ -27,6 +27,7 @@ namespace TPC_Negocio
 
                     Lista.Add(Objeto);
                 }
+                return Lista;
             }
             catch (Exception ex)
             {
@@ -36,8 +37,6 @@ namespace TPC_Negocio
             {
                 Datos.CerrarConexion();
             }
-
-            return Lista;
         }
 
         public Domicilio Buscar(int Id)

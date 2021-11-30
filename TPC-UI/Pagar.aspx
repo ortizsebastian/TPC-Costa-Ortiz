@@ -32,7 +32,7 @@
                         </h4>
                         <ul class="list-group mb-3">
 
-<%--                            <% foreach (var Articulo in Carrito)
+                            <% foreach (var Articulo in Carrito)
                                 {%>                             
                             <li class="list-group-item d-flex justify-content-between lh-condensed border-0 shadow-sm mt-1"  style="border-radius: 15px !important;">
                                 <div>
@@ -41,8 +41,7 @@
                                 </div>
                                 <span class="text-muted">$<%:decimal.Round(Articulo.Precio) %></span>
                             </li>
-                            <%} %>--%>
-
+                            <%} %>
 
                             <li class="list-group-item d-flex justify-content-between my-3 shadow-sm" style="border-radius: 15px !important;">
                                 <span>Total ($)</span>
@@ -76,10 +75,17 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="email">Teléfono<span class="text-muted"> (Requerido)</span></label>
-                                <asp:TextBox ID="txtTelefono" placeholder="(+54) 011 XXXX XXXX" CssClass="form-control" runat="server" />
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email">Email<span class="text-muted"> (Requerido)</span></label>
+                                    <asp:TextBox ID="txtEmail" placeholder="email@ejemplo.com" CssClass="form-control" runat="server" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email">Teléfono</label>
+                                    <asp:TextBox ID="txtTelefono" placeholder="(+54) 011 XXXX XXXX" CssClass="form-control" runat="server" />
+                                </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="address">Calle</label>
@@ -87,8 +93,8 @@
 
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <label for="address">Altura</label>
-                                    <asp:TextBox ID="txtAltura" placeholder="2550" CssClass="form-control" runat="server" />
+                                    <label for="address">Número</label>
+                                    <asp:TextBox ID="txtNumero" placeholder="2550" CssClass="form-control" runat="server" />
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="address">Provincia</label>
@@ -97,11 +103,14 @@
                             </div>
                         </div>
 
-                            <hr class="mb-4">
-                            <div class="custom-control custom-checkbox">
-                                <asp:CheckBox ID="cbxDomicilio" CssClass="custom-control-label" runat="server" />
-                                <label class="custom-control-label" for="same-address">Usar el domicilio registrado en mi cuenta.</label>
-                            </div>
+                        <%if (Usuario != null)
+                            {%>
+                        <hr class="mb-4">
+                        <div class="custom-control custom-checkbox">
+                            <asp:CheckBox ID="cbxUsuario" CssClass="custom-control-label" runat="server" />
+                            <label class="custom-control-label" for="same-address">Actualizar datos personales en mi perfil.</label>
+                        </div>
+                        <%} %>
                             <hr class="mb-4">
 
                             <%--Forma de pago--%>

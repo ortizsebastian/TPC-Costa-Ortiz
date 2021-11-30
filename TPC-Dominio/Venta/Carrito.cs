@@ -9,8 +9,8 @@ namespace TPC_Dominio
     public class Carrito
     {
         public int Id { get; set; }
-        public int IdArticulo { get; set; }
-        public int IdVenta { get; set; }
+        public Articulo Articulo { get; set; }
+        public Venta Venta { get; set; }
         public int Estado { get; set; }
     }
 }

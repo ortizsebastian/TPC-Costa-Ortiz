@@ -27,6 +27,7 @@ namespace TPC_Negocio
 
                     Lista.Add(Objeto);
                 }
+                return Lista;
             }
             catch (Exception ex)
             {
@@ -36,8 +37,6 @@ namespace TPC_Negocio
             {
                 Datos.CerrarConexion();
             }
-
-            return Lista;
         }
 
         public void Agregar(Cliente Cliente, int IdDomicilio)
@@ -46,10 +45,11 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("INSERT INTO CLIENTES (NOMBRE, APELLIDO, TELEFONO, ID_DOMICILIO) VALUES (@NOMBRE, @APELLIDO, @TELEFONO, @ID_DOMICILIO)");
+                Datos.SetConsulta("INSERT INTO CLIENTES (NOMBRE, APELLIDO, EMAIL, TELEFONO, ID_DOMICILIO) VALUES (@NOMBRE, @APELLIDO, @EMAIL, @TELEFONO, @ID_DOMICILIO)");
 
                 Datos.SetParametro("@NOMBRE", Cliente.Nombre);
                 Datos.SetParametro("@APELLIDO", Cliente.Apellido);
+                Datos.SetParametro("@EMAIL", Cliente.Email);
                 Datos.SetParametro("@TELEFONO", Cliente.Telefono);
                 Datos.SetParametro("@ID_DOMICILIO", IdDomicilio);
 

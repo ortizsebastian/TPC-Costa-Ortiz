@@ -51,7 +51,7 @@ namespace TPC_Negocio
 
             try
             {
-                Datos.SetConsulta("SELECT U.ID, U.USERNAME, U.PASSWORD, U.TIPO, U.NOMBRE, U.APELLIDO, U.TELEFONO, U.EMAIL, D.CALLE, D.NUMERO, D.PROVINCIA, D.ID FROM USUARIOS AS U LEFT JOIN DOMICILIOS AS D ON U.ID = D.ID  WHERE U.ID =" + Id);
+                Datos.SetConsulta("SELECT U.ID, U.USERNAME, U.PASSWORD, U.TIPO, U.NOMBRE, U.APELLIDO, U.TELEFONO, U.EMAIL, D.CALLE, D.NUMERO, D.PROVINCIA, D.ID FROM USUARIOS AS U LEFT JOIN DOMICILIOS AS D ON U.ID_DOMICILIO = D.ID  WHERE U.ID =" + Id);
                 Datos.EjecutarLectura();
 
                 Usuario Objeto = new Usuario();
@@ -152,6 +152,33 @@ namespace TPC_Negocio
                 Datos.SetParametro("@USERNAME", Usuario.Username);
                 Datos.SetParametro("@PASSWORD", Usuario.Password);
                 Datos.SetParametro("@EMAIL", Usuario.Email);
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
+        public void Agregar(Usuario Usuario, int Id)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+            try
+            {
+                Datos.SetConsulta("INSERT INTO USUARIOS (NOMBRE, APELLIDO , TELEFONO, USERNAME, PASSWORD, EMAIL, ID_DOMICILIO) VALUES (@NOMBRE, @APELLIDO , @TELEFONO, @USERNAME, @PASSWORD, @EMAIL, @ID_DOMICILIO)");
+
+                Datos.SetParametro("@NOMBRE", Usuario.Nombre);
+                Datos.SetParametro("@APELLIDO", Usuario.Apellido);
+                Datos.SetParametro("@TELEFONO", Usuario.Telefono);
+                Datos.SetParametro("@USERNAME", Usuario.Username);
+                Datos.SetParametro("@PASSWORD", Usuario.Password);
+                Datos.SetParametro("@EMAIL", Usuario.Email);
+                Datos.SetParametro("@ID_DOMICILIO", Id);
 
                 Datos.EjecutarAccion();
             }

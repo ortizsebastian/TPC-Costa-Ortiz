@@ -10,13 +10,13 @@
             <div class="card-body">
                 <div class="jumbotron text-center">
                     <h1 class="display-3">Gracias por elegirnos!</h1>
-                    <p class="lead"><strong>Por favor manténgase al tanto en su email</strong> le enviaremos el seguimiento de su compra.</p>
+                    <p class="lead"><strong>Por favor manténgase al tanto de su email,</strong> pronto recibirá el seguimiento de su compra.</p>
                     <hr class="text-black-50 w-75 mx-auto">
                     <p>
-                        Algún inconveniente? <a href="Contactar.aspx">Contactenos</a>
+                        Algún inconveniente? <a href="Contactar.aspx" style="text-decoration: none; color: cornflowerblue;" >Contactenos</a>
                     </p>
                     <p class="lead">
-                        <a class="btn btn-light button-green" href="Catalogo.aspx" role="button">Volver a la Homepage</a>
+                        <a class="btn btn-light button-green shadow-sm" href="Catalogo.aspx" role="button">Volver a la Homepage</a>
                     </p>
                 </div>
             </div>

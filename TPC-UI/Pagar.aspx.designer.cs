@@ -42,6 +42,15 @@ namespace TPC_Ortiz_Costa
         protected global::System.Web.UI.WebControls.TextBox txtApellido;
 
         /// <summary>
+        /// Control txtEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
         /// Control txtTelefono.
         /// </summary>
         /// <remarks>
@@ -60,13 +69,13 @@ namespace TPC_Ortiz_Costa
         protected global::System.Web.UI.WebControls.TextBox txtCalle;
 
         /// <summary>
-        /// Control txtAltura.
+        /// Control txtNumero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAltura;
+        protected global::System.Web.UI.WebControls.TextBox txtNumero;
 
         /// <summary>
         /// Control txtProvincia.
@@ -78,13 +87,13 @@ namespace TPC_Ortiz_Costa
         protected global::System.Web.UI.WebControls.TextBox txtProvincia;
 
         /// <summary>
-        /// Control cbxDomicilio.
+        /// Control cbxUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbxDomicilio;
+        protected global::System.Web.UI.WebControls.CheckBox cbxUsuario;
 
         /// <summary>
         /// Control ddlPago.
