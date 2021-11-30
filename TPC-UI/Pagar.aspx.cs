@@ -80,7 +80,11 @@ namespace TPC_Ortiz_Costa
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
             Venta Venta = new Venta();
-            
+            Venta.Usuario = new Usuario();
+            Venta.Usuario.Domicilio = new Domicilio();
+            Venta.Cliente = new Cliente();
+            Venta.Cliente.Domicilio = new Domicilio();
+
             Venta.Monto = Precio;
             Venta.Cuotas = int.Parse(ddlCuotas.SelectedValue);
             Venta.Forma = ddlPago.SelectedItem.Text;
@@ -90,54 +94,52 @@ namespace TPC_Ortiz_Costa
 
             if (Session["Usuario"] != null)
             {
-                Venta.Usuario = new Usuario();
-                Venta.Usuario.Domicilio = new Domicilio();
+                UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
+                Usuario = (Usuario)Session["Usuario"];
+
                 Venta.Usuario.Domicilio.Calle = txtCalle.Text;
                 Venta.Usuario.Domicilio.Numero = txtNumero.Text;
                 Venta.Usuario.Domicilio.Provincia = txtProvincia.Text;
-                DomicilioNegocio.Agregar(Venta.Usuario.Domicilio);
 
+                Venta.Usuario.Id = Usuario.Id;
+                Venta.Usuario.Username = Usuario.Username;
+                Venta.Usuario.Password = Usuario.Password;
                 Venta.Usuario.Nombre = txtNombre.Text;
                 Venta.Usuario.Apellido = txtApellido.Text;
                 Venta.Usuario.Email = txtEmail.Text;
                 Venta.Usuario.Telefono = txtTelefono.Text;
 
-                Usuario = (Usuario)Session["Usuario"];
-                Venta.Usuario.Username = Usuario.Username;
-                Venta.Usuario.Password = Usuario.Password;
-
-                int IdDomicilio = DomicilioNegocio.Listar().Last().Id;
-
-                UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
-                Usuario = UsuarioNegocio.BuscarCompleto(Usuario.Id);
                 if (cbxUsuario.Checked)
                 {
-                    if (DomicilioNegocio.Existe(Usuario.Domicilio.Id))
+                    if(UsuarioNegocio.BuscarDomicilio(Usuario.Id))
                     {
                         DomicilioNegocio.Modificar(Venta.Usuario.Domicilio);
                     }
                     else
                     {
                         DomicilioNegocio.Agregar(Venta.Usuario.Domicilio);
-                    }
-                    UsuarioNegocio.Modificar(Venta.Usuario); //No llega el Venta.Usuario con los datos cargados
+                        int IdDomicilio = DomicilioNegocio.Listar().Last().Id;
+                        UsuarioNegocio.Modificar(Venta.Usuario, IdDomicilio);
+                    }                 
                 }
                 else
                 {
+                    DomicilioNegocio.Agregar(Venta.Usuario.Domicilio);
+                    int IdDomicilio = DomicilioNegocio.Listar().Last().Id;
                     UsuarioNegocio.Agregar(Venta.Usuario, IdDomicilio);
                 }
-                int IdUsuario = UsuarioNegocio.Listar().Last().Id;
 
-                VentaNegocio.AgregarVentaUsuario(Venta, IdUsuario);
+                VentaNegocio.AgregarVentaUsuario(Venta, Usuario.Id);
                 int IdVenta = VentaNegocio.Listar().Last().Id;
 
                 CarritoNegocio CarritoNegocio = new CarritoNegocio();
                 CarritoNegocio.Agregar(Carrito, IdVenta);
+
             }
             else
             {
-                Venta.Cliente = new Cliente();
-                Venta.Cliente.Domicilio = new Domicilio();
+                ClienteNegocio ClienteNegocio = new ClienteNegocio();
+
                 Venta.Cliente.Domicilio.Calle = txtCalle.Text;
                 Venta.Cliente.Domicilio.Numero = txtNumero.Text;
                 Venta.Cliente.Domicilio.Provincia = txtProvincia.Text;
@@ -149,7 +151,6 @@ namespace TPC_Ortiz_Costa
                 Venta.Cliente.Telefono = txtTelefono.Text;
                 int IdDomicilio = DomicilioNegocio.Listar().Last().Id;
 
-                ClienteNegocio ClienteNegocio = new ClienteNegocio();
                 ClienteNegocio.Agregar(Venta.Cliente, IdDomicilio);
                 int IdCliente = ClienteNegocio.Listar().Last().Id;
 

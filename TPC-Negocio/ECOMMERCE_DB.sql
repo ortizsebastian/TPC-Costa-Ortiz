@@ -106,6 +106,8 @@ CREATE TABLE CARRITOS(
 GO
 
 
+
+
 --Datos precargados inicialmente.
 INSERT INTO USUARIOS(USERNAME, PASSWORD, EMAIL, TIPO) VALUES('admin','123','email@email.com',1)
 INSERT INTO USUARIOS(USERNAME, PASSWORD, EMAIL, TIPO) VALUES('cliente','123','email@email.com',0)

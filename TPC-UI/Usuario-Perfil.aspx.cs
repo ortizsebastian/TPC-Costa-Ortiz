@@ -109,7 +109,7 @@ namespace TPC_Ortiz_Costa
             }
 
             UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
-            UsuarioNegocio.Modificar(Usuario);
+            UsuarioNegocio.ModificarSimple(Usuario);
 
             txtNombre.ReadOnly = true;
             txtApellido.ReadOnly = true;

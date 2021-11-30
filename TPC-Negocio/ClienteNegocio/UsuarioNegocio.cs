@@ -110,13 +110,13 @@ namespace TPC_Negocio
             }
         }
     
-    public Usuario Buscar(int Id)
+        public Usuario Buscar(int Id)
         {
             AccesoDatabase Datos = new AccesoDatabase();
 
             try
             {
-                Datos.SetConsulta("SELECT ID, USERNAME, PASSWORD, EMAIL, NOMBRE, APELLIDO, TELEFONO FROM USUARIOS WHERE ID =" + Id);
+                Datos.SetConsulta("SELECT ID, USERNAME, PASSWORD, EMAIL, NOMBRE, APELLIDO, TELEFONO, ID_DOMICILIO FROM USUARIOS WHERE ID =" + Id);
                 Datos.EjecutarLectura();
                 Usuario Objeto = new Usuario();
 
@@ -129,6 +129,10 @@ namespace TPC_Negocio
                     Objeto.Nombre = (string)Datos.Lector["NOMBRE"];
                     Objeto.Apellido = (string)Datos.Lector["APELLIDO"];
                     Objeto.Telefono = (string)Datos.Lector["TELEFONO"];
+
+                    Objeto.Domicilio = new Domicilio();
+                    if(Datos.Lector["ID_DOMICILIO"] != DBNull.Value)
+                        Objeto.Domicilio.Id = (int)Datos.Lector["ID_DOMICILIO"];
                 }
                                   
                 return Objeto;
@@ -142,6 +146,41 @@ namespace TPC_Negocio
                 Datos.CerrarConexion();
             }
         }
+
+        public bool BuscarDomicilio(int Id)
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+
+            try
+            {
+                Datos.SetConsulta("SELECT ID, ID_DOMICILIO FROM USUARIOS WHERE ID =" + Id);
+                Datos.EjecutarLectura();
+                Usuario Objeto = new Usuario();
+
+                if (Datos.Lector.Read())
+                {
+                    Objeto.Id = (int)(Datos.Lector["ID"]);
+
+                    Objeto.Domicilio = new Domicilio();
+                    if (Datos.Lector["ID_DOMICILIO"] != DBNull.Value)
+                    {
+                        Objeto.Domicilio.Id = (int)Datos.Lector["ID_DOMICILIO"];
+                        return true;
+                    }
+
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
         public void Agregar(Usuario Usuario)
         {
             AccesoDatabase Datos = new AccesoDatabase();
@@ -219,7 +258,26 @@ namespace TPC_Negocio
             }
         }
 
-        public void Modificar(Usuario Usuario) 
+        public void Modificar(Usuario Usuario, int IdDomicilio) 
+        {
+            AccesoDatabase Datos = new AccesoDatabase();
+            try
+            {
+                Datos.SetConsulta("UPDATE USUARIOS SET NOMBRE = '" + Usuario.Nombre + "', APELLIDO = '" + Usuario.Apellido + "', " + "EMAIL = '" + Usuario.Email + "', TELEFONO = '" + Usuario.Telefono + "', ID_DOMICILIO = '" + IdDomicilio + "' WHERE ID = '" + Usuario.Id + "'");
+
+                Datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConexion();
+            }
+        }
+
+        public void ModificarSimple(Usuario Usuario)
         {
             AccesoDatabase Datos = new AccesoDatabase();
             try
